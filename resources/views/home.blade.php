@@ -292,7 +292,7 @@
                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:leading-bold editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-p:text-white editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full text-left relative z-[2] editor-em:mb-[10px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:text-[24px] md:editor-p:text-[22px] sm:editor-p:text-[20px] xs:editor-p:text-[18px] duration-700 editor-p:line-clamp-3 editor-headings:line-clamp-2 editor-em:line-clamp-1">
                                         <em>{{$product->category->title}}</em>
                                         <h2>{{$product->title}}</h2>
-                                        <p>{{$product->description}}</p>
+                                        <p>{!!$product->technical_info!!}</p>
                                     </div>
                                     <div class="button-field flex flex-wrap gap-[25px] mt-[50px] md:mt-[20px] w-full">
                                         <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
@@ -321,7 +321,7 @@
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide">
                                                         <div class="prod-img img h-[300px] group-[&.swiper-slide-active]/slide:h-[400px] md:h-[250px] md:group-[&.swiper-slide-active]/slide:h-[350px] sm:group-[&.swiper-slide-active]/slide:h-[300px] xs:group-[&.swiper-slide-active]/slide:h-[275px] group-[&.swiper-slide-active]/slide:pl-[50px] pr-[25px] md:!px-[15px] w-full overflow-hidden duration-700 ml-auto">
-                                                            <img class="h-full w-full object-contain  duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->image }}" alt="">
+                                                            <img class="h-full w-full object-contain  duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->gallery[0]->image }}" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
