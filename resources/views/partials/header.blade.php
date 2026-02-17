@@ -115,7 +115,7 @@
                                         <div class="icon-earth text-[16px] text-white leading-tight flex duration-450 "></div>
                                     </div>
                                     <div class="text text-white group-hover/language:text-white/80 duration-450 font-medium flex justify-center items-center ">
-                                        EN
+                                        {{ strtoupper(app()->getLocale()) }}
                                         <div class="icon-arrow text-[8px] text-white ml-[5px] duration-450">
                                             <svg width="8" height="4" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 3L0.401923 -1.25623e-08L5.59808 4.417e-07L3 3Z" fill="white" />
@@ -127,27 +127,66 @@
                                 <div class="sub-menu min-w-[100px] md:mt-[15px] sm:min-w-fit absolute left-[50%] top-[calc(100%+12px)]  w-full opacity-0 translate-y-[10px] translate-x-[-50%] group-hover/language:opacity-100 duration-450 group-hover/language:translate-y-0 pointer-events-none before:content before:absolute before:left-[50%] before:translate-x-[-50%] before:-top-[50px] before:h-[50px] before:bg-transparent before:w-full before:duration-450 group-hover/language:before:-top-[45px] group-hover/language:before:height-[45px] z-[2] group-hover/language:pointer-events-auto">
                                     <div class="menu-content py-[8px] border border-solid overflow-hidden isolate bg-white">
                                         <ul class="">
-                                            <li>
-                                                <a href="javascript:;" class="group/item flex items-center justify-center space-x-[10px] py-[8px] px-[12px] duration-450 font-medium hover:bg-[#EAEAEA] sm:p-[10px]">
-                                                    <div class="text text-white group-hover/language:text-primary-900 duration-450 font-medium flex gap-2">
-                                                        <span>TR</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="group/item flex items-center justify-center space-x-[10px] py-[8px] px-[12px] duration-450 font-medium hover:bg-[#EAEAEA] sm:p-[10px]">
-                                                    <div class="text text-white group-hover/language:text-primary-900 duration-450 font-medium flex gap-2">
-                                                        <span>FR</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="group/item flex items-center justify-center space-x-[10px] py-[8px] px-[12px] duration-450 font-medium hover:bg-[#EAEAEA] sm:p-[10px]">
-                                                    <div class="text text-white group-hover/language:text-primary-900 duration-450 font-medium flex gap-2">
-                                                        <span>RU</span>
-                                                    </div>
-                                                </a>
-                                            </li>
+                                            <?php $languagesArray = App\Models\Language::all(); 
+                                                // get URL segments
+                                                $segments = explode('/', url()->current());
+                                                //$lang = ['tr', 'en', 'ar', 'ru', 'es', 'fr'];
+                                                foreach ($languagesArray as $language) { ?>
+                                                    <?php 
+                                                        if(isset($segments[3]) && isset($segments[4])):
+                                                            $segments[3] = urldecode($segments[3]);
+                                                            $segments[4] = urldecode($segments[4]);
+                                                            $langParam0 = App\Models\Menu::where(['lang' => app()->getLocale(), 'seo_url' => $segments[3]])->first();
+                                                            if(isset($blog)):
+                                                                $langParam1 = App\Models\Blog::where(['lang' => app()->getLocale(), 'seo_url' => $segments[4]])->first();
+                                                            elseif(isset($careerJob)):
+                                                                $langParam1 = App\Models\CareerJob::where(['lang' => app()->getLocale(), 'seo_url' => $segments[4]])->first();
+                                                            elseif(isset($project)):
+                                                                $langParam1 = App\Models\Project::where(['lang' => app()->getLocale(), 'seo_url' => $segments[4]])->first();
+                                                            else:
+                                                                $langParam1 = App\Models\Menu::where(['lang' => app()->getLocale(), 'seo_url' => $segments[4]])->first();
+                                                            endif;
+                                                            $langParam0_new = App\Models\Menu::where(['lang' => $language->lang_code, 'menu_id' => $langParam0->menu_id])->first();
+                                                            if(isset($blog)):
+                                                                $langParam1_new = App\Models\Blog::where(['lang' => $language->lang_code, 'blog_id' => $langParam1->blog_id])->first();
+                                                            elseif(isset($careerJob)):
+                                                                $langParam1_new = App\Models\CareerJob::where(['lang' => $language->lang_code, 'job_id' => $langParam1->job_id])->first();
+                                                            elseif(isset($project)):
+                                                                $langParam1_new = App\Models\Project::where(['lang' => $language->lang_code, 'project_id' => $langParam1->project_id])->first(); 
+                                                            else:
+                                                                $langParam1_new = App\Models\Menu::where(['lang' => $language->lang_code, 'menu_id' => $langParam1->menu_id])->first();
+                                                            endif;
+                                                            //dd($langParam0, $langParam1);
+                                                            if($langParam0 && $langParam1):
+                                                                $url = $language->domain . '/' . $langParam0_new->seo_url . '/' . $langParam1_new->seo_url;
+                                                            endif;
+                                                        endif;
+                                                        if(isset($segments[3]) && !isset($segments[4])):
+                                                            //set $segment[3] as utf8 string
+                                                            $segments[3] = urldecode($segments[3]);
+                                                            $langParam0 = App\Models\Menu::where(['lang' => app()->getLocale(), 'seo_url' => $segments[3]])->first();
+
+                                                            $langParam0_new = App\Models\Menu::where(['lang' => $language->lang_code, 'menu_id' => $langParam0->menu_id])->first();
+                                                            //dd($langParam0, $langParam1);
+                                                            if($langParam0 && $langParam0_new):
+                                                                $url = $language->domain . '/' . $langParam0_new->seo_url;
+                                                            endif;
+                                                        endif;
+                                                        if(!isset($segments[3]) && !isset($segments[4])):
+                                                            $url = $language->domain . '/';
+                                                        endif;
+                                                    
+                                                ?>
+                                                <li>
+                                                    <a href="{{$url}}" class="group/item flex items-center justify-center space-x-[10px] py-[8px] px-[12px] duration-450 font-medium hover:bg-[#EAEAEA] sm:p-[10px]">
+                                                        <div class="text text-white group-hover/language:text-primary-900 duration-450 font-medium flex gap-2">
+                                                            <span>{{ strtoupper($language->title ) }}</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                
+                                            <?php } ?>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -197,307 +236,7 @@
                 <div class="menu-field flex items-center justify-center lg:justify-end w-full">
                     <div class="menu lg:absolute lg:top-full lg:left-0 lg:w-full lg:bg-white lg:hidden w-full scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200">
                         <ul class="flex justify-between  lg:space-x-0 lg:flex-col w-full">
-                            <!--<li class="group/menu-item menu-item lg:relative">
-                                <a href="page-about.php" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
-                                    <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">We Padel</span>
-                                </a>
-                            </li>
-                            <li class="group/menu-item menu-item lg:relative main-menu-li back-bl">
-                                <a href="page-product.php" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
-                                    <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">Padel Courts</span>
-
-                                </a>
-                                <div class="sub-trigger group/menu-icon absolute right-3 top-[11px] w-[30px] h-[30px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 ">
-                                    <div class="icon icon-arrow-down absolute text-white left-1/2 -translate-x-1/2 bg-[#0055A3] p-[8px] rounded-[5px] duration-450 group-[&.active]/menu-icon:rotate-180 flex justify-center items-center"></div>
-                                    <div class="icon w-4 h-[2px] sm:w-3 bg-white duration-450 rounded-full"></div>
-                                </div>
-                                <div class="sub-menu absolute top-full left-0 w-full z-[2] bg-white rounded-b-default shadow-header lg:hidden lg:relative lg:left-0 lg:top-0 lg:w-full lg:shadow-none opacity-0 group-hover/menu-item:opacity-100 invisible group-hover/menu-item:visible translate-y-2 group-hover/menu-item:translate-y-0 duration-450 group-hover/menu-item:delay-450 lg:opacity-100 lg:visible lg:translate-y-0 lg:duration-0 lg:before:hidden group-hover/menu-item:before:top-[-50px] group-[.is-fixed]/header:group-hover/menu-item:before:top-[-35px] group-hover/menu-item:before:h-[50px] group-[.is-fixed]/header:group-hover/menu-item:before:h-[35px] before:absolute before:left-0 before:top-[-45px] before:h-[45px] before:bg-transparent before:w-full before:duration-450 pointer-events-none group-hover/menu-item:pointer-events-auto">
-                                    <div class="content h-[calc(75vh-140px)] min-h-[400px] lg:min-h-fit lg:h-fit relative">
-                                        <div class="wrapper flex w-full lg:flex-col h-full">
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-fit lg:border-b lg:borde-solid lg:border-[#e5e9eb]">
-                                                <div class="content h-full min-h-[325px] lg:min-h-fit relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none pt-[13%] pl-[12%] xl:p-[30px] lg:py-[20px] lg:px-[30px]">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-0  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/menu-1.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(145deg,_rgba(0,85,163,1)_0%,_rgba(199,35,75,1)_100%);] opacity-60 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between items-center p-[20px_30px] lg:p-0 gap-2 mb-[40px] xl:mb-[20px] lg:mb-0 relative z-[1]">
-                                                        <a href="page-product.php" class="title flex text-[30px] xl:text-[28px] lg:text-[20px] leading-tight text-[#0055A3] duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-[.active]/mpb:text-[#C7234B] xs:group-hover/mpb:text-[#0055A3] font-bold w-full">We Origins</a>
-                                                    </div>
-                                                    <div class="sub-trigger-inner group/menu-icon absolute right-3 top-[14px] w-[30px] h-[35px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 z-[2]">
-                                                        <div class="icon icon-arrow-down text-white p-[8px] text-[12px] absolute left-1/2 -translate-x-1/2 bg-[#0055a3] duration-450 group-[&.active]/menu-icon:rotate-0 -rotate-90 flex justify-center items-center rounded-[5px] group-[.none-active]/mpb:bg-[#C7234B]"></div>
-                                                        <div class="icon w-3 h-[2px] sm:w-3 bg-white duration-450 rounded-full"></div>
-                                                    </div>
-                                                    <div class="inner-menu p-[0_30px_20px] max-h-[280px] overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 lg:hidden lg:p-0 lg:mt-[15px] z-[2] relative mr-3">
-                                                        <ul class="space-y-[30px] lg:space-y-0">
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Single</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Discover</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Pro</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Reinforced</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-fit lg:border-b lg:borde-solid lg:border-[#e5e9eb]">
-                                                <div class="content h-full min-h-[325px] lg:min-h-fit relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none pt-[13%] pl-[12%] xl:p-[30px] lg:py-[20px] lg:px-[30px]">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-0  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/menu-2.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(145deg,_rgba(0,85,163,1)_0%,_rgba(199,35,75,1)_100%);] opacity-60 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between items-center p-[20px_30px] lg:p-0 gap-2 mb-[40px] xl:mb-[20px] lg:mb-0 relative z-[1]">
-                                                        <a href="page-product.php" class="title flex text-[30px] xl:text-[28px] lg:text-[20px] leading-tight text-[#0055A3] duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-[.active]/mpb:text-[#C7234B] xs:group-hover/mpb:text-[#0055A3] font-bold w-full">We Origins</a>
-                                                    </div>
-
-                                                    <div class="sub-trigger-inner group/menu-icon absolute right-3 top-[14px] w-[30px] h-[35px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 z-[2]">
-                                                        <div class="icon icon-arrow-down text-white p-[8px] text-[12px] absolute left-1/2 -translate-x-1/2 bg-[#0055a3] duration-450 group-[&.active]/menu-icon:rotate-0 -rotate-90 flex justify-center items-center rounded-[5px] group-[.none-active]/mpb:bg-[#C7234B]"></div>
-                                                        <div class="icon w-3 h-[2px] sm:w-3 bg-white duration-450 rounded-full"></div>
-                                                    </div>
-                                                    <div class="inner-menu p-[0_30px_20px] max-h-[280px] overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 lg:hidden lg:p-0 lg:mt-[15px] z-[2] relative mr-3">
-                                                        <ul class="space-y-[30px] lg:space-y-0">
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Single</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Discover</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Pro</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Reinforced</span>
-                                                                </a>
-
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-fit lg:border-b lg:borde-solid lg:border-[#e5e9eb]">
-                                                <div class="content h-full min-h-[325px] lg:min-h-fit relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none pt-[13%] pl-[12%] xl:p-[30px] lg:py-[20px] lg:px-[30px]">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-0  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/menu-3.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(145deg,_rgba(0,85,163,1)_0%,_rgba(199,35,75,1)_100%);] opacity-60 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between items-center p-[20px_30px] lg:p-0 gap-2 mb-[40px] xl:mb-[20px] lg:mb-0 relative z-[1]">
-                                                        <a href="page-product.php" class="title flex text-[30px] xl:text-[28px] lg:text-[20px] leading-tight text-[#0055A3] duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-[.active]/mpb:text-[#C7234B] xs:group-hover/mpb:text-[#0055A3] font-bold w-full">We Origins</a>
-                                                    </div>
-
-                                                    <div class="sub-trigger-inner group/menu-icon absolute right-3 top-[14px] w-[30px] h-[35px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 z-[2]">
-                                                        <div class="icon icon-arrow-down text-white p-[8px] text-[12px] absolute left-1/2 -translate-x-1/2 bg-[#0055a3] duration-450 group-[&.active]/menu-icon:rotate-0 -rotate-90 flex justify-center items-center rounded-[5px] group-[.none-active]/mpb:bg-[#C7234B]"></div>
-                                                        <div class="icon w-3 h-[2px] sm:w-3 bg-white duration-450 rounded-full"></div>
-                                                    </div>
-                                                    <div class="inner-menu p-[0_30px_20px] max-h-[280px] overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 lg:hidden lg:p-0 lg:mt-[15px] z-[2] relative mr-3">
-                                                        <ul class="space-y-[30px] lg:space-y-0">
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Single</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Discover</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Pro</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Reinforced</span>
-                                                                </a>
-
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-fit lg:border-b lg:borde-solid lg:border-[#e5e9eb]">
-                                                <div class="content h-full min-h-[325px] lg:min-h-fit relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none pt-[13%] pl-[12%] xl:p-[30px] lg:py-[20px] lg:px-[30px]">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-0  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/menu-4.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(145deg,_rgba(0,85,163,1)_0%,_rgba(199,35,75,1)_100%);] opacity-60 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between items-center p-[20px_30px] lg:p-0 gap-2 mb-[40px] xl:mb-[20px] lg:mb-0 relative z-[1]">
-                                                        <a href="page-product.php" class="title flex text-[30px] xl:text-[28px] lg:text-[20px] leading-tight text-[#0055A3] duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-[.active]/mpb:text-[#C7234B] xs:group-hover/mpb:text-[#0055A3] font-bold w-full">We Origins</a>
-                                                    </div>
-
-                                                    <div class="sub-trigger-inner group/menu-icon absolute right-3 top-[14px] w-[30px] h-[35px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 z-[2]">
-                                                        <div class="icon icon-arrow-down text-white p-[8px] text-[12px] absolute left-1/2 -translate-x-1/2 bg-[#0055a3] duration-450 group-[&.active]/menu-icon:rotate-0 -rotate-90 flex justify-center items-center rounded-[5px] group-[.none-active]/mpb:bg-[#C7234B]"></div>
-                                                        <div class="icon w-3 h-[2px] sm:w-3 bg-white duration-450 rounded-full"></div>
-                                                    </div>
-                                                    <div class="inner-menu p-[0_30px_20px] max-h-[280px] overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 lg:hidden lg:p-0 lg:mt-[15px] z-[2] relative mr-3">
-                                                        <ul class="space-y-[30px] lg:space-y-0">
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Single</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Discover</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Pro</span>
-                                                                </a>
-
-                                                            </li>
-                                                            <li class="inner-link group/inner-link relative">
-                                                                <a href="single-product.php" class="flex items-center space-x-3 lg:py-4 lg:px-10 xs:px-0 xs:py-2 w-full">
-                                                                    <span class="text text-[#656565] font-light text-[22px] xl:text-[22px] lg:text-[20px] xs:text-[18px] leading-tight duration-450 group-[.is-active]/mpb:text-white group-hover/mpb:text-white xs:group-hover/mpb:text-[#656565] group-hover/inner-link:translate-x-2">Origin Reinforced</span>
-                                                                </a>
-
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="group/menu-item menu-item lg:relative main-menu-li back-bl mr-[480px] lg:!mr-0">
-                                <a href="page-clubs.php" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
-                                    <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">Padel Clubs</span>
-                                </a>
-                                <div class="sub-trigger group/menu-icon absolute right-3 top-[11px] w-[30px] h-[30px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 ">
-                                    <div class="icon icon-arrow-down absolute text-white left-1/2 -translate-x-1/2 bg-[#0055A3] p-[8px] rounded-[5px] duration-450 group-[&.active]/menu-icon:rotate-180 flex justify-center items-center"></div>
-                                    <div class="icon w-4 h-[2px] sm:w-3 bg-white duration-450 rounded-full"></div>
-                                </div>
-                                <div class="sub-menu absolute top-full left-0 w-full z-[2] bg-white rounded-b-default shadow-header lg:hidden lg:relative lg:left-0 lg:top-0 lg:w-full lg:shadow-none opacity-0 group-hover/menu-item:opacity-100 invisible group-hover/menu-item:visible translate-y-2 group-hover/menu-item:translate-y-0 duration-450 group-hover/menu-item:delay-450 lg:opacity-100 lg:visible lg:translate-y-0 lg:duration-0 lg:before:hidden group-hover/menu-item:before:top-[-50px] group-[.is-fixed]/header:group-hover/menu-item:before:top-[-35px] group-hover/menu-item:before:h-[50px] group-[.is-fixed]/header:group-hover/menu-item:before:h-[35px] before:absolute before:left-0 before:top-[-45px] before:h-[45px] before:bg-transparent before:w-full before:duration-450 pointer-events-none group-hover/menu-item:pointer-events-auto">
-                                    <div class="content h-[calc(75vh-140px)] min-h-[400px] lg:min-h-fit lg:h-fit relative">
-                                        <div class="wrapper flex w-full md:flex-col h-full">
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-auto">
-                                                <div class="content h-full min-h-[325px] xs:min-h-full relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-10  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/clubs-1.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(180deg,_rgba(3,20,35,1)_0%,_rgba(0,85,163,1)_100%);] opacity-80 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between md:justify-center items-center p-[20px_30px] lg:p-0 gap-2 relative z-[1] h-full lg:min-h-[325px] xs:min-h-full">
-                                                        <a href="single-club.php" class="editor title editor-headings:duration-450 group-[.is-active]/mpb:editor-headings:text-white group-hover/mpb:editor-headings:text-white xs:group-hover/mpb:editor-h1:text-[#C7234B] editor-headings:mb-0 editor-headings:font-light editor-headings:text-[40px] xl:editor-headings:text-[34px] lg:editor-headings:text-[20px] editor-strong:duration-450 group-[.is-active]/mpb:editor-strong:text-white group-hover/mpb:editor-strong:text-white xs:group-hover/mpb:editor-strong:text-[#C7234B] editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headimgs:from-25% editor-headings:to-[#C7234B] editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-center xs:text-left xs:px-[30px] xs:py-[10px] xs:border-b xs:borde-solid xs:border-[#e5e9eb] xs:editor-strong:inline-block ">
-                                                            <h1>Padel Club</h1>
-                                                            <strong>Essential</strong>
-                                                        </a>
-                                                        <div class="button-field absolute left-0 px-[30px] bottom-[20%] lg:bottom-[10%] flex justify-center gap-[30px] w-full duration-450 opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 group-hover/mpb:pointer-events-auto xs:hidden">
-                                                            <a href="single-club.php" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Detail</div>
-                                                            </a>
-                                                            <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center md:bg-[#0055A3]">
-                                                                <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
-                                                                    <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
-                                                                </div>
-                                                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Catalog</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-auto">
-                                                <div class="content h-full min-h-[325px] xs:min-h-full relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-10  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/clubs-2.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(180deg,_rgba(3,20,35,1)_0%,_rgba(0,85,163,1)_100%);] opacity-80 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between md:justify-center items-center p-[20px_30px] lg:p-0 gap-2 relative z-[1] h-full lg:min-h-[325px] xs:min-h-full">
-                                                        <a href="single-club.php" class="editor title editor-headings:duration-450 group-[.is-active]/mpb:editor-headings:text-white group-hover/mpb:editor-headings:text-white xs:group-hover/mpb:editor-h1:text-[#C7234B] editor-headings:mb-0 editor-headings:font-light editor-headings:text-[40px] xl:editor-headings:text-[34px] lg:editor-headings:text-[20px] editor-strong:duration-450 group-[.is-active]/mpb:editor-strong:text-white group-hover/mpb:editor-strong:text-white xs:group-hover/mpb:editor-strong:text-[#C7234B] editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headimgs:from-25% editor-headings:to-[#C7234B] editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-center xs:text-left xs:px-[30px] xs:py-[10px] xs:border-b xs:borde-solid xs:border-[#e5e9eb] xs:editor-strong:inline-block ">
-                                                            <h1>Padel Club</h1>
-                                                            <strong>Impact</strong>
-                                                        </a>
-                                                        <div class="button-field absolute left-0 px-[30px] bottom-[20%] lg:bottom-[10%] flex justify-center gap-[30px] w-full duration-450 opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 group-hover/mpb:pointer-events-auto xs:hidden">
-                                                            <a href="single-club.php" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Detail</div>
-                                                            </a>
-                                                            <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center md:bg-[#0055A3]">
-                                                                <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
-                                                                    <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
-                                                                </div>
-                                                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Catalog</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="menu-product-box group/mpb w-full h-full lg:h-auto">
-                                                <div class="content h-full min-h-[325px] xs:min-h-full relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none">
-                                                    <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-10  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                        <img loading="lazy" src="../assets/image/other/clubs-3.jpg" alt="" class="h-full object-center object-cover w-full">
-                                                        <div class="gradient [background:linear-gradient(180deg,_rgba(3,20,35,1)_0%,_rgba(0,85,163,1)_100%);] opacity-80 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
-                                                    </div>
-                                                    <div class="title-field flex justify-between md:justify-center items-center p-[20px_30px] lg:p-0 gap-2 relative z-[1] h-full lg:min-h-[325px] xs:min-h-full">
-                                                        <a href="single-club.php" class="editor title editor-headings:duration-450 group-[.is-active]/mpb:editor-headings:text-white group-hover/mpb:editor-headings:text-white xs:group-hover/mpb:editor-h1:text-[#C7234B] editor-headings:mb-0 editor-headings:font-light editor-headings:text-[40px] xl:editor-headings:text-[34px] lg:editor-headings:text-[20px] editor-strong:duration-450 group-[.is-active]/mpb:editor-strong:text-white group-hover/mpb:editor-strong:text-white xs:group-hover/mpb:editor-strong:text-[#C7234B] editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headimgs:from-25% editor-headings:to-[#C7234B] editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-center xs:text-left xs:px-[30px] xs:py-[10px] xs:border-b xs:borde-solid xs:border-[#e5e9eb] xs:editor-strong:inline-block ">
-                                                            <h1>Padel Club</h1>
-                                                            <strong>Extreme</strong>
-                                                        </a>
-                                                        <div class="button-field absolute left-0 px-[30px] bottom-[20%] lg:bottom-[10%] flex justify-center gap-[30px] w-full duration-450 opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 group-hover/mpb:pointer-events-auto xs:hidden">
-                                                            <a href="single-club.php" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Detail</div>
-                                                            </a>
-                                                            <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center md:bg-[#0055A3]">
-                                                                <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
-                                                                    <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
-                                                                </div>
-                                                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Catalog</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="group/menu-item menu-item lg:relative">
-                                <a href="page-projects.php" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
-                                    <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">Projects</span>
-                                </a>
-
-                            </li>
-                            <li class="group/menu-item menu-item lg:relative">
-                                <a href="page-blog.php" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
-                                    <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">News & Blog</span>
-                                </a>
-
-                            </li>
-                            <li class="group/menu-item menu-item lg:relative">
-                                <a href="page-contact.php" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
-                                    <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">Contact</span>
-                                </a>
-
-                            </li>-->
+                            
                             @foreach($menu as $item)
                                 @if($item->page_type == 'product_category')
                                     <li class="group/menu-item menu-item lg:relative main-menu-li back-bl">
