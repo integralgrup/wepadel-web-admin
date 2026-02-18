@@ -214,10 +214,12 @@ class HomeController extends Controller
         
 
         if($menu->page_type == 'club') {
-            $club = Club::where(['lang' => app()->getLocale(), 'seo_url' => $slug])->with(['sliders1', 'sliders2', 'sliders3', 'features', 'faqs'])->firstOrFail();
-            $seo = $club;
-            //dd($club);
-            return view('club', compact('club', 'seo'));
+            if($slug2 != null) {
+                $club = Club::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->with(['sliders1', 'sliders2', 'sliders3', 'features', 'faqs'])->firstOrFail();
+                $seo = $club;
+                
+                return view('club', compact('club', 'seo'));
+            }
 
         }
 
