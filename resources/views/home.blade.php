@@ -286,7 +286,11 @@
                             <img class="h-full w-full object-cover duration-500" src="../assets/image/other/saha-bg.jpg" alt="">
                         </div>
                         <?php foreach($products as $key => $product) : ?>
+                        @if($key == 0)
                         <div class="detail-box active opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] h-full z-[5]" data-id="{{$key}}">
+                        @else 
+                        <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] h-full z-[5] group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);]" data-id="{{$key}}">
+                        @endif
                             <div class="text-field w-full h-full">
                                 <div class="text-content max-w-[500px] lg:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] lg:p-[30px] duration-700 relative rounded-[30px] sm:rounded-t-none overflow-hidden isolate sm:px-[30px]" dir="">
                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:leading-bold editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-p:text-white editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full text-left relative z-[2] editor-em:mb-[10px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:text-[24px] md:editor-p:text-[22px] sm:editor-p:text-[20px] xs:editor-p:text-[18px] duration-700 editor-p:line-clamp-3 editor-headings:line-clamp-2 editor-em:line-clamp-1">
@@ -394,7 +398,7 @@
                             </div>
                         </div>
                         <div class="button-field flex flex-wrap gap-[25px] mt-[50px]">
-                            <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                            <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('about_url') }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                                 <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Wepadel</div>
                             </a>
                         </div>
@@ -418,7 +422,7 @@
                     </h1>
                 </div>
                 <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
-                    <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                    <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                         <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">All Project</div>
                     </a>
                 </div>
@@ -445,10 +449,10 @@
                                                         <h2>{{$project->title_1}}</h2>
                                                     </div>
                                                     <div class="button-field flex flex-wrap gap-[25px] xs:gap-[15px] w-full mt-[20px] mb-[70px] md:mb-[100px] xs:mb-[70px]">
-                                                        <a href="#" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                                                        <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') .'/'. $project->seo_url }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                                                             <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Detail</div>
                                                         </a>
-                                                        <a href="#" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full  before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                                                        <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full  before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                                                             <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-white relative z-2 duration-450 w-max">All Projects</div>
                                                         </a>
                                                     </div>

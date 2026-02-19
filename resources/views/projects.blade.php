@@ -116,8 +116,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                         <div class="gradient duration-450 bg-gradient-to-b from-[#005AA5] to-[#C7234B] rounded-[30px] absolute top-0 left-0 w-full h-full z-[0] opacity-0 group-hover/blog:opacity-100"></div>
                         <div class="button-field absolute right-0 top-0 z-[1]">
                             <div class="button group/button h-[90px] w-[90px] xs:h-[70px] xs:w-[70px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-[#0055A3] border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right">
-                                <div class="icon-arrow-right-2 text-[18px] 
-xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450"></div>
+                                <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450"></div>
                             </div>
                         </div>
                         <div class="content w-full bg-white relative px-[30px] py-[28px] rounded-[30px] overflow-hidden isolate">
@@ -132,18 +131,18 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                                     <div class="text-field p-[10px] sm:p-0 max-w-[500px] m-auto overflow-hidden isolate flex flex-col justify-center sm:max-w-full relative sm:order-2">
                                         <div class="w-fit flex justify-center items-center gap-[8px] duration-450 mb-[20px]">
                                             <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Angola</span>
+                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">{{$project->location}}</span>
                                         </div>
                                         <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.1] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
                                             <h1>{{$project->title_1}}</h1>
-                                            <p>{!!$project->description!!} </p>
+                                            <p>{!!$project->short_description!!} </p>
                                         </div>
                                     </div>
                                 @else
                                     <div class="text-field p-[10px] sm:p-0 max-w-[500px] m-auto overflow-hidden isolate flex flex-col justify-center sm:max-w-full relative sm:order-2">
                                         <div class="w-fit flex justify-center items-center gap-[8px] duration-450 mb-[20px]">
                                             <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Angola</span>
+                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">{{$project->location}}</span>
                                         </div>
                                         <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.1] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
                                             <h1>{{$project->title_1}}</h1>

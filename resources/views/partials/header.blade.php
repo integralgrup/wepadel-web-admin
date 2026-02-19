@@ -284,7 +284,7 @@
                                         </div>
                                     </li>
                                 @elseif($item->page_type == 'club')
-                                    <li class="group/menu-item menu-item lg:relative main-menu-li back-bl mr-[480px] lg:!mr-0">
+                                    <li class="group/menu-item menu-item lg:relative main-menu-li back-bl mr-[480px] lg:!mr-0" style="margin-right: 350px;">
                                         <a href="javascript:;" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
                                             <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">{{$item->title}}</span>
                                         </a>

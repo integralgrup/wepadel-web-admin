@@ -100,106 +100,25 @@
                         </button>
                     </form>
                 </div>
-                <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">We Origin</div>
-                    <div class="list grid gap-[15px]">
-
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Origin Single</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Origin Discover</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Origin Pro</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Origin Reinforced</div>
-                        </a>
-
+                <?php 
+                    $footer_menu = App\Models\Menu::where(['lang' => app()->getLocale(), 'menu_type' => 'footer'])->with('children')
+                    ->where('parent_menu_id', 0) // only root menus
+                    ->orderBy('sort', 'asc')
+                    ->get();
+                    //dd($menu);
+                ?>
+                @foreach($footer_menu as $menu)
+                    <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
+                        <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">{{ $menu->title }}</div>
+                        <div class="list grid gap-[15px]">
+                        @foreach($menu->children as $child)
+                            <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
+                                <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">{{ $child->title }}</div>
+                            </a>
+                        @endforeach
+                        </div>
                     </div>
-                </div>
-                <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">We Professional</div>
-                    <div class="list grid gap-[15px]">
-
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Panoramic Single</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Panoramic Challenge</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Panoramic 360°</div>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">We Premium</div>
-                    <div class="list grid gap-[15px]">
-
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Origin Roofed</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Panoramic Roofed</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Full Cover</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Special Edition</div>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">Padel Clubs</div>
-                    <div class="list grid gap-[15px]">
-
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Padel Club - Essential</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Padel Club - Impact</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Padel Club - Extreme</div>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">WePadel</div>
-                    <div class="list grid gap-[15px]">
-
-                        <a href="page-about.php" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">About Us</div>
-                        </a>
-                        <a href="page-about.php#certifications" data-target="#certifications" class="text-black scrollable group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Certifications</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Panoramic 360°</div>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">Corporate</div>
-                    <div class="list grid gap-[15px]">
-
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">Privacy Policy</div>
-                        </a>
-                        <a href="" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                            <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">GDPR</div>
-                        </a>
-
-                    </div>
-
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

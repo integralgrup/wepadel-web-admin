@@ -740,9 +740,8 @@ $breadcrumbImage = $about->image;
                             <div class="text-field w-full h-full relative z-[3]">
                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full relative z-[2] editor-em:mb-[30px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:font-light editor-p:text-white editor-p:text-[20px] xs:editor-p:text-[18px] duration-700" dir="">
-                                        <h1>Our
-                                            Mission</h1>
-                                        <p>To bring the success of the Wepadel brand to all over the world and to become a leader in this sector and to offer people a more social, healthier and sportier life standard.</p>
+                                        <h1>{{$about->mission_title}}</h1>
+                                        <p>{{$about->mission_title}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -763,10 +762,8 @@ $breadcrumbImage = $about->image;
                             <div class="text-field w-full h-full relative z-[3]">
                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full relative z-[2] editor-em:mb-[30px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:font-light editor-p:text-white editor-p:text-[20px] xs:editor-p:text-[18px] duration-700" dir="">
-                                        <h1>Our
-                                            Vision</h1>
-                                        <p>To build the best padel courts with WePadel quality, introduce people to padel, and contribute to the development of this sport.
-                                        </p>
+                                        <h1>{{$about->vision_title}}</h1>
+                                        <p>{{$about->vision_title}}</p>
                                     </div>
                                 </div>
                             </div>
