@@ -51,6 +51,7 @@
                         <div class="club-content-swiper relative">
                             <div class="swiper-container club-top relative w-full mx-auto overflow-hidden h-[calc(100vh-230px)] lg:h-[700px] md:h-[700px] xs:h-[calc(100vh-210px)] min-h-[600px]">
                                 <div class="swiper-wrapper">
+                                    @foreach($club->sliders1 as $slider)
                                     <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
                                         <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
                                         <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
@@ -59,8 +60,8 @@
                                                 <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
                                                     <h2>Padel Clubs</h2>
                                                     <h1>{{$club->title}}</h1>
-                                                    <h3>Overview</h3>
-                                                    <p>{{$club->description_2}}</p>
+                                                    <h3>{{$slider->title}}</h3>
+                                                    <p>{{$slider->description}}</p>
                                                 </div>
                                                 <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
                                                     <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
@@ -75,175 +76,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
-                                        <div class="bg absolute w-full h-full left-0 top-0 [background:_radial-gradient(28.72%_66.96%_at_52.65%_52.75%,_rgba(0,0,0,0.12)_0%,_rgba(0,85,163,_0.6)_100%)] opacity-50"></div>
-                                        <div class="text-container absolute z-[5] top-[45%] xl:top-[40%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px]  group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
-                                            <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
-                                                <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
-                                                <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
-                                                    <h1>Padel Club Impact</h1>
-                                                    <h3>Cafeteria</h3>
-                                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                                </div>
-                                                <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
-                                                    <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="image h-full w-full">
-                                            <img loading="lazy" src="../assets/image/other/banner.jpg" alt="" class="h-full object-center object-cover w-full">
-                                        </div>
-                                        <div class="video group/video absolute top-0 left-0 w-full h-full">
-
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
 
@@ -278,104 +111,6 @@
                                                         </div>
                                                         <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
                                                             <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
-                                                <div class="content">
-                                                    <div class="img-field relative w-full h-full mb-[15px]">
-                                                        <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
-                                                        </div>
-                                                        <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-field overflow-hidden isolate">

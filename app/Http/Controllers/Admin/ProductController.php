@@ -640,7 +640,7 @@ class ProductController extends Controller
     // Product Feature methods will go here
     public function featuresIndex($product_id)
     {
-        $features = ProductFeature::where('product_id', $product_id)->get();
+        $features = ProductFeature::where('product_id', $product_id)->where('lang' , 'en')->get();
         return view('admin.product.feature.index', compact('features', 'product_id'));
     }
 
@@ -652,6 +652,7 @@ class ProductController extends Controller
 
     public function featuresStore(Request $request, $product_id)
     {
+        //dd($request->all());
         if ($request->has('feature_id')) {
             $feature_id = $request->feature_id; // Use the provided feature_id
         }else{
@@ -671,10 +672,27 @@ class ProductController extends Controller
                     $request->validate([
                         'title_' . $language->lang_code => 'required|max:100',
                         'description_' . $language->lang_code => 'required|max:500',
-                        'left_' . $language->lang_code => 'required|integer',
-                        'top_' . $language->lang_code => 'required|integer',
-                        'sort_' . $language->lang_code => 'required|integer',
+                        'image_' . $language->lang_code => 'nullable|image|max:2048',
+                        'icon_' . $language->lang_code => 'nullable|image|max:1024',
+                        'alt_' . $language->lang_code => 'required|max:100',
                     ]);
+                }
+
+                if ($request->hasFile('image_en') || $request->hasFile('image_' . $language->lang_code)) {
+                    $tmpImgPath = createTmpFile($request, 'image_en', $this->languages[0]);
+                    $imageName = moveFile($request,$language,'image_' . $language->lang_code, 'image_en', 'title_' . $language->lang_code, 'title_en', $language->product_images_folder, $tmpImgPath);
+                    //dd($imageName);
+                }else{
+                    $imageName = $request->input('old_image_' . $language->lang_code, null); // Use old image if no new image is uploaded
+                }
+
+                if ($request->hasFile('icon_en') || $request->hasFile('icon_' . $language->lang_code)) {
+                    
+                    $tmpIconPath = createTmpFile($request, 'icon_en', $this->languages[0]);
+                    $iconName = moveFile($request,$language,'icon_' . $language->lang_code, 'icon_en', 'title_' . $language->lang_code, 'title_en', $language->product_images_folder, $tmpIconPath);
+                    //dd($imageName);
+                }else{
+                    $iconName = $request->input('old_icon_' . $language->lang_code, null); // Use old image if no new image is uploaded
                 }
                 
 
@@ -684,9 +702,10 @@ class ProductController extends Controller
                         'product_id' => $product_id,
                         'title' => $request->input('title_' . $language->lang_code) ?? $request->input('title_en'),
                         'description' => $request->input('description_' . $language->lang_code) ?? $request->input('description_en'),
-                        'left' => $request->input('left_' . $language->lang_code) ?? 0,
-                        'top' => $request->input('top_' . $language->lang_code) ?? 0,
-                        'sort' => $request->input('sort_' . $language->lang_code) ?? 0,
+                        'image' => $imageName,
+                        'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en'),
+                        'icon' => $iconName,
+                        'sort' => $request->input('sort_' . $language->lang_code) ?? $request->input('sort_en') ?? 0,
                     ]
                 );
             }

@@ -38,7 +38,7 @@ class ProductCategory extends Model
     // Define relationship with Product model
     public function product()
     {
-        return $this->belongsTo(Product::class, 'category_id', 'category_id');
+        return $this->hasMany(Product::class, 'category_id', 'category_id')->where('lang', app()->getLocale())->orderBy('sort', 'asc');
     }
 
     public function children()

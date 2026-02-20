@@ -2,129 +2,135 @@
 
 @section('content')
 <?php 
-$pageTitle = $category->title;
+$pageName = $category->title;
 $breadcrumbTitle = $category->title;
+$breadcrumbType = "image";
+$breadcrumbSRC = "../assets/image/other/blog-2.jpg";
 $breadcrumbImage = $menu->image;
+//dd($categories);
 ?>
 
-<main class="main-field">
-    <!-- BREADCRUMB -->
-    <section class="breadcrumb-field relative overflow-hidden">
-        <div class="image-wrapper overflow-hidden absolute left-0 top-0 w-full h-[100vh]">
-            <div class="content relative w-full h-[100vh]">
-                <div class="background [background:_linear-gradient(180deg,_rgba(0,_0,_0,_0.50)_0%,_rgba(0,_0,_0,_0.15)_100%);] absolute top-0 left-0 size-full z-2 translate-z-0 overflow-hidden"></div>
-                <div class="image w-full h-[100vh] overflow-hidden translate-z-0">
-                    <img src="{{ asset(getFolder( ['uploads_folder', 'images_folder'], $category->lang ) . '/' . $breadcrumbImage) }}" alt="{{ $breadcrumbTitle }}" class="size-full object-cover object-center" />
-                </div>
+<main class="main-field header-space">
+ <?php # include 'layout/breadcrumb.php'; ?>
+<!-- 2. breadcrumbı kullanmak için yukarıdaki satırı aktif edin ve aşağıdaki breadcrumb divini yorum satırı yapın veya kaldırın. -->
+    <div class="breadcrump bg-[#F6F6F6]">
+        <div class="container max-w-[1440px]">
+            <div class="wrapper title-content flex justify-between py-[20px]" dir="">
+                <!-- TITLE -->
+                <div class="page-title text-[#656565] text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px] font-semibold leading-tight relative max-w-[768px] sm:max-w-none">{{$category->title}} </div>
+                <!-- NAVIGATION -->
+                <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
+                    <li class="flex items-center">
+                        <a href="index.php" class="flex group">
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">Homepage</span>
+                        </a>
+                    </li>
+                    <li class="split relative flex items-center h-[12px]">
+                        <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">/</span>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="index.php" class="flex group">
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">Padel Courts</span>
+                        </a>
+                    </li>
+                    <li class="split relative flex items-center h-[12px]">
+                        <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">/</span>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="javascript:;" class="flex group">
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{$category->title}}</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="container max-w-[1690px] px-[30px] sm:px-[20px] mx-auto pt-[405px] pb-[140px] relative w-full h-[100vh] z-20 md:py-[60px]">
-            <div class="flex srb items-end justify-center h-full gap-[70px] xsm:gap-[30px]">
-                <div class="content-wrapper flex flex-col justify-center items-end w-fit md:gap-[15px]">
-                    <div class="navigation-wrapper xsm:hidden">
-                        <ul class="flex gap-[5px] flex-wrap">
-                            <li>
-                                <a href="index.php" class="flex items-center group/link">
-                                    <span class="text text-[18px] leading-[28px] font-light text-[#eee] tracking-[-0.18px] duration-350 group-hover/link:text-white">Home</span>
+    </div>
+    <section class="content">
+        <div class="container max-w-[1440px]">
+            <div class="wrapper grid grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:grid-cols-[minmax(0,4fr)_minmax(0,9fr)] md:grid-cols-1" dir="">
+                <div class="left-menu relative ">
+                    <div class="dynamic-sticky [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[15px] mt-[45px]">
+                    <button type="button" class="cursor-pointer category-trigger border-0 outline-none h-[60px] bg-primary hidden md:flex items-center justify-center gap-[20px] w-full px-[30px] duration-350 bg-[#0055A3] [&.active]:bg-[#C7234B] group peer rounded-[20px]">
+                        <div class="text text-[18px] text-white font-medium">KATEGORİLER</div>
+                        <div class="icon icon-arrow-down text-[12px] h-[12px] block leading-none duration-350 text-white group-[&.active]:rotate-180"></div>
+                    </button>
+                        <ul class="menu-field relative z-[1] px-[30px] py-[30px] md:hidden">
+                            @foreach($categories as $item)
+                            <li class="main-menu-li group/inner-link relative menu-selector text-[#1C2840]/40 text-[18px] font-medium duration-450 [&.active]:text-[#0055A3] hover:text-[#0055A3] py-[6px] [&.active_.icon-arrow-right]:rotate-90 [&.active_.icon-arrow-right]:text-[#D00D15] [&.active_.icon-arrow-right]:translate-x-0">
+                                <a href="javascript:;" class="flex items-center justify-start gap-[20px] group/link bg-white rounded-[15px] py-[10px] px-[20px]">
+                                    <i class="icon-arrow-right text-[14px] font-light flex items-center text-[#0055A3] relative z-10 duration-450 group-hover/link:text-[#D00D15] -translate-x-1 group-hover/link:translate-x-0"></i>
+                                    <div class="text font-medium group-[.active]/inner-link:font-bold text-[#0055A3] text-[24px] md:text-[22px] xs:text-[18px]">{{$item->title}}</div>
                                 </a>
+                                <div class="inner-child-menu p-[20px_10px_20px] hidden lg:hidden ">
+                                    <ul class="ml-[50px] space-y-4 xs:ml-0">
+                                        @foreach($item->product as $product)
+                                        <li class="group/inner-child-link ">
+                                            <a href="{{env('HTTP_DOMAIN'). '/'. $item->seo_url .'/'. $product->seo_url }}" class="flex items-center w-full">
+                                                <div class="flex items-center relative z-2 group-[.active]/inner-child-link:w-[25px] group-[.active]/inner-child-link:mr-2 w-0 duration-450 ">
+                                                    <div class="split w-full h-[3px] rounded-[30px] bg-[#C7234B] z-[1] absolute top-[50%] translate-y-[-50%]"></div>
+                                                </div>
+                                                <span class="text text-black font-light text-[18px] lg:text-[16px] leading-tight duration-450 group-hover/inner-child-link:text-[#C7234B] group-hover/inner-child-link:translate-x-1 group-[.active]/inner-child-link:text-[#C7234B] group-[.active]/inner-child-link:font-bold">{{$product->title}}</span>
+                                            </a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </li>
-                            <li>
-                                <p class="split text-[18px] leading-[28px] font-light text-[#eee] tracking-[-0.18px] duration-350 group-hover/link:text-white">/</p>
-                            </li>
-                            <li>
-                                <a href="index.php" class="flex items-center group/link">
-                                    <span class="text text-[18px] leading-[28px] font-light text-[#eee] tracking-[-0.18px] duration-350 group-hover/link:text-white">Wepadel</span>
-                                </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
-                    <div class="page-name-wrapper">
-                        <h2 class="title text-[48px] text-[#eee] font-bold leading-[64px] uppercase 2xl:text-[60px] xl:text-[32px] lg:text-[26px] lg:leading-normal md:text-[24px] sm:text-[22px] xsm:h-[95px] xsm:flex xsm:items-center"><?= $breadcrumbTitle ?></h2>
-                    </div>
-
                 </div>
-                <div class="scroll-and-expo-field flex gap-[70px] md:items-center xsm:gap-[30px]">
-                    <div class="scroll-field group/scroll cursor-pointer scrollable relative overflow-hidden w-[5px] h-[95px] duration-350 xsm:order-2" data-scrollable="#about-section">
-                        <svg width="5" height="96" viewBox="0 0 5 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="5" height="96" rx="2.5" fill="white" fill-opacity="0.2" />
-                            <rect class="duration-350 ease-kagitmiadam group-hover/scroll:translate-y-[55%]" width="5" height="41" rx="2.5" fill="#75BF00" />
-                        </svg>
-                    </div>
-                    <p class="expo text-[32px] 2xl:text-[30px] xl:text-[26px] lg:text-[24px] sm:text-[14px] max-w-[510px] text-white/80 leading-[48px] duration-350 md:max-w-[250px] md:leading-normal sm:h-min xsm:order-1">
-                        Discover the Power of the Game That Brings Passion to the Field!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTENT -->
-    <section class="product-section py-[120px] 2xl:py-[80px] xl:py-[60px] lg:py-[45px] md:py-[30px]">
-        <div class="container max-w-[1500px]">
-            <div class="wrapper">
-                <div class="heading-wrapper relative srt z-3 flex items-center gap-[45px] bg-white [box-shadow:_0px_10px_40px_0px_rgba(14,_42,_67,_0.15);] p-[25px] mt-[-180px] rounded-[8px] xl:mt-[-130px] lg:mt-[-110px] md:mt-0 sm:flex-col sm:gap-[30px]">
-                    <div class="filter-field flex items-center gap-[45px] sm:order-2 sm:w-full sm:gap-[30px] xsm:flex-col">
-                        <div class="filter-item group/select relative overflow-hidden bg-green h-[70px] w-full min-w-[255px] max-w-[255px] flex justify-center items-center rounded-[8px] gap-[10px] duration-350 before:absolute before:left-[50%] before:translate-x-[-50%] before:top-[50%] before:translate-y-[-50%] before:size-[35px] before:scale-0 before:bg-secondary-700 before:rounded-full before:translate-z-0 before:duration-350 min-sm:hover:before:scale-[8] md:h-[60px] sm:max-w-full">
-                            <select name="" id="" class="text relative z-2 text-[18px] text-white leading-[30px] w-full h-full pl-[30px]">
-                                <option value="" selected>Product Categories</option>
-                                <option value="">Football Grass</option>
-                                <option value="">Garden Grass</option>
-                                <option value="">Playground Grass</option>
-                            </select>
-                            <i class="icon icon-chevron-down2 text-[10px] h-[10px] text-white flex leading-normal absolute right-[30px] top-[50%] translate-y-[-50%] z-2 duration-350 group-hover/select:rotate-180"></i>
+                <div class="container max-w-[1440px] md:px-0">
+                    <div class="wrapper flex items-center md:flex-col md:items-center justify-between mt-[30px] gap-[30px]">
+                        <div class="text text-[20px] font-normal text-[#0055A3] [&_strong]:text-[18px] [&_strong]:font-bold [&_strong]:text-[#C7234B]">
+                            Product Result <strong>{{$category->product->count()}}</strong>
                         </div>
-                        <div class="filter-item group/select relative overflow-hidden bg-[#F7F7F7] h-[70px] w-full min-w-[240px] max-w-[240px] flex justify-center items-center rounded-[8px] gap-[10px] duration-350 before:absolute before:left-[50%] before:translate-x-[-50%] before:top-[50%] before:translate-y-[-50%] before:size-[32px] before:scale-0 before:bg-blue before:rounded-full before:translate-z-0 before:duration-350 min-sm:hover:before:scale-[8] md:h-[60px] sm:max-w-full">
-                            <select name="" id="" class="text relative z-2 text-[18px] text-[#52555CA6] leading-[30px] w-full h-full pl-[30px] duration-350 min-sm:group-hover/select:text-white">
-                                <option value="" selected>Filter Name</option>
-                                <option value="">Football Grass</option>
-                                <option value="">Garden Grass</option>
-                                <option value="">Playground Grass</option>
-                            </select>
-                            <i class="icon icon-chevron-down2 text-[10px] h-[10px] text-[#52555CA6] flex leading-normal absolute right-[30px] top-[50%] translate-y-[-50%] z-2 duration-350 group-hover/select:rotate-180 min-sm:group-hover/select:text-white"></i>
+                        <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full">
+                            <form action="" class="w-full max-w-[450px] sm:max-w-full ml-auto relative">
+                                <input type="text" placeholder="Search Produts" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                                <button class="group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%] border-0">
+                                    <div class="icon icon-search-2 text-[22px] h-[22px] block leading-none duration-350 text-[#0055A3] group-hover:text-[#C7234B]"></div>
+                                </button>
+                            </form>
                         </div>
                     </div>
-                    <div class="search-field w-full relative sm:order-1">
-                        <input type="text" name="" id="" placeholder="Search in products..." class="search-bar w-full h-[70px] bg-[#F7F7F7] rounded-[8px] pl-[35px] pr-[60px] md:h-[60px] xsm:pl-[27px]">
-                        <i class="icon icon-search text-[25px] h-[25px] text-black absolute right-[30px] top-[50%] translate-y-[-50%] flex leading-normal cursor-pointer xsm:text-[20px] xsm:h-[20px] xsm:right-[27px]"></i>
-                    </div>
-                </div>
-                <div class="inner-wrapper relative flex flex-col gap-[65px] mt-[60px] xl:gap-[60px] lg:mt-[40px] lg:gap-[40px]">
-                    <div class="second-filter-field relative flex justify-between items-center xs:flex-col">
-                        <div class="total-field srl text text-[18px] text-[#52555C]/50 leading-[28px] xsm:text-[16px]">Total <span class="text-green"> 30 </span> products found.</div>
-                        <div class="date-filter-field srr group/date relative flex items-center gap-[15px]">
-                            <div class="date-title text-[18px] text-[#52555C] font-medium leading-[28px] opacity-65 duration-350 group-hover/date:opacity-100 xsm:text-[16px]">Short by :</div>
-                            <select name="" id="" class="text relative z-2 text-[18px] text-green leading-[30px] pr-[50px] xsm:text-[16px] xs:pr-0">
-                                <option value="" selected>Latest</option>
-                                <option value="">2024</option>
-                                <option value="">2023</option>
-                                <option value="">2022</option>
-                            </select>
-                            <i class="icon icon-chevron-down2 text-[10px] h-[10px] text-[#52555CA6] flex leading-normal absolute right-[30px] top-[50%] translate-y-[-50%] z-2 duration-350 group-hover/date:rotate-180 group-hover/date:text-green xs:right-[-20px]"></i>
-                        </div>
-                    </div>
-                    <div class="product-field srb-all-fast grid grid-cols-3 gap-[85px] 2xl:gap-[75px] xl:gap-[60px] lg:gap-[40px] md:grid-cols-2 md:gap-[30px] xsm:grid-cols-1">
-                        <?php foreach($products as $item) : ?>
-                            <div class="item is-active group/item relative overflow-hidden w-full h-max p-[2px] rounded-[14px] opacity-50 duration-350 [&.is-active]:opacity-100 hover:[box-shadow:_0px_25px_75px_0px_rgba(3,_36,_107,_0.15);] before:absolute before:size-full before:left-0 before:top-0 before:bg-gradient-to-b before:from-green before:to-blue before:-translate-y-full before:translate-z-0 before:duration-450 hover:before:translate-y-0 after:absolute after:size-full after:left-0 after:top-0 after:bg-gradient-to-b after:from-green after:to-blue after:translate-y-full after:translate-z-0 after:duration-450 hover:after:translate-y-0 2xl:p-0 2xl:hover:p-[2px] sm:before:translate-y-0 sm:p-[2px] sm:after:hidden">
-                                <div class="item-content bg-white rounded-[12px] relative z-2 size-full sm:px-[10px]">
-                                    <a href="{{ env('HTTP_DOMAIN') . '/' . $category->seo_url . '/' . $item->seo_url }}" class="flex flex-col items-center">
-                                        <div class="product-detail-carousel swiper w-full h-[335px] mb-[30px] overflow-hidden lg:h-[275px]">
-                                            <div class="swiper-wrapper">
-                                                    <div class="swiper-slide">
-                                                        <div class="image w-full h-[335px] lg:h-[275px]">
-                                                            <img src="{{ asset( getFolder(['uploads_folder', 'product_images_folder'], $item->lang) . '/' . $item->image ) }}" alt="" class="size-full object-contain object-center">
-                                                        </div>
-                                                    </div>
+                    <div class="wrapper grid grid-cols-2 md:grid-cols-1 gap-[40px] mt-[30px] mb-[50px]">
+                        @foreach($category->product as $product)
+                        <div class="project-box w-full h-full duration-450 hover:-translate-y-2">
+                            <a href="{{env('HTTP_DOMAIN'). '/'. $category->seo_url .'/'. $product->seo_url }}" class="content group/blog flex relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 p-[3px] rounded-[30px] overflow-hidden isolate ">
+                                <div class="gradient duration-450 bg-gradient-to-b from-[#005AA5] to-[#C7234B] rounded-[30px] absolute top-0 left-0 w-full h-full z-[0] opacity-0 group-hover/blog:opacity-100"></div>
+                                <div class="button-field absolute right-0 top-0 z-[1]">
+                                    <div class="button group/button h-[90px] w-[90px] xs:h-[70px] xs:w-[70px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-[#0055A3] border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right">
+                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450"></div>
+                                    </div>
+                                </div>
+                                <div class="content w-full bg-white relative rounded-[30px] overflow-hidden isolate py-[50px] sm:pb-[30px]">
+                                    <div class="gradient duration-450 bg-gradient-to-b from-[#005AA5]/70 to-[#C7234B]/25 to-65% rounded-[30px] absolute top-0 left-0 w-full h-full z-[0] opacity-10"></div>
+                                    <div class="wrapper relative z-[1] lg:gap-[30px]">
+                                        <div class="text-field p-[10px] sm:p-0 m-auto flex flex-col justify-center sm:max-w-full relative sm:order-2 mx-[50px] md:mx-[30px] xs:mx-[20px]">
+                                            <div class="w-fit flex justify-center items-center gap-[8px] duration-450 mb-[15px]">
+                                                <div class="icon icon-arrow-down text-[20px] h-[20px] sm:text-[16px] sm:h-[16px] block leading-none duration-350 text-[#C7234B] absolute -top-[20px] left-0 sm:left-0"></div>
+                                                <span class="text-[#0055A3] font-light text-[20px] line-clamp-1">{{$category->title}}</span>
+                                            </div>
+                                            <div class="editor editor-base editor-h1:text-[34px] xl:editor-h1:text-[30px] lg:editor-h1:text-[28px] md:editor-h1:text-[26px] sm:editor-h1:text-[24px] xs:editor-h1:text-[22px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-2 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
+                                                <h1>{{$product->title}}</h1>
                                             </div>
                                         </div>
-                                        <div class="product-detail-pagination !w-full !flex !justify-center !gap-[15px] !z-2 !relative [&_.swiper-pagination-bullet]:duration-450 [&_.swiper-pagination-bullet]:!size-[12px] [&_.swiper-pagination-bullet]:!rounded-none [&_.swiper-pagination-bullet]:!mx-0 [&_.swiper-pagination-bullet]:bg-blue/10 [&_.swiper-pagination-bullet-active]:!bg-green lg:!gap-[5px] "></div>
-                                        <div class="content flex flex-col items-center pb-[60px] mt-[30px] lg:pb-[30px]">
-                                            <a href="product-detail.php" class="text text-[#52555C] text-[18px] leading-[28px] opacity-65">{{$item->category->title}}</a>
-                                            <h4 class="title text-blue text-[24px] font-bold leading-[36px] opacity-90 sm:text-[20px]">{{$item->title}}</h4>
+                                        <div class="image-field relative sm:order-1">
+                                            <div class="image relative w-full h-[250px] md:h-[225px]  duration-450 overflow-hidden isolate opacity-100 group-hover/blog:opacity-0">
+                                                <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()) .'/'. $product->gallery[0]->image}}" alt="" class="w-full h-full object-contain object-center duration-450">
+                                            </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php endforeach; ?>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
+                        <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">More</div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -136,63 +142,5 @@ $breadcrumbImage = $menu->image;
 
 <!-- script --> 
 @section('script') 
-<script>
-    let i;
-    const ProductDetail = document.querySelectorAll('.product-detail-carousel');
-    const ProductDetailPagination = document.querySelectorAll('.product-detail-pagination');
 
-    for (i = 0; i < ProductDetail.length; i++) {
-        ProductDetail[i].classList.add('product-detail-carousel-' + i);
-        ProductDetailPagination[i].classList.add('product-detail-pagination-' + i);
-
-        let ProductDetailCarousel = new Swiper('.product-detail-carousel-' + i, {
-            modules: [A, P, N, Px],
-            slidesPerView: 1,
-            speed: 1000,
-            spaceBetween: 30,
-            loop: false,
-            resistance: true,
-            resistanceRatio: 0,
-            watchSlidesProgress: true,
-            pagination: {
-                el: '.product-detail-pagination-' + i,
-                clickable: true,
-            },
-        });
-    }
-</script>
-
-<script>
-    if (window.innerWidth > 1024) {
-        let imageBoxs = document.querySelectorAll(".product-field .item");
-        document.addEventListener('mouseover', (event) => {
-            let imageBoxsArray = Array.from(imageBoxs);
-
-            if (!imageBoxsArray.some(imageBox => imageBox.contains(event.target))) {
-                imageBoxsArray.forEach(imageBox => {
-                    imageBox.classList.add("is-active");
-                });
-            }
-        });
-        imageBoxs.forEach(imageBox => {
-            imageBox.addEventListener('mouseover', () => {
-                let imageBoxsArray = Array.from(imageBoxs);
-
-                imageBoxsArray.forEach(otherImageBox => {
-                    if (otherImageBox !== imageBox) {
-                        otherImageBox.classList.remove("is-active");
-                    }
-                });
-                imageBox.classList.add("is-active");
-            });
-            imageBox.addEventListener('mouseout', () => {
-                let imageBoxsArray = Array.from(imageBoxs);
-
-                imageBoxsArray.forEach(otherImageBox => {
-                    otherImageBox.classList.add("is-active");
-                });
-            });
-        });
-    }
-</script>
 @endsection

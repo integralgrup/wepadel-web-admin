@@ -183,16 +183,19 @@ class HomeController extends Controller
         }
 
         if($menu->page_type == 'product_category') {
-            if($slug2 == null) {
-                
-                $category = ProductCategory::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->first();
+            $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+            // if $category is not null
+            if($category) {
+                $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+                $categories = ProductCategory::where('lang', app()->getLocale())->with('product')->get();
+                //dd($category);
                 $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $category->category_id])->with(['images', 'category'])->get();
                 //dd($products);
                 $seo = SeoSettings::where('page', 'product_category')->where('lang', app()->getLocale())->first();
-                return view('product_category', compact('category', 'products', 'menu', 'seo'));
+                return view('product_category', compact('category', 'categories', 'products', 'menu', 'seo'));
 
             } else {
-                
+
                 $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features'])->firstOrFail();
                 
                 $seo = $product;

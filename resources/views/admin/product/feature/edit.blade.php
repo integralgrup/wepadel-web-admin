@@ -56,13 +56,15 @@
                             $product_id = $item->product_id;
                             $title[$item->lang] = $item->title;
                             $description[$item->lang] = $item->description;
-                            $left[$item->lang] = $item->left;
-                            $top[$item->lang] = $item->top;
+                            $image[$item->lang] = $item->image;
+                            $alt[$item->lang] = $item->alt;
+                            $icon[$item->lang] = $item->icon;
                             $sort[$item->lang] = $item->sort;
 
                         }
                     ?>
                     <div class="card-body">
+                        <?php $required = $language->lang_code == 'en' ? 'required' : ''; ?>
                         <form action="{{ route('admin.product.features.store', $product_id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             
@@ -74,25 +76,46 @@
                                 <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="tab-{{ $language->id }}" role="tabpanel" aria-labelledby="tab-{{ $language->id }}-tab">
                                     <div class="card-body grids-4">
                                        
-                                        <div class="form-group">
-                                            <label for="title_{{ $language->lang_code }}">Başlık ({{ strtoupper($language->lang_code) }})</label>
-                                            <input type="text" name="title_{{ $language->lang_code }}" class="form-control" id="title_{{ $language->lang_code }}" value="{{ $title[$language->lang_code] ?? '' }}">
+                                        <div>
+                                             <div class="mb-3">
+                                                <label for="title_{{ $language->lang_code }}" class="form-label">Başlık ({{ strtoupper($language->lang_code) }})</label>
+                                                <input type="text" class="form-control" id="title_{{ $language->lang_code }}" name="title_{{ $language->lang_code }}" value="{{ $title[$language->lang_code] }}" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="description_{{ $language->lang_code }}" class="form-label">Açıklama ({{ strtoupper($language->lang_code) }})</label>
+                                                <textarea class="form-control" id="description_{{ $language->lang_code }}" name="description_{{ $language->lang_code }}" rows="3" >{{$description[$language->lang_code]}}</textarea>
+                                            </div>
+                                           
                                         </div>
-                                        <div class="form-group">
-                                            <label for="left_{{ $language->lang_code }}">Sol ({{ strtoupper($language->lang_code) }})</label>
-                                            <input type="text" name="left_{{ $language->lang_code }}" class="form-control" id="left_{{ $language->lang_code }}" value="{{ $left[$language->lang_code] ?? '' }}">
+                                        <!-- image -->
+                                        <div >
+                                            <div class="mb-3">
+                                                <label for="image_{{ $language->lang_code }}" class="form-label">Görsel ({{ $language->lang_code }})</label>
+                                                <input type="file" class="form-control" id="image_{{ $language->lang_code }}" name="image_{{ $language->lang_code }}"  accept="image/*" >
+                                                @if($image[$language->lang_code])
+                                                    <img src="{{ $language->domain .'/'.  getFolder(['uploads_folder','product_images_folder'], $language->lang_code) . '/' . $image[$language->lang_code] }}" alt="" style="width: 100px; margin-top: 10px;">
+                                                    <input type="hidden"  name="old_image_{{ $language->lang_code }}" value="{{ $image[$language->lang_code] }}">
+                                                @endif
+                                            </div>
+                                            <div>
+                                                <label for="alt_{{ $language->lang_code }}" class="form-label">Alt Metin ({{ $language->lang_code }})</label>
+                                                <input type="text" class="form-control" id="alt_{{ $language->lang_code }}" name="alt_{{ $language->lang_code }}" value="{{ $alt[$language->lang_code] }}" >
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="top_{{ $language->lang_code }}">Üst ({{ strtoupper($language->lang_code) }})</label>
-                                            <input type="text" name="top_{{ $language->lang_code }}" class="form-control" id="top_{{ $language->lang_code }}" value="{{ $top[$language->lang_code] ?? '' }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="sort_{{ $language->lang_code }}">Sıralama ({{ strtoupper($language->lang_code) }})</label>
-                                            <input type="number" name="sort_{{ $language->lang_code }}" class="form-control" id="sort_{{ $language->lang_code }}" value="{{ $sort[$language->lang_code] ?? 0 }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="description_{{ $language->lang_code }}">Açıklama ({{ strtoupper($language->lang_code) }})</label>
-                                            <textarea name="description_{{ $language->lang_code }}" class="form-control" id="description_{{ $language->lang_code }}" rows="4">{{ $description[$language->lang_code] ?? '' }}</textarea>
+
+                                        <!-- image -->
+                                        <div class="mb-3">
+                                                <label for="icon_{{ $language->lang_code }}" class="form-label">Görsel ({{ $language->lang_code }})</label>
+                                                <input type="file" class="form-control" id="icon_{{ $language->lang_code }}" name="icon_{{ $language->lang_code }}"  accept="image/*" >
+                                                @if($image[$language->lang_code])
+                                                    <img src="{{ $language->domain .'/'.  getFolder(['uploads_folder','product_images_folder'], $language->lang_code) . '/' . $icon[$language->lang_code] }}" alt="" style="width: 100px; margin-top: 10px;">
+                                                    <input type="hidden"  name="old_icon_{{ $language->lang_code }}" value="{{ $icon[$language->lang_code] }}">
+                                                @endif
+                                            </div>
+
+                                        <div class="mb-3">
+                                            <label for="sort_{{ $language->lang_code }}" class="form-label">Sıralama ({{ strtoupper($language->lang_code) }})</label>
+                                            <input type="number" class="form-control" id="sort_{{ $language->lang_code }}" name="sort_{{ $language->lang_code }}" value="{{ $sort[$language->lang_code] ?? 0 }}" >
                                         </div>
                                     </div>
                                 </div>

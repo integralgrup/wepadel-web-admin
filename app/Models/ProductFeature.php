@@ -19,8 +19,9 @@ class ProductFeature extends Model
         'lang',
         'title',
         'description',
-        'left',
-        'top',
+        'image',
+        'alt',
+        'icon',
         'sort'
     ];
 
