@@ -248,36 +248,13 @@ $breadcrumbTitle = $product->title;
                     <div class="wrapper grid grid-cols-[minmax(0,6fr)_minmax(0,7fr)] md:grid-cols-1 relative gap-[100px] lg:gap-[50px]">
                         <div class="project-detail relative xs:m-auto xs:w-full !h-[650px] xl:!h-[550px] lg:!h-[500px] md:!h-[400px] xs:!h-[350px] rounded-[30px] overflow-hidden isolate">
                             <!-- project-swiper'ın swiper-slide adedi kadar detail-box oluşturulmalıdır. -->
-                            <div class="detail-box active opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="0">
+                            <?php foreach ($product->features as $key => $feature) : ?>
+                            <div class="detail-box {{ $key == 0 ? 'active' : '' }} opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="{{$key}}">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/qr-img.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder', 'product_images_folder'], $feature->lang).'/'. $feature->icon}}" alt="">
                                 </div>
                             </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="1">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="2">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="3">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="4">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="5">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="carousel-content">
                             <div class="title flex justify-between items-center sm:flex-col m-auto relative z-[2] pt-[50px] gap-[20px] md:gap-[15px]">
@@ -298,11 +275,10 @@ $breadcrumbTitle = $product->title;
                                     </div>
                                 </div>
                             </div>
-
                             <div class="project-swiper swiper rounded-[30px] !py-[30px] strecth-to-right">
                                 <div class="swiper-wrapper justify-start -left-[41%] xl:-left-[37%] lg:-left-[33%] md:-left-[32%] sm:-left-[31%] xs:left-0">
                                     <!-- project-text-slider'ın swiper-slide adedi kadar swiper-slide oluşturulmalıdır. -->
-                                    <?php for ($i = 1; $i < 3; $i++) : ?>
+                                    <?php foreach ($product->features as $feature) : ?>
                                         <div class="swiper-slide group/slide !duration-450 !transition-all [&.swiper-slide-active]:opacity-100  [&.swiper-slide-active]:!scale-100 [&.swiper-slide-active]:!visible [&.swiper-slide-next]:opacity-100 [&.swiper-slide-next]:!scale-100 [&.swiper-slide-next]:!visible !pointer-events-auto">
                                             <div class="content relative rounded-[30px] ">
                                                 <div class="text-field m-auto ">
@@ -310,68 +286,31 @@ $breadcrumbTitle = $product->title;
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/qr.png" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="{{ env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder', 'product_images_folder'], $feature->lang).'/'. $feature->image}}" alt="">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
-                                                            Best Padel
-                                                            Experience
+                                                            {{$feature->title}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide group/slide !duration-450 !transition-all [&.swiper-slide-active]:opacity-100  [&.swiper-slide-active]:!scale-100 [&.swiper-slide-active]:!visible [&.swiper-slide-next]:opacity-100 [&.swiper-slide-next]:!scale-100 [&.swiper-slide-next]:!visible !pointer-events-auto">
-                                            <div class="content relative rounded-[30px] ">
-                                                <div class="text-field m-auto ">
-                                                    <div class="sport-box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 h-[190px] flex flex-col justify-center">
-                                                        <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                                        <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
-                                                        <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
-                                                        </div>
-                                                        <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
-                                                            Best Padel
-                                                            Experience
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide group/slide !duration-450 !transition-all [&.swiper-slide-active]:opacity-100  [&.swiper-slide-active]:!scale-100 [&.swiper-slide-active]:!visible [&.swiper-slide-next]:opacity-100 [&.swiper-slide-next]:!scale-100 [&.swiper-slide-next]:!visible !pointer-events-auto">
-                                            <div class="content relative rounded-[30px] ">
-                                                <div class="text-field m-auto ">
-                                                    <div class="sport-box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 h-[190px] flex flex-col justify-center">
-                                                        <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                                        <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
-                                                        <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
-                                                        </div>
-                                                        <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
-                                                            Best Padel
-                                                            Experience
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endfor; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                             <div class="swiper project-text-slider">
                                 <div class="swiper-wrapper">
                                     <!-- project-swiper'ın swiper-slide adedi kadar swiper-slide oluşturulmalıdır. -->
-                                    <?php for ($i = 1; $i < 7; $i++) : ?>
+                                     <?php foreach ($product->features as $feature) : ?>
                                         <div class="swiper-slide p-6 sm:p-3">
                                             <div class="text-field">
                                                 <div class="editor editor-base md:editor-sm editor-headings:font-light editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#B6D3E4] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#231F20]/40 editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full" dir="">
-                                                    <h2>Unique QR Identification </h2>
-                                                    <p>As WePadel, we idetificate our products in unique
-                                                        way with QR codes that you can access and see
-                                                        global quality certificates of the products.</p>
+                                                    <h2>{{$feature->title}}</h2>
+                                                    <p>{{$feature->description}}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php endfor; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
@@ -385,190 +324,38 @@ $breadcrumbTitle = $product->title;
                             <div class="text-content relative mt-[30px] mb-[50px]">
                                 <div class="icon icon-arrow-down text-[34px] h-[34px] block leading-none duration-350 text-[#C7234B] absolute -top-[30px] -left-[30px] md:left-0 md:-top-[50px]"></div>
                                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-bold xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-l editor-headings:from-[#C7234B] editor-headings:from-40% editor-headings:to-[#0055A3] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-l editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block max-w-full">
-                                    <h1>Origin Discover
+                                    <h1>{{$product->title}}
                                         Installation</h1>
                                 </div>
                             </div>
                             <div class="description-field relative duration-450">
-                                <div class="desc-box w-full active absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="0">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Infrastructure </h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
+                                @foreach($product->features2 as $key => $feature)
+                                    <div class="desc-box w-full {{ $key == 0 ? 'active' : ''}} absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="{{$key}}">
+                                        <div class="text-field relative ">
+                                            <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
+                                                <h2>{{$feature->title}} </h2>
+                                                <p>{{$feature->description}}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="1">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Concrete Beam</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="2">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Glass</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="3">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Steel Construction</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="4">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Equipment</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="5">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Steel Mesh</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="6">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Lighting</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="7">
-                                    <div class="text-field relative ">
-                                        <div class="editor editor-base md:editor-sm editor-headings:font-normal editor-headings:text-[#0055A3] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#656565] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#656565] editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full">
-                                            <h2>Synthetic Grass</h2>
-                                            <p>As WePadel, we idetificate our products in unique
-                                                way with QR codes that you can access and see
-                                                global quality certificates of the products.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="text-field w-full select-field map-list grid grid-cols-4 lg:grid-cols-3 xs:flex xs:flex-wrap xs:justify-center gap-[30px] sm:gap-[20px] xs:gap-[10px] scrollreveal">
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob active" data-target=".installation" href="javascript:;" data-branch-index="0">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis-b.png" alt="">
+                            @foreach($product->features2 as $key => $feature2)
+                                <a class="map-box group/sport flex items-center justify-center scrollable-mob active" data-target=".installation" href="javascript:;" data-branch-index="{{$key}}">
+                                    <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
+                                        <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
+                                        <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
+                                        <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
+                                            <img class="h-full w-full object-contain object-center duration-500" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$feature2->image  ?>" alt="">
+                                        </div>
+                                        <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
+                                            {{$feature2->title}}
+                                        </div>
                                     </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Infrastructure
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="1">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Concrete Beam
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="2">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Glass
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="3">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Steel Construction
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="4">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Equipment
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="5">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Steel Mesh
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="6">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Lighting
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="map-box group/sport flex items-center justify-center scrollable-mob " data-target=".installation" href="javascript:;" data-branch-index="7">
-                                <div class="sport-box w-[210px] h-[220px] sm:w-[160px] sm:h-[150px] xs:w-[100px] xs:h-[110px] [background:linear-gradient(180deg,_rgba(217,217,217,0.3)_0%,_rgba(217,217,217,0)_100%);] rounded-[30px] p-[30px] sm:p-[20px] xs:p-[5px] xs:py-[15px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 flex flex-col justify-center hover:shadow-md">
-                                    <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                    <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
-                                    <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                        <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running-b.png" alt="">
-                                    </div>
-                                    <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
-                                        Synthetic Grass
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -588,11 +375,12 @@ $breadcrumbTitle = $product->title;
                                 </div>
                             </div>
                             <ul class="accordion tiles-nav scrollreveal">
+                                <?php foreach ($product->faqs as $key => $faq) : ?>
                                 <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
                                     <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
                                     group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
                                         <div class="title ">
-                                            What is a padel (or paddle)?
+                                            {{$faq->title}}
                                         </div>
                                         <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
                                             <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
@@ -601,95 +389,11 @@ $breadcrumbTitle = $product->title;
                                     </div>
                                     <div class="ac-content active z-[1] relative hidden ">
                                         <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
+                                            <p>{!!$faq->description!!}</p>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How to construct Origin Discover Padel Court?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How long is the Origin Discover Padel Court lifespan?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How long does the Origin Discover Padel Court construction process take?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How much does Origin Discover Padel Court construction cost?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            What are features of padel turf (artificial padel grass)?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>

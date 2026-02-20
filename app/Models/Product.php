@@ -11,6 +11,7 @@ use App\Models\ProductFaq;
 use App\Models\ProductType;
 use App\Models\ProductCategory;
 use App\Models\ProductFeature;
+use App\Models\ProductFeature2;
 
 
 class Product extends Model
@@ -75,7 +76,12 @@ class Product extends Model
 
     public function features()
     {
-        return $this->hasMany(ProductFeature::class, 'product_id', 'product_id')->orderBy('sort');
+        return $this->hasMany(ProductFeature::class, 'product_id', 'product_id')->orderBy('sort')->where('lang', app()->getLocale());
+    }
+
+    public function features2()
+    {
+        return $this->hasMany(ProductFeature2::class, 'product_id', 'product_id')->orderBy('sort')->where('lang', app()->getLocale());
     }
 
 

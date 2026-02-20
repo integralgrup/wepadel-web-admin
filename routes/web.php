@@ -190,6 +190,14 @@ Route::post('/admin/product/{id}/features/store', 'App\Http\Controllers\Admin\Pr
 Route::get('/admin/product/{id}/features/{featureId}/edit', 'App\Http\Controllers\Admin\ProductController@featuresEdit')->name('admin.product.features.edit');
 Route::delete('/admin/product/{id}/features/{featureId}', 'App\Http\Controllers\Admin\ProductController@featuresDestroy')->name('admin.product.features.destroy');
 
+// Product Feature 2 routes
+Route::get('/admin/product/{id}/features2', 'App\Http\Controllers\Admin\ProductController@features2Index')->name('admin.product.features2.index');
+Route::get('/admin/product/{id}/features2/create', 'App\Http\Controllers\Admin\ProductController@features2Create')->name('admin.product.features2.create');
+Route::post('/admin/product/{id}/features2/store', 'App\Http\Controllers\Admin\ProductController@features2Store')->name('admin.product.features2.store');
+Route::get('/admin/product/{id}/features2/{featureId}/edit', 'App\Http\Controllers\Admin\ProductController@features2Edit')->name('admin.product.features2.edit');
+Route::delete('/admin/product/{id}/features2/{featureId}', 'App\Http\Controllers\Admin\ProductController@features2Destroy')->name('admin.product.features2.destroy');
+
+
 // Office routes
 Route::get('/admin/office', 'App\Http\Controllers\Admin\OfficeController@index')->name('admin.office.index');
 Route::get('/admin/office/create', 'App\Http\Controllers\Admin\OfficeController@create')->name('admin.office.create');

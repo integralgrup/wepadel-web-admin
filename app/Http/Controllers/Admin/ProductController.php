@@ -11,6 +11,7 @@ use App\Models\ProductFaq;
 use App\Models\ProductType;
 use App\Models\ProductCategory;
 use App\Models\ProductFeature;
+use App\Models\ProductFeature2;
 use App\Models\Language; // Assuming you have a Language model to fetch languages
 use Illuminate\Support\Facades\DB; // For database operations
 
@@ -726,8 +727,107 @@ class ProductController extends Controller
 
     public function featuresDestroy($product_id, $id)
     {
-        $feature = ProductFeature::findOrFail($id);
-        $feature->delete();
+        $features = ProductFeature::where(['feature_id' => $id, 'product_id' => $product_id])->get();
+        foreach ($features as $feature) {
+            $feature->delete();
+        }
+
+        return redirect()->route('admin.product.features.index', $product_id)->with('success', 'Özellik başarıyla silindi!');
+    }
+
+
+    public function features2Index($product_id)
+    {
+        $features = ProductFeature2::where('product_id', $product_id)->where('lang' , 'en')->get();
+        return view('admin.product.feature2.index', compact('features', 'product_id'));
+    }
+
+    public function features2Create($product_id)
+    {
+        $languages = Language::all();
+        return view('admin.product.feature2.create', compact('languages', 'product_id'));
+    }
+
+    public function features2Store(Request $request, $product_id)
+    {
+        //dd($request->all());
+        if ($request->has('feature_id')) {
+            $feature_id = $request->feature_id; // Use the provided feature_id
+        }else{
+            $feature_id = ProductFeature2::max('feature_id') + 1; // Increment the maximum feature_id by 1
+            if (!$feature_id) {
+                $feature_id = 1; // If no feature items exist, start with 1
+            }
+        }
+
+        try {
+
+            $languages = Language::all();
+            
+            //validation
+            foreach ($languages as $language) {
+                if($language->lang_code == 'en'){
+                    $request->validate([
+                        'title_' . $language->lang_code => 'required|max:100',
+                        'description_' . $language->lang_code => 'required|max:500',
+                        'image_' . $language->lang_code => 'nullable|image|max:2048',
+                        'alt_' . $language->lang_code => 'required|max:100',
+                    ]);
+                }
+
+                if ($request->hasFile('image_en') || $request->hasFile('image_' . $language->lang_code)) {
+                    $tmpImgPath = createTmpFile($request, 'image_en', $this->languages[0]);
+                    $imageName = moveFile($request,$language,'image_' . $language->lang_code, 'image_en', 'title_' . $language->lang_code, 'title_en', $language->product_images_folder, $tmpImgPath);
+                    //dd($imageName);
+                }else{
+                    $imageName = $request->input('old_image_' . $language->lang_code, null); // Use old image if no new image is uploaded
+                }
+
+                if ($request->hasFile('icon_en') || $request->hasFile('icon_' . $language->lang_code)) {
+                    
+                    $tmpIconPath = createTmpFile($request, 'icon_en', $this->languages[0]);
+                    $iconName = moveFile($request,$language,'icon_' . $language->lang_code, 'icon_en', 'title_' . $language->lang_code, 'title_en', $language->product_images_folder, $tmpIconPath);
+                    //dd($imageName);
+                }else{
+                    $iconName = $request->input('old_icon_' . $language->lang_code, null); // Use old image if no new image is uploaded
+                }
+                
+
+                ProductFeature2::updateOrCreate(
+                    ['feature_id' => $feature_id, 'lang' => $request->input('lang_' . $language->lang_code)],
+                    [
+                        'product_id' => $product_id,
+                        'title' => $request->input('title_' . $language->lang_code) ?? $request->input('title_en'),
+                        'description' => $request->input('description_' . $language->lang_code) ?? $request->input('description_en'),
+                        'image' => $imageName,
+                        'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en'),
+                        'sort' => $request->input('sort_' . $language->lang_code) ?? $request->input('sort_en') ?? 0,
+                    ]
+                );
+            }
+
+            return redirect()->route('admin.product.features2.index', $product_id)->with('success', 'Özellik başarıyla kaydedildi.');
+        } catch (\Exception $e) {
+            //dd($e);
+            return redirect()->back()->withErrors(['error' => 'Hata oluştu: ' . $e->getMessage()]);
+        }
+    }
+
+    public function features2Edit($product_id, $id)
+    {
+        $features = ProductFeature2::where('product_id', $product_id)->where('feature_id', $id)->get();
+        $languages = Language::all();
+        return view('admin.product.feature2.edit', compact('features', 'languages', 'product_id'));
+    }
+
+    public function features2Destroy($product_id, $id)
+    {
+        $features = ProductFeature2::where(['feature_id' => $id, 'product_id' => $product_id])->get();
+
+        foreach ($features as $feature) {
+            $feature->delete();
+        }
+        
 
         return redirect()->route('admin.product.features.index', $product_id)->with('success', 'Özellik başarıyla silindi!');
     }

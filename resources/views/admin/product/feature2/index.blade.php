@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title', 'Ürün Listesi')
+@section('title', 'Ürün Özellikler 2 (Installation) Listesi')
 
 @section('content')
 
@@ -9,11 +9,11 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Ürün Listesi</h3></div>
+              <div class="col-sm-6"><h3 class="mb-0">Ürün Özellikler 2(Installation) Listesi</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Anasayfa</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Ürün Yönetimi</li>
+                  <li class="breadcrumb-item active" aria-current="page">Ürün Özellikler 2(Installation) Yönetimi</li>
                 </ol>
               </div>
             </div>
@@ -41,8 +41,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="card-title mb-0">Ürün Listesi</h5>
-                            <a href="{{ route('admin.product.create') }}" class="btn btn-primary">
+                            <h5 class="card-title mb-0">Ürün Özellikler 2(Installation) Listesi</h5>
+                            <a href="{{ route('admin.product.features2.create', $product_id) }}" class="btn btn-primary">
                                 <i class="bi bi-plus"></i> Ekle
                             </a>
                         </div>
@@ -53,39 +53,19 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Başlık</th>
-                                    <th>Görsel</th>
-                                    <th style="width: 350px;">İşlemler</th>
+                                    <th>İşlemler</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($products as $key => $item)
+                                @foreach($features as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>
-                                            <img src="{{ $languages[0]->domain .'/'. getFolder(['uploads_folder', 'product_images_folder'], $item->lang) . '/' . $item->image }}" alt="{{ $item->alt }}" class="img-thumbnail" width="100">
-                                        </td>
-                                        <td style="display: flex; gap: 5px; flex-wrap: wrap;">
-                                            <a href="{{ route('admin.product.edit', $item->product_id) }}" class="btn btn-success btn-sm">
+                                            <a href="{{ route('admin.product.features2.edit', [$product_id, $item->feature_id]) }}" class="btn btn-warning btn-sm">
                                                 <i class="bi bi-pencil"></i> Düzenle
                                             </a>
-                                            <a href="{{ route('admin.product.gallery.index', $item->product_id) }}" class="btn btn-warning btn-sm">
-                                                <i class="bi bi-images"></i> Galeri
-                                            </a>
-                                            <a href="{{ route('admin.product.features.index', $item->product_id) }}" class="btn btn-secondary btn-sm">
-                                                <i class="bi bi-camera-video"></i> Features
-                                            </a>
-                                            <a href="{{ route('admin.product.features2.index', $item->product_id) }}" class="btn btn-info btn-sm">
-                                                <i class="bi bi-images"></i> Tabs
-                                            </a>
-                                            <a href="{{ route('admin.product.faq.index', $item->product_id) }}" class="btn btn-info btn-sm">
-                                                SSS
-                                            </a>
-                                            <a href="{{ route('admin.product.type.index', $item->product_id) }}" class="btn btn-info btn-sm">
-                                                Çim Tipleri
-                                            </a>
-                                            
-                                            <form action="{{ route('admin.product.destroy', $item->product_id) }}" method="POST" style="display:inline;">
+                                            <form action="{{ route('admin.product.features2.destroy', [$product_id, $item->feature_id]) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bu içeriği silmek istediğinize emin misiniz?')">

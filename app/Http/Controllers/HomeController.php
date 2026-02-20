@@ -196,7 +196,7 @@ class HomeController extends Controller
 
             } else {
 
-                $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features'])->firstOrFail();
+                $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features','features2'])->firstOrFail();
                 
                 $seo = $product;
                 //dd($product);
@@ -206,7 +206,7 @@ class HomeController extends Controller
 
         if($menu->page_type == 'product') {
             
-                $product = Product::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features'])->firstOrFail();
+                $product = Product::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features', 'features2'])->firstOrFail();
                 
                 $seo = $product;
                 //dd($product);
