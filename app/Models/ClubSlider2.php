@@ -17,6 +17,8 @@ class ClubSlider2 extends Model
         'slider_id',
         'club_id',
         'lang',
+        'title',
+        'description',
         'image',
         'alt',
         'sort'

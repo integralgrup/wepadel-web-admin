@@ -290,108 +290,64 @@
                 </div>
             </section>
             <section class="py-[100px] xl:py-[50px] md:py-[50px] overflow-hidden isolate" id="facilities">
-                <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
-                    <div class="bg w-[500px] h-[500px] rounded-full absolute -left-[10%] top-[60%] translate-y-[-50%] pointer-events-none opacity-90 ">
-                        <img loading="lazy" src="../assets/image/other/Ellipsedty-3.png" alt="" class="h-full object-center object-contain w-full">
-                    </div>
-                    <div class="icons overflow-hidden absolute left-[70px] top-[40%] translate-y-[-50%] pointer-events-none z-[5]">
-                        <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3] opacity-5"></div>
-                    </div>
-                    <div class="icons overflow-hidden absolute -left-[100px] top-[70%] translate-y-[-50%] pointer-events-none z-[5]">
-                        <div class="icon icon-arrow-down text-[195px] w-[200px] h-[195px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3] opacity-5"></div>
-                    </div>
-                    <div class="container max-w-[1440px]">
-                        <div class="wrapper grid grid-cols-[minmax(0,4fr)_minmax(0,9fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
-                            <div class="text-field m-auto " dir="">
-                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
-                                    <h1>8+ Padel Courts
-                                        With Different
-                                        Desing Types</h1>
-                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                </div>
+                @foreach($club->sliders2 as $key => $slider)
+                    @if($key % 2 == 0)
+                        <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
+                            <div class="bg w-[500px] h-[500px] rounded-full absolute -left-[10%] top-[60%] translate-y-[-50%] pointer-events-none opacity-90 ">
+                                <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
                             </div>
-                            <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-l-[20px] md:rounded-[20px] strecth-to-right image-zoom">
-                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-1.jpg" alt="">
+                            <div class="icons overflow-hidden absolute left-[70px] top-[40%] translate-y-[-50%] pointer-events-none z-[5]">
+                                <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3] opacity-5"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
-                    <div class="bg w-[500px] h-[500px] rounded-full absolute -right-[15%] top-[60%] translate-y-[-50%] pointer-events-none ">
-                        <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
-                    </div>
-                    <div class="icons overflow-hidden absolute right-[30px] top-[25%] translate-y-[-50%] pointer-events-none z-[1]">
-                        <div class="icon icon-arrow-down text-[85px] h-[85px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
-                    </div>
-                    <div class="icons overflow-hidden absolute right-[50px] top-[45%] translate-y-[-50%] pointer-events-none z-[1]">
-                        <div class="icon icon-arrow-down text-[140px] h-[140px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
-                    </div>
-                    <div class="icons overflow-hidden absolute -right-[150px] top-[75%] translate-y-[-50%] pointer-events-none z-[1]">
-                        <div class="icon icon-arrow-down text-[250px] h-[250px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
-                    </div>
-                    <div class="container max-w-[1440px]">
-                        <div class="wrapper grid grid-cols-[minmax(0,9fr)_minmax(0,4fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
-                            <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-r-[20px] sm:rounded-[20px] strecth-to-left md:order-2 image-zoom">
-                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-2.jpg" alt="">
+                            <div class="icons overflow-hidden absolute -left-[100px] top-[70%] translate-y-[-50%] pointer-events-none z-[5]">
+                                <div class="icon icon-arrow-down text-[195px] w-[200px] h-[195px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3] opacity-5"></div>
                             </div>
-                            <div class="text-field m-auto   dir=""md:order-1">
-                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
-                                    <h1>Cafeteria and Resting
-                                        Facilities</h1>
-                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
+                            <div class="container max-w-[1440px]">
+                                <div class="wrapper grid grid-cols-[minmax(0,4fr)_minmax(0,9fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
+                                    <div class="text-field m-auto " dir="">
+                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
+                                            <h1>{{$slider->title}}</h1>
+                                            <p>{!!$slider->description!!}</p>
+                                        </div>
+                                    </div>
+                                    <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-l-[20px] md:rounded-[20px] strecth-to-right image-zoom">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN') . '/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $slider->image }}" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
-                    <div class="bg w-[500px] h-[500px] rounded-full absolute left-[30%] top-[15%] translate-y-[-50%] pointer-events-none opacity-80 ">
-                        <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
-                    </div>
-                    <div class="icons overflow-hidden absolute left-[28%] top-[85%] translate-y-[-50%] pointer-events-none z-[5]">
-                        <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3]/0 opacity-5"></div>
-                    </div>
-                    <div class="icons overflow-hidden absolute left-[35%] top-[105%] translate-y-[-50%] pointer-events-none z-[5]">
-                        <div class="icon icon-arrow-down text-[75px] w-[80px] h-[75px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3]/0 opacity-5"></div>
-                    </div>
-                    <div class="icons overflow-hidden absolute left-[20%] top-[115%] translate-y-[-50%] pointer-events-none z-[5]">
-                        <div class="icon icon-arrow-down text-[195px] w-[200px] h-[195px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3]/0 opacity-5"></div>
-                    </div>
-                    <div class="container max-w-[1440px]">
-                        <div class="wrapper grid grid-cols-[minmax(0,4fr)_minmax(0,9fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
-                            <div class="text-field m-auto " dir="">
-                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
-                                    <h1>Modern Landscape
-                                        Design</h1>
-                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
-                                </div>
+                    @else
+                        <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
+                            <div class="bg w-[500px] h-[500px] rounded-full absolute -right-[15%] top-[60%] translate-y-[-50%] pointer-events-none ">
+                                <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
                             </div>
-                            <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-l-[20px] md:rounded-[20px]  strecth-to-right image-zoom">
-                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-3.jpg" alt="">
+                            <div class="icons overflow-hidden absolute right-[30px] top-[25%] translate-y-[-50%] pointer-events-none z-[1]">
+                                <div class="icon icon-arrow-down text-[85px] h-[85px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
-                    <div class="bg w-[500px] h-[500px] rounded-full absolute -right-[10%] top-[60%] translate-y-[-50%] pointer-events-none opacity-90">
-
-                        <img loading="lazy" src="../assets/image/other/Ellipsedty-3.png" alt="" class="h-full object-center object-contain w-full">
-                    </div>
-                    <div class="container max-w-[1440px]">
-                        <div class="wrapper grid grid-cols-[minmax(0,9fr)_minmax(0,4fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
-                            <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-r-[20px] sm:rounded-[20px] strecth-to-left md:order-2 image-zoom">
-                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-4.jpg" alt="">
+                            <div class="icons overflow-hidden absolute right-[50px] top-[45%] translate-y-[-50%] pointer-events-none z-[1]">
+                                <div class="icon icon-arrow-down text-[140px] h-[140px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
                             </div>
-                            <div class="text-field m-auto   dir=""md:order-1">
-                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
-                                    <h1>Design, Planning and
-                                        Installation</h1>
-                                    <p>T wo types of turf are generally used for Padel Club Impact: Multi Sport KDK Padel and Multi Sport Flat Padel. They have similar performance to natural grass.</p>
+                            <div class="icons overflow-hidden absolute -right-[150px] top-[75%] translate-y-[-50%] pointer-events-none z-[1]">
+                                <div class="icon icon-arrow-down text-[250px] h-[250px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
+                            </div>
+                            <div class="container max-w-[1440px]">
+                                <div class="wrapper grid grid-cols-[minmax(0,9fr)_minmax(0,4fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
+                                    <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-r-[20px] sm:rounded-[20px] strecth-to-left md:order-2 image-zoom">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-2.jpg" alt="">
+                                    </div>
+                                    <div class="text-field m-auto"   dir="md:order-1">
+                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
+                                            <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
+                                                <h1>{{$slider->title}}</h1>
+                                                <p>{!!$slider->description!!}</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </section>
             <section class="py-[100px] xl:py-[50px] md:py-[50px]" id="FAQ">
                 <section class="accordion-content px-[30px] md:px-0 section-animation ">
@@ -401,115 +357,32 @@
                                 <div class="text-field relative mt-[30px]">
                                     <div class="icon icon-arrow-down text-[34px] h-[34px] block leading-none duration-350 text-[#C7234B] absolute -top-[30px] -left-[30px] md:left-0 md:-top-[50px]"></div>
                                     <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-bold xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-l editor-headings:from-[#C7234B] editor-headings:from-40% editor-headings:to-[#0055A3] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-l editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block max-w-full">
-                                        <h1>Origin Discover
+                                        <h1>{{$club->title}}
                                             Frequently Asked
                                             Questions</h1>
                                     </div>
                                 </div>
                             </div>
                             <ul class="accordion tiles-nav scrollreveal">
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            What is a padel (or paddle)?
+                                @foreach($club->faqs as $faq)
+                                    <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
+                                        <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
+                                        group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
+                                            <div class="title ">
+                                                {{$faq->title}}
+                                            </div>
+                                            <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
+                                                <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
+                                                <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
+                                            </div>
                                         </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
+                                        <div class="ac-content active z-[1] relative hidden ">
+                                            <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
+                                                <p>{{$faq->description}}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How to construct Origin Discover Padel Court?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How long is the Origin Discover Padel Court lifespan?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How long does the Origin Discover Padel Court construction process take?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            How much does Origin Discover Padel Court construction cost?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item group/accordion mb-[15px] tiles-nav__item relative duration-450 overflow-hidden isolate [&.active_.image]:opacity-100 border-b border-solid border-[#656565]/30">
-                                    <div class="title-content py-[20px] grid grid-cols-[auto_auto] items-center justify-between gap-[15px] cursor-pointer select-none z-[1] text-[24px] lg:text-[22px] md:text-[20px] text-[#0055A3] xs:text-[18px] font-normal relative duration-450 group/items 
-                                    group-[&.active]/accordion:text-[#C7234B] hover:text-[#C7234B]">
-                                        <div class="title ">
-                                            What are features of padel turf (artificial padel grass)?
-                                        </div>
-                                        <div class="glyph-wrapper relative w-[50px] h-[50px] duration-450 rounded-full my-auto">
-                                            <span class="line-h w-[20px] h-[2px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450"></span>
-                                            <span class="line-v w-[2px] h-[20px] rounded-md bg-[#C7234B] block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-450 group-[&.active]/accordion:!h-0"></span>
-                                        </div>
-                                    </div>
-                                    <div class="ac-content active z-[1] relative hidden ">
-                                        <div class="editor editor-lg lg:editor-base sm:editor-sm xs:editor-h1:text-[24px] editor-headings:font-medium editor-headings:mb-[10px] editor-p:text-[#656565]/60 editor-strong:bg-[#656565] border-b border-solid border-white/10 pb-[40px] md:max-w-full">
-                                            <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

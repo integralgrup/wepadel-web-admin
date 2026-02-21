@@ -52,7 +52,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Görsel</th>
+                                    <th>Başlık</th>
                                     <th>İşlemler</th>
                                 </tr>
                             </thead>
@@ -60,7 +60,7 @@
                                 @foreach($features as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td><img src="{{ asset( getFolder(['uploads_folder', 'club_images_folder']) . '/' . $item->image) }}" alt="{{ $item->alt }}" width="100"></td>
+                                        <td>{{ $item->title }}</td>
                                         <td>
                                             <a href="{{ route('admin.club.features.edit', [$club_id, $item->feature_id]) }}" class="btn btn-warning btn-sm">
                                                 <i class="bi bi-pencil"></i> Düzenle
