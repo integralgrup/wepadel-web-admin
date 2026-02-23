@@ -7,11 +7,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if(isset($seo))
+    <meta name="keywords" content="{{ $seo->seo_keywords }}">
+    <meta name="description" content="{{ $seo->seo_description }}">
+    <?php $pageTitle = $seo->seo_title;?>
+    @endif
     <title><?php if (!empty($pageTitle)) echo $pageTitle . ' - '; ?><?= $nameofProject; ?></title>
     <link rel="shortcut icon" href="../assets/image/trademark/favicon.png" type="image/x-icon">
     <!-- Önbellek tutmasın diye ekledim; '?id<?= rand(); ?>' yazısını silersin -->
     <link rel="stylesheet" href="../assets/css/tailwind.css?id=<?= rand(); ?>">
     <link rel="stylesheet" href="../assets/css/style.css?id=<?= rand(); ?>">
+    <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
+    <?php $language = App\Models\Language::where('lang_code', app()->getLocale())->first(); 
+        //dd($language);
+    ?>  
+    {!! $code->ga_code !!}
+    {!! $code->yandex_metrica_code !!}
+    {!! $code->facebook_pixel_code !!}
+    {!! $code->microsoft_clarity_code !!}
+    {!! $code->google_tag_manager_head_code !!}
 </head>
 
 <body class="antialiased group/body font-sansscrollbar scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200">

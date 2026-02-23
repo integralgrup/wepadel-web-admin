@@ -5,6 +5,7 @@
 $pageTitle = $product->title;
 $breadcrumbTitle = $product->title;
 ?>
+<?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
 
 <main class="main-field header-space">
     <section class="content page-tabs relative">
@@ -409,62 +410,7 @@ $breadcrumbTitle = $product->title;
                             </div>
                         </div>
                         <div class="left-form" dir="">
-                            <div class="editor editor-base lg:editor-base sm:editor-sm editor-headings:text-[#656565] editor-headings:font-normal editor-headings:leading-tight editor-strong:font-semibold editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-strong:text-[#D00D15] editor-headings:mb-[10px] editor-p:text-[18px] sm:editor-p:text-[16px] editor-p:font-light editor-p:text-[#656565] border-b border-solid border-white/10 pb-[30px] mt-[30px] max-w-[500px] md:max-w-full m-auto text-center">
-                                <h2>Your Contact Information</h2>
-                                <p>We will call you back as soon as possible.</p>
-                            </div>
-                            <form action="#" class="self-center max-w-[500px] md:max-w-full m-auto ">
-                                <div class="form grid grid-cols-6 sm:grid-cols-1 gap-[15px] ">
-                                    <!-- itemlere error classı ekleyerek mesajları aktif edebilirsiniz. -->
-                                    <div class="item group/item col-span-6 sm:col-span-1 relative ">
-                                        <input type="text" name="name" id="name" class="block px-[30px] sm:px-[15px] w-full text-[16px] border border-[#656565]/40 focus:border-[#0055A3]/50 bg-[#D9D9D9]/20 appearance-none !outline-none focus:!outline-none !ring-0 text-[#18191B] placeholder:text-[18191B]/40 focus:placeholder:text-[#18191B] placeholder:duration-450 font-normal placeholder:font-light rounded-[20px] focus:text-[#18191B] group-[&.error]/item:border-red-500 duration-300 h-[50px] " placeholder="Name Surname" required="">
-                                        <div class="tooltip hidden text-[14px] absolute right-2 top-full -translate-y-1/2 w-fit h-fit rounded-none border border-solid border-red-500 text-red-500 bg-white px-3 py-1 group-[&.error]/item:block">Error</div>
-                                    </div>
-                                    <div class="item group/item col-span-6 sm:col-span-1 relative">
-                                        <input type="tel" name="phone" id="phone" class="block px-[30px] sm:px-[15px] w-full text-[16px] border border-[#656565]/40 focus:border-[#0055A3]/50 bg-[#D9D9D9]/20 appearance-none !outline-none focus:!outline-none !ring-0 text-[#18191B] placeholder:text-[18191B]/40 focus:placeholder:text-[#18191B] placeholder:duration-450 font-normal placeholder:font-light rounded-[20px] focus:text-[#18191B] group-[&.error]/item:border-red-500 duration-300 h-[50px]" placeholder="Phone" required="">
-                                        <div class="tooltip hidden text-[14px] absolute right-2 top-full -translate-y-1/2 w-fit h-fit rounded-none border border-solid border-red-500 text-red-500 bg-white px-3 py-1 group-[&.error]/item:block">Error</div>
-                                    </div>
-
-                                    <div class="item group/item col-span-6 sm:col-span-1 relative">
-                                        <input type="email" name="email" id="email" class="block px-[30px] sm:px-[15px] w-full text-[16px] border border-[#656565]/40 focus:border-[#0055A3]/50 bg-[#D9D9D9]/20 appearance-none !outline-none focus:!outline-none !ring-0 text-[#18191B] placeholder:text-[18191B]/40 focus:placeholder:text-[#18191B] placeholder:duration-450 font-normal placeholder:font-light rounded-[20px] focus:text-[#18191B] group-[&.error]/item:border-red-500 duration-300 h-[50px]" placeholder="E-mail" required="">
-                                        <div class="tooltip hidden text-[14px] absolute right-2 top-full -translate-y-1/2 w-fit h-fit rounded-none border border-solid border-red-500 text-red-500 bg-white px-3 py-1 group-[&.error]/item:block">Error</div>
-                                    </div>
-
-                                    <div class="item group/item col-span-6 sm:col-span-1 relative">
-                                        <textarea name="review" id="review" class="block px-[30px] py-[15px] sm:p-[15px] w-full text-[16px] border border-[#656565]/40 focus:border-[#0055A3]/50 bg-[#D9D9D9]/20 appearance-none !outline-none focus:!outline-none !ring-0 text-[#18191B] placeholder:text-[18191B]/40 focus:placeholder:text-[#18191B] placeholder:duration-450 font-normal placeholder:font-light rounded-[20px] text-/80 group-[&.error]/item:border-red-500 duration-300 h-[50px] min-h-[90px]" placeholder="Message*" required=""></textarea>
-                                        <div class="tooltip hidden text-[14px] absolute right-2 top-full -translate-y-1/2 w-fit h-fit rounded-none border border-solid border-red-500 text-red-500 bg-white px-3 py-1 group-[&.error]/item:block">Error</div>
-                                    </div>
-
-                                    <div class="item group/item col-span-6 xl:col-span-6 md:col-span-4 sm:col-span-1 relative pt-2.5">
-                                        <div class="form-el flex items-center gap-[15px] md:h-full">
-                                            <input type="checkbox" id="acceptance" class="peer cursor-pointer absolute left-0 top-0 w-full h-full opacity-0 z-10">
-                                            <div class="box relative shrink-0 h-5 w-5 before:absolute before:duration-450 peer-checked:before:!opacity-100 peer-checked:before:!scale-100 before:scale-0 before:opacity-0 before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40%] before:h-[40%] before:bg-[#818B99] before:rounded-full duration-450 shadow-[0_0_0_1px_rgb(129_139_153/.35)] peer-hover:shadow-[0_0_0_1px_rgb(129_139_153/.5)] peer-checked:!shadow-[0_0_0_1px_rgb(129_139_153/.5)] border-0 bg-transparent group-[&.error]/item:shadow-[0_0_0_1px_rgba(255_0_0/100)]  rounded-full"></div>
-                                            <label for="acceptance" class="text-[16px] text-[#18191B]/40 leading-tight duration-450 font-medium"><a href="#popup-gdpr" class="relative z-20 text-[#818B99] font-semibold hover:text-[#0055A3] duration-450 underline" data-fancybox="">
-                                                    KVKK
-                                                </a>Formunu okudum ve kabul ediyorum.</label>
-                                            <div class="tooltip hidden text-[14px] absolute right-2 top-full -translate-y-1/2 w-fit h-fit rounded-none border border-solid border-red-500 text-red-500 bg-[#818B99] px-3 py-1 group-[&.error]/item:block z-10">Error</div>
-                                        </div>
-                                    </div>
-                                    <div class="item col-span-6 xl:col-span-6 md:col-span-2 sm:col-span-1 relative flex items-center justify-center w-full pt-2.5">
-                                        <div class="button-field w-full ">
-                                            <!-- loading classını buttona ekleyerek icon aktif edebilirsiniz. -->
-                                            <a href="javascript:;" class="button group m-auto w-full h-[50px] flex justify-center px-[30px] bg-[#0055A3] border border-solid border-[#0055A3] relative space-x-[10px] duration-500 overflow-hidden isolate rounded-full before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-500">
-                                                <div class="text text-[16px] font-medium flex items-center text-white relative z-2 duration-500 group-hover:text-[#0055A3]">Get A Free Quote</div>
-                                                <!-- LOADING -->
-                                                <div class="loading hidden group-[.loading]:block relative top-[50%] translate-y-[-50%] !h-[16px] !w-[16px] z-2 after:content after:absolute after:right-[0px] after:border-[3px] after:border-solid after:border-white/50 group-hover:after:border-[#0055A3]/50 after:border-t-[3px] after:border-t-solid after:border-t-white group-hover:after:border-t-[#0055A3] after:rounded-full after:w-[16px] after:h-[16px] after:animate-spin after:duration-450"></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- FORM GÖNDERİLDİ/GÖNDERİLEMEDİ MESAJLARI -->
-                                    <!-- iteme error veya success classı ekleyerek mesajları aktif edebilirsiniz. -->
-                                    <div class="item group col-span-6 sm:col-span-1 relative flex ">
-                                        <!-- ERROR -->
-                                        <div class="tooltip hidden text-[14px] group-[.error]:flex group-[.error]:justify-center w-full text-red-500 bg-white px-[10px] py-[10px] rounded border-[1px] border-solid border-red-500">Hata</div>
-                                        <!-- SUCCESS -->
-                                        <div class="tooltip hidden text-[14px] group-[.success]:flex group-[.success]:justify-center w-full text-green-500 bg-white px-[10px] py-[10px] rounded border-[1px] border-solid border-green-500">Düzgün</div>
-                                    </div>
-                                </div>
-                            </form>
+                            {!! $code->bitrix_form_code !!} 
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+<?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
 <footer class="footer-field block relative bg-white overflow-hidden isolate">
     <div class="image overflow-hidden absolute -left-[90px] top-[60%] translate-y-[-50%] pointer-events-none z-[1] xs:hidden">
         <div class="icon icon-arrow-down text-[250px] h-[250px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
@@ -107,6 +108,9 @@
                     ->get();
                     //dd($menu);
                 ?>
+                <?php $footerInfo = \App\Models\FooterInfo::where('lang' , app()->getLocale())->first(); ?>
+                <?php $offices = \App\Models\Office::where('lang' , app()->getLocale())->get(); ?>
+                
                 @foreach($footer_menu as $menu)
                     <div class="menu-inner md:max-w-[480px] md:w-full sm:max-w-full md:mx-auto">
                         <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">{{ $menu->title }}</div>
@@ -224,6 +228,7 @@
         </div>
         <!-- Önbellek tutmasın diye ekledim '?id<?= rand(); ?>' yazısını silersin -->
         <script src="../assets/js/script.js?id=<?= rand(); ?>"></script>
+        {!! $code->bitrix_widget_code !!}
        
         </body>
 
