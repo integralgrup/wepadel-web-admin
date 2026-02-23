@@ -261,7 +261,7 @@
                                 </div>
                             </div>
                             <div class="left-form">
-                                <{!! $code->bitrix_form_code !!} 
+                                {!! $code->bitrix_form_code !!} 
                             </div>
                         </div>
                     </div>
