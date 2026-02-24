@@ -19,7 +19,7 @@
                         </li>
                         <li class="flex items-center">
                             <a href="javascript:;" class="flex group">
-                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">Padel Club Impact</span>
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">{{$club->title}}</span>
                             </a>
                         </li>
                     </ul>
