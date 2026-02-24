@@ -146,7 +146,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                                         </div>
                                         <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.1] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
                                             <h1>{{$project->title_1}}</h1>
-                                            <p>{!!$project->description!!} </p>
+                                            <p>{!!$project->short_description!!} </p>
                                         </div>
                                     </div>
                                     <div class="image-field relative sm:order-1">
