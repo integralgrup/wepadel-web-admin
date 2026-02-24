@@ -9,16 +9,15 @@
 
 @section('content')
 
-<main class="main-field">
-    <!-- CONTENT -->
-    <section class="text-section py-[120px] 2xl:py-[80px] xl:py-[60px] lg:py-[45px] md:py-[30px]">
-        <div class="container max-w-[1500px]">
-            <div class="wrapper">
-                <div class="text-editor !max-w-none">
+<main class="main-field header-space">
+    <div class="breadcrump bg-[#F6F6F6]">
+       
+    </div>
+    <section class="blog-detail mt-[30px]">
+        <div class="container max-w-[1440px] ">
                     <h3><?=$page->title?></h3>
                     <p><?=$page->description?></p>
-                </div>
-            </div>
+                
         </div>
     </section>
 

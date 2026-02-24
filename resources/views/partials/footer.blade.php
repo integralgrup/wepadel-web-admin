@@ -116,9 +116,15 @@
                         <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">{{ $menu->title }}</div>
                         <div class="list grid gap-[15px]">
                         @foreach($menu->children as $child)
-                            <a href="{{env('HTTP_DOMAIN') .'/' . $menu->seo_url .'/'. $child->seo_url}}" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
-                                <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">{{ strip_tags($child->title) }}</div>
-                            </a>
+                            @if($menu->page_type == 'page')
+                                <a href="{{env('HTTP_DOMAIN') . '/'. $child->seo_url}}" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
+                                    <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">{{ strip_tags($child->title) }}</div>
+                                </a>
+                            @else
+                                <a href="{{env('HTTP_DOMAIN') .'/' . $menu->seo_url .'/'. $child->seo_url}}" class="text-black group relative flex items-center w-fit gap-[30px] whitespace-nowrap hover:text-[#C7234B]">
+                                    <div class="text duration-350 text-[18px] xs:text-[16px] font-light group-hover:translate-x-2 group-hover:[-webkit-text-stroke:1px_rgb(199_35_75/var(--tw-text-opacity))] [-webkit-text-stroke:1px_transparent]">{{ strip_tags($child->title) }}</div>
+                                </a>
+                            @endif
                         @endforeach
                         </div>
                     </div>
