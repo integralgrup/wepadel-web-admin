@@ -116,7 +116,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="text-field overflow-hidden isolate">
-                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">Court</div>
+                                                        <div class="text-base font-normal text-white h-0 group-[&.swiper-slide-active]/slide:h-[25px] duration-450 text-center">{{$slider->title}}</div>
                                                     </div>
                                                 </div>
                                             </div>
