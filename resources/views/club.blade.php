@@ -70,7 +70,7 @@
                                             </div>
                                         </div>
                                         <div class="image h-full w-full">
-                                            <img loading="lazy" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $club->image}}" alt="" class="h-full object-center object-cover w-full">
+                                            <img loading="lazy" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $slider->lang) .'/'. $slider->image}}" alt="" class="h-full object-center object-cover w-full">
                                         </div>
                                         <div class="video group/video absolute top-0 left-0 w-full h-full">
 
@@ -104,13 +104,15 @@
                                 <div class="content max-w-[700px] md:max-w-[400px] sm:max-w-[250px] xs:w-[150px] px-[80px] md:px-[50px] xs:px-[10px] m-auto sm:ml-auto sm:mr-0 xs:mr-[15px] relative">
                                     <div class="swiper-container club-thumbs relative w-full mx-auto overflow-hidden h-[140px] box-border py-[35px]">
                                         <div class="swiper-wrapper ">
+                                            @foreach($club->sliders1 as $slider)
                                             <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center cursor-pointer">
                                                 <div class="content">
                                                     <div class="img-field relative w-full h-full mb-[15px]">
                                                         <div class="gradient absolute left-[50%] top-[50%] z-0 translate-x-[-50%] translate-y-[-50%] m-auto [background:linear-gradient(180deg,_#FFFFFF_0%,_#0055A3_0.01%,_rgba(0,90,165,0.35)_100%);] w-[75px] h-[75px] rounded-full flex justify-center items-center opacity-0 group-[.swiper-slide-active]/slide:opacity-100 duration-450 border border-solid border-[#0055A3]">
                                                         </div>
                                                         <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" 
+                                                            src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $slider->lang) .'/'. $slider->icon}}" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-field overflow-hidden isolate">
@@ -118,6 +120,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="controller flex gap-[15px] justify-between items-center w-full h-full absolute left-0 top-0 z-[2] pointer-events-none">
