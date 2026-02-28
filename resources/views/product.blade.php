@@ -40,7 +40,7 @@ $breadcrumbTitle = $product->title;
                                         <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                             <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
                                         </div>
-                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(31)}}</div>
+                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(26)}}</div>
                                     </a>
                                 </li>
                             </ul>
