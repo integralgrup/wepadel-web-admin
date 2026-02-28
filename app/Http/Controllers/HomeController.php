@@ -136,7 +136,7 @@ class HomeController extends Controller
             ->toArray();
         $projects = Project::where('lang', app()->getLocale())->with(['gallery', 'country', 'country.continent'])->limit(10)->get();
         //dd($projects);
-        $blogs = Blog::where('lang', app()->getLocale())->limit(5)->get();
+        $blogs = Blog::where('lang', app()->getLocale())->orderBy('created_at', 'desc')->limit(5)->get();
         //dd($blog);
         $continents = Continent::where('lang', app()->getLocale())->with('countries')->get()->toArray();
 
