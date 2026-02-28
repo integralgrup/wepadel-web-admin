@@ -261,7 +261,7 @@ $breadcrumbTitle = $product->title;
                             <div class="title flex justify-between items-center sm:flex-col m-auto relative z-[2] pt-[50px] gap-[20px] md:gap-[15px]">
                                 <div class="icon icon-arrow-down text-[34px] h-[34px] block leading-none duration-350 text-[#C7234B] absolute top-[0px] -left-[30px] md:left-0"></div>
                                 <div class="editor editor-base md:editor-sm editor-headings:font-bold editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-p:leading-tight editor-p:text-[#B6D3E4] editor-p:text-[24px] sm:editor-p:text-[22px] xs:editor-p:text-[20px] editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-full w-full md:pl-[35px] sm:pl-0 text-left" dir="">
-                                    <h1>Technical Spesifications</h1>
+                                    <h1>{{getStaticText(32)}}</h1>
                                 </div>
                                 <div class="controller flex gap-[30px] justify-center items-center max-w-[100px] w-full h-full sm:justify-start sm:max-w-full xs:gap-[15px]">
                                     <div class="ri-prev swiper-slide-prev  pointer-events-auto duration-450 [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:pointer-events-none">
