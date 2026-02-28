@@ -90,7 +90,7 @@
             <div class="menu-wrapper grid grid-cols-[repeat(3,minmax(0,auto))] justify-between gap-x-[120px] 2xl:gap-x-[60px] lg:gap-x-[30px] 2xl:gap-y-[30px] gap-y-[60px] xs:gap-y-[30px] w-full md:grid-cols-2 sm:grid-cols-1 sm:hidden">
                 <div class="subscribe col-span-3 sm:col-span-1 flex items-center gap-[100px] sm:flex-col sm:gap-[30px] justify-between sm:items-start  sm:w-full sm:mx-auto">
                     <div class="editor editor-lg lg:editor-base title editor-headings:duration-350 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-h1:text-[40px] xl:editor-h1:text-[34px] lg:editor-h1:text-[20px] editor-strong:duration-350 group-hover/mpb:editor-strong:text-white editor-strong:text-[44px] xl:editor-strong:text-[36px] lg:editor-strong:text-[28px] editor-headings:leading-tight editor-strong:leading-tight duration-350 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headimgs:from-25% editor-headings:to-[#C7234B] editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-[-35%] ditor-strong:to-100% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block">
-                        {{getSaticText(16)}}
+                        {{getStaticText(16)}}
                     </div>
 
                     <form action="" class="w-full max-w-[450px] relative">
