@@ -14,12 +14,12 @@
         <div class="container max-w-[1440px]">
             <div class="wrapper title-content flex justify-between py-[20px]">
                 <!-- TITLE -->
-                <div class="page-title text-[#656565] text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px] font-semibold leading-tight relative max-w-[768px] sm:max-w-none">News & Blog </div>
+                <div class="page-title text-[#656565] text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px] font-semibold leading-tight relative max-w-[768px] sm:max-w-none">{{getStaticText(51)}} </div>
                 <!-- NAVIGATION -->
                 <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
                     <li class="flex items-center">
                         <a href="{{env('HTTP_DOMAIN')}}" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">Homepage</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(28)}}</span>
                         </a>
                     </li>
                     <li class="split relative flex items-center h-[12px]">
@@ -27,7 +27,7 @@
                     </li>
                     <li class="flex items-center">
                         <a href="javascript:;" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">News & Blog</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(51)}}</span>
                         </a>
                     </li>
                 </ul>
@@ -46,7 +46,7 @@
                     <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden mt-[20px]">
                         <li class="flex items-center">
                             <a href="index.php" class="flex group">
-                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">Homepage</span>
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(28)}}</span>
                             </a>
                         </li>
                         <li class="split relative flex items-center h-[12px]">
@@ -54,7 +54,7 @@
                         </li>
                         <li class="flex items-center">
                             <a href="javascript:;" class="flex group">
-                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">News & Blog</span>
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(51)}}</span>
                             </a>
                         </li>
                     </ul>
@@ -155,7 +155,7 @@
                     <a href="page-blog.php" class="button group w-fit block">
                         <div class="text-[20px] xs:text-[18px] font-light flex gap-[20px] justify-center items-center w-fit text-[#656565] hover:text-[#C7234B] duration-450 ">
                             <div class="icon-back text-[20px] lg:text-[18px] md:text-[16px] text-[#656565] group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
-                            Back To News
+                            {{getStaticText(52)}}
                         </div>
                     </a>
                 </div>
@@ -168,9 +168,7 @@
             <div class="swiper news-swip relative flex flex-col justify-center md:justify-start w-full mx-auto ">
                 <div class="title flex justify-between items-center mb-[50px] md:mb-[30px]" dir="">
                     <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                        <h1>Featured
-                            <strong>News & Blogs</strong>
-                        </h1>
+                        <h1>{{getStaticText(14)}}</h1>
                     </div>
                     <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                         <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">

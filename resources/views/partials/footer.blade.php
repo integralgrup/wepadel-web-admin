@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="social mt-[45px] xs:mt-[30px]">
-                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">Social Media</div>
+                    <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">{{getStaticText(18)}}</div>
                     <div class="list flex items-center gap-[30px] justify-self-center">
                         <a href="" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
                             <div class="icon facebook  relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
@@ -90,12 +90,11 @@
             <div class="menu-wrapper grid grid-cols-[repeat(3,minmax(0,auto))] justify-between gap-x-[120px] 2xl:gap-x-[60px] lg:gap-x-[30px] 2xl:gap-y-[30px] gap-y-[60px] xs:gap-y-[30px] w-full md:grid-cols-2 sm:grid-cols-1 sm:hidden">
                 <div class="subscribe col-span-3 sm:col-span-1 flex items-center gap-[100px] sm:flex-col sm:gap-[30px] justify-between sm:items-start  sm:w-full sm:mx-auto">
                     <div class="editor editor-lg lg:editor-base title editor-headings:duration-350 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-h1:text-[40px] xl:editor-h1:text-[34px] lg:editor-h1:text-[20px] editor-strong:duration-350 group-hover/mpb:editor-strong:text-white editor-strong:text-[44px] xl:editor-strong:text-[36px] lg:editor-strong:text-[28px] editor-headings:leading-tight editor-strong:leading-tight duration-350 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headimgs:from-25% editor-headings:to-[#C7234B] editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-[-35%] ditor-strong:to-100% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block">
-                        <h2>Search Anything</h2>
-                        <strong>In We Padel</strong>
+                        {{getSaticText(16)}}
                     </div>
 
                     <form action="" class="w-full max-w-[450px] relative">
-                        <input type="text" placeholder="Search" class="w-full search-form leading-normal pl-[20px] pr-[80px] py-[12px] font-medium text-[#0055A3] placeholder:text-[#231F20]/40 text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                        <input type="text" placeholder="{{getStaticText(17)}}" class="w-full search-form leading-normal pl-[20px] pr-[80px] py-[12px] font-medium text-[#0055A3] placeholder:text-[#231F20]/40 text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
                         <button class="bg-[#0055A3] hover:bg-white border border-solid border-[#0055A3] duration-450 group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%]">
                             <div class="icon icon-search text-[20px] h-[20px] block leading-none duration-350 text-white group-hover:text-[#0055A3]"></div>
                         </button>
@@ -137,8 +136,8 @@
     </div>
     <div class="copyright-wrapper py-[20px] xl:py-[15px] relative z-2">
         <div class="wrapper max-w-[1440px] mx-auto w-full px-[30px] grid grid-cols-3 lg:grid-cols-[minmax(0,4fr)_minmax(0,5fr)_minmax(0,2fr)] md:grid-cols-2 sm:grid-cols-1 items-center justify-between gap-[20px] ">
-            <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center">Wepadel is a Brand of <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]" dir="">Integral Group</a></div>
-            <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center sm:hidden" dir="">© 2023 <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]">Wepadel.com.tr</a> | All Rights Reserved</div>
+            <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center">{{getStaticText(19)}} <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]" dir="">Integral Group</a></div>
+            <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center sm:hidden" dir="">© {{date('Y')}} <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]">Wepadel.com</a> | {{getStaticText(20)}}</div>
             <a href="" class="logo-wrapper block max-w-[120px] w-full hover:scale-105 duration-450 ml-auto md:col-span-2 sm:col-span-1 md:m-auto sm:hidden">
                 <img class="block object-contain object-center w-full h-auto" src="../assets/image/other/integral.png" alt="" loading="lazy">
             </a>

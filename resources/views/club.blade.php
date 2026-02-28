@@ -26,16 +26,16 @@
                     <div class="tabs tabs-horizontal tabs-horizontal-4 nav w-full" role="nav">
                         <div class=" w-full md:max-w-full overflow-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 " id="menu-center">
                             <ul class="flex items-center gap-[30px] w-max ml-auto">
-                                <li><a data-target="#general" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">General</a></li>
-                                <li><a data-target="#technic" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Technic Spesifications</a></li>
-                                <li><a data-target="#facilities" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Facilities</a></li>
-                                <li><a data-target="#FAQ" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">FAQ</a></li>
+                                <li><a data-target="#general" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">{{getStaticText(31)}}</a></li>
+                                <li><a data-target="#technic" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(32)}}</a></li>
+                                <li><a data-target="#facilities" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(54)}}</a></li>
+                                <li><a data-target="#FAQ" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(34)}}</a></li>
                                 <li>
                                     <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[150px] justify-center items-center w-fit h-[45px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-transparent before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
                                         <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                             <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
                                         </div>
-                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Catalog</div>
+                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(26)}}</div>
                                     </a>
                                 </li>
                             </ul>
@@ -58,13 +58,13 @@
                                             <div class="text-field relative xl:pl-[50px] xs:pl-0" dir="">
                                                 <div class="icon icon-arrow-down text-[20px] h-[20px] block leading-none duration-350 text-white absolute bottom-[50px] -left-[50px] xl:left-0 xs:hidden"></div>
                                                 <div class="editor editor-xl md:editor-lg xs:editor-base editor-h1:text-[60px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-h2:text-[44px] xl:editor-h2:text-[40px] lg:editor-h2:text-[34px] md:editor-h2:text-[30px] sm:editor-h2:text-[26px] xs:editor-h2:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[10px] editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden md:editor-p:text-[18px] xs:editor-p:text-[16px] editor-p:line-clamp-2 lg:editor-p:line-clamp-5 rtl:max-w-full">
-                                                    <h2>Padel Clubs</h2>
+                                                    <h2>{{getStaticText(43)}}</h2>
                                                     <h1>{{$club->title}}</h1>
                                                     <h3>{{$slider->title}}</h3>
                                                     <p>{{$slider->description}}</p>
                                                 </div>
                                                 <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
+                                                    <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">{{getStaticText(35)}}</div>
                                                     <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
                                                 </div>
                                             </div>
@@ -91,10 +91,10 @@
 
                                             </div>
                                             <div class="icon-photo text-[30px] flex items-center text-[#C7234B] group-[&.active]/vdbutton:text-white absolute top-[50%] left-[18px] translate-y-[-50%] z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1 ">
-                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-white group-[&.active]/vdbutton:text-white/30 duration-450">Photo</span>
+                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-white group-[&.active]/vdbutton:text-white/30 duration-450">{{getStaticText(37)}}</span>
                                             </div>
                                             <div class="icon-video text-[30px] flex items-center text-white group-[&.active]/vdbutton:text-[#C7234B] absolute top-[50%] right-[18px] translate-y-[-50%] z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1">
-                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-white/30 group-[&.active]/vdbutton:text-white duration-450">Video</span>
+                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-white/30 group-[&.active]/vdbutton:text-white duration-450">{{getStaticText(38)}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="button-field flex flex-wrap justify-center items-center gap-[25px] sm:hidden">
                                     <a href="javascript:;" data-target=".contact-form" class="button scrollable group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Contact</div>
+                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(40)}}</div>
                                     </a>
                                 </div>
                             </div>

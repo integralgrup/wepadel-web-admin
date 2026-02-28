@@ -22,7 +22,7 @@ $breadcrumbImage = $menu->image;
                 <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
                     <li class="flex items-center">
                         <a href="index.php" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">Homepage</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(28)}}</span>
                         </a>
                     </li>
                     <li class="split relative flex items-center h-[12px]">
@@ -30,7 +30,7 @@ $breadcrumbImage = $menu->image;
                     </li>
                     <li class="flex items-center">
                         <a href="index.php" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">Padel Courts</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(3)}}</span>
                         </a>
                     </li>
                     <li class="split relative flex items-center h-[12px]">
@@ -87,7 +87,7 @@ $breadcrumbImage = $menu->image;
                         </div>
                         <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full">
                             <form action="" class="w-full max-w-[450px] sm:max-w-full ml-auto relative">
-                                <input type="text" placeholder="Search Produts" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                                <input type="text" placeholder="{{getStaticText(17)}}" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
                                 <button class="group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%] border-0">
                                     <div class="icon icon-search-2 text-[22px] h-[22px] block leading-none duration-350 text-[#0055A3] group-hover:text-[#C7234B]"></div>
                                 </button>

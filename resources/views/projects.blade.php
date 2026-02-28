@@ -53,7 +53,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                     <div class="title w-full max-w-[150px]">
                         <div class="group/link flex items-center justify-start space-x-3 rtl:!gap-2" dir="">
                             <div class="icon icon-filter text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                            <span class="text w-max text-[#C7234B] text-[20px] md:text-[18px] xs:text-[16px] leading-tight duration-450">Filter By</span>
+                            <span class="text w-max text-[#C7234B] text-[20px] md:text-[18px] xs:text-[16px] leading-tight duration-450">{{getStaticText(44)}}</span>
                         </div>
                     </div>
                     <div class="button-field flex justify-start w-fit relative max-w-[700px] xl:max-w-[600px] sm:w-full ">
@@ -102,7 +102,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                 </div>
                 <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full flex justify-center" dir="">
                     <form action="" class="w-full max-w-[450px] sm:max-w-full ml-auto relative my-auto">
-                        <input type="text" placeholder="Search News & Blogs" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                        <input type="text" placeholder="{{getStaticText(50)}}" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
                         <button class="group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%] border-0">
                             <div class="icon icon-search-2 text-[22px] h-[22px] block leading-none duration-350 text-[#0055A3] group-hover:text-[#C7234B]"></div>
                         </button>

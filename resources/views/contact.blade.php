@@ -29,7 +29,7 @@
                             <img class="block object-contain object-center w-full h-auto" src="../assets/image/trademark/logo-white.png" alt="" loading="lazy">
                         </a>
                         <div class="editor editor-base title editor-headings:duration-350 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-h1:text-[40px] xl:editor-h1:text-[34px] lg:editor-h1:text-[20px] editor-strong:duration-350  editor-headings:leading-tight editor-strong:leading-tight duration-350 font-bold w-full editor-strong:font-bold editor-strong:block editor-p:text-[18px] editor-p:font-light editor-p:text-white editor-a:no-underline editor-a:font-bold editor-a:text-white editor-a:hover:text-[#C7234B] editor-a:duration-350">
-                            <p>Wepadel is a Brand of <a href="">Integral Group</a></p>
+                            <p>{{getStaticText(19)}} <a href="">Integral Group</a></p>
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@
                                         </ul>
                                         <a href="" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                Get Direction
+                                                {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
                                             </div>
                                         </a>
@@ -141,7 +141,7 @@
                                         </ul>
                                         <a href="" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                Get Direction
+                                                {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
                                             </div>
                                         </a>
@@ -184,7 +184,7 @@
                                         </ul>
                                         <a href="" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                Get Direction
+                                                {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
                                             </div>
                                         </a>
@@ -227,7 +227,7 @@
                                         </ul>
                                         <a href="" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                Get Direction
+                                                {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
                                             </div>
                                         </a>
@@ -270,7 +270,7 @@
                                         </ul>
                                         <a href="" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                Get Direction
+                                                {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
                                             </div>
                                         </a>
@@ -313,7 +313,7 @@
                                         </ul>
                                         <a href="" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                Get Direction
+                                                {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
                                             </div>
                                         </a>

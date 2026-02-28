@@ -82,7 +82,7 @@
                     </div>
                     <div class="container max-w-[1440px] m-auto relative xl:!px-0">
                         <div class="scroll-down group/scroll scrollable absolute bottom-[75px] right-[15px] xl:right-[-10px] xl:bottom-[50px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450" data-target=".tabmenuscroll">
-                            <div class="text text-[16px] xl:text-[14px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
+                            <div class="text text-[16px] xl:text-[14px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">{{getStaticText(35)}}</div>
                             <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                                 <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">100</div>
                                 <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
                             </div>
-                            <p class="text-[18px] text-white font-medium !leading-6 text-center">Project</p>
+                            <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getSaticText(1)}}</p>
                         </div>
                     </div>
                     <div class="icons absolute right-[40px] -top-[40px] md:top-[90px] md:right-0 xs:-right-[25px] xs:top-[170px] translate-y-[-50%] pointer-events-none z-[1]">
@@ -113,7 +113,7 @@
                                 <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">80</div>
                                 <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
                             </div>
-                            <p class="text-[18px] text-white font-medium !leading-6 text-center">Customer</p>
+                            <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getSaticText(2)}}</p>
                         </div>
                     </div>
                     <div class=" max-w-[700px] mx-auto h-[620px] md:h-[500px] sm:mt-[150px] w-full z-0">
@@ -200,8 +200,7 @@
                     </div>
                 </div>
                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-bold xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-l editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-l editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-center max-w-full" dir="">
-                    <h1>Padel Court <br>
-                        Groups</h1>
+                    <h1>{{getSaticText(3)}}</h1>
                 </div>
                 <div class="articles-carousel-next swiper-slide-next  pointer-events-auto duration-450 [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:pointer-events-none">
                     <div class="icon group/item flex items-center justify-center w-[60px] h-[60px] xs:w-[40px] xs:h-[40px] rounded-full cursor-pointer duration-500 border border-solid border-[#0055A3] bg-white hover:bg-[#0055A3] group">
@@ -241,7 +240,7 @@
                                 </div>
                                 <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[50px] z-[2] relative">
                                     <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Detail</div>
+                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getSaticText(4)}}</div>
                                     </a>
                                 </div>
                             </div>
@@ -258,8 +257,7 @@
         <div class="bg w-[800px] h-[800px] rounded-full [background:radial-gradient(circle,_rgba(0,90,165,0.35)_0%,_rgba(217,217,217,0)_80%);] absolute blur-xl -left-[250px] top-[100%] translate-y-[-50%] pointer-events-none "></div>
         <div class="title flex justify-between items-center max-w-[1440px] px-[30px] m-auto" dir="">
             <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit sm:w-full" dir="">
-                <h1>Featured
-                    <strong>Padel Courts</strong>
+                <h1>{{getSaticText(5)}}
                 </h1>
             </div>
             <div class="controller flex gap-[15px] justify-end items-center max-w-[300px] w-full h-full ">
@@ -300,7 +298,7 @@
                                     </div>
                                     <div class="button-field flex flex-wrap gap-[25px] mt-[50px] md:mt-[20px] w-full">
                                         <a href="{{ env('HTTP_DOMAIN') .'/'. $product->category->seo_url . '/' . $product->seo_url }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Details</div>
+                                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">{{getSaticText(6)}}</div>
                                         </a>
                                     </div>
                                 </div>
@@ -361,8 +359,8 @@
                         <div class="icon icon-arrow-down text-[35px] h-[35px] sm:text-[16px] sm:h-[16px] block leading-none duration-350 text-[#C7234B] absolute -top-[40px] -left-[30px] sm:left-0"></div>
                         <div class="editor editor-base md:editor-sm editor-headings:font-bold editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[44px] editor-p:leading-tight editor-p:text-[#B6D3E4] editor-p:text-[24px] sm:editor-p:text-[22px] xs:editor-p:text-[20px] editor-li:text-[#231F20]/40 editor-li:font-medium        editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px]
                         [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] m-auto lg:max-w-full w-full">
-                            <h1>Wepadel is one of the newest brands of Integral Group.</h1>
-                            <p>Wepadel is one of the newest brands of Integral Group. </p>
+                            <h1>{{getSaticText(7)}}</h1>
+                            <p>{{getSaticText(7)}}</p>
                         </div>
 
                         <div class="wrapper grid grid-cols-3 sm:grid-cols-2 sm:justify-center sm:[&_.sport-box:nth-child(3)]:col-span-2 mt-[50px] gap-[40px] lg:gap-[20px]">
@@ -372,8 +370,7 @@
                                     <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
                                 </div>
                                 <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
-                                    Best Padel
-                                    Experience
+                                   {{getSaticText(8)}}
                                 </div>
                             </div>
                             <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
@@ -382,8 +379,7 @@
                                     <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
                                 </div>
                                 <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
-                                    High Quality
-                                    Pitch
+                                    {{getSaticText(9)}}
                                 </div>
                             </div>
                             <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
@@ -392,8 +388,7 @@
                                     <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
                                 </div>
                                 <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
-                                    Sport Activity
-                                    With Friends
+                                    {{getSaticText(10)}}
                                 </div>
                             </div>
                         </div>
@@ -417,13 +412,11 @@
         <div class="container max-w-[1440px]">
             <div class="title flex justify-between items-center mb-[40px] md:mb-[30px]" dir="">
                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                    <h1>Featured
-                        <strong>Wepadel Projects</strong>
-                    </h1>
+                    <h1>{{getSaticText(11)}}</h1>
                 </div>
                 <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                     <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">All Project</div>
+                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getSaticText(13)}}</div>
                     </a>
                 </div>
 
@@ -445,7 +438,7 @@
                                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
                                                     <div class="icon icon-arrow-down text-[40px] h-[40px] sm:text-[16px] sm:h-[16px] block leading-none duration-350 text-white/15 absolute top-[40px] left-[40px] sm:left-0"></div>
                                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-p:text-white editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full text-left relative z-[2] editor-em:mb-[30px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:text-[24px] md:editor-p:text-[22px] sm:editor-p:text-[20px] xs:editor-p:text-[18px] duration-700">
-                                                        <em>Projects</em>
+                                                        <em>{{getSaticText(12)}}</em>
                                                         <h2>{{$project->title_1}}</h2>
                                                     </div>
                                                     <div class="button-field flex flex-wrap gap-[25px] xs:gap-[15px] w-full mt-[20px] mb-[70px] md:mb-[100px] xs:mb-[70px]">
@@ -501,13 +494,11 @@
         <div class="container max-w-[1440px] scrollreveal">
             <div class="title flex justify-between items-center mb-[40px] md:mb-[30px]" dir="">
                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                    <h1>Featured
-                        <strong>News & Blogs</strong>
-                    </h1>
+                    <h1>{{getSaticText(14)}}</h1>
                 </div>
                 <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                     <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">All News</div>
+                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getSaticText(15)}}</div>
                     </a>
                 </div>
 

@@ -15,7 +15,7 @@
                     <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden ">
                         <li class="flex items-center">
                             <a href="{{env('HTTP_DOMAIN')}}" class="flex group">
-                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">Homepage</span>
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">{{getStaticText(28)}}</span>
                             </a>
                         </li>
                         <li class="split relative flex items-center h-[12px]">
@@ -23,16 +23,16 @@
                         </li>
                         <li class="flex items-center">
                             <a href="javascript:;" class="flex group">
-                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">Project</span>
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">{{getStaticText(1)}}</span>
                             </a>
                         </li>
                     </ul>
                     <div class="tabs tabs-horizontal tabs-horizontal-4 nav sm:w-full" role="nav">
                         <div class=" w-full md:max-w-full overflow-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 " id="menu-center">
                             <ul class="flex gap-[30px] xs:gap-[20px] items-center w-max">
-                                <li><a data-target="#gallery" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">Gallery</a></li>
-                                <li><a data-target="#technic" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Technic Spesifications</a></li>
-                                <li><a data-target="#contact" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Contact</a></li>
+                                <li><a data-target="#gallery" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">{{getStaticText(46)}}</a></li>
+                                <li><a data-target="#technic" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(32)}}</a></li>
+                                <li><a data-target="#contact" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(40)}}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <a href="page-projects.php" class="button group w-fit block md:w-full md:flex md:justify-end" dir="">
                                 <div class="text-[20px] xs:text-[18px] font-light flex gap-[20px] justify-center items-center w-fit text-[#656565] hover:text-[#C7234B] duration-450 ">
                                     <div class="icon-back text-[20px] lg:text-[18px] md:text-[16px] text-[#656565] group-hover:text-[#C7234B] duration-450 relative  flex group-hover:scale-90 group-hover:text-sushi-400"></div>
-                                    Back To Projects
+                                    {{getStaticText(45)}}
                                 </div>
                             </a>
                         </div>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[50px] md:mt-[30px] z-[2] relative">
                             <a href="javascript:;" data-target=".contact-form" class="button scrollable group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] w-fit h-[50px] px-[30px] bg-[#0055A3] relative flex justify-center space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Contact</div>
+                                <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(40)}}</div>
                             </a>
                         </div>
                     </div>

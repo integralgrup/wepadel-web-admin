@@ -31,16 +31,16 @@ $breadcrumbTitle = $product->title;
                     <div class="tabs tabs-horizontal tabs-horizontal-4 nav w-full" role="nav">
                         <div class=" w-full md:max-w-full overflow-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 md:py-[7px]" id="menu-center">
                             <ul class="flex items-center gap-[30px] w-max ml-auto">
-                                <li><a data-target="#general" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">General Features</a></li>
-                                <li><a data-target="#technic" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Technic Spesifications</a></li>
-                                <li><a data-target="#facilities" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Installation</a></li>
-                                <li><a data-target="#FAQ" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">FAQ</a></li>
+                                <li><a data-target="#general" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">{{getStaticText(31)}}</a></li>
+                                <li><a data-target="#technic" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(32)}}</a></li>
+                                <li><a data-target="#facilities" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(33)}}</a></li>
+                                <li><a data-target="#FAQ" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(34)}}</a></li>
                                 <li>
                                     <a href="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->pdf_file  ?>" target="_blank" class="button group min-w-[150px] justify-center items-center w-fit h-[45px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-transparent before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
                                         <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                             <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
                                         </div>
-                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Catalog</div>
+                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(31)}}</div>
                                     </a>
                                 </li>
                             </ul>
@@ -63,7 +63,7 @@ $breadcrumbTitle = $product->title;
 
                                         </div>
                                         <div class="scroll-down group/scroll scrollable absolute top-[50px] -left-[100px] xl:-left-[40px] z-20 cursor-pointer space-y-[10px] flex flex-col items-start justify-start -rotate-90 opacity-70 hover:opacity-100 duration-450 xs:hidden" data-target=".tabmenuscroll">
-                                            <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">Scroll Down</div>
+                                            <div class="text text-[16px] text-white duration-450 translate-x-5 group-hover/scroll:translate-x-0">{{getStaticText(35)}}</div>
                                             <div class="line w-10 h-[2px] left-0 bg-white duration-500 group-hover/scroll:w-full"></div>
                                         </div>
                                     </div>
@@ -100,10 +100,10 @@ $breadcrumbTitle = $product->title;
 
                                             </div>
                                             <div class="icon-photo text-[30px] flex items-center text-[#C7234B] group-[&.active]/vdbutton:text-[#231F20]/40 absolute top-[50%] left-[18px] translate-y-[-50%] z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1 ">
-                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-[#C7234B] group-[&.active]/vdbutton:text-[#656565]/50 duration-450">Photo</span>
+                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-[#C7234B] group-[&.active]/vdbutton:text-[#656565]/50 duration-450">{{getStaticText(37)}}</span>
                                             </div>
                                             <div class="icon-video text-[30px] flex items-center text-[#231F20]/40 group-[&.active]/vdbutton:text-[#C7234B] absolute top-[50%] right-[18px] translate-y-[-50%] z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1">
-                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-[#656565]/50 group-[&.active]/vdbutton:text-[#C7234B] duration-450">Video</span>
+                                                <span class="absolute -left-[10px] font-light -bottom-[25px] translate-y-[100%] text-[16px] text-[#656565]/50 group-[&.active]/vdbutton:text-[#C7234B] duration-450">{{getStaticText(38)}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -160,13 +160,13 @@ $breadcrumbTitle = $product->title;
                                 <div class="wrapper grid grid-cols-[minmax(0,7fr)_minmax(0,5fr)] sm:grid-cols-1">
                                     <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-bold xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-[1.25] duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-l editor-headings:from-[#C7234B] editor-headings:from-40% editor-headings:to-[#0055A3] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-l editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block max-w-full">
                                         <h1>{{$product->title}}
-                                            General Features</h1>
+                                            {{getStaticText(31)}}</h1>
                                     </div>
                                     <div class="button-field w-full h-full">
                                         <a href="" class="button group w-fit block ml-auto">
                                             <div class="text-[20px] xs:text-[18px] font-light flex gap-[20px] justify-center items-center w-fit text-[#656565] hover:text-[#C7234B] duration-450 ">
                                                 <div class="icon-back text-[20px] lg:text-[18px] md:text-[16px] text-[#656565] group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
-                                                Back To Products
+                                                {{getStaticText(36)}}
                                             </div>
                                         </a>
                                     </div>
@@ -178,7 +178,7 @@ $breadcrumbTitle = $product->title;
                                 <div class="color-content mt-[50px]">
                                     <div class="title flex items-center">
                                         <div class="text text-[24px] text-[#0055A3] font-normal border-r border-solid border-black/20 pr-5 mr-5">
-                                            Grass Types Used
+                                            {{getStaticText(39)}}
                                         </div>
                                         <div class="color-select text-[#C7234B] [&.green]:text-lime-600 [&.blue]:text-blue-600 [&.red]:text-red-600 duration-450">
                                             Padel Turf Red
@@ -203,13 +203,13 @@ $breadcrumbTitle = $product->title;
                                     </ul>
                                     <div class="button-field flex flex-wrap gap-[25px] mt-[50px]">
                                         <a href="javascript:;" data-target=".contact-form" class="button group scrollable min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Contact</div>
+                                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(40)}}</div>
                                         </a>
                                         <a href="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->pdf_file  ?>" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full  before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center border border-solid border-[#0055A3]">
                                             <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                                 <div class="icon-download text-[18px] flex items-center text-[#0055A3] relative z-2 duration-450 group-hover:text-white group-hover:-translate-x-1"></div>
                                             </div>
-                                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Catalog</div>
+                                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(26)}}</div>
                                         </a>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@ $breadcrumbTitle = $product->title;
                             </div>
                             <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:text-white xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-headings:text-[42px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:leading-tight editor-p:text-[#D9D9D9] editor-p:text-[26px] sm:editor-p:text-[22px] xs:editor-p:text-[20px]  editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px]
                      [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px]  lg:max-w-full w-full">
-                                <h1>Wepadel offers you a unique padel court with its experienced team and understanding of high quality products.</h1>
+                                <h1>{{getStaticText(41)}}</h1>
                                 <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
                             </div>
                         </div>

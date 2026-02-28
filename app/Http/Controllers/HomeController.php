@@ -279,6 +279,7 @@ class HomeController extends Controller
             }
         }
 
+
         if($menu->page_type == 'contact') {
             $offices = Office::where(['lang' => app()->getLocale()])->get();
             $seo = SeoSettings::where('page', 'contact')->where('lang', app()->getLocale())->first();

@@ -15,7 +15,7 @@ $breadcrumbImage = $about->image;
                     <ul class="navigation flex-wrap w-full gap-[10px] flex items-center md:hidden">
                         <li class="flex items-center">
                             <a href="index.php" class="flex group">
-                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">Home</span>
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">{{getStaticText(21)}}</span>
                             </a>
                         </li>
                         <li class="split relative flex items-center h-[12px]">
@@ -30,16 +30,16 @@ $breadcrumbImage = $about->image;
                     <div class="tabs tabs-horizontal tabs-horizontal-4 nav w-full" role="nav">
                         <div class=" w-full md:max-w-full overflow-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 md:py-[7px]" id="menu-center">
                             <ul class="flex items-center gap-[30px] w-max ml-auto">
-                                <li><a data-target="#general" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">About Us</a></li>
-                                <li><a data-target="#world" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">All Over The World</a></li>
-                                <li><a data-target="#mission" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">Mission / Vision</a></li>
-                                <li><a data-target="#companies" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450  sm:hidden">Group Companies</a></li>
+                                <li><a data-target="#general" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 active">{{getStaticText(22)}}</a></li>
+                                <li><a data-target="#world" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(23)}}</a></li>
+                                <li><a data-target="#mission" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450 ">{{getStaticText(24)}}</a></li>
+                                <li><a data-target="#companies" class="scrollable cursor-pointer text-white/60 [&.active]:text-white hover:text-white duration-450  sm:hidden">{{getStaticText(25)}}</a></li>
                                 <li>
                                     <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[150px] justify-center items-center w-fit h-[45px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-transparent before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
                                         <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                             <div class="icon-download text-[18px] flex items-center text-white relative z-2 duration-450 group-hover:text-[#0055A3] group-hover:-translate-x-1"></div>
                                         </div>
-                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">Catalog</div>
+                                        <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(26)}}</div>
                                     </a>
                                 </li>
                             </ul>
@@ -269,7 +269,7 @@ $breadcrumbImage = $about->image;
                             <div class="title flex justify-end items-center mb-[50px] md:mb-[30px] relative height-fix-title">
                                 <div class="split w-[2px] h-full bg-[#0055A3] absolute top-0 left-0 sm:hidden rounded-[30px]"></div>
                                 <div class="editor editor-lg title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px]  duration-450 editor-h1:font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#0055A3] editor-headings:to-75% editor-strong:font-bold max-w-full w-fit text-right" dir="">
-                                    <h3>Selected Area
+                                    <h3>{{getStaticText(27)}}
                                     </h3>
                                     <h1>Europe</h1>
                                 </div>
@@ -777,11 +777,11 @@ $breadcrumbImage = $about->image;
                     <div class="title flex justify-between md:flex-col md:items-start md:gap-10 items-center mb-[50px] md:mb-[30px]">
                         <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit" dir="">
                             <h1>WePadel
-                                <strong>Group Companies</strong>
+                                <strong>{{getStaticText(25)}}</strong>
                             </h1>
                         </div>
                         <div class="editor editor-base md:editor-sm editor-headings:font-bold editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[44px] editor-p:leading-tight editor-p:text-[#231F20]/60 editor-p:text-[24px] md:editor-p:text-[22px] sm:editor-p:text-[20px] xs:sm:editor-p:text-[18px] editor-p:font-normal editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] md:max-w-full w-full text-right max-w-[610px] ml-auto" dir="">
-                            <p>Wepadel offers you a unique padel experience by using Integral Group's strong industry experience to meet the needs of the industry and provide professional padel court service to its customers!</p>
+                            <p>{{getStaticText(41)}}</p>
                         </div>
 
                     </div>
@@ -802,9 +802,7 @@ $breadcrumbImage = $about->image;
             <div class="container max-w-[1440px] scrollreveal">
                 <div class="title flex justify-between items-center mb-[40px] md:mb-[30px]" dir="">
                     <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                        <h1>Featured
-                            <strong>News & Blogs</strong>
-                        </h1>
+                        <h1>{{getStaticText(14)}}</h1>
                     </div>
                     <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                         <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">

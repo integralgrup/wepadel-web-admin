@@ -8,12 +8,12 @@
         <div class="container max-w-[1440px]">
             <div class="wrapper title-content flex justify-between py-[20px]">
                 <!-- TITLE -->
-                <div class="page-title text-[#656565] text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px] font-semibold leading-tight relative max-w-[768px] sm:max-w-none">News & Blog </div>
+                <div class="page-title text-[#656565] text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px] font-semibold leading-tight relative max-w-[768px] sm:max-w-none">{{getStaticText(51)}} </div>
                 <!-- NAVIGATION -->
                 <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
                     <li class="flex items-center">
                         <a href="index.php" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">Homepage</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(28)}}</span>
                         </a>
                     </li>
                     <li class="split relative flex items-center h-[12px]">
@@ -21,7 +21,7 @@
                     </li>
                     <li class="flex items-center">
                         <a href="javascript:;" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">News & Blog</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(51)}}</span>
                         </a>
                     </li>
                 </ul>
@@ -35,25 +35,25 @@
                     <div class="title">
                         <div class="group/link flex items-center justify-start space-x-3 " dir="">
                             <div class="icon icon-filter text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                            <span class="text text-[#C7234B] text-[20px] md:text-[18px] xs:text-[16px] leading-tight duration-450">Filter By</span>
+                            <span class="text text-[#C7234B] text-[20px] md:text-[18px] xs:text-[16px] leading-tight duration-450">{{getStaticText(44)}}</span>
                         </div>
                     </div>
                     <div class="button-field flex flex-wrap justify-center gap-[10px]">
                         <!-- buttonlara active classı eklenince renk değişiyor -->
                         <a href="" class="button group active min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
-                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">News</div>
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(47)}}</div>
                         </a>
                         <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
-                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">Blog</div>
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(48)}}</div>
                         </a>
                         <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
-                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">All</div>
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(49)}}</div>
                         </a>
                     </div>
                 </div>
                 <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full">
                     <form action="" class="w-full max-w-[450px] sm:max-w-full ml-auto relative" dir="">
-                        <input type="text" placeholder="Search News & Blogs" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                        <input type="text" placeholder="{{getStaticText(50)}}" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
                         <button class="group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%] border-0">
                             <div class="icon icon-search-2 text-[22px] h-[22px] block leading-none duration-350 text-[#0055A3] group-hover:text-[#C7234B]"></div>
                         </button>
