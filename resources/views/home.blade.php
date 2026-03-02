@@ -257,7 +257,7 @@
         <div class="bg w-[800px] h-[800px] rounded-full [background:radial-gradient(circle,_rgba(0,90,165,0.35)_0%,_rgba(217,217,217,0)_80%);] absolute blur-xl -left-[250px] top-[100%] translate-y-[-50%] pointer-events-none "></div>
         <div class="title flex justify-between items-center max-w-[1440px] px-[30px] m-auto" dir="">
             <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit sm:w-full" dir="">
-                <h1>{{getStaticText(5)}}
+                <h1>{!!getStaticText(5)!!}
                 </h1>
             </div>
             <div class="controller flex gap-[15px] justify-end items-center max-w-[300px] w-full h-full ">
@@ -412,7 +412,7 @@
         <div class="container max-w-[1440px]">
             <div class="title flex justify-between items-center mb-[40px] md:mb-[30px]" dir="">
                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                    <h1>{{getStaticText(11)}}</h1>
+                    <h1>{!!getStaticText(11)!!}</h1>
                 </div>
                 <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                     <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
@@ -494,7 +494,7 @@
         <div class="container max-w-[1440px] scrollreveal">
             <div class="title flex justify-between items-center mb-[40px] md:mb-[30px]" dir="">
                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                    <h1>{{getStaticText(14)}}</h1>
+                    <h1>{!!getStaticText(14)!!}</h1>
                 </div>
                 <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                     <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
