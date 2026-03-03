@@ -2,7 +2,7 @@
 
 @section('content')
 <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
-<?php $pageTitle = 'İletişim';?>
+<?php $pageTitle = $seo['seo_title'] ?? 'Contact';?>
 
 <main class="main-field ">
     <section class="map-content">

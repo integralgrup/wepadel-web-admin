@@ -69,7 +69,7 @@
           <form action="<?= route('admin.login.submit') ?>" method="post">
             @csrf
             <div class="input-group mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Email" />
+              <input type="text" name="email" class="form-control" placeholder="Email" />
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
             </div>
             <div class="input-group mb-3">

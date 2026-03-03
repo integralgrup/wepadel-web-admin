@@ -2,7 +2,6 @@
 
 
 @section('content')
-<?php $pageTitle = 'Haberler'; ?>
 <main class="main-field header-space">
     <div class="breadcrump bg-[#F6F6F6]">
         <div class="container max-w-[1440px]">
