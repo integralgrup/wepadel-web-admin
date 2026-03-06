@@ -77,7 +77,7 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                             </div>
                             <div class="text-field absolute bottom-0 left-0 p-[20px_20px_30px_50px] sm:p-[30px] overflow-hidden isolate group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);] rtl:w-full">
                                 <p class="  w-fit flex justify-center items-center gap-[8px] text-white/75 font-medium group-hover/blog:text-white duration-450 mb-[8px]">
-                                    <span>{{date('d/m/Y', $blogs[0]->created_at) }}</span>
+                                    <span>{{date('d/m/Y', strtotime($blogs[0]->created_at)) }}</span>
                                 </p>
                                 <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450 text-white mr-auto w-full sm:[&_br]:hidden rtl:max-w-full">
                                     <h1>{{$blogs[0]->title}}</h1>
@@ -103,7 +103,7 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                             </div>
                             <div class="text-field absolute bottom-0 left-0 p-[20px_20px_30px_50px] sm:p-[30px] overflow-hidden isolate group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);] rtl:w-full">
                                 <p class="  w-fit flex justify-center items-center gap-[8px] text-white/75 font-medium group-hover/blog:text-white duration-450 mb-[8px]">
-                                    <span>{{date('d/m/Y', $blog->created_at) }}</span>
+                                    <span>{{date('d/m/Y', strtotime($blog->created_at)) }}</span>
                                 </p>
                                 <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450 text-white mr-auto w-full sm:[&_br]:hidden">
                                     <h2>{{$blog->title}}</h2>
