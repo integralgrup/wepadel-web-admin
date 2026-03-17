@@ -13,7 +13,7 @@ class AdminUserSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'admin@wepadel.com'],
             [
-                'name' => 'pentagoAdmin',
+                'name' => 'wepadelAdmin',
                 'password' => Hash::make('wepadel*12*34*67'), // change to a secure password!
                 //'is_admin' => true, // optional if you add is_admin column
             ]

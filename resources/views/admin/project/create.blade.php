@@ -70,11 +70,6 @@
                                                 <label for="short_description_{{ $language->lang_code }}" class="form-label">Kısa Açıklama ({{ $language->lang_code }})</label>
                                                 <textarea class="form-control" id="short_description_{{ $language->lang_code }}" name="short_description_{{ $language->lang_code }}" rows="3" {{ $required }}></textarea>
                                             </div>
-
-                                            <div class="mb-3">
-                                                <label for="title_2_{{ $language->lang_code }}" class="form-label">Başlık 2 ({{ $language->lang_code }})</label>
-                                                <input type="text" class="form-control" id="title_2_{{ $language->lang_code }}" name="title_2_{{ $language->lang_code }}" {{ $required }}>
-                                            </div>
                                             <!-- short_description -->
                                             
                                             <div class="mb-3">

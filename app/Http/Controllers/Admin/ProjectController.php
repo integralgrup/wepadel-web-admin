@@ -60,7 +60,6 @@ class ProjectController extends Controller
                     $request->validate([
                         'lang_'.$language->lang_code => 'required|string|max:10',
                         'title_1_'.$language->lang_code => 'required|string|max:100',
-                        'title_2_'.$language->lang_code => 'nullable|string|max:100',
                         'short_description_'.$language->lang_code => 'nullable|string|max:500',
                         'description_'.$language->lang_code => 'required|string',
                         'seo_url_'.$language->lang_code => 'required|string|max:255',
@@ -81,13 +80,17 @@ class ProjectController extends Controller
                     $imageName = $request->input('old_image_' . $language->lang_code, null); // Use old image if no new image is uploaded
                 }
 
-                $usedProductsInput = $request->input('used_products_en');
+                $usedProductsInput = [];
+                if ($request->has('used_products_' . $language->lang_code)) {
+                    $usedProductsInput = $request->input('used_products_' . $language->lang_code);
+                } elseif ($request->has('used_products_en')) {
+                    $usedProductsInput = $request->input('used_products_en');
+                }
                 $usedProductsInput = implode(',', $usedProductsInput);
 
                 $data = [
                     'lang' => $language->lang_code,
                     'title_1' => $request->input('title_1_'.$language->lang_code) ?? $request->input('title_1_en'),
-                    'title_2' => $request->input('title_2_'.$language->lang_code) ?? $request->input('title_2_en'),
                     'short_description' => $request->input('short_description_'.$language->lang_code) ?? $request->input('short_description_en'),
                     'description' => $request->input('description_'.$language->lang_code) ?? $request->input('description_en'),
                     'seo_url' => $request->input('seo_url_'.$language->lang_code) ?? $request->input('seo_url_en'),
