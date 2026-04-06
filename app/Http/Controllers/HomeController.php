@@ -262,7 +262,9 @@ class HomeController extends Controller
         }
 
         if($menu->page_type == 'blog') {
+            
             if($slug2!= null) {
+                
                 // Get blog posts limit 5 as array
                 $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
                 //dd($blogs);

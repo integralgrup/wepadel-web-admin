@@ -88,7 +88,8 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                 </div>
                 @foreach($blogs as $blog)
                 <div class="media-box w-full h-full duration-450 hover:-translate-y-2">
-                    <a href="{{ env('HTTP_DOMAIN') .'/'. getUrl('blog_url') . '/' . $blog->seo_url }}" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
+                    <?php $blog->news == 1 ? $blogUrl = getUrl('news_url', app()->getLocale()) : $blogUrl = getUrl('blog_url', app()->getLocale()); ?>
+                    <a href="<?= env('HTTP_DOMAIN') .'/'. $blogUrl .'/'. $blog->seo_url ?>" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
                         <div class="button-field absolute right-0 top-0 z-[1]">
                             <div class="button group/button h-[90px] w-[90px] xs:h-[70px] xs:w-[70px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-[#0055A3] border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right">
                                 <div class="icon-arrow-right-2 text-[18px] 

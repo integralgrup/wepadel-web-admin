@@ -17,6 +17,7 @@ class Blog extends Model
         'blog_id',
         'lang',
         'title',
+        'news',
         'description',
         'image',
         'alt',
