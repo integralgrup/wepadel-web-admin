@@ -67,12 +67,21 @@
                                             </a>
                                         </div>
                                     @endforeach
+                                    @foreach($project->gallery as $image)
+                                        <div class="swiper-slide rounded-[20px] bg-cover bg-center relative image-zoom !duration-450 hover:!scale-110 overflow-hidden isolate" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})">
+                                            <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}}" class="absolute flex items-center w-full h-full z-[5]" data-fancybox="gallery">
+                                            </a>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="thumbs-content max-w-[650px] px-[75px] m-auto mt-[30px] relative">
                                 <div class="swiper-container project-thumbs relative w-full mx-auto overflow-hidden h-[120px] box-border py-[10px]">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
+                                        @foreach($project->gallery as $image)
+                                            <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
+                                        @endforeach
                                         @foreach($project->gallery as $image)
                                             <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
                                         @endforeach
