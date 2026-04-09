@@ -218,14 +218,14 @@
                             <path d="M23.21,21.42c-2.64,0-4.78,2.14-4.78,4.78,0,2.64,2.14,4.78,4.78,4.78s4.78-2.14,4.78-4.78c0-2.64-2.15-4.77-4.78-4.78Zm0,8.37c-1.98,0-3.59-1.61-3.59-3.59s1.61-3.59,3.59-3.59,3.59,1.61,3.59,3.59h0c0,1.98-1.61,3.58-3.59,3.59Z" style="fill: #fff; isolation: isolate; opacity: .4; stroke: #fff;" />
                         </svg>
                     </span>
-                    <p class="cookie-text text-white text-[14px] leading-tight flex items-center max-w-[300px] sm:mr-0 sm:max-w-full">Bu site, hizmetlerini sunmak ve trafiği analiz etmek için çerezlerden yararlanıyor.</p>
+                    <p class="cookie-text text-white text-[14px] leading-tight flex items-center max-w-[300px] sm:mr-0 sm:max-w-full"><?=getStaticText(54)?></p>
                 </div>
                 <div class="button-field flex sm:justify-center space-x-5">
                     <a href="#popup-gdpr" data-fancybox="" class="info leading-tight text-[12px] text-white whitespace-nowrap opacity-60 hover:opacity-100 flex items-center duration-500">
-                        <span class="text">Bilgi Al</span>
+                        <span class="text"><?=getStaticText(55)?></span>
                     </a>
                     <a href="javascript:;" class="accept-cookie flex items-center duration-500 space-x-3">
-                        <span class="text text-[14px] leading-tight text-white opacity-100 font-bold whitespace-nowrap">Tamam</span>
+                        <span class="text text-[14px] leading-tight text-white opacity-100 font-bold whitespace-nowrap"><?=getStaticText(56)?></span>
                         <i class="icon flex items-center duration-500">👍</i>
                     </a>
                 </div>
