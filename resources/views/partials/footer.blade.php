@@ -221,7 +221,7 @@
                     <p class="cookie-text text-white text-[14px] leading-tight flex items-center max-w-[300px] sm:mr-0 sm:max-w-full"><?=getStaticText(55)?></p>
                 </div>
                 <div class="button-field flex sm:justify-center space-x-5">
-                    <a href="#popup-gdpr" data-fancybox="" class="info leading-tight text-[12px] text-white whitespace-nowrap opacity-60 hover:opacity-100 flex items-center duration-500">
+                    <a href="<?=env('HTTP_DOMAIN').'/'.getStaticText(58)?>" class="info leading-tight text-[12px] text-white whitespace-nowrap opacity-60 hover:opacity-100 flex items-center duration-500">
                         <span class="text"><?=getStaticText(56)?></span>
                     </a>
                     <a href="javascript:;" class="accept-cookie flex items-center duration-500 space-x-3">
