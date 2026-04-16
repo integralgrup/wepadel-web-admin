@@ -34,40 +34,23 @@
                     </div>
 
                     <div class="text-field select-field map-list flex flex-col max-w-[280px] sm:max-w-full max-h-[380px] overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] pr-[15px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 ">
-                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 active" data-target=".map-field" href="javascript:;" data-branch-index="0">
-                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">Head Office</div>
+                        @foreach($offices as $index => $office)
+                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 @if($index == 0) active @endif" data-target=".map-field" href="javascript:;" data-branch-index="{{$index}}">
+                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">{{$office->title}}</div>
                             <i class="icon-arrow-right text-[14px] font-light flex items-center text-white relative z-10 duration-450 -translate-x-2 rtl:translate-x-0 group-hover/link:translate-x-0 opacity-0 group-hover/link:opacity-100"></i>
                         </a>
-                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 " data-target=".map-field" href="javascript:;" data-branch-index="1">
-                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">Factory</div>
-                            <i class="icon-arrow-right text-[14px] font-light flex items-center text-white relative z-10 duration-450 -translate-x-2 rtl:translate-x-0 group-hover/link:translate-x-0 opacity-0 group-hover/link:opacity-100"></i>
-                        </a>
-                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 " data-target=".map-field" href="javascript:;" data-branch-index="2">
-                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">Newyork, USA</div>
-                            <i class="icon-arrow-right text-[14px] font-light flex items-center text-white relative z-10 duration-450 -translate-x-2 rtl:translate-x-0 group-hover/link:translate-x-0 opacity-0 group-hover/link:opacity-100"></i>
-                        </a>
-                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 " data-target=".map-field" href="javascript:;" data-branch-index="3">
-                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">Doha, Qatar</div>
-                            <i class="icon-arrow-right text-[14px] font-light flex items-center text-white relative z-10 duration-450 -translate-x-2 rtl:translate-x-0 group-hover/link:translate-x-0 opacity-0 group-hover/link:opacity-100"></i>
-                        </a>
-                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 " data-target=".map-field" href="javascript:;" data-branch-index="4">
-                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">London, England</div>
-                            <i class="icon-arrow-right text-[14px] font-light flex items-center text-white relative z-10 duration-450 -translate-x-2 rtl:translate-x-0 group-hover/link:translate-x-0 opacity-0 group-hover/link:opacity-100"></i>
-                        </a>
-                        <a class="map-box group/link flex items-center justify-between scrollable py-[5px] border-b border-solid border-transparent duration-450 [&.active_.text]:text-white [&.active]:border-white [&.active_.icon-arrow-right]:opacity-100 [&.active_.icon-arrow-right]:translate-x-0 " data-target=".map-field" href="javascript:;" data-branch-index="5">
-                            <div class="text text-white/50 group-hover/link:text-white duration-450 font-medium text-[24px] lg:text-[22px] sm:text-[20px] xs:text-[18px]">Moscow, Russia</div>
-                            <i class="icon-arrow-right text-[14px] font-light flex items-center text-white relative z-10 duration-450 -translate-x-2 rtl:translate-x-0 group-hover/link:translate-x-0 opacity-0 group-hover/link:opacity-100"></i>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="contact-info relative z-[2] py-[30px] pr-[50px] sm:px-[50px] sm:pt-[25px] xs:px-[25px]">
 
                     <div class="description-field relative duration-450">
-                        <div class="desc-box w-full active absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="0">
+                        @foreach($offices as $index => $office)
+                        <div class="desc-box w-full @if($index == 0) active @endif absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="{{$index}}">
                             <div class="text-field relative ">
                                 <div class="title lg:mt-[20px] mb-[40px] sm:mb-[30px] sm:mt-0">
                                     <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 editor-headings:text-white editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-snug duration-450 font-bold editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                        <h1>Head Office
+                                        <h1>{{$office->title}}
                                             <strong>Information</strong>
                                         </h1>
                                     </div>
@@ -78,20 +61,20 @@
                                             <li>
                                                 <a href="tel:+90 212 678 13 13" class="group/text flex space-x-5">
                                                     <div class="icon-phone text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> +90 212 678 13 13</div>
+                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> {{$office->phone}}</div>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="mailto:info@wepadel.com.tr" class="group/text flex space-x-5">
                                                     <div class="icon-mail text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">info@wepadel.com.tr</div>
+                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">{{$office->email}}</div>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" class="group/text flex space-x-5">
                                                     <div class="icon-location h-fit text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
                                                     <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">
-                                                        Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye
+                                                        {{$office->address}}
                                                     </div>
                                                 </a>
                                             </li>
@@ -106,221 +89,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="1">
-                            <div class="text-field relative ">
-                                <div class="title lg:mt-[20px] mb-[40px] sm:mb-[30px] sm:mt-0">
-                                    <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 editor-headings:text-white editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-snug duration-450 font-bold editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                        <h1>Factory
-                                            <strong>Information</strong>
-                                        </h1>
-                                    </div>
-                                </div>
-                                <div class="contact-information-field relative z-10">
-                                    <div class="wrapper grid grid-cols-2 items-end md:grid-cols-1 md:items-start">
-                                        <ul class="space-y-[20px]">
-                                            <li>
-                                                <a href="tel:+90 212 678 13 13" class="group/text flex space-x-5">
-                                                    <div class="icon-phone text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> +90 212 678 13 13</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:info@wepadel.com.tr" class="group/text flex space-x-5">
-                                                    <div class="icon-mail text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">info@wepadel.com.tr</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="group/text flex space-x-5">
-                                                    <div class="icon-location h-fit text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">
-                                                        Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="" class="group/text flex justify-center md:justify-start">
-                                            <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                {{getStaticText(53)}}
-                                                <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="2">
-                            <div class="text-field relative ">
-                                <div class="title lg:mt-[20px] mb-[40px] sm:mb-[30px] sm:mt-0">
-                                    <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 editor-headings:text-white editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-snug duration-450 font-bold editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                        <h1>Newyork, USA
-                                            <strong>Information</strong>
-                                        </h1>
-                                    </div>
-                                </div>
-                                <div class="contact-information-field relative z-10">
-                                    <div class="wrapper grid grid-cols-2 items-end md:grid-cols-1 md:items-start">
-                                        <ul class="space-y-[20px]">
-                                            <li>
-                                                <a href="tel:+90 212 678 13 13" class="group/text flex space-x-5">
-                                                    <div class="icon-phone text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> +90 212 678 13 13</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:info@wepadel.com.tr" class="group/text flex space-x-5">
-                                                    <div class="icon-mail text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">info@wepadel.com.tr</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="group/text flex space-x-5">
-                                                    <div class="icon-location h-fit text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">
-                                                        Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="" class="group/text flex justify-center md:justify-start">
-                                            <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                {{getStaticText(53)}}
-                                                <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="3">
-                            <div class="text-field relative ">
-                                <div class="title lg:mt-[20px] mb-[40px] sm:mb-[30px] sm:mt-0">
-                                    <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 editor-headings:text-white editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-snug duration-450 font-bold editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                        <h1>Doha, Qatar
-                                            <strong>Information</strong>
-                                        </h1>
-                                    </div>
-                                </div>
-                                <div class="contact-information-field relative z-10">
-                                    <div class="wrapper grid grid-cols-2 items-end md:grid-cols-1 md:items-start">
-                                        <ul class="space-y-[20px]">
-                                            <li>
-                                                <a href="tel:+90 212 678 13 13" class="group/text flex space-x-5">
-                                                    <div class="icon-phone text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> +90 212 678 13 13</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:info@wepadel.com.tr" class="group/text flex space-x-5">
-                                                    <div class="icon-mail text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">info@wepadel.com.tr</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="group/text flex space-x-5">
-                                                    <div class="icon-location h-fit text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">
-                                                        Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="" class="group/text flex justify-center md:justify-start">
-                                            <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                {{getStaticText(53)}}
-                                                <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="4">
-                            <div class="text-field relative ">
-                                <div class="title lg:mt-[20px] mb-[40px] sm:mb-[30px] sm:mt-0">
-                                    <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 editor-headings:text-white editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-snug duration-450 font-bold editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                        <h1>London, England
-                                            <strong>Information</strong>
-                                        </h1>
-                                    </div>
-                                </div>
-                                <div class="contact-information-field relative z-10">
-                                    <div class="wrapper grid grid-cols-2 items-end md:grid-cols-1 md:items-start">
-                                        <ul class="space-y-[20px]">
-                                            <li>
-                                                <a href="tel:+90 212 678 13 13" class="group/text flex space-x-5">
-                                                    <div class="icon-phone text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> +90 212 678 13 13</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:info@wepadel.com.tr" class="group/text flex space-x-5">
-                                                    <div class="icon-mail text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">info@wepadel.com.tr</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="group/text flex space-x-5">
-                                                    <div class="icon-location h-fit text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">
-                                                        Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="" class="group/text flex justify-center md:justify-start">
-                                            <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                {{getStaticText(53)}}
-                                                <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="desc-box w-full absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1]" box-id="5">
-                            <div class="text-field relative ">
-                                <div class="title lg:mt-[20px] mb-[40px] sm:mb-[30px] sm:mt-0">
-                                    <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 editor-headings:text-white editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] editor-headings:leading-snug duration-450 font-bold editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                        <h1>Moscow, Russia
-                                            <strong>Information</strong>
-                                        </h1>
-                                    </div>
-                                </div>
-                                <div class="contact-information-field relative z-10">
-                                    <div class="wrapper grid grid-cols-2 items-end md:grid-cols-1 md:items-start">
-                                        <ul class="space-y-[20px]">
-                                            <li>
-                                                <a href="tel:+90 212 678 13 13" class="group/text flex space-x-5">
-                                                    <div class="icon-phone text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light"> +90 212 678 13 13</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:info@wepadel.com.tr" class="group/text flex space-x-5">
-                                                    <div class="icon-mail text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">info@wepadel.com.tr</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="group/text flex space-x-5">
-                                                    <div class="icon-location h-fit text-[20px] font-light text-white duration-500 relative z-20 flex group-hover/text:scale-110"></div>
-                                                    <div class="text text-[20px] sm:text-[18px] text-white flex items-center leading-tight duration-500 group-hover/text:translate-x-1 font-light">
-                                                        Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="" class="group/text flex justify-center md:justify-start">
-                                            <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
-                                                {{getStaticText(53)}}
-                                                <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="social-media border-t border-solid border-white/10 pt-[40px] mt-[40px] sm:pt-[25px] sm:mt-[25px]">
                         <ul class="flex justify-start items-center sm:justify-center gap-[35px] md:gap-[20px] xs:gap-[15px]">
@@ -456,45 +225,21 @@
         }
         // Sayfa yüklendiğinde ilk gösterilecek konum
         window.latLng = {
-            lat: 41.06995412725466,
-            lng: 28.80439999157121
+            lat: {{ $offices->first()->lat }},
+            lng: {{ $offices->first()->longitude }}
         };
 
 
         // Şubelerin konumları ve URL'leri
 
-        const locations = [{
-                lat: 41.06995412725466,
-                lng: 28.80439999157121,
-                url: 'https://g.page/pentayazilim?share'
-            },
-
+        const locations = [
+            @foreach($offices as $index => $office)
             {
-                lat: 40.9095072,
-                lng: 29.2036767,
-                url: 'https://example.com/location1'
+                lat: {{ $office->lat }},
+                lng: {{ $office->longitude }},
+                url: '{{ $office->map_url }}'
             },
-            {
-                lat: 41.06995412725466,
-                lng: 28.80439999157121,
-                url: 'https://g.page/pentayazilim?share'
-            },
-            {
-                lat: 36.5430984,
-                lng: 32.0344702,
-                url: 'https://example.com/location2'
-            },
-
-            {
-                lat: 40.9095072,
-                lng: 29.2036767,
-                url: 'https://example.com/location1'
-            },
-            {
-                lat: 36.5430984,
-                lng: 32.0344702,
-                url: 'https://example.com/location2'
-            },
+            @endforeach
         ];
 
         // Sayfa yüklendiğinde haritayı oluştur
