@@ -225,8 +225,8 @@
         }
         // Sayfa yüklendiğinde ilk gösterilecek konum
         window.latLng = {
-            lat: {{ $offices->first()->lat }},
-            lng: {{ $offices->first()->longitude }}
+            lat: {{ $offices[0]->lat }},
+            lng: {{ $offices[0]->longitude }}
         };
 
 
