@@ -55,7 +55,7 @@ class ProductController extends Controller
                     
                     $request->validate([
                         'lang_'.$language->lang_code => 'required|string|max:10',
-                        'category_id' => 'required|integer',
+                        'category_id_'.$language->lang_code => 'required|integer',
                         'title_'.$language->lang_code => 'required|string|max:100',
                         'seo_url_'.$language->lang_code => 'required|string|max:255',
                         'description_'.$language->lang_code => 'required|string',
