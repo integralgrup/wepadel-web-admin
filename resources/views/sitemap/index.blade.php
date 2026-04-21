@@ -29,14 +29,12 @@
         }
        
     ?>
-    <?php if($menu->page_type != 'blog' && $menu->page_type != 'product' && $menu->page_type != 'product_category'  && $menu->page_type != 'project'){ ?>
         <url>
             <loc>{{ url('/' . $pageParam . $menu->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.9</priority>
         </url>
-    <?php } ?>
     @endforeach
 
     <!-- Dynamic Blogs -->
