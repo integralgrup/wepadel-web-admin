@@ -37,7 +37,11 @@
                         <?php $type = $type ?? 'header'; 
                           $url = $type == 'header' ? 'admin.menu' : 'admin.menu.footer';
                         ?>
-                        <a style="display:inline-block;" href="{{ route($url . '.create', '?type=' . $type) }}" class="btn btn-sm btn-primary">Menü Ekle</a>
+                        @if($type == 'footer')
+                            <a style="display:inline-block;" href="{{ route('admin.menu.create', 'type=footer') }}" class="btn btn-sm btn-secondary">Menü Ekle</a>
+                        @else
+                            <a style="display:inline-block;" href="{{ route('admin.menu.create', 'type=header') }}" class="btn btn-sm btn-secondary">Menü Ekle</a>
+                        @endif
                     </div>
                   </div>
                   <!-- /.card-header -->
