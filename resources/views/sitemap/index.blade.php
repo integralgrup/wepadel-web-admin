@@ -13,7 +13,10 @@
 
     <!-- Dynamic Posts -->
     @foreach ($menus as $menu)
-    <?php if($menu->page_type == 'blog'){ 
+    <?php 
+    
+    $pageParam = null;
+        if($menu->page_type == 'blog'){ 
             
         } elseif($menu->page_type == 'about'){
             $pageParam = getUrl('about_url') . '/';
