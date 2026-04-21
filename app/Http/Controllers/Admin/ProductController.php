@@ -106,7 +106,7 @@ class ProductController extends Controller
 
                 $data = [
                     'product_id' => $product_id,
-                    'category_id' => $request->input('category_id'),
+                    'category_id' => $request->input('category_id_' . $language->lang_code) ?? $request->input('category_id_en'),
                     'lang' => $language->lang_code,
                     'title' => $request->input('title_'.$language->lang_code) ?? $request->input('title_en'),
                     'seo_url' => $request->input('seo_url_'.$language->lang_code) ?? $request->input('seo_url_en'),
