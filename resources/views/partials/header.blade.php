@@ -1,7 +1,7 @@
 <?php $nameofProject = 'Wepadel'; ?>
 
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{app()->getLocale()}}">
 
 <head>
     <meta charset="UTF-8">
