@@ -323,7 +323,7 @@
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide">
                                                         <div class="prod-img img h-[300px] group-[&.swiper-slide-active]/slide:h-[400px] md:h-[250px] md:group-[&.swiper-slide-active]/slide:h-[350px] sm:group-[&.swiper-slide-active]/slide:h-[300px] xs:group-[&.swiper-slide-active]/slide:h-[275px] group-[&.swiper-slide-active]/slide:pl-[50px] pr-[25px] md:!px-[15px] w-full overflow-hidden duration-700 ml-auto">
-                                                            <img class="h-full w-full object-contain  duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->gallery[0]->image ?? '' }}" alt="">
+                                                            <img class="h-full w-full object-contain  duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->image ?? '' }}" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
