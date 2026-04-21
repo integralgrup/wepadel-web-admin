@@ -167,10 +167,15 @@ class ProductController extends Controller
    
 
     // Delete sector
-    public function destroy(Sector $sector)
+    public function destroy($id)
     {
-        $sector->delete();
-        return redirect()->route('admin.sector.index')->with('success', 'Sector deleted successfully!');
+        $product = Product::where('product_id', $id)->get();
+        foreach ($product as $product) {
+            // Delete the image file from storage if needed
+            // Storage::delete('path/to/image/' . $product->image);
+            $product->delete();
+        }
+        return redirect()->route('admin.product.index')->with('success', 'Ürün başarıyla silindi!');
     }
 
     // Additional methods for managing product images will go here
