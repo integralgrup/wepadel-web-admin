@@ -181,7 +181,7 @@ $breadcrumbTitle = $product->title;
                                             {{getStaticText(39)}}
                                         </div>
                                         <div class="color-select text-[#C7234B] [&.green]:text-lime-600 [&.blue]:text-blue-600 [&.red]:text-red-600 duration-450">
-                                            Padel Turf Red
+                                            
                                         </div>
                                     </div>
                                     <ul class="colors mt-[20px] flex gap-[15px]">
