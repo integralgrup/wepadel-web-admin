@@ -185,21 +185,13 @@ $breadcrumbTitle = $product->title;
                                         </div>
                                     </div>
                                     <ul class="colors mt-[20px] flex gap-[15px]">
-                                        <li class="color-item cursor-pointer duration-450 p-[5px] w-fit h-fit border border-solid border-transparent [&.active]:border-[#C7234B] rounded-full" data-title="Padel Turf Green">
-                                            <div class="img h-[54px] w-[54px] relative z-[1] duration-450 rounded-full overflow-hidden isolate">
-                                                <img class="h-full w-full object-cover object-top duration-500" src="../assets/image/other/green.jpg" alt="">
-                                            </div>
-                                        </li>
-                                        <li class="color-item cursor-pointer duration-450 p-[5px] w-fit h-fit border border-solid border-transparent [&.active]:border-[#C7234B] rounded-full" data-title="Padel Turf Blue">
-                                            <div class="img h-[54px] w-[54px] relative z-[1] duration-450 rounded-full overflow-hidden isolate">
-                                                <img class="h-full w-full object-cover object-top duration-500" src="../assets/image/other/blue.jpg" alt="">
-                                            </div>
-                                        </li>
-                                        <li class="color-item cursor-pointer duration-450 p-[5px] w-fit h-fit border border-solid border-transparent [&.active]:border-[#C7234B] rounded-full active" data-title="Padel Turf Red">
-                                            <div class="img h-[54px] w-[54px] relative z-[1] duration-450 rounded-full overflow-hidden isolate">
-                                                <img class="h-full w-full object-cover object-top duration-500" src="../assets/image/other/red.jpg" alt="">
-                                            </div>
-                                        </li>
+                                        @foreach($product->types as $color)
+                                            <li class="color-item cursor-pointer duration-450 p-[5px] w-fit h-fit border border-solid border-transparent [&.active]:border-[{{$color->alt}}] rounded-full" data-title="{{$color->title}}">
+                                                <div class="img h-[54px] w-[54px] relative z-[1] duration-450 rounded-full overflow-hidden isolate">
+                                                    <img class="h-full w-full object-cover object-top duration-500" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$color->image  ?>" alt="">
+                                                </div>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                     <div class="button-field flex flex-wrap gap-[25px] mt-[50px]">
                                         <a href="javascript:;" data-target=".contact-form" class="button group scrollable min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
