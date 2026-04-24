@@ -466,7 +466,7 @@ class ProductController extends Controller
     public function typeIndex($id)
     {
         $product = Product::where('product_id', $id)->where('lang', app()->getLocale())->firstOrFail();
-        $types = ProductType::where('product_id', $id)->get();
+        $types = ProductType::where('product_id', $id)->where('lang', app()->getLocale())->get();
         return view('admin.product.type.index', compact('product', 'types'));
     }
 
@@ -548,10 +548,11 @@ class ProductController extends Controller
     public function typeDestroy($id, $typeId)
     {
         try {
-            $type = ProductType::findOrFail($typeId);
+            $type = ProductType::where('product_id', $id)->where('type_id', $typeId)->get();
+
+            foreach($type as $item){ $item->delete(); }
             // Delete the image file from storage if needed
             // Storage::delete('path/to/image/' . $type->image);
-            $type->delete();
             return redirect()->route('admin.product.type.index', $id)->with('success', 'Product type deleted successfully!');
         } catch (\Throwable $th) {
             return redirect()->route('admin.product.type.index', $id)->with('error', 'An error occurred while deleting the product type.');

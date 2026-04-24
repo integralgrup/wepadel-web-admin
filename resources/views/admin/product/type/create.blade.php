@@ -52,7 +52,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.product.type.store', $product->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.product.type.store', $product->product_id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="tab-content" id="myTabContent">
                                 @foreach($languages as $language)
