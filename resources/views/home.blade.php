@@ -213,7 +213,8 @@
 
             <div class="gradient-text duration-450 bg-gradient-to-b from-white/0 to-white absolute bottom-0 left-0 w-full h-[50px] z-[1] pointer-events-none  "></div>
             <div class="swiper-wrapper [&_.swiper-slide-next]:!-translate-y-[40%] !z-0 bg-gradient-to-b from-white/0 to-white [&_.swiper-slide-prev_.mini-title]:left-[unset] [&_.swiper-slide-prev_.mini-title]:translate-x-[30%] [&_.swiper-slide-prev_.mini-title]:right-0 [&_.swiper-slide:has(+.swiper-slide-prev)_.mini-title]:left-[unset] [&_.swiper-slide:has(+.swiper-slide-prev)_.mini-title]:translate-x-[30%] [&_.swiper-slide:has(+.swiper-slide-prev)_.mini-title]:right-0">
-                <?php foreach ($categories as $category) : ?>
+                <?php foreach ($categories as $parent_category) : ?>
+                    <?php foreach ($parent_category->children as $key => $category) : ?>
                     <div class="swiper-slide !z-0 !duration-450 !transition-all items-end !flex h-full rounded-[30px] overflow-hidden isolate [&.swiper-slide-active_.feature]:!h-[650px] lg:[&.swiper-slide-active_.feature]:!h-[500px] relative [&.swiper-slide-active_.gradient]:opacity-0 [&.swiper-slide-active_.gradient-field]:opacity-100 [&.swiper-slide-active_.text-field]:opacity-100 [&.swiper-slide-active_.mini-title]:opacity-0">
                         <div class="gradient bg-gradient-to-b from-white/50 to-white absolute bottom-0 left-0 w-full h-full
                             z-[15] pointer-events-none duration-450 group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);]"></div>
@@ -239,13 +240,14 @@
                                     <p>{{ $category->description }}</p>
                                 </div>
                                 <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[50px] z-[2] relative">
-                                    <a href="{{ env('HTTP_DOMAIN').'/'. $category->seo_url  }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                                    <a href="{{ env('HTTP_DOMAIN') .'/'. $parent_category->seo_url .'/'. $category->seo_url  }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                                         <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(4)}}</div>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                <?php endforeach; ?>
                 <?php endforeach; ?>
 
 
