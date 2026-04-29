@@ -103,7 +103,7 @@ $breadcrumbImage = $about->image;
                                     <div class="icon icon-arrow-down text-[35px] h-[35px] sm:text-[16px] sm:h-[16px] block leading-none duration-350  text-transparent bg-clip-text bg-gradient-to-b from-white to-white/0 opacity-20 absolute -top-[40px] -left-[30px] sm:left-0"></div>
                                     <div class="editor editor-base md:editor-sm editor-headings:font-bold editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[44px] editor-p:leading-tight editor-p:text-[#B6D3E4] editor-p:text-[24px] sm:editor-p:text-[22px] xs:editor-p:text-[20px] editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px]
                                     [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] m-auto lg:max-w-full w-full">
-                                        <h1>Wepadel is one of the newest brands of Integral Group.</h1>
+                                        <h3 class="fake-h1">Wepadel is one of the newest brands of Integral Group.</h3>
                                     </div>
                                     <div class="wrapper grid grid-cols-3 sm:grid-cols-2 sm:justify-center sm:[&_.sport-box:nth-child(3)]:col-span-2 my-[50px] gap-[40px] lg:gap-[20px]">
                                         <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
@@ -217,9 +217,9 @@ $breadcrumbImage = $about->image;
                         <div class="image-field">
                             <div class="title flex justify-between items-center mb-[50px] md:mb-[30px] xs:mb-0">
                                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                                    <h1>WePadel
+                                    <h3 class="fake-h1">WePadel
                                         <strong>All Over The World</strong>
-                                    </h1>
+                                    </h3>
                                 </div>
                             </div>
                             <div class="img h-[500px] md:h-[400px] sm:h-[350px] xs:h-[250px] w-full overflow-hidden isolate relative height-fix-image">
@@ -271,7 +271,7 @@ $breadcrumbImage = $about->image;
                                 <div class="editor editor-lg title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px]  duration-450 editor-h1:font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#0055A3] editor-headings:to-75% editor-strong:font-bold max-w-full w-fit text-right" dir="">
                                     <h3>{{getStaticText(27)}}
                                     </h3>
-                                    <h1>Europe</h1>
+                                    <h3 class="fake-h1">Europe</h3>
                                 </div>
                             </div>
                             <div class="gradient absolute left-0 bottom-0 w-full h-[350px] [background:linear-gradient(180deg,_rgba(255,255,255,0)_0%,_#FFFFFF_100%);] pointer-events-none z-[2] md:hidden duration-450 group-hover/map-list:opacity-0"></div>
@@ -740,7 +740,7 @@ $breadcrumbImage = $about->image;
                             <div class="text-field w-full h-full relative z-[3]">
                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full relative z-[2] editor-em:mb-[30px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:font-light editor-p:text-white editor-p:text-[20px] xs:editor-p:text-[18px] duration-700" dir="">
-                                        <h1>{{$about->mission_title}}</h1>
+                                        <h3 class="fake-h1">{{$about->mission_title}}</h3>
                                         <p>{{$about->mission_text}}</p>
                                     </div>
                                 </div>
@@ -762,7 +762,7 @@ $breadcrumbImage = $about->image;
                             <div class="text-field w-full h-full relative z-[3]">
                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
                                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:duration-700 editor-headings:text-white editor-headings:mt-0 editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px] editor-p:leading-tight editor-p:mt-[15px] editor-em:text-[20px] editor-em:font-light editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] mx-auto lg:max-w-full w-full relative z-[2] editor-em:mb-[30px] editor-em:block editor-em:not-italic editor-em:duration-700  editor-em:text-white editor-headings:text-[44px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:font-light editor-p:text-white editor-p:text-[20px] xs:editor-p:text-[18px] duration-700" dir="">
-                                        <h1>{{$about->vision_title}}</h1>
+                                        <h3 class="fake-h1">{{$about->vision_title}}</h3>
                                         <p>{{$about->vision_text}}</p>
                                     </div>
                                 </div>
@@ -776,9 +776,9 @@ $breadcrumbImage = $about->image;
                 <div class="container max-w-[1440px]">
                     <div class="title flex justify-between md:flex-col md:items-start md:gap-10 items-center mb-[50px] md:mb-[30px]">
                         <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit" dir="">
-                            <h1>WePadel
+                            <h3 class="fake-h1">WePadel
                                 <strong>{{getStaticText(25)}}</strong>
-                            </h1>
+                            </h3>
                         </div>
                         <div class="editor editor-base md:editor-sm editor-headings:font-bold editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[44px] editor-p:leading-tight editor-p:text-[#231F20]/60 editor-p:text-[24px] md:editor-p:text-[22px] sm:editor-p:text-[20px] xs:sm:editor-p:text-[18px] editor-p:font-normal editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] md:max-w-full w-full text-right max-w-[610px] ml-auto" dir="">
                             <p>{{getStaticText(41)}}</p>
@@ -802,7 +802,7 @@ $breadcrumbImage = $about->image;
             <div class="container max-w-[1440px] scrollreveal">
                 <div class="title flex justify-between items-center mb-[40px] md:mb-[30px]" dir="">
                     <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] duration-450 font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-r editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-left max-w-full w-fit">
-                        <h1>{{getStaticText(14)}}</h1>
+                        <h3 class="fake-h1">{{getStaticText(14)}}</h3>
                     </div>
                     <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
                         <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
