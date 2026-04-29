@@ -6,9 +6,9 @@
     <!-- Homepage -->
     <url>
         <loc>{{ url('/') }}</loc>
-        <lastmod>{{ now() }}</lastmod>
+        <lastmod>{{ date('Y-m-d') }}</lastmod>
         <changefreq>daily</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
     </url>
 
     <!-- Dynamic Posts -->
