@@ -235,7 +235,7 @@
 
                             <div class="text-field absolute bottom-[10px] left-[50%] translate-x-[-50%] rounded-[30px] max-w-[450px] py-[40px] px-[60px] w-full z-[1] opacity-0 duration-450">
                                 <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:text-white editor-headings:leading-tight editor-headings:mb-[15px] xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-p:leading-tight editor-p:mt-[15px] editor-p:text-white editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-white editor-li:font-medium editor-li:text-[20px] xs:editor-li:text-[16px] editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] m-auto lg:max-w-full w-full text-center relative z-[2]" dir="">
-                                    <h1>{{ $category->title }}</h1>
+                                    <h3 class="fake-h1">{{ $category->title }}</h3>
                                     <p>{{ $category->description }}</p>
                                 </div>
                                 <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[50px] z-[2] relative">
