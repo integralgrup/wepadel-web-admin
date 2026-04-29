@@ -115,7 +115,7 @@ class HomeController extends Controller
                 $q->where('lang', app()->getLocale());
             }])
             ->get();
-        $categories = ProductCategory::where(['parent_category_id' => 0, 'lang' => app()->getLocale()])->orderBy('sort', 'asc')->get();
+        $categories = ProductCategory::where(['parent_category_id' => 0, 'lang' => app()->getLocale()])->orderBy('sort', 'asc')->with('children')->get();
 
         //dd($categories);
 

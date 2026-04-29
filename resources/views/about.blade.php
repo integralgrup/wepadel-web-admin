@@ -809,7 +809,6 @@ $breadcrumbImage = $about->image;
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">All News</div>
                         </a>
                     </div>
-
                 </div>
                 <div class="swiper news-swip !py-[10px] relative flex flex-col justify-center md:justify-start w-full mx-auto ">
                     <div class="swiper-wrapper ">
