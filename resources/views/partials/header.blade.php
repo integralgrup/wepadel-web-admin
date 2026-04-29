@@ -30,31 +30,28 @@
 
     <style>
         fake-h1 {
-            font-size: 40px;
+            font-size: 40px !important;
             font-weight: bold;
             line-height: normal;
-            background: linear-gradient(to left, #0055A3 40%, #C7234B 75%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         @media (max-width: 640px) {
             fake-h1 {
-                font-size: 24px;
+                font-size: 24px !important;
             }
         }
             @media (min-width: 641px) and (max-width: 768px) {
                 fake-h1 {
-                    font-size: 26px;
+                    font-size: 26px !important;
                 }
             }
             @media (min-width: 769px) and (max-width: 1024px) {
                 fake-h1 {
-                    font-size: 30px;
+                    font-size: 30px !important;
                 }
             }
             @media (min-width: 1025px) and (max-width: 1280px) {
                 fake-h1 {
-                    font-size: 34px;
+                    font-size: 34px !important;
                 }
             }
     </style>
