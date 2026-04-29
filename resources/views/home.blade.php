@@ -35,9 +35,9 @@
                                             <div class="text-field col-start-1 relative group/text " data-swiper-parallax="-1000">
                                                 <div class="px-[20px] mb-[40px] relative space-y-[15px] z-20 ">
                                                     <div class="text-wrapper">
-                                                        <h1 class="title text-[60px] xs:text-[24px] sm:text-[26px] md:text-[30px] lg:text-[34px] xl:text-[40px] text-white font-bold leading-tight [&_strong]:text-black [&.active]:opacity-100 duration-300">
+                                                        <h3 class="title text-[60px] xs:text-[24px] sm:text-[26px] md:text-[30px] lg:text-[34px] xl:text-[40px] text-white font-bold leading-tight [&_strong]:text-black [&.active]:opacity-100 duration-300">
                                                             {{ $item->title }}
-                                                        </h1>
+                                                        </h3>
                                                     </div>
                                                     <div class="text-wrapper">
                                                         <div class="editor editor-xl md:editor-base sm:editor-sm editor-headings:text-white editor-p:text-white editor-headings:line-clamp-3 editor-p:text-[18px] editor-p:line-clamp-3 sm:editor-p:text-[16px] xs:editor-p:text-[18px]  editor-li:text-white [&>p:not(:first-child)]:hidden [&>p:first-child]:line-clamp-4 [&>p:first-child]:mb-0  [&.active]:opacity-100 max-w-none">
@@ -155,7 +155,7 @@
                     <div class="icon icon-arrow-down text-[35px] h-[35px] sm:text-[16px] sm:h-[16px] sm:-top-[30px] block leading-none duration-350 text-[#C7234B] absolute -top-[50px] -left-[30px] sm:left-0"></div>
                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:text-[#005AA5] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-headings:text-[42px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:leading-tight editor-p:text-[#231F20]/60 editor-p:text-[26px] sm:editor-p:text-[22px] xs:editor-p:text-[20px]  editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px]
                      [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] m-auto lg:max-w-full w-full md:[&_br]:hidden">
-                        <h1>{!!$about->title!!}</h1>
+                        <h3>{!!$about->title!!}</h3>
                         <p>{!!$about->description!!}</p>
                     </div>
                     <div class="button-field flex flex-wrap gap-[25px] mt-[50px]">
@@ -200,7 +200,7 @@
                     </div>
                 </div>
                 <div class="editor title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-bold xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] editor-h1:text-[40px] editor-strong:duration-450 group-hover/mpb:editor-strong:text-white editor-strong:text-[40px] xl:editor-strong:text-[34px] lg:editor-strong:text-[20px] leading-tight duration-450 font-bold w-full editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-l editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#C7234B] editor-headings:to-75% editor-strong:text-transparent editor-strong:bg-clip-text editor-strong:bg-gradient-to-l editor-strong:from-[#0055A3] editor-strong:from-25% editor-strong:to-[#C7234B] editor-strong:font-bold editor-strong:block text-center max-w-full" dir="">
-                    <h1>{{getStaticText(3)}}</h1>
+                    <h3 class="sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[44px]">{{getStaticText(3)}}</h3>
                 </div>
                 <div class="articles-carousel-next swiper-slide-next  pointer-events-auto duration-450 [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:pointer-events-none">
                     <div class="icon group/item flex items-center justify-center w-[60px] h-[60px] xs:w-[40px] xs:h-[40px] rounded-full cursor-pointer duration-500 border border-solid border-[#0055A3] bg-white hover:bg-[#0055A3] group">
