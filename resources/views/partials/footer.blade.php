@@ -1,4 +1,5 @@
 <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
+<?php $footer_info = \App\Models\FooterInfo::where('lang', app()->getLocale())->first(); ?>
 <footer class="footer-field block relative bg-white overflow-hidden isolate">
     <div class="image overflow-hidden absolute -left-[90px] top-[60%] translate-y-[-50%] pointer-events-none z-[1] xs:hidden">
         <div class="icon icon-arrow-down text-[250px] h-[250px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
@@ -25,52 +26,52 @@
                 <div class="list grid gap-[40px]">
                     <a href="" class="item group/item w-fit text-black flex items-center gap-[10px] hover:text-[#C7234B]">
                         <div class="icon icon-phone text-[18px] h-[18px] block leading-none duration-350 text-[#C7234B]"></div>
-                        <div class="text text-[18px] lg:text-[16px] font-light duration-350 font-ligt group-hover/item:translate-x-2"> +90 212 678 13 13</div>
+                        <div class="text text-[18px] lg:text-[16px] font-light duration-350 font-ligt group-hover/item:translate-x-2"> <?php echo $footer_info ? $footer_info->phone : ''; ?> </div>
                     </a>
                     <a href="" class="item group/item w-fit text-black flex items-center gap-[10px] hover:text-[#C7234B]">
                         <div class="icon icon-mail text-[18px] h-[18px] block leading-none duration-350 text-[#C7234B]"></div>
-                        <div class="text text-[18px] lg:text-[16px] font-light duration-350 font-ligt group-hover/item:translate-x-2">info@wepadel.com.tr</div>
+                        <div class="text text-[18px] lg:text-[16px] font-light duration-350 font-ligt group-hover/item:translate-x-2"> <?php echo $footer_info ? $footer_info->email : ''; ?> </div>
                     </a>
 
-                    <a href="" class="item group/item w-fit text-black flex gap-[10px] hover:text-[#C7234B]">
+                    <a href="<?php echo $footer_info ? $footer_info->map_url : ''; ?>" class="item group/item w-fit text-black flex gap-[10px] hover:text-[#C7234B]">
                         <div class="icon icon-location text-[22px] h-[22px] block leading-none duration-350 text-[#C7234B] mt-2"></div>
-                        <div class="text text-[18px] lg:text-[16px] font-light duration-350 font-ligt group-hover/item:translate-x-2">Metro 34 Plaza No: 23/99, IOSB Bedrettin Dalan Bulvarı Basaksehir, Istanbul / Türkiye</div>
+                        <div class="text text-[18px] lg:text-[16px] font-light duration-350 font-ligt group-hover/item:translate-x-2"> <?php echo $footer_info ? $footer_info->address : ''; ?> </div>
                     </a>
                 </div>
 
                 <div class="social mt-[45px] xs:mt-[30px]">
                     <div class="title font-bold text-[#0055A3] text-[28px] lg:text-[24px] md:text-[20px] mb-[30px] xs:mb-[15px]">{{getStaticText(18)}}</div>
                     <div class="list flex items-center gap-[30px] justify-self-center">
-                        <a href="" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
+                        <a href="<?php echo $footer_info ? $footer_info->facebook_url : ''; ?>" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
                             <div class="icon facebook  relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
                                 <svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="duration-350 group-hover:stroke-transparent" d="M6.15114 7.04864V7.44864H6.55114H9.2932L8.90312 9.99168H6.55114H6.15114V10.3917V18.074H3.33731V10.3917V9.99168H2.93731H0.4V7.44864H2.93731H3.33731V7.04864V4.49817C3.33731 3.12963 3.74347 2.11628 4.41373 1.44552C5.08392 0.774832 6.06422 0.400543 7.30323 0.400001C8.03801 0.41014 8.7713 0.466856 9.49868 0.569764V2.67225H8.4659C8.16657 2.63586 7.86277 2.66525 7.57578 2.7585C7.27977 2.85468 7.00924 3.01632 6.78429 3.23142C6.55933 3.44652 6.38574 3.70954 6.27641 4.00095C6.16929 4.28644 6.12655 4.59198 6.15114 4.89575V7.04864Z" fill="white" stroke="#C7234B" stroke-opacity="0.8" stroke-width="0.8" />
+                                    <path class="duration-350 group-hover:stroke-transparent" d="M6.15114 7.04864V7.44864H6.55114H9.2932L8.90312 9.99168H6.55114H6.15114V10.3917V18.074H3.33731V10.3917V9.99168H2.93731H0.4V7.44864H2.93731H3.33731V7.04864V4.49817C3.33731 3.12963 3.74347 2.11628 4.41373 1.44552C5.08392 0.774832 6.06422 0.400543 7.30323 0.400001C8.03801 0.41₀, stroke="#C72３４B" stroke-opacity="０．８" stroke-width="０．８" />
                                 </svg>
                             </div>
                         </a>
-                        <a href="" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
+                        <a href="<?php echo $footer_info ? $footer_info->youtube_url : ''; ?>" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
                             <div class="icon youtube relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
                                 <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path class="duration-350 group-hover:stroke-transparent" d="M20.198 3.63408L20.1951 3.61792L20.1909 3.60206C20.0675 3.1393 19.8249 2.71699 19.4874 2.37723C19.1499 2.03748 18.7291 1.79216 18.2672 1.66576L18.2672 1.66576L18.2657 1.66536C17.8618 1.55648 17.191 1.4816 16.4457 1.42692C15.6892 1.37141 14.8207 1.3346 14.0013 1.31012C13.1812 1.28561 12.407 1.27338 11.8381 1.26726C11.5535 1.2642 11.3201 1.26267 11.1577 1.2619L10.9699 1.26123L10.9205 1.26114L10.9078 1.26113L10.9045 1.26113L10.9037 1.26113L10.9035 1.26113L10.9034 1.66113L10.9033 1.26113L10.9031 1.26113L10.9022 1.26113L10.8989 1.26113L10.8862 1.26114L10.8369 1.26123L10.649 1.2619C10.4866 1.26267 10.2532 1.2642 9.96865 1.26726C9.39969 1.27338 8.62552 1.28561 7.80545 1.31012C6.98603 1.3346 6.11756 1.37141 5.361 1.42692C4.61574 1.4816 3.94491 1.55648 3.54101 1.66536L3.54101 1.66536L3.53954 1.66576C3.0776 1.79216 2.65689 2.03748 2.31935 2.37723C1.98182 2.71699 1.73926 3.1393 1.61588 3.60206L1.61165 3.61792L1.60874 3.63408C1.33672 5.14174 1.20449 6.6713 1.21373 8.20328C1.20449 9.73525 1.33672 11.2648 1.60874 12.7725L1.61177 12.7892L1.61621 12.8057C1.74044 13.2659 1.98432 13.685 2.32305 14.0204C2.66133 14.3553 3.08216 14.5949 3.54285 14.7147C3.94694 14.8233 4.61688 14.898 5.361 14.9526C6.11756 15.0081 6.98603 15.045 7.80545 15.0694C8.62552 15.0939 9.39969 15.1062 9.96865 15.1123C10.2532 15.1154 10.4866 15.1169 10.649 15.1177L10.8369 15.1183L10.8862 15.1184L10.8989 15.1184L10.9022 15.1184H10.903H10.9033L10.9034 14.7184L10.9035 15.1184H10.9037H10.9045L10.9078 15.1184L10.9205 15.1184L10.9699 15.1183L11.1577 15.1177C11.3201 15.1169 11.5535 15.1154 11.8381 15.1123C12.407 15.1062 13.1812 15.0939 14.0013 15.0694C14.8207 15.045 15.6892 15.0081 16.4457 14.9526C17.1899 14.898 17.8598 14.8233 18.2639 14.7147C18.7246 14.5949 19.1454 14.3553 19.4837 14.0204C19.8224 13.685 20.0663 13.2659 20.1905 12.8057L20.195 12.7892L20.198 12.7725C20.47 11.2648 20.6022 9.73525 20.593 8.20328C20.6022 6.6713 20.47 5.14174 20.198 3.63408ZM13.0521 8.20232L9.40334 10.2767V6.12724L13.0521 8.20232Z" fill="white" stroke="#C7234B" stroke-opacity="0.8" stroke-width="0.8" />
                                 </svg>
                             </div>
                         </a>
-                        <a href="" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
+                        <a href="<?php echo $footer_info ? $footer_info->linkedin_url : ''; ?>" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
                             <div class="icon linkedin relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path class="duration-350 group-hover:stroke-transparent" d="M4.67221 16.6655H1.40294V6.13888H4.67221V16.6655ZM3.03218 4.70306C2.65638 4.70412 2.28869 4.59382 1.97553 4.38608C1.66237 4.17835 1.41777 3.88249 1.27261 3.53586C1.12745 3.18923 1.08824 2.80736 1.15992 2.43846C1.23161 2.06956 1.41098 1.73017 1.67538 1.46313C1.93979 1.19609 2.27739 1.01336 2.64556 0.938024C3.01373 0.862686 3.39597 0.898111 3.74402 1.03983C4.09208 1.18154 4.39034 1.4232 4.60117 1.73429C4.812 2.04538 4.92594 2.41195 4.92861 2.78774C4.93029 3.29296 4.73162 3.77824 4.37615 4.13726C4.02068 4.49627 3.53739 4.69973 3.03218 4.70306ZM16.9018 16.6682H13.6479V11.5403C13.6479 10.3195 13.6236 8.75142 11.9485 8.75142C10.249 8.75142 9.98815 10.0784 9.98815 11.4503V16.6628H6.72068V6.13888H9.85501V7.57829H9.90089C10.2145 7.04172 10.6677 6.60027 11.2124 6.30099C11.7571 6.00172 12.3728 5.85583 12.9938 5.87888C16.3018 5.87888 16.9099 8.0569 16.9099 10.8872V16.6691L16.9018 16.6682Z" fill="white" stroke="#C7234B" stroke-opacity="0.8" stroke-width="0.8" />
                                 </svg>
                             </div>
                         </a>
-                        <a href="" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
+                        <a href="<?php echo $footer_info ? $footer_info->x_url : ''; ?>" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
                             <div class="icon twitter relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
                                 <svg width="22" height="18" viewBox="0 0 24 24" version="1.1">
                                     <path class=" fill-[#C7234B] group-hover:fill-white duration-450" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                 </svg>
                             </div>
                         </a>
-                        <a href="" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
-                            <div class="icon twitter relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
+                        <a href="<?php echo $footer_info ? $footer_info->instagram_url : ''; ?>" class="block group relative before:absolute before:left-[50%] before:top-[50%] before:translate-x-[-50%] before:translate-y-[-50%] before:w-[40px] before:h-[40px] before:rounded-full before:bg-[#0055A3] before:scale-75 before:opacity-0 before:duration-350 hover:before:scale-100 hover:before:opacity-100">
+                            <div class="icon instagram relative z-2 block leading-none duration-350 text-[#C7234B] group-hover:text-[#C7234B] group-hover:scale-110">
                                 <svg width="16" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
                                     <g>
                                         <path class=" fill-[#C7234B] group-hover:fill-white duration-450"d="M220.646,338.475C207.223,408.825,190.842,476.269,142.3,511.5
