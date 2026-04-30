@@ -17,7 +17,9 @@ $breadcrumbImage = $menu->image;
         <div class="container max-w-[1440px]">
             <div class="wrapper title-content flex justify-between py-[20px]" dir="">
                 <!-- TITLE -->
-                <div class="page-title text-[#656565] text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px] font-semibold leading-tight relative max-w-[768px] sm:max-w-none">{{$category->title}} </div>
+                <div class="page-title text-[#656565]  font-semibold leading-tight relative max-w-[768px] sm:max-w-none">
+                    <h1 class="text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px]">{{$category->title}}</h1>
+                </div>
                 <!-- NAVIGATION -->
                 <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
                     <li class="flex items-center">
@@ -113,7 +115,7 @@ $breadcrumbImage = $menu->image;
                                                 <span class="text-[#0055A3] font-light text-[20px] line-clamp-1">{{$category->title}}</span>
                                             </div>
                                             <div class="editor editor-base editor-h1:text-[34px] xl:editor-h1:text-[30px] lg:editor-h1:text-[28px] md:editor-h1:text-[26px] sm:editor-h1:text-[24px] xs:editor-h1:text-[22px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-2 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
-                                                <h1>{{$product->title}}</h1>
+                                                <h3 class="fake-h1">{{$product->title}}</h3>
                                             </div>
                                         </div>
                                         <div class="image-field relative sm:order-1">
