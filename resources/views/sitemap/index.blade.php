@@ -7,8 +7,7 @@
     <url>
         <loc>{{ url('/') }}</loc>
         <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
+        <priority>1</priority>
     </url>
 
     <!-- Dynamic Posts -->
@@ -33,8 +32,7 @@
         <url>
             <loc>{{ url('/' . $pageParam . $menu->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>0.9</priority>
+            <priority>1</priority>
         </url>
     <?php } ?>
     @endforeach
@@ -51,8 +49,7 @@
         <url>
             <loc>{{ url('/' . $pageParam . $blog->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>0.9</priority>
+            <priority>1</priority>
         </url>
     @endforeach
 
@@ -61,8 +58,7 @@
          <url>
             <loc>{{ url('/' . getUrl('project_url') . '/' . $project->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>0.9</priority>
+            <priority>1</priority>
         </url>
     @endforeach
 
@@ -71,8 +67,7 @@
          <url>
             <loc>{{ url('/' . $product->category->seo_url . '/' . $product->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>0.9</priority>
+            <priority>1</priority>
         </url>
     @endforeach
 
