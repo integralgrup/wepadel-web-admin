@@ -117,7 +117,7 @@ $breadcrumbImage = $menu->image;
                                             </div>
                                         </div>
                                         <div class="image-field relative sm:order-1">
-                                            <div class="image relative w-full h-[250px] md:h-[225px]  duration-450 overflow-hidden isolate opacity-100 group-hover/blog:opacity-0">
+                                            <div class="image relative w-full h-[250px] md:h-[225px]  duration-450 overflow-hidden isolate opacity-100">
                                                 <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()) .'/'. $product->gallery[0]->image}}" alt="" class="w-full h-full object-contain object-center duration-450">
                                             </div>
                                         </div>
