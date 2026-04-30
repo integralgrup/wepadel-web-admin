@@ -283,7 +283,7 @@
                             @foreach($menu as $item)
                                 @if($item->page_type == 'product_category')
                                     <li class="group/menu-item menu-item lg:relative main-menu-li back-bl">
-                                        <a href="javascript:;" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
+                                        <a href="{{env('HTTP_DOMAIN') . '/' . $item->seo_url}}" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
                                             <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">{{$item->title}}</span>
 
                                         </a>
@@ -328,7 +328,7 @@
                                     </li>
                                 @elseif($item->page_type == 'club')
                                     <li class="group/menu-item menu-item lg:relative main-menu-li back-bl mr-[480px] lg:!mr-0" style="margin-right: 350px;">
-                                        <a href="javascript:;" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
+                                        <a href="{{env('HTTP_DOMAIN') . '/' . $item->seo_url}}" class="flex items-center space-x-3 lg:py-4 lg:pl-[30px] lg:pr-20">
                                             <span class="text text-black group-hover/menu-item:text-[#C7234B] text-[18px] font-light group-hover/menu-item:font-bold transition-all lg:text-[18px] leading-tight duration-450">{{$item->title}}</span>
                                         </a>
                                         <div class="sub-trigger group/menu-icon absolute right-3 top-[11px] w-[30px] h-[30px] bg-primary justify-center items-center hidden lg:flex cursor-pointer rounded-default duration-450 ">
