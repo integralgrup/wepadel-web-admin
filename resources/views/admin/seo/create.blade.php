@@ -71,8 +71,8 @@
                                                 <option value="projects">Projeler</option>
                                                 <option value="news">Haberler</option>
                                                 <option value="contact">İletişim</option>
-                                                
-                                                <option value="contact">İletişim</option>
+                                                <option value="court">Padel Kortlar</option>
+                                                <option value="club">Padel Kulüpler</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
