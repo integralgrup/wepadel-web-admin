@@ -2,8 +2,8 @@
 
 @section('content')
 <?php 
-$pageName = $category->title;
-$breadcrumbTitle = $category->title;
+$pageName = $main_category->title;
+$breadcrumbTitle = $main_category->title;
 $breadcrumbType = "image";
 $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
 $breadcrumbImage = $menu->image;
@@ -18,7 +18,7 @@ $breadcrumbImage = $menu->image;
             <div class="wrapper title-content flex justify-between py-[20px]" dir="">
                 <!-- TITLE -->
                 <div class="page-title text-[#656565]  font-semibold leading-tight relative max-w-[768px] sm:max-w-none">
-                    <h1 class="text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px]">{{$category->title}}</h1>
+                    <h1 class="text-[30px] lg:text-[28px] md:text-[24px] sm:text-[22px] xs:text-[20px]">{{$main_category->title}}</h1>
                 </div>
                 <!-- NAVIGATION -->
                 <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
@@ -40,7 +40,7 @@ $breadcrumbImage = $menu->image;
                     </li>
                     <li class="flex items-center">
                         <a href="javascript:;" class="flex group">
-                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{$category->title}}</span>
+                            <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{$main_category->title}}</span>
                         </a>
                     </li>
                 </ul>

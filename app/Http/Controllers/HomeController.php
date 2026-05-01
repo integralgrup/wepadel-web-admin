@@ -186,10 +186,11 @@ class HomeController extends Controller
 
         if($menu->page_type == 'product_category') {
             if($slug2 == null) {
+                $main_category = ProductCategory::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->firstOrFail();
                 $categories = ProductCategory::where('lang', app()->getLocale())->where('parent_category_id', '!=', 0)->orderBy('sort', 'asc')->with('product')->get();
                 $seo = SeoSettings::where('page', 'products')->where('lang', app()->getLocale())->first();
                 
-                return view('product_category', compact('categories', 'menu', 'seo'));
+                return view('product_category', compact('categories', 'menu', 'seo', 'main_category'));
             }else{
                 $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
 
