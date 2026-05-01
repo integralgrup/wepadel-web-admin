@@ -17,6 +17,10 @@ function getPageName($page){
             return 'Kataloglar';
         case 'contact':
             return 'İletişim';
+        case 'court':
+            return 'Padel Kortlar';
+        case 'club':
+            return 'Padel Kulüpler';
         default:
             return 'Bilinmiyor';
     }
