@@ -182,28 +182,39 @@ class HomeController extends Controller
             return view('about', compact('about','blogs', 'how_we_do', 'what_we_do', 'certificates', 'about_slider', 'brands', 'seo'));
         }
 
+        dd($menu);
+
         if($menu->page_type == 'product_category') {
-            $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
-            // if $category is not null
-            if($category) {
-                
-                $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+            if($slug2 == null) {
                 $categories = ProductCategory::where('lang', app()->getLocale())->with('product')->get();
-                //dd($category);
-                $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $category->category_id])->with(['images', 'category'])->get();
-                //dd($products);
-                $seo = $category;
-                
-                return view('product_category', compact('category', 'categories', 'products', 'menu', 'seo'));
+                $seo = SeoSettings::where('page', 'products')->where('lang', app()->getLocale())->first();
+                return view('product_category', compact('categories', 'menu', 'seo'));
+            }else{
+                $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
 
-            } else {
+                // if $category is not null
+                if($category) {
+                    
+                    $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+                    $categories = ProductCategory::where('lang', app()->getLocale())->with('product')->get();
+                    //dd($category);
+                    $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $category->category_id])->with(['images', 'category'])->get();
+                    //dd($products);
+                    $seo = $category;
+                    
+                    return view('product_category', compact('category', 'categories', 'products', 'menu', 'seo'));
 
-                $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features','features2'])->firstOrFail();
-                
-                $seo = $product;
-                //dd($product);
-                return view('product', compact('product', 'seo'));
+                } else {
+
+                    $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'gallery', 'faqs', 'types', 'images', 'features','features2'])->firstOrFail();
+                    
+                    $seo = $product;
+                    //dd($product);
+                    return view('product', compact('product', 'seo'));
+                }
             }
+            
+            
         }
 
         if($menu->page_type == 'product') {
