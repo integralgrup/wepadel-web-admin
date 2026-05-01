@@ -182,12 +182,13 @@ class HomeController extends Controller
             return view('about', compact('about','blogs', 'how_we_do', 'what_we_do', 'certificates', 'about_slider', 'brands', 'seo'));
         }
 
-        dd($menu);
+        
 
         if($menu->page_type == 'product_category') {
             if($slug2 == null) {
                 $categories = ProductCategory::where('lang', app()->getLocale())->with('product')->get();
                 $seo = SeoSettings::where('page', 'products')->where('lang', app()->getLocale())->first();
+                dd($categories);
                 return view('product_category', compact('categories', 'menu', 'seo'));
             }else{
                 $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
