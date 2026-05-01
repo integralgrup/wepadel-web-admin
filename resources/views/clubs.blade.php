@@ -2,6 +2,11 @@
 
 @section('content')
     <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
+    <?php
+    $paneName = "Padel Clubs";
+    $breadcrumbType = "Görsel";
+    $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
+    ?>
     <main class="main-field ">
        <section class="breadcrumb relative header-space">
             <div class="image-field absolute top-0 left-0 w-full h-full overflow-hidden">
