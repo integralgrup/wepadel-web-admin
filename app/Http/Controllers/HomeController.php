@@ -188,23 +188,24 @@ class HomeController extends Controller
             if($slug2 == null) {
                 $main_category = ProductCategory::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->firstOrFail();
                 $categories = ProductCategory::where('lang', app()->getLocale())->where('parent_category_id', '!=', 0)->orderBy('sort', 'asc')->with('product')->get();
+                $products = Product::where(['lang' => app()->getLocale()])->with(['images', 'category'])->get();
                 $seo = SeoSettings::where('page', 'products')->where('lang', app()->getLocale())->first();
                 
-                return view('product_category', compact('categories', 'menu', 'seo', 'main_category'));
+                return view('product_category', compact('categories', 'menu', 'seo', 'main_category', 'products'));
             }else{
-                $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+                $main_category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
 
-                // if $category is not null
-                if($category) {
+                // if $main_category is not null
+                if($main_category) {
                     
-                    $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+                    $main_category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
                     $categories = ProductCategory::where('lang', app()->getLocale())->with('product')->get();
-                    //dd($category);
-                    $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $category->category_id])->with(['images', 'category'])->get();
+                    //dd($main_category);
+                    $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $main_category->category_id])->with(['images', 'category'])->get();
                     //dd($products);
-                    $seo = $category;
+                    $seo = $main_category;
                     
-                    return view('product_category', compact('category', 'categories', 'products', 'menu', 'seo'));
+                    return view('product_category', compact('main_category', 'categories', 'products', 'menu', 'seo'));
 
                 } else {
 
