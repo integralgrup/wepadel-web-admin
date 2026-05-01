@@ -65,7 +65,7 @@
                                         <div class="image-field relative sm:order-1">
                                             <a href="single-club.php">
                                                 <div class="image relative w-full h-[420px] md:h-[350px] xs:h-[300px] bg-[#D6D6D6] duration-450 overflow-hidden isolate image-zoom rounded-[20px]">
-                                                    <img src="../assets/image/other/club-1.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                    <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $club->image}}" alt="{{$club->alt}}" class="w-full h-full object-cover object-center duration-450">
                                                 </div>
                                             </a>
                                         </div>
@@ -77,12 +77,12 @@
                                             <div class="text-content">
                                                 <a href="single-club.php">
                                                     <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.1] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
-                                                        <h1>Padel Club <br> Essential</h1>
-                                                        <p>Padel Club Essential by Wepadel is one of the comprehensive padel clubs and includes many sports fields, locker rooms and social areas....</p>
+                                                        <h3 class="fake-h1">{{$club->title}}</h3>
+                                                        <p>{{ mb_substr($club->description_2, 0, 100) }}</p>
                                                     </div>
                                                 </a>
                                                 <div class="button-field relative mt-[30px]">
-                                                    <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
+                                                <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $club->pdf_file}}" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
                                                         <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                                             <div class="icon-download text-[18px] flex items-center text-[#0055A3] relative z-2 duration-450 group-hover:text-white group-hover:-translate-x-1"></div>
                                                         </div>
@@ -121,7 +121,7 @@
                                                 </div>
                                             </a>
                                             <div class="button-field relative mt-[30px]">
-                                                <a href="../assets/image/other/sample.pdf" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
+                                                <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $club->pdf_file}}" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
                                                     <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
                                                         <div class="icon-download text-[18px] flex items-center text-[#0055A3] relative z-2 duration-450 group-hover:text-white group-hover:-translate-x-1"></div>
                                                     </div>
@@ -133,7 +133,7 @@
                                     <div class="image-field relative sm:order-1">
                                         <a href="single-club.php">
                                             <div class="image relative w-full h-[420px] md:h-[350px] xs:h-[300px] bg-[#D6D6D6] duration-450 overflow-hidden isolate image-zoom rounded-[20px]">
-                                                <img src="../assets/image/other/club-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $club->image}}" alt="{{$club->alt}}" class="w-full h-full object-cover object-center duration-450">
                                             </div>
                                         </a>
                                     </div>
