@@ -281,6 +281,8 @@ class HomeController extends Controller
 
         }
 
+        dd($menu);
+
         if($menu->page_type == 'news') {
             
             if($slug2 != null) {
