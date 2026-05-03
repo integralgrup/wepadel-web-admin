@@ -287,8 +287,8 @@ class HomeController extends Controller
 
                 $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
                 
-                if($blog != null) {
-                    die('blog detail');
+                if($blog) {
+                    
                     // Get blog posts limit 5 as array
                     $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
                     //dd($blogs);
@@ -298,7 +298,7 @@ class HomeController extends Controller
                     //dd($blogSlider);
                     return view('blog-detail', compact('blog', 'blogs', 'blogSlider', 'seo'));
                 } else {
-                    die('blog list');
+                    
                     $menu = Menu::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->firstOrFail(); 
 
                     if($menu->page_type == 'blog') {
