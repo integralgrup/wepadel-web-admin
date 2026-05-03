@@ -300,7 +300,7 @@ class HomeController extends Controller
                     } 
                     
                     if($menu->page_type == 'company-news') {
-
+                        die('Company news page is under construction. Please check back later.');
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                         $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
                         //dd($blogs);
