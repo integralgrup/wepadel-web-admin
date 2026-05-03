@@ -286,11 +286,13 @@ class HomeController extends Controller
             
             if($slug2 != null) {
 
-                $menu = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
+                $menu_item = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
                 //dd($menu);
 
-                if($menu != null) {
-                    if($menu->page_type == 'blog') {
+                if($menu_item != null) {
+
+
+                    if($menu_item->page_type == 'blog') {
 
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                         $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();
@@ -299,8 +301,9 @@ class HomeController extends Controller
                         
                     } 
                     
-                    if($menu->page_type == 'company-news') {
-                        die('Company news page is under construction. Please check back later.');
+                    if($menu_item->page_type == 'company-news') {
+
+                        
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                         $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
                         //dd($blogs);
