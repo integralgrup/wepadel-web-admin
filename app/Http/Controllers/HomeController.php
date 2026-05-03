@@ -282,7 +282,6 @@ class HomeController extends Controller
         }
 
         if($menu->page_type == 'news') {
-            die('news');
             
             if($slug2 != null) {
 
