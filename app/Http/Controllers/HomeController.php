@@ -288,22 +288,7 @@ class HomeController extends Controller
 
                 $menu = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
 
-                dd($menu);
-                
-                if($blog) {
-                    
-                    // Get blog posts limit 5 as array
-                    $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
-                    //dd($blogs);
-                    
-                    $seo = $blog;
-                    $blogSlider = BlogSlider::where(['lang' => app()->getLocale(), 'blog_id' => $blog->blog_id])->get();
-                    //dd($blogSlider);
-                    return view('blog-detail', compact('blog', 'blogs', 'blogSlider', 'seo'));
-                } else {
-                    
-                    $menu = Menu::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->firstOrFail(); 
-
+                if($menu != null) {
                     if($menu->page_type == 'blog') {
 
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
@@ -321,7 +306,16 @@ class HomeController extends Controller
                         return view('blog', compact('blogs', 'seo'));
                         
                     }
-
+                } else{
+                    $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
+                    // Get blog posts limit 5 as array
+                    $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
+                    //dd($blogs);
+                    
+                    $seo = $blog;
+                    $blogSlider = BlogSlider::where(['lang' => app()->getLocale(), 'blog_id' => $blog->blog_id])->get();
+                    //dd($blogSlider);
+                    return view('blog-detail', compact('blog', 'blogs', 'blogSlider', 'seo'));
                 }
 
             }else{
