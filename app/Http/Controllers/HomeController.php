@@ -291,7 +291,7 @@ class HomeController extends Controller
 
                 if($menu_item != null) {
 
-                    dd($menu_item);
+                    //dd($menu_item);
 
                     if($menu_item->page_type == 'blog') {
 
@@ -302,7 +302,7 @@ class HomeController extends Controller
                         
                     } 
                     
-                    if($menu_item->page_type == 'company-news') {
+                    if($menu_item->page_type == 'news') {
 
                         
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
