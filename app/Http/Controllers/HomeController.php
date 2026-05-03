@@ -281,15 +281,14 @@ class HomeController extends Controller
 
         }
 
-        dd($menu);
 
         if($menu->page_type == 'news') {
             
             if($slug2 != null) {
 
-                $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
+                $menu = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
 
-                dd($blog);
+                dd($menu);
                 
                 if($blog) {
                     
