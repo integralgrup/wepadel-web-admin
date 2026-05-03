@@ -323,12 +323,7 @@ class HomeController extends Controller
             }else{
                 $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                 $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
-                $blog_menu = Menu::where([
-                function ($query) {
-                    $query->where('page_type', 'blog')
-                          ->orWhere('page_type', 'company-news');
-                },
-                'lang' => app()->getLocale()])->get();    
+                $blog_menu = Menu::where(['lang' => app()->getLocale(), 'page_type' => 'blog'])->orWhere(['lang' => app()->getLocale(), 'page_type' => 'company-news'])->get();   
                 dd($blog_menu);
                 return view('blog', compact('blogs', 'seo', 'blog_menu'));
             }
