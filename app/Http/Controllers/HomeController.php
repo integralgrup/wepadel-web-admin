@@ -286,6 +286,8 @@ class HomeController extends Controller
             if($slug2 != null) {
 
                 $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
+
+                dd($blog);
                 
                 if($blog) {
                     
