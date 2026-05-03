@@ -287,10 +287,12 @@ class HomeController extends Controller
             if($slug2 != null) {
 
                 $menu = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
-                dd($menu);
+                //dd($menu);
 
                 if($menu != null) {
                     if($menu->page_type == 'blog') {
+
+                        die('blog');
 
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                         $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();
