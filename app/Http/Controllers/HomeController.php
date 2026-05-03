@@ -304,6 +304,7 @@ class HomeController extends Controller
                     
                     if($menu_item->page_type == 'news') {
 
+                        dd($blog);
                         
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                         $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
@@ -312,7 +313,7 @@ class HomeController extends Controller
                         
                     }
                 } else{
-                    dd('Menu item not found for slug: ' . $slug2);
+                    
                     $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
                     // Get blog posts limit 5 as array
                     $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
