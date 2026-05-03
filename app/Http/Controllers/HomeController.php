@@ -281,23 +281,56 @@ class HomeController extends Controller
 
         }
 
-        if($menu->page_type == 'blog') {
+        if($menu->page_type == 'news') {
             
-            if($slug2!= null) {
-                
-                // Get blog posts limit 5 as array
-                $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
-                //dd($blogs);
+            if($slug2 != null) {
+
                 $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
-                $seo = $blog;
-                $blogSlider = BlogSlider::where(['lang' => app()->getLocale(), 'blog_id' => $blog->blog_id])->get();
-                //dd($blogSlider);
-                return view('blog-detail', compact('blog', 'blogs', 'blogSlider', 'seo'));
+                
+                if($blog != null) {
+                    // Get blog posts limit 5 as array
+                    $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
+                    //dd($blogs);
+                    
+                    $seo = $blog;
+                    $blogSlider = BlogSlider::where(['lang' => app()->getLocale(), 'blog_id' => $blog->blog_id])->get();
+                    //dd($blogSlider);
+                    return view('blog-detail', compact('blog', 'blogs', 'blogSlider', 'seo'));
+                } else {
+                    
+                    $menu = Menu::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->firstOrFail(); 
+
+                    if($menu->page_type == 'blog') {
+
+                        $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
+                        $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();
+                        //dd($blogs);
+                        return view('blog', compact('blogs', 'seo'));
+                        
+                    } 
+                    
+                    if($menu->page_type == 'company-news') {
+
+                        $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
+                        $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
+                        //dd($blogs);
+                        return view('blog', compact('blogs', 'seo'));
+                        
+                    }
+
+                }
+
             }else{
                 $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                 $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
-                //dd($blogs);
-                return view('blog', compact('blogs', 'seo'));
+                $blog_menu = Menu::where([
+                function ($query) {
+                    $query->where('page_type', 'blog')
+                          ->orWhere('page_type', 'company-news');
+                },
+                'lang' => app()->getLocale()])->get();    
+                dd($blog_menu);
+                return view('blog', compact('blogs', 'seo', 'blog_menu'));
             }
         }
 
