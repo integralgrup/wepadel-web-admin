@@ -26,7 +26,7 @@
                         <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">/</span>
                     </li>
                     <li class="flex items-center">
-                        <a href="javascript:;" class="flex group">
+                        <a href="{{env('HTTP_DOMAIN').'/'.getUrl('blog_url')}}" class="flex group">
                             <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(51)}}</span>
                         </a>
                     </li>
@@ -45,7 +45,7 @@
                     </div>
                     <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden mt-[20px]">
                         <li class="flex items-center">
-                            <a href="index.php" class="flex group">
+                            <a href="{{env('HTTP_DOMAIN')}}" class="flex group">
                                 <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(28)}}</span>
                             </a>
                         </li>
@@ -53,7 +53,7 @@
                             <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">/</span>
                         </li>
                         <li class="flex items-center">
-                            <a href="javascript:;" class="flex group">
+                            <a href="{{env('HTTP_DOMAIN').'/'.getUrl('blog_url')}}" class="flex group">
                                 <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-normal group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(51)}}</span>
                             </a>
                         </li>
