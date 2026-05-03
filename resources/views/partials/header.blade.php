@@ -1,4 +1,4 @@
-<?php dd($blog);  $nameofProject = 'Wepadel'; ?>
+<?php  $nameofProject = 'Wepadel'; ?>
 
 <!DOCTYPE html>
 <html lang="{{app()->getLocale()}}">
