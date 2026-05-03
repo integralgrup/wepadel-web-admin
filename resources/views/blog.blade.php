@@ -39,13 +39,13 @@
                     </div>
                     <div class="button-field flex flex-wrap justify-center gap-[10px]">
                         <!-- buttonlara active classı eklenince renk değişiyor -->
-                         <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
+                         <a href="" class="button active group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(49)}}</div>
                         </a>
-                        <a href="" class="button group active min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
+                        <a href="#news" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(47)}}</div>
                         </a>
-                        <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
+                        <a href="#blog" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(48)}}</div>
                         </a>
                         
@@ -88,7 +88,7 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                     </a>
                 </div>
                 @foreach($blogs as $blog)
-                <div class="media-box w-full h-full duration-450 hover:-translate-y-2">
+                <div class="media-box w-full h-full duration-450 hover:-translate-y-2 @if($blog->news == 1) news @else blog @endif">
                     <?php $blog->news == 1 ? $blogUrl = getUrl('news_url', app()->getLocale()) : $blogUrl = getUrl('blog_url', app()->getLocale()); ?>
                     <a href="<?= env('HTTP_DOMAIN') .'/'. $blogUrl .'/'. $blog->seo_url ?>" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
                         <div class="button-field absolute right-0 top-0 z-[1]">
