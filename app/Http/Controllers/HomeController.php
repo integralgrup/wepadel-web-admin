@@ -303,8 +303,6 @@ class HomeController extends Controller
                     } 
                     
                     if($menu_item->page_type == 'news') {
-
-                        dd($blog);
                         
                         $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                         $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
