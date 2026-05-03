@@ -11,7 +11,7 @@
                 <!-- NAVIGATION -->
                 <ul class="navigation flex-wrap gap-[10px] flex items-center sm:hidden">
                     <li class="flex items-center">
-                        <a href="index.php" class="flex group">
+                        <a href="{{env('HTTP_DOMAIN')}}" class="flex group">
                             <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(28)}}</span>
                         </a>
                     </li>
@@ -19,7 +19,7 @@
                         <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">/</span>
                     </li>
                     <li class="flex items-center">
-                        <a href="javascript:;" class="flex group">
+                        <a href="{{env('HTTP_DOMAIN').'/'.getUrl('blog_url')}}" class="flex group">
                             <span class="text text-[#656565] text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-[#0055A3] duration-450 leading-tight">{{getStaticText(51)}}</span>
                         </a>
                     </li>
@@ -39,15 +39,16 @@
                     </div>
                     <div class="button-field flex flex-wrap justify-center gap-[10px]">
                         <!-- buttonlara active classı eklenince renk değişiyor -->
+                         <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(49)}}</div>
+                        </a>
                         <a href="" class="button group active min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(47)}}</div>
                         </a>
                         <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(48)}}</div>
                         </a>
-                        <a href="" class="button group min-w-[160px] lg:min-w-[130px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center " dir="">
-                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(49)}}</div>
-                        </a>
+                        
                     </div>
                 </div>
                 <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full">
