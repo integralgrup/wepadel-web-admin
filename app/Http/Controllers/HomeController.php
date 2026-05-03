@@ -291,6 +291,7 @@ class HomeController extends Controller
 
                 if($menu_item != null) {
 
+                    dd($menu_item);
 
                     if($menu_item->page_type == 'blog') {
 
