@@ -170,7 +170,7 @@
                                 <div class="sub-menu min-w-[100px] md:mt-[15px] sm:min-w-fit absolute left-[50%] top-[calc(100%+12px)]  w-full opacity-0 translate-y-[10px] translate-x-[-50%] group-hover/language:opacity-100 duration-450 group-hover/language:translate-y-0 pointer-events-none before:content before:absolute before:left-[50%] before:translate-x-[-50%] before:-top-[50px] before:h-[50px] before:bg-transparent before:w-full before:duration-450 group-hover/language:before:-top-[45px] group-hover/language:before:height-[45px] z-[2] group-hover/language:pointer-events-auto">
                                     <div class="menu-content py-[8px] border border-solid overflow-hidden isolate bg-white">
                                         <ul class="">
-                                            <?php $languagesArray = App\Models\Language::all(); 
+                                            <?php dd($blog); $languagesArray = App\Models\Language::all(); 
                                                 // get URL segments
                                                 $segments = explode('/', url()->current());
                                                 //$lang = ['tr', 'en', 'ar', 'ru', 'es', 'fr'];
