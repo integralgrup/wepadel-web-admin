@@ -20,9 +20,17 @@
                                         <div class="gradient bg-black/30 absolute top-0 left-0 w-full h-full z-[2] pointer-events-none"></div>
                                         <!-- video örneği -->
                                         <div class="image h-full w-full" data-swiper-parallax="50%">
-                                            <div class="image h-full w-full">
-                                                <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="" class="h-full object-center object-cover w-full">
-                                            </div>
+                                            <?php //if file extension == 'mp4' || 'avi' || 'mov' then show video tag else show image tag ?>
+
+                                            @if(in_array(pathinfo($item->image, PATHINFO_EXTENSION), ['mp4', 'avi', 'mov']))
+                                                <video loading="lazy" autoplay="" playsinline="" loop="" muted="" class="w-full h-full object-center object-cover">
+                                                    <source src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}">
+                                                </video>
+                                            @else
+                                                <div class="image h-full w-full">
+                                                    <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="" class="h-full object-center object-cover w-full">
+                                                </div>
+                                            @endif
                                             <!-- <video loading="lazy" autoplay="" playsinline="" loop="" muted="" class="w-full h-full object-center object-cover">
                                                 <source src="../assets/image/other/tennis.mp4">
                                             </video> -->
