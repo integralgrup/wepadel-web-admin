@@ -44,13 +44,13 @@
                                                 <div class="px-[20px] mb-[40px] relative space-y-[15px] z-20 ">
                                                     <div class="text-wrapper">
                                                         <h3 class="title text-[60px] xs:text-[24px] sm:text-[26px] md:text-[30px] lg:text-[34px] xl:text-[40px] text-white font-bold leading-tight [&_strong]:text-black [&.active]:opacity-100 duration-300">
-                                                            {{ $item->title }}
+                                                            {!! $item->title !!}
                                                         </h3>
                                                     </div>
                                                     <div class="text-wrapper">
                                                         <div class="editor editor-xl md:editor-base sm:editor-sm editor-headings:text-white editor-p:text-white editor-headings:line-clamp-3 editor-p:text-[18px] editor-p:line-clamp-3 sm:editor-p:text-[16px] xs:editor-p:text-[18px]  editor-li:text-white [&>p:not(:first-child)]:hidden [&>p:first-child]:line-clamp-4 [&>p:first-child]:mb-0  [&.active]:opacity-100 max-w-none">
                                                             <p>
-                                                                {{ $item->description }}
+                                                                {!! $item->description !!}
                                                             </p>
                                                         </div>
                                                     </div>
