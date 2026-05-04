@@ -104,7 +104,7 @@ class HomeController extends Controller
         die('done');*/
 
         //dd($_SERVER['DOCUMENT_ROOT']);
-        $sliders = Slider::where('lang', app()->getLocale())->get();
+        $sliders = Slider::where('lang', app()->getLocale())->orderBy('sort', 'asc')->get();
         $languages = Language::all();
         $about = DB::table('about_home')->where('lang', app()->getLocale())->first();
         $about_sliders = DB::table('about_slider')->where('lang', app()->getLocale())->get();
