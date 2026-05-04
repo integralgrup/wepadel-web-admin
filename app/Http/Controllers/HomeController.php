@@ -284,53 +284,47 @@ class HomeController extends Controller
 
         if($menu->page_type == 'news') {
             
+            $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
+            $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
+            //dd($blogs);
+            return view('blog', compact('blogs', 'seo'));
+            
+        }
+
+        if($menu->page_type == 'company-news') {
             if($slug2 != null) {
 
-                $menu_item = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
-                //dd($menu);
-
-                if($menu_item != null) {
-
-                    //dd($menu_item);
-
-                    if($menu_item->page_type == 'blog') {
-
-                        $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
-                        $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();
-                        //dd($blogs);
-                        return view('blog', compact('blogs', 'seo'));
-                        
-                    } 
-                    
-                    if($menu_item->page_type == 'news') {
-                        
-                        $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
-                        $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
-                        //dd($blogs);
-                        return view('blog', compact('blogs', 'seo'));
-                        
-                    }
-                } else{
-                    
-                    $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
-                    // Get blog posts limit 5 as array
-                    $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
-                    //dd($blogs);
-                    
-                    $seo = $blog;
-                    $blogSlider = BlogSlider::where(['lang' => app()->getLocale(), 'blog_id' => $blog->blog_id])->get();
-                    //dd($blogSlider);
-                    return view('blog-detail', compact('blog', 'blogs', 'blogSlider', 'seo'));
-                }
-
-            }else{
                 $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                 $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
                 $blog_menu = Menu::where(['lang' => app()->getLocale(), 'parent_menu_id' => 174])->get();
                 //dd($blog_menu);
                 return view('blog', compact('blogs', 'seo', 'blog_menu'));
+            }else{
+                $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
+                $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
+                //dd($blogs);
+                return view('blog', compact('blogs', 'seo'));
+            }
+            
+        }
+
+        if($menu->page_type == 'blog') {
+            if($slug2 != null) {
+
+                $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
+                $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
+                $blog_menu = Menu::where(['lang' => app()->getLocale(), 'parent_menu_id' => 174])->get();
+                //dd($blog_menu);
+                return view('blog', compact('blogs', 'seo', 'blog_menu'));
+            }else{
+                $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
+                $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();
+                //dd($blogs);
+                return view('blog', compact('blogs', 'seo'));
             }
         }
+
+
 
 
         if($menu->page_type == 'contact') {
