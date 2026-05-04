@@ -298,7 +298,7 @@ class HomeController extends Controller
                 $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
                 $blog_menu = Menu::where(['lang' => app()->getLocale(), 'parent_menu_id' => 174])->get();
                 //dd($blog_menu);
-                return view('blog-detail', compact('blogs', 'seo', 'blog_menu'));
+                return view('blog-detail', compact('blog','blogs', 'seo', 'blog_menu'));
             }else{
                 $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                 $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 1])->orderBy('created_at', 'desc')->get();
@@ -316,7 +316,7 @@ class HomeController extends Controller
                 $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
                 $blog_menu = Menu::where(['lang' => app()->getLocale(), 'parent_menu_id' => 174])->get();
                 //dd($blog_menu);
-                return view('blog-detail', compact('blogs', 'seo', 'blog_menu'));
+                return view('blog-detail', compact('blog','blogs', 'seo', 'blog_menu'));
             }else{
                 $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                 $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();
