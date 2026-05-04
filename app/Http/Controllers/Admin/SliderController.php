@@ -50,7 +50,7 @@ class SliderController extends Controller
                         'description_' . $language->lang_code => 'nullable|max:255',
                         'button_text_' . $language->lang_code => 'nullable|max:255',
                         'button_url_' . $language->lang_code => 'nullable|max:255',
-                        'image_' . $language->lang_code => 'nullable|mimes:jpeg,png,jpg,gif,svg,webp,mp4,avi,mov|max:10000',
+                        'image_' . $language->lang_code => 'nullable|mimes:jpeg,png,jpg,gif,svg,webp,mp4,avi,mov|max:20000',
                         'alt_' . $language->lang_code => 'required|max:255',
                     ]);
                 }
