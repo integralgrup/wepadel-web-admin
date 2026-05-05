@@ -28,6 +28,7 @@
     {!! $code->microsoft_clarity_code !!}
     {!! $code->google_tag_manager_head_code !!}
 
+    <?php $footer_info = \App\Models\FooterInfo::where('lang', app()->getLocale())->first(); ?>
     <style>
         .fake-h1 {
             font-size: 40px !important;
@@ -66,15 +67,15 @@
                 <div class="contact-information flex justify-between flex-wrap gap-[20px] sm:justify-between">
                     <ul class="flex justify-end [&_li:last-child_.split]:hidden sm:justify-center gap-[40px] sm:gap-[20px] xs:gap-[15px]">
                         <li class="flex">
-                            <a href="#" class="group/link flex items-center justify-center space-x-3 sm:flex-col sm:space-x-0 sm:space-y-3">
+                            <a href="tel:<?php echo $footer_info ? $footer_info->phone : ''; ?>" class="group/link flex items-center justify-center space-x-3 sm:flex-col sm:space-x-0 sm:space-y-3">
                                 <div class="icon icon-phone text-white text-[16px] h-[16px] block leading-none duration-350"></div>
-                                <span class="text text-white text-[18px] md:text-[16px] xs:text-[14px] leading-tight duration-450 group-hover/link:translate-x-1 sm:text-[14px] sm:hidden"> +90 212 678 13 13</span>
+                                <span class="text text-white text-[18px] md:text-[16px] xs:text-[14px] leading-tight duration-450 group-hover/link:translate-x-1 sm:text-[14px] sm:hidden"> <?php echo $footer_info ? $footer_info->phone : ''; ?> </span>
                             </a>
                         </li>
                         <li class="flex">
-                            <a href="#" class="group/link flex items-center justify-center space-x-3 sm:flex-col sm:space-x-0 sm:space-y-3">
+                            <a href="mailto:<?php echo $footer_info ? $footer_info->email : ''; ?>" class="group/link flex items-center justify-center space-x-3 sm:flex-col sm:space-x-0 sm:space-y-3">
                                 <div class="icon icon-mail text-white text-[16px] h-[16px] block leading-none duration-350"></div>
-                                <span class="text text-white text-[18px] md:text-[16px] xs:text-[14px] leading-tight duration-450 group-hover/link:translate-x-1 sm:text-[14px] sm:hidden">info@wepadel.com.tr</span>
+                                <span class="text text-white text-[18px] md:text-[16px] xs:text-[14px] leading-tight duration-450 group-hover/link:translate-x-1 sm:text-[14px] sm:hidden"> <?php echo $footer_info ? $footer_info->email : ''; ?> </span>
                             </a>
                         </li>
 
@@ -82,7 +83,7 @@
                     <div class="right-info flex gap-[50px] sm:gap-[20px] xs:gap-[15px] xs:justify-between xs:w-max">
                         <ul class="flex justify-end items-center sm:justify-center gap-[35px] md:gap-[20px] xs:gap-[15px]">
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?php echo $footer_info ? $footer_info->facebook_url : ''; ?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon text-[20px] max-h-[20px] max-w-[20px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
                                         <svg width="100%" height="100%" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.47287 7.87504L7.8873 5.34161H5.29456V3.6972C5.27633 3.50765 5.30389 3.31668 5.37519 3.13849C5.44649 2.9603 5.5597 2.79946 5.7064 2.66793C5.8531 2.5364 6.02952 2.43756 6.22256 2.37874C6.41559 2.31993 6.62028 2.30266 6.82141 2.32822H8V0.171122C7.30692 0.0661728 6.60657 0.00897893 5.90457 0C3.76915 0 2.3739 1.21354 2.3739 3.40881V5.34161H0V7.87504H2.3739V14H5.29456V7.87504H7.47287Z" fill="white" />
@@ -91,7 +92,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?php echo $footer_info ? $footer_info->youtube_url : ''; ?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon text-[20px] max-h-[20px] max-w-[22px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
                                         <svg width="100%" height="100%" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.9919 2.53991C14.9082 2.2261 14.7437 1.9397 14.5148 1.7093C14.2859 1.47889 14.0006 1.31253 13.6873 1.22681C12.5371 0.916748 7.92338 0.916748 7.92338 0.916748C7.92338 0.916748 3.30965 0.916748 2.15943 1.22681C1.84616 1.31253 1.56085 1.47889 1.33195 1.7093C1.10305 1.9397 0.938563 2.2261 0.854894 2.53991C0.642236 3.71857 0.53892 4.91436 0.546264 6.11202C0.53892 7.30969 0.642236 8.50547 0.854894 9.68413C0.938932 9.99544 1.10391 10.2789 1.33304 10.5058C1.56218 10.7327 1.8473 10.8949 2.15943 10.9758C3.30965 11.2859 7.92338 11.2859 7.92338 11.2859C7.92338 11.2859 12.5371 11.2859 13.6873 10.9758C13.9995 10.8949 14.2846 10.7327 14.5137 10.5058C14.7429 10.2789 14.9078 9.99544 14.9919 9.68413C15.2045 8.50547 15.3078 7.30969 15.3005 6.11202C15.3078 4.91436 15.2045 3.71857 14.9919 2.53991ZM6.41452 8.30744V3.91732L10.2724 6.11131L6.41452 8.30458V8.30744Z" fill="white" />
@@ -101,7 +102,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?php echo $footer_info ? $footer_info->linkedin_url : ''; ?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon text-[20px] max-h-[20px] max-w-[20px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
                                         <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.564 13.0381H0.967789V4.67861H3.564V13.0381ZM2.26161 3.53839C1.96318 3.53923 1.67119 3.45164 1.4225 3.28667C1.17381 3.1217 0.979565 2.88676 0.864291 2.61149C0.749016 2.33622 0.717876 2.03297 0.774803 1.74002C0.831729 1.44707 0.97417 1.17755 1.18414 0.965482C1.39412 0.753416 1.66221 0.608311 1.95459 0.548483C2.24696 0.488656 2.5505 0.516788 2.8269 0.629328C3.1033 0.741869 3.34016 0.933773 3.50758 1.18082C3.67501 1.42786 3.76549 1.71896 3.76761 2.01739C3.76894 2.4186 3.61118 2.80397 3.32889 3.08907C3.0466 3.37417 2.66281 3.53575 2.26161 3.53839ZM13.2758 13.0402H10.6918V8.968C10.6918 7.99853 10.6725 6.75329 9.34224 6.75329C7.9927 6.75329 7.78552 7.80706 7.78552 8.89656V13.0359H5.19074V4.67861H7.67978V5.82168H7.71622C7.96523 5.39557 8.32519 5.04501 8.75774 4.80735C9.19028 4.56969 9.6792 4.45384 10.1724 4.47214C12.7993 4.47214 13.2823 6.20176 13.2823 8.44933V13.0409L13.2758 13.0402Z" fill="white" />
@@ -110,20 +111,8 @@
                                     </div>
                                 </a>
                             </li>
-                            
-                                        <!-- eski twitter logosu -->
-                            <!-- <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
-                                    <div class="icon text-[20px] max-h-[20px] max-w-[20px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
-                                        <svg width="100%" height="100%" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.9989 2.01835C15.4155 2.27642 14.797 2.44664 14.1636 2.52344C14.8314 2.12396 15.3311 1.49525 15.5696 0.754535C14.9426 1.12787 14.256 1.39033 13.5399 1.5304C13.1021 1.06177 12.5333 0.735785 11.9076 0.594886C11.282 0.453986 10.6284 0.504693 10.0319 0.740406C9.43546 0.976119 8.92378 1.38592 8.56346 1.91648C8.20315 2.44703 8.01088 3.07376 8.0117 3.7151C8.01038 3.96161 8.0382 4.2074 8.09457 4.44738C6.82319 4.38441 5.57937 4.05409 4.44426 3.47798C3.30916 2.90187 2.30826 2.09292 1.50689 1.10389C1.09766 1.80865 0.972559 2.64294 1.15707 3.43673C1.34158 4.23053 1.82182 4.92411 2.49994 5.37613C1.99045 5.36361 1.49178 5.22649 1.04752 4.97677V5.01606C1.0474 5.75444 1.30274 6.47011 1.77023 7.04165C2.23772 7.61318 2.88855 8.00537 3.61229 8.15166C3.33795 8.22609 3.05496 8.2638 2.7707 8.26382C2.56895 8.26422 2.36766 8.24435 2.16988 8.20453C2.37401 8.83997 2.77169 9.39571 3.30728 9.79397C3.84286 10.1922 4.48956 10.4131 5.15687 10.4257C4.02444 11.3144 2.62566 11.7959 1.18612 11.7924C0.931328 11.7919 0.67679 11.7764 0.423828 11.7459C1.87911 12.6932 3.57902 13.1957 5.31547 13.1919C6.51312 13.2005 7.70051 12.9709 8.80865 12.5165C9.91678 12.0621 10.9236 11.392 11.7704 10.5451C12.6173 9.69825 13.2874 8.69148 13.7418 7.58334C14.1962 6.47521 14.4258 5.28781 14.4172 4.09017C14.4172 3.95157 14.4172 3.81298 14.4072 3.67795C15.0322 3.22372 15.5712 2.66173 15.9989 2.01835Z" fill="white" />
-                                        </svg>
-
-                                    </div>
-                                </a>
-                            </li> -->
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?php echo $footer_info ? $footer_info->x_url : ''; ?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon text-[20px] max-h-[20px] max-w-[20px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
                                         <!-- yeni twitter logosu -->
                                         <svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1">
@@ -133,19 +122,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?php echo $footer_info ? $footer_info->instagram_url : ''; ?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon text-[20px] max-h-[20px] max-w-[20px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
                                         <!-- pinterest logosu -->
-                                        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
-                                            <g >
-                                                <path style="display: inline;" d="M220.646,338.475C207.223,408.825,190.842,476.269,142.3,511.5
-                                                    c-14.996-106.33,21.994-186.188,39.173-270.971c-29.293-49.292,3.518-148.498,65.285-124.059
-                                                    c76.001,30.066-65.809,183.279,29.38,202.417c99.405,19.974,139.989-172.476,78.359-235.054
-                                                    C265.434-6.539,95.253,81.775,116.175,211.161c5.09,31.626,37.765,41.22,13.062,84.884c-57.001-12.65-74.005-57.6-71.822-117.533
-                                                    c3.53-98.108,88.141-166.787,173.024-176.293c107.34-12.014,208.081,39.398,221.991,140.376
-                                                    c15.67,113.978-48.442,237.412-163.23,228.529C258.085,368.704,245.023,353.283,220.646,338.475z" fill="white">
-                                                </path>
-                                            </g>
+                                        <svg width="100%" height="100%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="1" y="1" width="48" height="48" rx="12" stroke="white" stroke-width="2"/>
+                                            <circle cx="25" cy="25" r="11" stroke="white" stroke-width="2"/>
+                                            <circle cx="38.5" cy="11.5" r="2.5" fill="white"/>
                                         </svg>
                                     </div>
                                 </a>
