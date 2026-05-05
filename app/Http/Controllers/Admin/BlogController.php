@@ -216,4 +216,40 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.slider.index', $id)->with('success', 'Slider başarıyla silindi.');
     }
 
+    public function uploadImage(Request $request)
+    {
+
+        //dd($request->all());
+       if (!$request->hasFile('upload')) {
+            return response()->json([
+                'uploaded' => 0,
+                'error' => ['message' => 'No file uploaded']
+            ]);
+        }
+
+        $file = $request->file('upload');
+
+        // Optional validation
+        $request->validate([
+            'upload' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ]);
+
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
+
+        // Move file to public/uploads/images/blog
+        $file->move(
+            public_path('uploads/images/blog'),
+            $fileName
+        );
+
+        $url = asset('uploads/images/blog/' . $fileName);
+
+        return response()->json([
+            'uploaded' => 1,
+            'url' => asset('uploads/images/blog/' . $fileName),
+        ]);
+
+
+    }
+
 }

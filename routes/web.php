@@ -319,6 +319,7 @@ Route::delete('/admin/code/{id}', 'App\Http\Controllers\Admin\CodeController@des
 
 
 Route::post('/admin/update-order', 'App\Http\Controllers\Admin\FooterInfoController@updateSortOrder')->name('admin.update_order');
+Route::post('upload-editor-image', 'App\Http\Controllers\Admin\BlogController@uploadImage')->name('admin.code.upload_editor_image');
 
 
 }); // End of Auth middleware group
