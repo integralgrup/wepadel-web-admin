@@ -20,7 +20,7 @@ class ProjectController extends Controller
     public function __construct()
     {
         $this->languages = Language::all();
-        $this->products = Product::all();
+        $this->products = Product::where('lang', 'en')->get();
         $this->countries = Country::where('lang', 'en')->get();
         view()->share('languages', $this->languages);
         view()->share('products', $this->products);
