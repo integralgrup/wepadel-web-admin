@@ -67,9 +67,9 @@
                                         </td>
                                         <td>
                                             <!-- Slider Yönetimi Butonları -->
-                                            <a href="{{ route('admin.blog.slider.index', $item->blog_id) }}" class="btn btn-info btn-sm">
+                                           <!-- <a href="{{ route('admin.blog.slider.index', $item->blog_id) }}" class="btn btn-info btn-sm">
                                                 <i class="bi bi-images"></i> Slider Yönetimi
-                                            </a>
+                                            </a>-->
                                             <a href="{{ route('admin.blog.edit', $item->blog_id) }}" class="btn btn-warning btn-sm">
                                                 <i class="bi bi-pencil"></i> Düzenle
                                             </a>
