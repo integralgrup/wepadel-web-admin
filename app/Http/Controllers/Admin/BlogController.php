@@ -54,6 +54,7 @@ class BlogController extends Controller
                     
                     $request->validate([
                         'title_' . $language->lang_code => 'required|max:100',
+                        'news_' . $language->lang_code => 'required|boolean',
                         'seo_url_' . $language->lang_code => 'required|max:255',
                         'description_' . $language->lang_code => 'required',
                         'image_' . $language->lang_code => 'nullable|image|max:2048', // Assuming image is optional
@@ -83,6 +84,7 @@ class BlogController extends Controller
                         'seo_title' => $request->input('seo_title_' . $language->lang_code) ?? $request->input('seo_title_en'),
                         'seo_description' => $request->input('seo_description_' . $language->lang_code) ?? $request->input('seo_description_en'),
                         'seo_keywords' => $request->input('seo_keywords_' . $language->lang_code) ?? $request->input('seo_keywords_en'),
+                        'news' => $request->input('news_en') ?? $request->input('news_' . $language->lang_code),
                     ]
                 );
 

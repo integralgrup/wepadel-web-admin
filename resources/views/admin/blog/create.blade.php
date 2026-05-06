@@ -84,7 +84,15 @@
                                                 <textarea class="form-control editor" id="description_{{ $language->lang_code }}" name="description_{{ $language->lang_code }}" rows="3" {{ $required }}></textarea>
                                             </div>
                                         </div>
-                                        <div class="grids-3">
+                                        <div class="grids-4">
+                                            <!-- is news selectbox --> 
+                                            <div class="mb-3">
+                                                <label for="news_{{ $language->lang_code }}" class="form-label">Haber Olarak İşaretle ({{ $language->lang_code }})</label>
+                                                <select class="form-select" id="news_{{ $language->lang_code }}" name="news_{{ $language->lang_code }}" {{ $required }}>
+                                                    <option value="0">Hayır</option>
+                                                    <option value="1">Evet</option>
+                                                </select>
+                                            </div>
                                             <!-- seo_title -->
                                             <div class="mb-3">
                                                 <label for="seo_title_{{ $language->lang_code }}" class="form-label">SEO Başlığı ({{ $language->lang_code }})</label>

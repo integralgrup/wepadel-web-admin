@@ -61,6 +61,7 @@
                             $seo_title[$blog->lang] = $blog->seo_title;
                             $seo_description[$blog->lang] = $blog->seo_description;
                             $seo_keywords[$blog->lang] = $blog->seo_keywords;
+                            $news[$blog->lang] = $blog->news;
                         }
                     ?>
                     <div class="card-body">
@@ -99,7 +100,15 @@
                                             <label for="description_{{ $language->lang_code }}">Açıklama ({{ strtoupper($language->lang_code) }})</label>
                                             <textarea class="form-control editor" id="description_{{ $language->lang_code }}" name="description_{{ $language->lang_code }}" rows="3" required>{{ $description[$language->lang_code] }}</textarea>
                                         </div>
-                                        <div class="grids-3 mt-3">
+                                        <div class="grids-4 mt-3">
+                                            <!-- is news selectbox -->
+                                            <div class="form-group">
+                                                <label for="news_{{ $language->lang_code }}">Haber Olarak İşaretle ({{ strtoupper($language->lang_code) }})</label>
+                                                <select class="form-select" id="news_{{ $language->lang_code }}" name="news_{{ $language->lang_code }}" required>
+                                                    <option value="0" {{ $news[$language->lang_code] == 0 ? 'selected' : '' }}>Hayır</option>
+                                                    <option value="1" {{ $news[$language->lang_code] == 1 ? 'selected' : '' }}>Evet</option>
+                                                </select>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="seo_title_{{ $language->lang_code }}">SEO Başlık ({{ strtoupper($language->lang_code) }})</label>
                                                 <input type="text" class="form-control seo_title" id="seo_title_{{ $language->lang_code }}" name="seo_title_{{ $language->lang_code }}" value="{{ $seo_title[$language->lang_code] }}">
