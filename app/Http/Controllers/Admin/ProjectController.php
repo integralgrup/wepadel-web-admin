@@ -132,10 +132,14 @@ class ProjectController extends Controller
    
 
     // Delete sector
-    public function destroy(Sector $sector)
+    public function destroy($id)
     {
-        $sector->delete();
-        return redirect()->route('admin.sector.index')->with('success', 'Sector deleted successfully!');
+
+        Project::where('project_id', $id)->delete();
+        ProjectGallery::where('project_id', $id)->delete();    
+
+
+        return redirect()->route('admin.project.index')->with('success', 'Project deleted successfully!');
     }
 
 
