@@ -225,19 +225,7 @@ $breadcrumbTitle = $product->title;
                 </div>
                 <div class="gradient duration-450 bg-gradient-to-r from-[#0055A3] from-25% to-[#005AA5]/60 absolute top-0 left-0 w-full h-[calc(100%-150px)] xl:h-full md:h-full z-[0] "></div>
                 <div class="container max-w-[1440px] relative z-[3]">
-                    <div class="text-field mt-[100px] mb-[200px] lg:mt-0 lg:mb-[100px] md:mb-[50px]" dir="">
-                        <div class="wrapper flex xs:flex-wrap justify-center gap-[50px] scrollreveal">
-                            <div class="image h-[125px] w-fit">
-                                <img loading="lazy" src="../assets/image/other/karekod.png" alt="" class="h-full object-center object-contain w-full">
-                            </div>
-                            <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:leading-[1.1] editor-headings:text-white xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-headings:text-[42px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:leading-tight editor-p:text-[#D9D9D9] editor-p:text-[26px] sm:editor-p:text-[22px] xs:editor-p:text-[20px]  editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px]
-                     [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px]  lg:max-w-full w-full">
-                                <h1>{{getStaticText(41)}}</h1>
-                                <p>Origin Discover Padel Court is covered with 10x20 meters of green artificial turf and surrounded by steel construction, glass panels, and steel mesh. It is mostly used outdoors.</p>
-                            </div>
-                        </div>
-
-                    </div>
+                    
                     <div class="wrapper grid grid-cols-[minmax(0,6fr)_minmax(0,7fr)] md:grid-cols-1 relative gap-[100px] lg:gap-[50px]">
                         <div class="project-detail relative xs:m-auto xs:w-full !h-[650px] xl:!h-[550px] lg:!h-[500px] md:!h-[400px] xs:!h-[350px] rounded-[30px] overflow-hidden isolate">
                             <!-- project-swiper'ın swiper-slide adedi kadar detail-box oluşturulmalıdır. -->
