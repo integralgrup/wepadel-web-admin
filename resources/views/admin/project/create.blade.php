@@ -107,7 +107,7 @@
                                             <!-- country select box --> 
                                             <div class="mb-3">
                                                 <label for="country_id_{{ $language->lang_code }}" class="form-label">Ülke ({{ $language->lang_code }})</label>
-                                                <select class="form-select" id="country_id_{{ $language->lang_code }}" name="country_id_{{ $language->lang_code }}">
+                                                <select class="form-select" id="country_id_{{ $language->lang_code }}" name="country_id_{{ $language->lang_code }}" {{ $required }} >
                                                     <option value="">Seçiniz</option>
                                                     @foreach($countries as $country)
                                                         <option value="{{ $country['country_id'] }}">{{ $country['title'] }}</option>
