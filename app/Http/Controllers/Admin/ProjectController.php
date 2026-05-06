@@ -29,7 +29,7 @@ class ProjectController extends Controller
     // Display a list of projects
     public function index()
     {
-        $projects = Project::where('lang', app()->getLocale())->get();
+        $projects = Project::where('lang', app()->getLocale())->orderBy('project_id', 'desc')->get();
         return view('admin.project.index', compact('projects'));
     }
 
