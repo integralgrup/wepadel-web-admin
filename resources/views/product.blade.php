@@ -163,7 +163,7 @@ $breadcrumbTitle = $product->title;
                                             {{getStaticText(31)}}</h1>
                                     </div>
                                     <div class="button-field w-full h-full">
-                                        <a href="" class="button group w-fit block ml-auto">
+                                        <a href="<?= env('HTTP_DOMAIN') .'/'. $product->category->seo_url ?>" class="button group w-fit block ml-auto">
                                             <div class="text-[20px] xs:text-[18px] font-light flex gap-[20px] justify-center items-center w-fit text-[#656565] hover:text-[#C7234B] duration-450 ">
                                                 <div class="icon-back text-[20px] lg:text-[18px] md:text-[16px] text-[#656565] group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                                 {{getStaticText(36)}}
