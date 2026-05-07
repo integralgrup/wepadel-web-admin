@@ -321,6 +321,13 @@ Route::delete('/admin/code/{id}', 'App\Http\Controllers\Admin\CodeController@des
 Route::post('/admin/update-order', 'App\Http\Controllers\Admin\FooterInfoController@updateSortOrder')->name('admin.update_order');
 Route::post('upload-editor-image', 'App\Http\Controllers\Admin\BlogController@uploadImage')->name('admin.code.upload_editor_image');
 
+// Certificate routes
+Route::get('/admin/certificate', 'App\Http\Controllers\Admin\CertificateController@index')->name('admin.certificate.index');
+Route::get('/admin/certificate/create', 'App\Http\Controllers\Admin\CertificateController@create')->name('admin.certificate.create');
+Route::post('/admin/certificate/store', 'App\Http\Controllers\Admin\CertificateController@store')->name('admin.certificate.store');
+Route::get('/admin/certificate/{id}/edit', 'App\Http\Controllers\Admin\CertificateController@edit')->name('admin.certificate.edit');
+Route::delete('/admin/certificate/{id}', 'App\Http\Controllers\Admin\CertificateController@destroy')->name('admin.certificate.destroy');
+
 
 }); // End of Auth middleware group
 //Project Front End routes

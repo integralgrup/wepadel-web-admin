@@ -92,9 +92,9 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('admin.brand') }}" class="nav-link">
+                    <a href="{{ route('admin.certificate.index') }}" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Markalar</p>
+                      <p>Sertifika Yönetimi</p>
                     </a>
                   </li>
                   <li class="nav-item">

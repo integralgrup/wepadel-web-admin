@@ -37,6 +37,7 @@ class Language extends Model
         'club_images_folder',
         'project_images_folder',
         'blog_images_folder',
+        'certificate_folder',
         'ga_code',
         'bitrix_form_code',
         'bitrix_widget_code',
