@@ -94,7 +94,7 @@
                   <li class="nav-item">
                     <a href="{{ route('admin.certificate.index') }}" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Sertifika Yönetimi</p>
+                      <p>Kort Sertifika Yönetimi</p>
                     </a>
                   </li>
                   <li class="nav-item">
