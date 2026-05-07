@@ -6,6 +6,7 @@ use App\Models\Menu; // or any model you want indexed
 use App\Models\Blog;
 use App\Models\Project;
 use App\Models\Product;
+use App\Models\Club;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller
@@ -20,11 +21,13 @@ class SitemapController extends Controller
 
         $products = Product::latest()->where('lang', app()->getLocale())->with('category')->get();
 
+        $clubs = Club::latest()->where('lang', app()->getLocale())->get();
+
 
         //dd($menus, $blogs, $projects, $products);
 
         return response()
-            ->view('sitemap.index', compact('menus', 'blogs', 'projects', 'products'))
+            ->view('sitemap.index', compact('menus', 'blogs', 'projects', 'products', 'clubs'))
             ->header('Content-Type', 'application/xml');
     }
 }

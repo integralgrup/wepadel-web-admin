@@ -18,7 +18,7 @@
         if($menu->page_type == 'blog'){ 
             
         } elseif($menu->page_type == 'about'){
-            $pageParam = getUrl('about_url') . '/';
+            
         } elseif($menu->page_type == 'product'){
             
         }  elseif($menu->page_type == 'project'){
@@ -28,7 +28,8 @@
         }
        
     ?>
-    <?php if($menu->page_type != 'blog' && $menu->page_type != 'product' && $menu->page_type != 'product_category'  && $menu->page_type != 'project'){ ?>
+    <?php if($menu->page_type != 'blog' && $menu->page_type != 'product' && 
+            $menu->page_type != 'product_category'  && $menu->page_type != 'project' && $menu->page_type != 'club'){ ?>
         <url>
             <loc>{{ url('/' . $pageParam . $menu->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
@@ -36,7 +37,7 @@
         </url>
     <?php } ?>
     @endforeach
-
+ 
     <!-- Dynamic Blogs -->
     @foreach ($blogs as $blog)
         <?php if($blog->news == 1){
@@ -66,6 +67,15 @@
     @foreach ($products as $product)
          <url>
             <loc>{{ url('/' . $product->category->seo_url . '/' . $product->seo_url) }}</loc>
+            <lastmod>{{ date('Y-m-d') }}</lastmod>
+            <priority>1</priority>
+        </url>
+    @endforeach
+
+    <!-- Dynamic Clubs -->
+    @foreach ($clubs as $club)
+         <url>
+            <loc>{{ url('/' . getUrl('club_url') . '/' . $club->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
