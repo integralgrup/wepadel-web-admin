@@ -53,7 +53,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Başlık</th>
-                                    <th>Görsel</th>
+                                    <th>PDF Dosyası</th>
                                     <th style="width: 350px;">İşlemler</th>
                                 </tr>
                             </thead>
@@ -63,7 +63,11 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>
-                                            <img src="{{ asset( getFolder(['uploads_folder', 'certificate_images_folder'] ) . '/' . $item->image) }}" alt="{{ $item->alt }}" class="img-thumbnail" width="100">
+                                            @if($item->pdf_file)
+                                                <a href="{{ env('HTTP_DOMAIN').'/'. getFolder(['certificate_folder'], $item->lang) . '/' . $item->pdf_file }}" target="_blank">PDF Dosyasını Görüntüle</a>
+                                            @else
+                                                PDF Dosyası Yok
+                                            @endif
                                         </td>
                                         <td>
                                             
