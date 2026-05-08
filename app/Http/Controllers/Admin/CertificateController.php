@@ -51,7 +51,7 @@ class CertificateController extends Controller
                     $request->validate([
                         'title_' . $language->lang_code => 'required|max:100',
                         'url_' . $language->lang_code => 'required|max:255',
-                        'pdf_file_' . $language->lang_code => 'required|mimes:pdf|max:2048',
+                        'pdf_file_' . $language->lang_code => 'nullable|mimes:pdf|max:2048',
                     ]);
                 }
                 // save image if it exists
