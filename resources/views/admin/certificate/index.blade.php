@@ -64,7 +64,9 @@
                                         <td>{{ $item->title }}</td>
                                         <td>
                                             @if($item->pdf_file)
-                                                <a href="{{ env('HTTP_DOMAIN').'/'. getFolder(['certificate_folder'], $item->lang) . '/' . $item->pdf_file }}" target="_blank">PDF Dosyasını Görüntüle</a>
+                                                <a href="{{ env('HTTP_DOMAIN').'/'. getFolder(['certificate_folder'], $item->lang) . '/' . $item->pdf_file }}" target="_blank">
+                                                    {{ env('HTTP_DOMAIN').'/'. getFolder(['certificate_folder'], $item->lang) . '/' . $item->pdf_file }}
+                                                </a>
                                             @else
                                                 PDF Dosyası Yok
                                             @endif
