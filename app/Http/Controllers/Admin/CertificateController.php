@@ -57,7 +57,7 @@ class CertificateController extends Controller
                 // save image if it exists
                 if ($request->hasFile('pdf_file_en') || $request->hasFile('pdf_file_' . $language->lang_code)) {
                     $tmpFilePath = createTmpFile($request, 'pdf_file_en', $languages[0]);
-                    $fileName = moveFile($request,$language,'pdf_file_' . $language->lang_code, 'pdf_file_en', 'title_' . $language->lang_code, 'title_en', $language->certificate_folder, $tmpFilePath);
+                    $fileName = moveFileCertificate($request,$language,'pdf_file_' . $language->lang_code, 'pdf_file_en', 'title_' . $language->lang_code, 'title_en', $language->certificate_folder, $tmpFilePath);
                     //dd($fileName);
                 }else{
                     $fileName = $request->input('old_pdf_file_' . $language->lang_code, null); // Use old PDF file if no new PDF file is uploaded

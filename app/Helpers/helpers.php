@@ -150,3 +150,24 @@ if(!function_exists('moveFile')) {
         return $imageName;
     }
 }
+
+if(!function_exists('moveFileCertificate')) {
+    function moveFile($request, $language, $fileName, $enFileName, $imgTitle, $enImgTitle, $folderName, $tmpImgPath = null)
+    {
+        $image = $request->file($fileName) ?? $request->file($enFileName);
+        $imageName = seoUrl($request->input($imgTitle) ?? $request->input($enImgTitle)) . '_' . time() . '.' . $image->getClientOriginalExtension();
+        $folderPath = $language->path.'/'.$folderName ;
+        $imgPath = $folderPath .'/'. $imageName;
+
+        if(!file_exists($folderPath)) {
+            mkdir($folderPath, 0755, true);
+        }
+
+        if(isset($tmpImgPath) && file_exists($tmpImgPath)) {
+            copy($tmpImgPath, $imgPath);
+        }else{
+            $image->move($folderPath, $imageName); // Move the image to the specified folder
+        }
+        return $imageName;
+    }
+}

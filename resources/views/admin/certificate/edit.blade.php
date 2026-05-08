@@ -80,7 +80,7 @@
                                             <label for="pdf_file_{{ $language->lang_code }}">PDF Dosyası ({{ strtoupper($language->lang_code) }})</label>
                                             <input type="file" class="form-control" id="pdf_file_{{ $language->lang_code }}" name="pdf_file_{{ $language->lang_code }}">
                                             @if($pdf_file[$language->lang_code])
-                                                <a href="{{ $language->domain.'/'. getFolder(['uploads_folder','certificate_folder'], $language->lang_code) . '/' . $pdf_file[$language->lang_code] }}" target="_blank">PDF Dosyasını Görüntüle</a>
+                                                <a href="{{ env('HTTP_DOMAIN').'/'. getFolder(['certificate_folder'], $language->lang_code) . '/' . $pdf_file[$language->lang_code] }}" target="_blank">PDF Dosyasını Görüntüle</a>
                                                 <input type="hidden" class="form-control" id="old_pdf_file_{{ $language->lang_code }}" name="old_pdf_file_{{ $language->lang_code }}" value="{{ $pdf_file[$language->lang_code] }}" readonly>
                                             @endif
                                         </div>
