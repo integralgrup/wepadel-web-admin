@@ -152,7 +152,7 @@ if(!function_exists('moveFile')) {
 }
 
 if(!function_exists('moveFileCertificate')) {
-    function moveFile($request, $language, $fileName, $enFileName, $imgTitle, $enImgTitle, $folderName, $tmpImgPath = null)
+    function moveFileCertificate($request, $language, $fileName, $enFileName, $imgTitle, $enImgTitle, $folderName, $tmpImgPath = null)
     {
         $image = $request->file($fileName) ?? $request->file($enFileName);
         $imageName = seoUrl($request->input($imgTitle) ?? $request->input($enImgTitle)) . '_' . time() . '.' . $image->getClientOriginalExtension();
