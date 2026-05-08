@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="url_{{ $language->lang_code }}">URL ({{ strtoupper($language->lang_code) }})</label>
-                                            <input type="text" class="form-control" id="url_{{ $language->lang_code }}" name="url_{{ $language->lang_code }}" value="{{ $url[$language->lang_code] }}" required>
+                                            <input type="text" class="form-control" id="url_{{ $language->lang_code }}" name="url_{{ $language->lang_code }}" value="{{ $url[$language->lang_code] }}" value="{{ env('HTTP_DOMAIN').'/'. getFolder(['certificate_folder'], $language->lang_code) . '/' . $pdf_file[$language->lang_code] }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="pdf_file_{{ $language->lang_code }}">PDF Dosyası ({{ strtoupper($language->lang_code) }})</label>
