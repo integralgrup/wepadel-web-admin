@@ -245,7 +245,7 @@ class HomeController extends Controller
             }
 
         }
-
+ 
         if($menu->page_type == 'project') {
 
             if($slug2 == null) {
