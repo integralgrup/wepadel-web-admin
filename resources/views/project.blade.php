@@ -83,13 +83,16 @@
                             <div class="thumbs-content max-w-[650px] px-[75px] m-auto mt-[30px] relative">
                                 <div class="swiper-container project-thumbs relative w-full mx-auto overflow-hidden h-[120px] box-border py-[10px]">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
-                                        @foreach($project->gallery as $image)
-                                            <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
-                                        @endforeach
-                                        @foreach($project->gallery as $image)
-                                            <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
-                                        @endforeach
+                                        <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}})"></div>
+                                        
+                                        @if($project->gallery->count() > 0)
+                                            @foreach($project->gallery as $image)
+                                                <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
+                                            @endforeach
+                                            @foreach($project->gallery as $image)
+                                                <div class="swiper-slide h-full opacity-[.5] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})"></div>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="controller flex gap-[15px] justify-between items-center w-full h-full absolute left-0 top-0 z-[2] pointer-events-none">
