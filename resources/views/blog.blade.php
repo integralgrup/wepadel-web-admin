@@ -88,8 +88,9 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                         </div>
                     </a>
                 </div>
-                @foreach($blogs as $blog)
-                <div class="media-box w-full h-full duration-450 hover:-translate-y-2 @if($blog->news == 1) news @else blog @endif">
+                @foreach($blogs as $key => $blog)
+                <?php $hidden_first = $key >= 12 ? 'hidden' : '';?>
+                <div class="media-box {{ $hidden_first }} w-full h-full duration-450 hover:-translate-y-2 @if($blog->news == 1) news @else blog @endif">
                     <?php $blog->news == 1 ? $blogUrl = getUrl('news_url', app()->getLocale()) : $blogUrl = getUrl('blog_url', app()->getLocale()); ?>
                     <a href="<?= env('HTTP_DOMAIN') .'/'. $blogUrl .'/'. $blog->seo_url ?>" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
                         <div class="button-field absolute right-0 top-0 z-[1]">
@@ -118,7 +119,7 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                 @endforeach
             </div>
             <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
-                <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                <a href="javascript:;" class="remove_hidden_class button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                     <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">More</div>
                 </a>
             </div>
@@ -126,3 +127,14 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
     </section>
 </main>
 @endsection 
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $('.remove_hidden_class').click(function(){
+            $('.media-box.hidden').removeClass('hidden');
+            $(this).addClass('hidden');
+        });
+    });
+</script>
+@endsection
