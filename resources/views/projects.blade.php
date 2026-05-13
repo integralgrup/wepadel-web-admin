@@ -111,8 +111,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
             </div>
             <div class="wrapper mt-[50px] mb-[50px] space-y-[50px]" dir="">
                 @foreach($projects as $key => $project)
-                <?php $hidden_first = $key >= 12 ? 'hidden' : '';?>
-                <div class="{{ $hidden_first }} project-box w-full h-full duration-450 hover:-translate-y-2">
+                <div class="project-box w-full h-full duration-450 hover:-translate-y-2">
                     <a href="{{ env('HTTP_DOMAIN') .'/'. getUrl('project_url') . '/' . $project->seo_url }}" class="content group/blog flex relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 p-[3px] rounded-[30px] overflow-hidden isolate">
                         <div class="gradient duration-450 bg-gradient-to-b from-[#005AA5] to-[#C7234B] rounded-[30px] absolute top-0 left-0 w-full h-full z-[0] opacity-0 group-hover/blog:opacity-100"></div>
                         <div class="button-field absolute right-0 top-0 z-[1]">
@@ -164,7 +163,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                 
             </div>
             <div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
-                <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] w-fit h-[50px] px-[30px] bg-[#0055A3] relative flex justify-center space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                <a href="javascript:;" class="remove_hidden_class button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] w-fit h-[50px] px-[30px] bg-[#0055A3] relative flex justify-center space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                     <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">More</div>
                 </a>
             </div>
