@@ -128,7 +128,7 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
 </main>
 @endsection 
 
-@section('scripts')
+@section('script')
 <script>
     $(document).ready(function(){
         $('.remove_hidden_class').click(function(){
