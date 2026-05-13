@@ -60,19 +60,24 @@
                         <div class="project-content-swiper ">
                             <div class="swiper-container project-top relative w-full mx-auto overflow-hidden h-[525px] lg:h-[450px] md:h-[400px] xs:h-[350px] rounded-[20px] ">
                                 <div class="swiper-wrapper">
-                                    
-                                    @foreach($project->gallery as $image)
-                                        <div class="swiper-slide rounded-[20px] bg-cover bg-center relative image-zoom !duration-450 hover:!scale-110 overflow-hidden isolate" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})">
-                                            <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}}" class="absolute flex items-center w-full h-full z-[5]" data-fancybox="gallery">
-                                            </a>
-                                        </div>
-                                    @endforeach
-                                    @foreach($project->gallery as $image)
-                                        <div class="swiper-slide rounded-[20px] bg-cover bg-center relative image-zoom !duration-450 hover:!scale-110 overflow-hidden isolate" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})">
-                                            <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}}" class="absolute flex items-center w-full h-full z-[5]" data-fancybox="gallery">
-                                            </a>
-                                        </div>
-                                    @endforeach
+                                    <div class="swiper-slide rounded-[20px] bg-cover bg-center relative image-zoom !duration-450 hover:!scale-110 overflow-hidden isolate" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}})">
+                                        <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}}" class="absolute flex items-center w-full h-full z-[5]" data-fancybox="gallery">
+                                        </a>
+                                    </div>
+                                    @if($project->gallery->count() > 0)
+                                        @foreach($project->gallery as $image)
+                                            <div class="swiper-slide rounded-[20px] bg-cover bg-center relative image-zoom !duration-450 hover:!scale-110 overflow-hidden isolate" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})">
+                                                <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}}" class="absolute flex items-center w-full h-full z-[5]" data-fancybox="gallery">
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                        @foreach($project->gallery as $image)
+                                            <div class="swiper-slide rounded-[20px] bg-cover bg-center relative image-zoom !duration-450 hover:!scale-110 overflow-hidden isolate" style="background-image:url({{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}})">
+                                                <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$image->image}}" class="absolute flex items-center w-full h-full z-[5]" data-fancybox="gallery">
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <div class="thumbs-content max-w-[650px] px-[75px] m-auto mt-[30px] relative">
