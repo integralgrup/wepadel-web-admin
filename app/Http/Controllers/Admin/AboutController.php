@@ -69,6 +69,9 @@ class AboutController extends Controller
                             'description_' . $language->lang_code => 'required|string',
                             'image_' . $language->lang_code => 'nullable|image|max:2048',
                             'alt_' . $language->lang_code => 'required|string|max:255',
+                            'country_' . $language->lang_code => 'required|integer|max:255',
+                            'customer_' . $language->lang_code => 'required|integer|max:255',
+                            'project_' . $language->lang_code => 'required|integer|max:255',
                             'mission_title_' . $language->lang_code => 'required|string|max:255',
                             'mission_text_' . $language->lang_code => 'required|string',
                             'mission_image_' . $language->lang_code => 'nullable|image|max:2048',
@@ -123,6 +126,9 @@ class AboutController extends Controller
                             'image' => $imageName, // save relative path
                             'pdf_file' => $pdfName,
                             'alt' => $request->input('alt_' . $language->lang_code) ?: $request->input('alt_en'),
+                            'country' => $request->input('country_' . $language->lang_code) ?: $request->input('country_en'),
+                            'customer' => $request->input('customer_' . $language->lang_code) ?: $request->input('customer_en'),
+                            'project' => $request->input('project_' . $language->lang_code) ?: $request->input('project_en'),
                             'mission_title' => $request->input('mission_title_' . $language->lang_code) ?: $request->input('mission_title_en'),
                             'mission_text' => $request->input('mission_text_' . $language->lang_code) ?: $request->input('mission_text_en'),
                             'mission_image' => $missionImageName, // save relative path

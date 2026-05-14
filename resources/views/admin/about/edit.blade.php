@@ -103,6 +103,20 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        <div class="grids-3">
+                                            <div class="mb-3">
+                                                <label for="country_{{ $about->lang }}" class="form-label">Ülke Sayısı ({{ $about->lang }})</label>
+                                                <input type="number" class="form-control" id="country_{{ $about->lang }}" name="country_{{ $about->lang }}" value="{{ $about->country }}" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="customer_{{ $about->lang }}" class="form-label">Müşteri Sayısı ({{ $about->lang }})</label>
+                                                <input type="number" class="form-control" id="customer_{{ $about->lang }}" name="customer_{{ $about->lang }}" value="{{ $about->customer }}" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="project_{{ $about->lang }}" class="form-label">Proje Sayısı ({{ $about->lang }})</label>
+                                                <input type="number" class="form-control" id="project_{{ $about->lang }}" name="project_{{ $about->lang }}" value="{{ $about->project }}" >
+                                            </div>
+                                        </div>
                                         <div class="grids-2">
                                             <div class="mb-3">
                                                 <label for="mission_title_{{ $about->lang }}" class="form-label">Misyon Başlığı ({{ $about->lang }})</label>

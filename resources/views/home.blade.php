@@ -107,7 +107,7 @@
                         </div>
                         <div class="text-field absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
                             <div class="counter-effect flex items-center">
-                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">100</div>
+                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">{{$about->project}}</div>
                                 <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
                             </div>
                             <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getStaticText(1)}}</p>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="text-field absolute top-[50%] left-[40%] translate-x-[-50%] translate-y-[-50%]">
                             <div class="counter-effect flex items-center">
-                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">80</div>
+                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">{{$about->customer}}</div>
                                 <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
                             </div>
                             <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getStaticText(2)}}</p>
@@ -129,7 +129,7 @@
                         </div>
                         <div class="text-field absolute top-[50%] left-[40%] translate-x-[-50%] translate-y-[-50%]">
                             <div class="counter-effect flex items-center">
-                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">20</div>
+                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">{{$about->country}}</div>
                                 <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
                             </div>
                             <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getStaticText(59)}}</p>
@@ -174,12 +174,12 @@
                     <div class="icon icon-arrow-down text-[35px] h-[35px] sm:text-[16px] sm:h-[16px] sm:-top-[30px] block leading-none duration-350 text-[#C7234B] absolute -top-[50px] -left-[30px] sm:left-0"></div>
                     <div class="editor editor-lg md:editor-sm editor-headings:font-bold editor-headings:text-[#005AA5] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-headings:text-[42px] xl:editor-headings:text-[40px] lg:editor-headings:text-[34px] md:editor-headings:text-[30px] sm:editor-headings:text-[26px] xs:editor-headings:text-[24px] editor-p:leading-tight editor-p:text-[#231F20]/60 editor-p:text-[26px] sm:editor-p:text-[22px] xs:editor-p:text-[20px]  editor-li:text-[#231F20]/40 editor-li:font-medium editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px]
                      [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] m-auto lg:max-w-full w-full md:[&_br]:hidden">
-                        <h1>{!!$about->title!!}</h1>
-                        <p>{!!$about->description!!}</p>
+                        <h1>{!!$about_home->title!!}</h1>
+                        <p>{!!$about_home->description!!}</p>
                     </div>
                     <div class="button-field flex flex-wrap gap-[25px] mt-[50px]">
-                        <a href="{{$about->button_url}}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{$about->button_text}}</div>
+                        <a href="{{$about_home->button_url}}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{$about_home->button_text}}</div>
                         </a>
                     </div>
                 </div>

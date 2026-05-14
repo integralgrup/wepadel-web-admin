@@ -105,7 +105,8 @@ class HomeController extends Controller
         //dd($_SERVER['DOCUMENT_ROOT']);
         $sliders = Slider::where('lang', app()->getLocale())->orderBy('sort', 'asc')->get();
         $languages = Language::all();
-        $about = DB::table('about_home')->where('lang', app()->getLocale())->first();
+        $about = About::where('lang', app()->getLocale())->first();
+        $about_home = DB::table('about_home')->where('lang', app()->getLocale())->first();
         $about_sliders = DB::table('about_slider')->where('lang', app()->getLocale())->get();
         $about_certificates = DB::table('about_certificates')->where('lang', app()->getLocale())->get();
         $products = // Get products with related category
@@ -141,7 +142,7 @@ class HomeController extends Controller
 
         $seo = SeoSettings::where('page', 'home')->where('lang', app()->getLocale())->first();
 
-        return view('home', compact('sliders', 'languages', 'about', 'about_sliders', 'about_certificates', 'categories', 'products', 'clubs', 'countries', 'continents', 'projects', 'blogs', 'seo'));
+        return view('home', compact('sliders', 'languages', 'about', 'about_home', 'about_sliders', 'about_certificates', 'categories', 'products', 'clubs', 'countries', 'continents', 'projects', 'blogs', 'seo'));
     }
 
     public function route($slug, $slug2 = null)

@@ -162,10 +162,10 @@ $breadcrumbImage = $about->image;
                             </div>
                             <div class="text-field absolute top-[50%] left-[50%] translate-x-[-40%] translate-y-[-50%] w-full">
                                 <div class="counter-effect flex items-center justify-center">
-                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">100</div>
+                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">{{$about->project}}</div>
                                     <span class="text-[44px] lg:text-[34px] sm:text-[30px] xs:text-[24px] leading-[1.2] text-[#0055A3] group-hover/icon:text-white duration-450 font-semibold">+</span>
                                 </div>
-                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">Customer</p>
+                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">{{getStaticText(1)}}</p>
                             </div>
                         </div>
                         <div class="icons h-fit relative group/icon z-[1] w-fit md:!mx-auto opacity-50 hover:opacity-100 duration-450 ">
@@ -175,10 +175,10 @@ $breadcrumbImage = $about->image;
                             </div>
                             <div class="text-field absolute top-[50%] left-[50%] translate-x-[-60%] translate-y-[-50%] w-full">
                                 <div class="counter-effect flex items-center justify-center">
-                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">1200</div>
+                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">{{$about->customer}}</div>
                                     <span class="text-[44px] lg:text-[34px] sm:text-[30px] xs:text-[24px] leading-[1.2] text-[#0055A3] group-hover/icon:text-white duration-450 font-semibold">+</span>
                                 </div>
-                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">Customer</p>
+                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">{{getStaticText(2)}}</p>
                             </div>
                         </div>
                         <div class="icons h-fit relative group/icon z-[1] w-fit md:!mx-auto opacity-50 hover:opacity-100 duration-450 ">
@@ -188,23 +188,10 @@ $breadcrumbImage = $about->image;
                             </div>
                             <div class="text-field absolute top-[50%] left-[50%] translate-x-[-40%] translate-y-[-50%] w-full">
                                 <div class="counter-effect flex items-center justify-center">
-                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">100</div>
+                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">{{$about->country}}</div>
                                     <span class="text-[44px] lg:text-[34px] sm:text-[30px] xs:text-[24px] leading-[1.2] text-[#0055A3] group-hover/icon:text-white duration-450 font-semibold">+</span>
                                 </div>
-                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">Customer</p>
-                            </div>
-                        </div>
-                        <div class="icons h-fit relative group/icon z-[1] w-fit md:!mx-auto opacity-50 hover:opacity-100 duration-450 ">
-                            <div class="icon icon-arrow-right-str w-[260px] text-[250px] h-[260px] sm:w-[210px] sm:text-[200px] sm:h-[210px] xs:w-[145px] xs:text-[140px] xs:h-[145px] md:w-full block leading-none text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] from-25%  to-[#0055A3]/100 opacity-100 group-hover/icon:opacity-0 duration-450">
-                            </div>
-                            <div class="icon absolute top-0 left-0 icon-arrow-right w-[260px] text-[250px] h-[260px] sm:w-[210px] sm:text-[200px] sm:h-[210px] xs:w-[145px] xs:text-[140px] xs:h-[145px] md:w-full block leading-none text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] from-25%  to-[#0055A3]/0 opacity-0 group-hover/icon:opacity-100 duration-450">
-                            </div>
-                            <div class="text-field absolute top-[50%] left-[50%] translate-x-[-60%] translate-y-[-50%] w-full">
-                                <div class="counter-effect flex items-center justify-center">
-                                    <div class="value overflow-hidden text-[44px] lg:text-[34px] xs:text-[24px] leading-[1.2] font-semibold text-[#0055A3] group-hover/icon:text-white duration-450 h-[50px] sm:h-[40px] xs:h-[26px] px-[5px]">1200</div>
-                                    <span class="text-[44px] lg:text-[34px] sm:text-[30px] xs:text-[24px] leading-[1.2] text-[#0055A3] group-hover/icon:text-white duration-450 font-semibold">+</span>
-                                </div>
-                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">Customer</p>
+                                <p class="text-[18px] xs:text-[14px] text-[#0055A3] group-hover/icon:text-white duration-450 font-medium !leading-6 text-center" dir="">{{getStaticText(59)}}</p>
                             </div>
                         </div>
 
