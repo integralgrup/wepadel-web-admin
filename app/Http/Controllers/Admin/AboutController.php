@@ -173,6 +173,7 @@ class AboutController extends Controller
         return view('admin.about.how_we_do.index', compact('languages','how_we_do'));
     }
 
+
     public function howWeDoCreate()
     {
         $languages = Language::all(); // Fetch all languages for the dropdown
@@ -386,19 +387,19 @@ class AboutController extends Controller
                         'image_' . $language->lang_code => 'nullable|image|max:2048',
                         'pdf_' . $language->lang_code => 'nullable|mimes:pdf|max:15120', // max 15MB
                         'alt_' . $language->lang_code => 'required|string|max:255',
-                ]);
-            }
+                    ]);
+                }
 
-                if ($request->hasFile('image_' . $language->lang_code) || $request->hasFile('image_en')) {
-                    $tmpImgPath = createTmpFile($request, 'image_' . $language->lang_code, $languages[0]);
-                    $imageName = moveFile($request, $language, 'image_' . $language->lang_code, 'image_en', 'alt_' . $language->lang_code, 'alt_en', $language->images_folder, $tmpImgPath);
-
-                } else {
+                if ($request->hasFile('image_en') || $request->hasFile('image_' . $language->lang_code)) {
+                    $tmpImgPath = createTmpFile($request, 'image_en', $languages[0]);
+                    $imageName = moveFile($request,$language,'image_' . $language->lang_code, 'image_en', 'alt_' . $language->lang_code, 'alt_en', $language->images_folder, $tmpImgPath);
+                    //dd($imageName);
+                }else{
                     $imageName = $request->input('old_image_' . $language->lang_code, null); // Use old image if no new image is uploaded
                 }
 
-                if ($request->hasFile('pdf_' . $language->lang_code) || $request->hasFile('pdf_en')) {
-                    $tmpPdfPath = createTmpFile($request, 'pdf_' . $language->lang_code, $languages[0]);
+                if ($request->hasFile('pdf_en') || $request->hasFile('pdf_' . $language->lang_code)) {
+                    $tmpPdfPath = createTmpFile($request, 'pdf_en', $languages[0]);
                     $pdfName = moveFile($request, $language, 'pdf_' . $language->lang_code, 'pdf_en', 'alt_' . $language->lang_code, 'alt_en', $language->images_folder, $tmpPdfPath);
 
                 } else {

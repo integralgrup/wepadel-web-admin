@@ -71,7 +71,7 @@
                                             <a href="{{ route('admin.about.certificates.edit', $item->content_id) }}" class="btn btn-warning btn-sm">
                                                 <i class="bi bi-pencil"></i> Düzenle
                                             </a>
-                                            <form action="{{ route('admin.about.certificates.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                            <form action="{{ route('admin.about.certificates.destroy', $item->content_id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bu içeriği silmek istediğinize emin misiniz?')">
