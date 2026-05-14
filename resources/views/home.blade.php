@@ -113,7 +113,7 @@
                             <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getStaticText(1)}}</p>
                         </div>
                     </div>
-                    <div class="icons absolute right-[40px] -top-[40px] md:top-[90px] md:right-0 xs:-right-[25px] xs:top-[170px] translate-y-[-50%] pointer-events-none z-[1]">
+                    <div style="right:200px;" class="icons absolute right-[40px] -top-[40px] md:top-[90px] md:right-0 xs:-right-[25px] xs:top-[170px] translate-y-[-50%] pointer-events-none z-[1]">
                         <div class="icon icon-arrow-right w-[210px] text-[200px] h-[210px] md:w-[180px] md:h-[180px] md:text-[170px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3]/0 opacity-80">
                         </div>
                         <div class="text-field absolute top-[50%] left-[40%] translate-x-[-50%] translate-y-[-50%]">
@@ -122,6 +122,17 @@
                                 <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
                             </div>
                             <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getStaticText(2)}}</p>
+                        </div>
+                    </div>
+                    <div style="right:20px; top:200px;" class="icons absolute right-[60px] -top-[160px] md:top-[90px] md:right-0 xs:-right-[25px] xs:top-[170px] translate-y-[-50%] pointer-events-none z-[1]">
+                        <div class="icon icon-arrow-right w-[210px] text-[200px] h-[210px] md:w-[180px] md:h-[180px] md:text-[170px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3]/0 opacity-80">
+                        </div>
+                        <div class="text-field absolute top-[50%] left-[40%] translate-x-[-50%] translate-y-[-50%]">
+                            <div class="counter-effect flex items-center">
+                                <div class="value overflow-hidden text-[44px] lg:text-[34px] leading-[1.2] font-semibold text-white">20</div>
+                                <span class="text-[44px] lg:text-[34px] sm:text-[30px] leading-[1.2] text-white font-semibold">+</span>
+                            </div>
+                            <p class="text-[18px] text-white font-medium !leading-6 text-center">{{getStaticText(59)}}</p>
                         </div>
                     </div>
                     <div class=" max-w-[700px] mx-auto h-[620px] md:h-[500px] sm:mt-[150px] w-full z-0">
