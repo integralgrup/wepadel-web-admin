@@ -55,7 +55,6 @@ class HomeController extends Controller
 
     public function index()
     {
-
         /*$projects = Project::where('lang', 'ru')
         ->select(['id','project_id', 'title_1', 'lang', 'image', 'country_id'])
         ->with(['gallery', 'country', 'country.continent'])->get();
@@ -313,9 +312,9 @@ class HomeController extends Controller
                 $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
                 $seo = $blog;
                 $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
-                
+                $is_blog = 1;
                 //dd($blog_menu);
-                return view('blog-detail', compact('blog','blogs', 'seo'));
+                return view('blog-detail', compact('blog','blogs', 'seo', 'is_blog'));
             }else{
                 $seo = SeoSettings::where('page', 'news')->where('lang', app()->getLocale())->first();
                 $blogs = Blog::where(['lang' => app()->getLocale(), 'news' => 0])->orderBy('created_at', 'desc')->get();

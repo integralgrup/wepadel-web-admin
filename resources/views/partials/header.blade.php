@@ -2,18 +2,17 @@
 
 <!DOCTYPE html>
 <html lang="{{app()->getLocale()}}">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @if(isset($seo))
     
-        <meta name="keywords" content="{{ $seo->seo_keywords }}">
-        <meta name="description" content="{{ $seo->seo_description }}">
+        <meta name="keywords" content="{{ $seo->seo_keywords }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
+        <meta name="description" content="{{ $seo->seo_description }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
         <?php $pageTitle = $seo->seo_title;?>
     @endif
-    <title><?php if (!empty($pageTitle)) echo $pageTitle; ?></title>
+    <title><?php if (!empty($pageTitle)) echo $pageTitle; ?><?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?></title>
     <link rel="shortcut icon" href="../assets/image/trademark/favicon.png" type="image/x-icon">
     <!-- Önbellek tutmasın diye ekledim; '?id<?= rand(); ?>' yazısını silersin -->
     <link rel="stylesheet" href="../assets/css/tailwind.css?id=<?= rand(); ?>">
