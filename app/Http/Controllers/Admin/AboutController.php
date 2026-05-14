@@ -89,6 +89,14 @@ class AboutController extends Controller
                         $imageName = $request->input('old_image_' . $language->lang_code, null); // Use old image if no new image is uploaded
                     }
 
+                    if ($request->hasFile('pdf_file_en') || $request->hasFile('pdf_file_' . $language->lang_code)) {
+                        $tmpPdfPath = createTmpFile($request, 'pdf_file_en', $languages[0]);
+                        $pdfName = moveFile($request, $language, 'pdf_file_' . $language->lang_code, 'pdf_file_en', 'alt_' . $language->lang_code, 'alt_en', $language->images_folder, $tmpPdfPath);
+
+                    } else {
+                        $pdfName = $request->input('old_pdf_file_' . $language->lang_code, null); // Use old PDF if no new PDF is uploaded
+                    }
+
                     if ($request->hasFile('mission_image_' . $language->lang_code) || $request->hasFile('mission_image_en')) {
                         $tmpMissionImagePath = createTmpFile($request, 'mission_image_' . $language->lang_code, $languages[0]);
                         $missionImageName = moveFile($request,$language,'mission_image_' . $language->lang_code, 'mission_image_en', 'mission_title_' . $language->lang_code, 'mission_title_en',$language->images_folder, $tmpMissionImagePath);
@@ -113,6 +121,7 @@ class AboutController extends Controller
                             'title_1' => $request->input('title_1_' . $language->lang_code) ?: $request->input('title_1_en'),
                             'description' => $request->input('description_' . $language->lang_code) ?: $request->input('description_en'),
                             'image' => $imageName, // save relative path
+                            'pdf_file' => $pdfName,
                             'alt' => $request->input('alt_' . $language->lang_code) ?: $request->input('alt_en'),
                             'mission_title' => $request->input('mission_title_' . $language->lang_code) ?: $request->input('mission_title_en'),
                             'mission_text' => $request->input('mission_text_' . $language->lang_code) ?: $request->input('mission_text_en'),

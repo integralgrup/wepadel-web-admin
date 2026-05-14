@@ -18,6 +18,7 @@ class About extends Model
         'title_1',
         'description',
         'image',
+        'pdf_file',
         'alt',
         'mission_title',
         'mission_text',

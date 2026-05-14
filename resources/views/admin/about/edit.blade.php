@@ -57,83 +57,97 @@
                         <div class="tab-content" id="myTabContent">
                             @foreach($about_contents as $key => $about)
                                 <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="tab-{{$about->lang}}" role="tabpanel" aria-labelledby="tab{{$about->lang}}-tab">
-                                    <div class="card-body" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">    
-                                        <input type="hidden" name="lang_{{$about->lang}}" value="{{$about->lang}}">
-                                        <input type="hidden" name="id" value="{{ $about->id }}">
-                                        <div class="mb-3">
-                                            <div>
-                                                <label for="title_{{ $about->lang }}" class="form-label">Başlık ({{ $about->lang }})</label>
-                                                <input type="text" class="form-control" id="title_{{ $about->lang }}" name="title_{{ $about->lang }}" value="{{ $about->title }}" required>
+                                    <div class="card-body">
+                                        <div class="grids-2">    
+                                            <input type="hidden" name="lang_{{$about->lang}}" value="{{$about->lang}}">
+                                            <input type="hidden" name="id" value="{{ $about->id }}">
+                                            <div class="mb-3">
+                                                <div>
+                                                    <label for="title_{{ $about->lang }}" class="form-label">Başlık ({{ $about->lang }})</label>
+                                                    <input type="text" class="form-control" id="title_{{ $about->lang }}" name="title_{{ $about->lang }}" value="{{ $about->title }}" required>
+                                                </div>
+                                                <div>
+                                                    <label for="title_1_{{ $about->lang }}" class="form-label">Alt Başlık ({{ $about->lang }})</label>
+                                                    <input type="text" class="form-control" id="title_1_{{ $about->lang }}" name="title_1_{{ $about->lang }}" value="{{ $about->title_1 }}" required>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label for="title_1_{{ $about->lang }}" class="form-label">Alt Başlık ({{ $about->lang }})</label>
-                                                <input type="text" class="form-control" id="title_1_{{ $about->lang }}" name="title_1_{{ $about->lang }}" value="{{ $about->title_1 }}" required>
+                                            <!-- title_1 -->
+                                            <div class="mb-3">
+                                                <label for="description_{{ $about->lang }}" class="form-label">Açıklama ({{ $about->lang }})</label>
+                                                <textarea class="form-control" id="description_{{ $about->lang }}" name="description_{{ $about->lang }}" rows="3" required>{{ $about->description }}</textarea>
                                             </div>
                                         </div>
-                                        <!-- title_1 -->
-                                        <div class="mb-3">
-                                            <label for="description_{{ $about->lang }}" class="form-label">Açıklama ({{ $about->lang }})</label>
-                                            <textarea class="form-control" id="description_{{ $about->lang }}" name="description_{{ $about->lang }}" rows="3" required>{{ $about->description }}</textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div>
-                                                <label for="image_{{ $about->lang }}" class="form-label">Görsel ({{ $about->lang }})</label>
-                                                <input type="file" class="form-control" id="image_{{ $about->lang }}" name="image_{{ $about->lang }}" accept="image/*">
-                                                @if($about->image)
-                                                <img src="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang ) .'/'.$about->image }}" 
-                                                    alt="{{ $about->title }}" class="img-thumbnail mt-2" style="max-width: 200px;">
-                                                    <input type="hidden" class="form-control mt-2" name="old_image_{{ $about->lang }}" value="{{ $about->image }}" readonly>
+                                        <div class="grids-3">
+                                            <div class="mb-3">
+                                                <div>
+                                                    <label for="image_{{ $about->lang }}" class="form-label">Görsel ({{ $about->lang }})</label>
+                                                    <input type="file" class="form-control" id="image_{{ $about->lang }}" name="image_{{ $about->lang }}" accept="image/*">
+                                                    @if($about->image)
+                                                    <img src="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang ) .'/'.$about->image }}" 
+                                                        alt="{{ $about->title }}" class="img-thumbnail mt-2" style="max-width: 200px;">
+                                                        <input type="hidden" class="form-control mt-2" name="old_image_{{ $about->lang }}" value="{{ $about->image }}" readonly>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="alt_{{ $about->lang }}" class="form-label">Alt Metin ({{ $about->lang }})</label>
+                                                <input type="text" class="form-control" id="alt_{{ $about->lang }}" name="alt_{{ $about->lang }}" value="{{ $about->alt }}" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pdf_file_{{ $about->lang }}">PDF ({{ $about->lang }})</label>
+                                                <input type="file" class="form-control" id="pdf_file_{{ $about->lang }}" name="pdf_file_{{ $about->lang }}">
+                                                @if($about->pdf_file)
+                                                    <a href="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang) .'/'.$about->pdf_file }}" target="_blank">Mevcut PDF'yi Görüntüle</a>
+                                                    <input type="hidden" class="form-control" id="old_pdf_file_{{ $about->lang }}" name="old_pdf_file_{{ $about->lang }}" value="{{ $about->pdf_file }}" readonly>
                                                 @endif
                                             </div>
                                         </div>
-                                        
-                                        <div class="mb-3">
-                                            <label for="alt_{{ $about->lang }}" class="form-label">Alt Metin ({{ $about->lang }})</label>
-                                            <input type="text" class="form-control" id="alt_{{ $about->lang }}" name="alt_{{ $about->lang }}" value="{{ $about->alt }}" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="mission_title_{{ $about->lang }}" class="form-label">Misyon Başlığı ({{ $about->lang }})</label>
-                                            <input type="text" class="form-control" id="mission_title_{{ $about->lang }}" name="mission_title_{{ $about->lang }}" value="{{ $about->mission_title }}" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="mission_text_{{ $about->lang }}" class="form-label">Misyon Açıklaması ({{ $about->lang }})</label>
-                                            <textarea class="form-control" id="mission_text_{{ $about->lang }}" name="mission_text_{{ $about->lang }}" rows="3" required>{{ $about->mission_text }}</textarea>
-                                        </div>
-                                        <div class="mb-3" style="display:none">
-                                            <label for="mission_image_{{ $about->lang }}" class="form-label">Misyon Görseli ({{ $about->lang }})</label>
-                                            <input type="file" class="form-control" id="mission_image_{{ $about->lang }}" name="mission_image_{{ $about->lang }}" accept="image/*">     
-                                            @if($about->mission_image)
-                                                <img src="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang) .'/'.$about->mission_image }}" alt="{{ $about->title }}" class="img-thumbnail mt-2" style="max-width: 200px;">
-                                                <input type="hidden" class="form-control mt-2" name="old_mission_image_{{ $about->lang }}" value="{{ $about->mission_image }}" readonly>
-                                            @endif  
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="vision_title_{{ $about->lang }}" class="form-label">Vizyon Başlığı ({{ $about->lang }})</label>
-                                            <input type="text" class="form-control" id="vision_title_{{ $about->lang }}" name="vision_title_{{ $about->lang }}" value="{{ $about->vision_title }}" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="vision_text_{{ $about->lang }}" class="form-label">Vizyon Açıklaması ({{ $about->lang }})</label>
-                                            <textarea class="form-control" id="vision_text_{{ $about->lang }}" name="vision_text_{{ $about->lang }}" rows="3" required>{{ $about->vision_text }}</textarea>
-                                        </div>
-                                        <div class="mb-3" style="display:none">
-                                            <label for="vision_image_{{ $about->lang }}" class="form-label">Vizyon Görseli ({{ $about->lang }})</label>
-                                            <input type="file" class="form-control" id="vision_image_{{ $about->lang }}" name="vision_image_{{ $about->lang }}" accept="image/*">
-                                            @if($about->vision_image)
-                                                <img src="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang) .'/'.$about->vision_image }}" alt="{{ $about->title }}" class="img-thumbnail mt-2" style="max-width: 200px;">
-                                                <input type="hidden" class="form-control mt-2" name="old_vision_image_{{ $about->lang }}" value="{{ $about->vision_image }}" readonly>
-                                            @endif
-                                        </div>
-                                        <div class="mb-3" style="display:none">
-                                            <label for="seo_title_{{ $about->lang }}" class="form-label">SEO Başlığı ({{ $about->lang }})</label>
-                                            <input type="text" class="form-control seo_title" id="seo_title_{{ $about->lang }}" name="seo_title_{{ $about->lang }}" value="{{ $about->seo_title }}" required>
-                                        </div>
-                                        <div class="mb-3" style="display:none">
-                                            <label for="seo_description_{{ $about->lang }}" class="form-label">SEO Açıklaması ({{ $about->lang }})</label>
-                                            <textarea class="form-control seo_description" id="seo_description_{{ $about->lang }}" name="seo_description_{{ $about->lang }}" rows="3" required>{{ $about->seo_description }}</textarea>
-                                        </div>
-                                        <div class="mb-3" style="display:none">
-                                            <label for="seo_keywords_{{ $about->lang }}" class="form-label">SEO Anahtar Kelimeleri ({{ $about->lang }})</label>
-                                            <input type="text" class="form-control" id="seo_keywords_{{ $about->lang }}" name="seo_keywords_{{ $about->lang }}" value="{{ $about->seo_keywords }}" required>
+                                        <div class="grids-2">
+                                            <div class="mb-3">
+                                                <label for="mission_title_{{ $about->lang }}" class="form-label">Misyon Başlığı ({{ $about->lang }})</label>
+                                                <input type="text" class="form-control" id="mission_title_{{ $about->lang }}" name="mission_title_{{ $about->lang }}" value="{{ $about->mission_title }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="mission_text_{{ $about->lang }}" class="form-label">Misyon Açıklaması ({{ $about->lang }})</label>
+                                                <textarea class="form-control" id="mission_text_{{ $about->lang }}" name="mission_text_{{ $about->lang }}" rows="3" required>{{ $about->mission_text }}</textarea>
+                                            </div>
+                                            <div class="mb-3" style="display:none">
+                                                <label for="mission_image_{{ $about->lang }}" class="form-label">Misyon Görseli ({{ $about->lang }})</label>
+                                                <input type="file" class="form-control" id="mission_image_{{ $about->lang }}" name="mission_image_{{ $about->lang }}" accept="image/*">     
+                                                @if($about->mission_image)
+                                                    <img src="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang) .'/'.$about->mission_image }}" alt="{{ $about->title }}" class="img-thumbnail mt-2" style="max-width: 200px;">
+                                                    <input type="hidden" class="form-control mt-2" name="old_mission_image_{{ $about->lang }}" value="{{ $about->mission_image }}" readonly>
+                                                @endif  
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="vision_title_{{ $about->lang }}" class="form-label">Vizyon Başlığı ({{ $about->lang }})</label>
+                                                <input type="text" class="form-control" id="vision_title_{{ $about->lang }}" name="vision_title_{{ $about->lang }}" value="{{ $about->vision_title }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="vision_text_{{ $about->lang }}" class="form-label">Vizyon Açıklaması ({{ $about->lang }})</label>
+                                                <textarea class="form-control" id="vision_text_{{ $about->lang }}" name="vision_text_{{ $about->lang }}" rows="3" required>{{ $about->vision_text }}</textarea>
+                                            </div>
+                                            <div class="mb-3" style="display:none">
+                                                <label for="vision_image_{{ $about->lang }}" class="form-label">Vizyon Görseli ({{ $about->lang }})</label>
+                                                <input type="file" class="form-control" id="vision_image_{{ $about->lang }}" name="vision_image_{{ $about->lang }}" accept="image/*">
+                                                @if($about->vision_image)
+                                                    <img src="{{ $languages[$key]->domain .'/'. getFolder(['uploads_folder', 'images_folder'], $about->lang) .'/'.$about->vision_image }}" alt="{{ $about->title }}" class="img-thumbnail mt-2" style="max-width: 200px;">
+                                                    <input type="hidden" class="form-control mt-2" name="old_vision_image_{{ $about->lang }}" value="{{ $about->vision_image }}" readonly>
+                                                @endif
+                                            </div>
+                                            <div class="mb-3" style="display:none">
+                                                <label for="seo_title_{{ $about->lang }}" class="form-label">SEO Başlığı ({{ $about->lang }})</label>
+                                                <input type="text" class="form-control seo_title" id="seo_title_{{ $about->lang }}" name="seo_title_{{ $about->lang }}" value="{{ $about->seo_title }}" required>
+                                            </div>
+                                            <div class="mb-3" style="display:none">
+                                                <label for="seo_description_{{ $about->lang }}" class="form-label">SEO Açıklaması ({{ $about->lang }})</label>
+                                                <textarea class="form-control seo_description" id="seo_description_{{ $about->lang }}" name="seo_description_{{ $about->lang }}" rows="3" required>{{ $about->seo_description }}</textarea>
+                                            </div>
+                                            <div class="mb-3" style="display:none">
+                                                <label for="seo_keywords_{{ $about->lang }}" class="form-label">SEO Anahtar Kelimeleri ({{ $about->lang }})</label>
+                                                <input type="text" class="form-control" id="seo_keywords_{{ $about->lang }}" name="seo_keywords_{{ $about->lang }}" value="{{ $about->seo_keywords }}" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
