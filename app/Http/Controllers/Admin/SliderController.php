@@ -80,7 +80,7 @@ class SliderController extends Controller
                         'button_url' => $request->input('button_url_' . $language->lang_code) ?? $request->input('button_url_en'),
                         'image' => $imageName,
                         'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en'),
-                        'sort' => $request->input('sort_' . $language->lang_code) ?? $request->input('sort_en'),
+                        'sort' => $request->input('sort_en') ?? $request->input('sort_' . $language->lang_code),
                     ]
                 );
 

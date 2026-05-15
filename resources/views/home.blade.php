@@ -20,8 +20,6 @@
                                         <div class="gradient bg-black/30 absolute top-0 left-0 w-full h-full z-[2] pointer-events-none"></div>
                                         <!-- video örneği -->
                                         <div class="image h-full w-full" data-swiper-parallax="50%">
-                                            <?php //if file extension == 'mp4' || 'avi' || 'mov' then show video tag else show image tag ?>
-
                                             @if(in_array(pathinfo($item->image, PATHINFO_EXTENSION), ['mp4', 'avi', 'mov']))
                                                 <video loading="lazy" autoplay="" playsinline="" loop="" muted="" class="w-full h-full object-center object-cover">
                                                     <source src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}">
@@ -31,12 +29,7 @@
                                                     <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="" class="h-full object-center object-cover w-full">
                                                 </div>
                                             @endif
-                                            <!-- <video loading="lazy" autoplay="" playsinline="" loop="" muted="" class="w-full h-full object-center object-cover">
-                                                <source src="../assets/image/other/tennis.mp4">
-                                            </video> -->
                                         </div>
-                                        <!-- resim örneği -->
-
                                     </div>
                                     <div class="text-container absolute z-[5] top-[45%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-full max-w-[1440px] mx-auto px-[30px] group-[&.left-slide]/slide:text-left group-[&.right-slide]/slide:text-right">
                                         <div class="text-wrapper grid grid-cols-1 gap-[25px]">
