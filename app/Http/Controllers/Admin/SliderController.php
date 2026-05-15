@@ -13,7 +13,7 @@ class SliderController extends Controller
     public function index()
     {
         // code to list all sliders where lang is en
-        $sliders = Slider::where('lang', 'en')->get();
+        $sliders = Slider::where('lang', 'en')->orderBy('sort')->get();
         $languages = Language::all(); // Assuming you have a Language model to fetch languages
         return view('admin.slider.index', compact('sliders', 'languages'));
     }
@@ -80,7 +80,7 @@ class SliderController extends Controller
                         'button_url' => $request->input('button_url_' . $language->lang_code) ?? $request->input('button_url_en'),
                         'image' => $imageName,
                         'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en'),
-                        'sort' => $request->input('sort_en') ?? $request->input('sort_' . $language->lang_code),
+                        'sort' => $request->input('sort_en') ?? $request->input('sort_' . $language->lang_code) ?? 0,
                     ]
                 );
 
