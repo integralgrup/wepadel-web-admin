@@ -239,11 +239,9 @@ class HomeController extends Controller
                 
                 return view('club', compact('club', 'seo'));
             }else{
-                $menu = Menu::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->firstOrFail();
                 $clubs = Club::where(['lang' => app()->getLocale()])->get();
                 $seo = SeoSettings::where('page', 'club')->where('lang', app()->getLocale())->first();
-                $clubs_title = $menu->title;
-                return view('clubs', compact('clubs', 'seo', 'clubs_title'));
+                return view('clubs', compact('clubs', 'seo'));
             }
 
         }
