@@ -54,15 +54,15 @@ class FooterInfoController extends Controller
                 FooterInfo::updateOrCreate(
                     ['lang' => $language->lang_code],
                     [
-                        'address' => $request->input('address_' . $language->lang_code),
-                        'phone' => $request->input('phone_' . $language->lang_code),
-                        'email' => $request->input('email_' . $language->lang_code),
-                        'map_url' => $request->input('map_url_' . $language->lang_code),
-                        'facebook_url' => $request->input('facebook_url_' . $language->lang_code),
-                        'youtube_url' => $request->input('youtube_url_' . $language->lang_code),
-                        'linkedin_url' => $request->input('linkedin_url_' . $language->lang_code),
-                        'x_url' => $request->input('x_url_' . $language->lang_code),
-                        'instagram_url' => $request->input('instagram_url_' . $language->lang_code),
+                        'address' => $request->input('address_' . $language->lang_code) ?? $request->input('address_en'),
+                        'phone' => $request->input('phone_' . $language->lang_code) ?? $request->input('phone_en'),
+                        'email' => $request->input('email_' . $language->lang_code) ?? $request->input('email_en'),
+                        'map_url' => $request->input('map_url_' . $language->lang_code) ?? $request->input('map_url_en'),
+                        'facebook_url' => $request->input('facebook_url_' . $language->lang_code) ?? $request->input('facebook_url_en'),
+                        'youtube_url' => $request->input('youtube_url_' . $language->lang_code) ?? $request->input('youtube_url_en'),
+                        'linkedin_url' => $request->input('linkedin_url_' . $language->lang_code) ?? $request->input('linkedin_url_en'),
+                        'x_url' => $request->input('x_url_' . $language->lang_code) ?? $request->input('x_url_en'),
+                        'instagram_url' => $request->input('instagram_url_' . $language->lang_code) ?? $request->input('instagram_url_en'),
                     ]
                 );
             }

@@ -3,7 +3,7 @@
 @section('content')
     <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
     <?php
-    $paneName = $seo['seo_title'] ?? 'Padel Clubs';
+    $paneName = $clubs_title ?? 'Padel Clubs';
     $breadcrumbType = "Görsel";
     $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
     ?>
