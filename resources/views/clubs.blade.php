@@ -28,8 +28,8 @@
                             <!-- NAVIGATION -->
                             <ul class="flex-wrap gap-[10px] flex sm:hidden [&>*:last-child]:text-sushi-500">
                                 <li class="flex items-center">
-                                    <a href="index.php" class="flex group">
-                                        <div class="text text-white text-[16px]  text-editor-500 group-hover:text-sushi-500 duration-500 leading-tight">Anasayfa</div>
+                                    <a href="{{env('HTTP_DOMAIN')}}" class="flex group">
+                                        <div class="text text-white text-[16px]  text-editor-500 group-hover:text-sushi-500 duration-500 leading-tight">{{getStaticText(21)}}</div>
                                     </a>
                                 </li>
                                 <li class="split relative flex items-center">
