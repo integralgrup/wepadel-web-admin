@@ -150,7 +150,7 @@
                                         </svg>
                                         <div class="image absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-fit">
                                             <div data-atropos-offset="2.5" class="image animpers h-[400px] lg:h-[400px] md:h-[300px] sm:h-[300px] ">
-                                                <img src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$about->image }}" alt="" class="w-full h-full object-contain object-center animpers-img duration-450">
+                                                <img src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$about_home->image }}" alt="" class="w-full h-full object-contain object-center animpers-img duration-450">
                                             </div>
                                         </div>
 
