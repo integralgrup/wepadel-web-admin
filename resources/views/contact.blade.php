@@ -79,7 +79,7 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                        <a href="" class="group/text flex justify-center md:justify-start">
+                                        <a target="_blank" href="{{$office->map_url}}" class="group/text flex justify-center md:justify-start">
                                             <div class="text text-[14px] h-fit font-light flex items-center leading-normal duration-500 group-hover/text:translate-x-1 ml-5 md:ml-10 text-white mt-[10px] gap-[10px] tracking-widest">
                                                 {{getStaticText(53)}}
                                                 <div class="icon-map text-[14px] duration-500 z-20 flex group-hover/text:scale-110  group-hover/text:[&>svg>path]:stroke-primary-500 [&>svg>path]:duration-450"></div>
@@ -90,27 +90,40 @@
                             </div>
                         </div>
                         @endforeach
-                    </div>
+                    </div> 
+                    <?php $footer_info = \App\Models\FooterInfo::where('lang', app()->getLocale())->first(); ?>
                     <div class="social-media border-t border-solid border-white/10 pt-[40px] mt-[40px] sm:pt-[25px] sm:mt-[25px]">
                         <ul class="flex justify-start items-center sm:justify-center gap-[35px] md:gap-[20px] xs:gap-[15px]">
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?=$footer_info ? $footer_info->facebook_url : '';?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon-facebook text-[20px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?=$footer_info ? $footer_info->linkedin_url : '';?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon-linkedin text-[20px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?=$footer_info ? $footer_info->youtube_url : '';?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon-youtube text-[20px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                <a href="<?=$footer_info ? $footer_info->x_url : '';?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                     <div class="icon-twitter text-[20px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $footer_info ? $footer_info->instagram_url : ''; ?>" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                    <div class="icon text-[20px] max-h-[20px] max-w-[20px] xs:max-w-[16px] xs:max-h-[16px] lg:text-[18px] md:text-[16px] text-white duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400">
+                                        <!-- pinterest logosu -->
+                                        <svg width="100%" height="100%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="1" y="1" width="48" height="48" rx="12" stroke="white" stroke-width="2"/>
+                                            <circle cx="25" cy="25" r="11" stroke="white" stroke-width="2"/>
+                                            <circle cx="38.5" cy="11.5" r="2.5" fill="white"/>
+                                        </svg>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
