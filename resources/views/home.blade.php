@@ -456,10 +456,10 @@
                                                     </div>
                                                     <div class="button-field flex flex-wrap gap-[25px] xs:gap-[15px] w-full mt-[20px] mb-[70px] md:mb-[100px] xs:mb-[70px]">
                                                         <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') .'/'. $project->seo_url }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-white relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-white before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                                            <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">Detail</div>
+                                                            <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(4)}}</div>
                                                         </a>
                                                         <a href="{{env('HTTP_DOMAIN') .'/'. getUrl('project_url') }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full  before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                                            <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-white relative z-2 duration-450 w-max">All Projects</div>
+                                                            <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-white relative z-2 duration-450 w-max">{{getStaticText(13)}}</div>
                                                         </a>
                                                     </div>
                                                 </div>
