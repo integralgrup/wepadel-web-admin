@@ -110,7 +110,7 @@
                         <div class="date-content flex items-center gap-[15px]">
                             <div class="icon-clock text-[22px] lg:text-[20px] md:text-[16px] text-[#656565] group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                             <p class="w-fit flex justify-center items-center gap-[8px]  text-black font-light group-hover/blog:text-white/80 duration-450">
-                                <span>{{ date('d.m.Y',  strtotime($blog->created_at)) }}</span>
+                                <span>{{ date('d/m/Y',  strtotime($blog->created_at)) }}</span>
                             </p>
                         </div>
                         <div class="rating left">
@@ -171,8 +171,8 @@
                         <h1>{!!getStaticText(14)!!}</h1>
                     </div>
                     <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
-                        <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">More</div>
+                        <a href="{{ env('HTTP_DOMAIN'). '/'. getUrl('blog_url'), app()->getLocale() ) }}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                            <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(30)}}</div>
                         </a>
                     </div>
 
@@ -197,7 +197,7 @@ xs:text-[16px] flex items-center relative z-2 -rotate-45 text-white duration-450
                                         </div>
                                         <div class="text-field absolute bottom-0 left-0 p-[20px_20px_30px_50px] sm:p-[30px] overflow-hidden isolate group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);] w-full" dir="">
                                             <p class="  w-fit flex justify-center items-center gap-[8px] text-white/75 font-medium group-hover/blog:text-white duration-450 mb-[8px]">
-                                                <span>{{ date('d.m.Y', strtotime($blog->created_at)) }}</span>
+                                                <span>{{ date('d/m/Y', strtotime($blog->created_at)) }}</span>
                                             </p>
                                             <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-white group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-white editor-p:mb-0 editor-p:duration-450 text-white mr-auto w-full sm:[&_br]:hidden">
                                                 <h2>{{$blog->title}}</h2>
