@@ -95,7 +95,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
             <div class="wrapper mt-[50px] mb-[50px] space-y-[50px]" dir="">
                 @foreach($projects as $key => $project)
                 <?php $hidden_first = $key >= 12 ? 'hidden' : '';?>
-                <div class="{{ $hidden_first }} project-box w-full h-full duration-450 hover:-translate-y-2 {{ $project->country->continent->class }}">
+                <div class="{{ $hidden_first }} project-box w-full h-full duration-450 hover:-translate-y-2 " data-continent="{{ $project->country->continent->class }}">
                     <a href="{{ env('HTTP_DOMAIN') .'/'. getUrl('project_url') . '/' . $project->seo_url }}" class="content group/blog flex relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 p-[3px] rounded-[30px] overflow-hidden isolate">
                         <div class="gradient duration-450 bg-gradient-to-b from-[#005AA5] to-[#C7234B] rounded-[30px] absolute top-0 left-0 w-full h-full z-[0] opacity-0 group-hover/blog:opacity-100"></div>
                         <div class="button-field absolute right-0 top-0 z-[1]">
@@ -172,8 +172,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
 
         $('.continent').click(function(){
             var continent = $(this).data('continent');
-            $('.continent').removeClass('active');
-            $(this).addClass('active');
+            
             $('.project-box').addClass('hidden');
             $('.project-box[data-continent="'+continent+'"]').removeClass('hidden');
         });
