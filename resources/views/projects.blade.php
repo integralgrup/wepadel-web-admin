@@ -85,7 +85,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                 </div>
                 <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full flex justify-center" dir="">
                     <form action="" class="w-full max-w-[450px] sm:max-w-full ml-auto relative my-auto">
-                        <input type="text" placeholder="{{getStaticText(50)}}" class="search-news w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                        <input type="text" placeholder="{{getStaticText(60)}}" class="search-projects w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
                         <button class="group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%] border-0">
                             <div class="icon icon-search-2 text-[22px] h-[22px] block leading-none duration-350 text-[#0055A3] group-hover:text-[#C7234B]"></div>
                         </button>
@@ -176,6 +176,13 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
             $('.project-box').addClass('hidden');
             $('.project-box[data-continent="'+continent+'"]').removeClass('hidden');
         });
+
+        $('.search-projects').on('input', function(){
+            var value = $(this).val().toLowerCase();
+            $('.project-box').filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        })
     });
 </script>
 @endsection
