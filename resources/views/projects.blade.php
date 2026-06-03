@@ -75,28 +75,11 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                         </div>
                         <!-- buttonlara active classı eklenince renk değişiyor -->
                         <div class="overflow-x-scroll pt-[10px] relative after:contents-[''] after:w-[40%] xs:after:w-[25%] after:inline-block  before:contents-[''] before:w-[8%] xs:before:w-[15%] before:inline-block whitespace-nowrap space-x-3 scrollbar scrollbar-w-[0px] scrollbar-h-[0px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[3px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200" id="timepicker">
-                            <a href="javascript:;" class="button group inline-block active min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">Africa</div>
-                            </a>
-                            <a href="javascript:;" class="button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">Europe</div>
-                            </a>
-                            <a href="javascript:;" class="button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">North America</div>
-                            </a>
-                            <a href="javascript:;" class="button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">Asia</div>
-                            </a>
-                            <a href="javascript:;" class="button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">South America</div>
-                            </a>
-                            <a href="javascript:;" class="button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">Australia</div>
-                            </a>
-                            <a href="javascript:;" class="button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">Antarctica</div>
-                            </a>
-                            
+                            @foreach($continents as $continent)
+                                <a href="javascript:;" data-continent="{{$continent->class}}" class="button group inline-block @if($loop->first) active @endif min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                                    <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">{{$continent->title}}</div>
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -112,7 +95,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
             <div class="wrapper mt-[50px] mb-[50px] space-y-[50px]" dir="">
                 @foreach($projects as $key => $project)
                 <?php $hidden_first = $key >= 12 ? 'hidden' : '';?>
-                <div class="{{ $hidden_first }} project-box w-full h-full duration-450 hover:-translate-y-2">
+                <div class="{{ $hidden_first }} project-box w-full h-full duration-450 hover:-translate-y-2 {{ $project->country->continent->class }}">
                     <a href="{{ env('HTTP_DOMAIN') .'/'. getUrl('project_url') . '/' . $project->seo_url }}" class="content group/blog flex relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 p-[3px] rounded-[30px] overflow-hidden isolate">
                         <div class="gradient duration-450 bg-gradient-to-b from-[#005AA5] to-[#C7234B] rounded-[30px] absolute top-0 left-0 w-full h-full z-[0] opacity-0 group-hover/blog:opacity-100"></div>
                         <div class="button-field absolute right-0 top-0 z-[1]">
