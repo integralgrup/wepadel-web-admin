@@ -4,7 +4,17 @@
 @extends('layouts.main')
 
 @section('content')
-
+<style>
+    @media(max-width: 640px) {
+        .xs-top-90 {
+            top: 90px;
+        }
+        
+        .xs-top-300 {
+            top: 300px;
+        }
+    }
+</style>
     <main class="main-field">
     <section class="homepage-carousel-field flex mt-0 header-space">
         <div class="container px-0 max-w-full m-0">
@@ -95,7 +105,7 @@
         <div class="container max-w-[1440px]">
             <div class="wrapper grid grid-cols-[minmax(0,6fr)_minmax(0,6fr)] md:grid-cols-1 gap-[50px] md:gap-[25px] ">
                 <div class="image-field relative w-full project-counter">
-                    <div class="icons absolute -left-[20px] md:left-0 xs:-left-[15px] top-[90px] translate-y-[-50%] pointer-events-none z-[1]">
+                    <div class="icons absolute -left-[20px] md:left-0 xs:-left-[15px] top-[90px] translate-y-[-50%] pointer-events-none z-[1] xs-top-300">
                         <div class="icon icon-arrow-down w-[210px] text-[200px] h-[210px] md:w-[180px] md:h-[180px] md:text-[170px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3]/0 opacity-80">
                         </div>
                         <div class="text-field absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%]">

@@ -2,6 +2,23 @@
 
 
 @section('content')
+<style>
+    @media(max-width: 1024px) {
+        .md-hidden{
+            display: none;
+        }
+    }
+    @media(max-width: 768px) {
+        .sm-hidden{
+            display: none;
+        }
+    }
+    @media(max-width: 640px) {
+        .xs-hidden{
+            display: none;
+        }
+    }
+</style>
 <main class="main-field header-space">
     <div class="breadcrump bg-[#F6F6F6]">
         <div class="container max-w-[1440px]">
@@ -62,7 +79,7 @@
             </div>
             <div class="wrapper grid grid-cols-2 md:grid-cols-1 gap-[40px] [&_.media-box:nth-child(1)]:col-span-2 md:[&_.media-box:nth-child(1)]:col-span-1 mt-[30px] mb-[50px]" dir="">
                 <!-- ilk media-box'da height farklıdır -->
-                <div class="media-box w-full h-full duration-450 hover:-translate-y-2">
+                <div class="media-box w-full h-full duration-450 hover:-translate-y-2 sm-hidden">
                     <?php $blogs[0]->news == 1 ? $blogUrl = getUrl('news_url', app()->getLocale()) : $blogUrl = getUrl('blog_url', app()->getLocale()); ?>
                     <a href="{{ env('HTTP_DOMAIN') .'/'. $blogUrl . '/' . $blogs[0]->seo_url }}" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
                         <div class="button-field absolute right-0 top-0 z-[1]">
