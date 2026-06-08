@@ -488,7 +488,7 @@ $breadcrumbImage = $about->image;
 
 
         $('.desc-box').hide();
-        $('.desc-box.'+continent).show();
+        $('.'+continent).show();
     });
 </script>
 @endsection
