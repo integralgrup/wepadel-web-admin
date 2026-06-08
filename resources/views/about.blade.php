@@ -213,7 +213,7 @@ $breadcrumbImage = $about->image;
                                 <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/earth.png" alt="">
                                 <div data-target=".maps-list" class="location-list select-field scrollable-mob">
                                     @foreach($continents as $index => $continent)
-                                        <a title="{{$continent->title}}" class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}}%;left:{{$continent->left}}%;">
+                                        <a title="{{$continent->title}}" data-name="{{$continent->class}}" class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}}%;left:{{$continent->left}}%;">
                                             <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
                                             </div>
                                             <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
@@ -236,451 +236,108 @@ $breadcrumbImage = $about->image;
 
                             <div class="description-main-content xl:max-h-[550px] content content-fields w-full overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 relative  pr-[10px]">
                                 <div class="description-field relative duration-450 overflow-hidden" dir="">
-                                    <div class="desc-box active w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="0" data-title="Europe">
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
+                                    @foreach($projects as $index => $project)    
+                                        <div class="desc-box  @if($index == 0) active @endif {{$project->continent->class}} w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="0" data-title="Europe">
+                                                <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
+                                                    <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
+                                                        <div class="button-field absolute right-0 top-0 z-[1]">
+                                                            <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
+                                                                <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
+                                                            </div>
                                                         </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
+                                                        <div class="image-field relative ">
+                                                            <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
+                                                                <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
+                                                                <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                            </div>
+                                                            <div class="text-field px-[20px] overflow-hidden isolate">
+                                                                <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
+                                                                    <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
+                                                                    <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
+                                                                </div>
+                                                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
+                                                                    <h2>Cyprus Origin Padel Court Construction</h2>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </div>
-                                            </a>
+                                                <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
+                                                    <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
+                                                        <div class="button-field absolute right-0 top-0 z-[1]">
+                                                            <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
+                                                                <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="image-field relative ">
+                                                            <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
+                                                                <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
+                                                                <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                            </div>
+                                                            <div class="text-field px-[20px] overflow-hidden isolate">
+                                                                <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
+                                                                    <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
+                                                                    <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
+                                                                </div>
+                                                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
+                                                                    <h2>Cyprus Origin Padel Court Construction</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
+                                                    <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
+                                                        <div class="button-field absolute right-0 top-0 z-[1]">
+                                                            <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
+                                                                <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="image-field relative ">
+                                                            <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
+                                                                <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
+                                                                <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                            </div>
+                                                            <div class="text-field px-[20px] overflow-hidden isolate">
+                                                                <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
+                                                                    <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
+                                                                    <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
+                                                                </div>
+                                                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
+                                                                    <h2>Cyprus Origin Padel Court Construction</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
+                                                    <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
+                                                        <div class="button-field absolute right-0 top-0 z-[1]">
+                                                            <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
+                                                                <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="image-field relative ">
+                                                            <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
+                                                                <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
+                                                                <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                            </div>
+                                                            <div class="text-field px-[20px] overflow-hidden isolate">
+                                                                <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
+                                                                    <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
+                                                                    <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
+                                                                </div>
+                                                                <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
+                                                                    <h2>Cyprus Origin Padel Court Construction</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="desc-box w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="1" data-title="Asia">
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                    <div class="desc-box w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="2" data-title="Asia">
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="desc-box w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="3" data-title="Africa">
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="desc-box w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="4" data-title="South America">
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="desc-box w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="5" data-title="North America">
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
-                                            <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
-                                                <div class="button-field absolute right-0 top-0 z-[1]">
-                                                    <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
-                                                        <div class="icon-arrow-right-2 text-[18px] xs:text-[16px] flex items-center relative z-2 -rotate-45 text-[#0055A3] duration-450"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-field relative ">
-                                                    <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
-                                                        <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                        <img src="../assets/image/other/blog-2.jpg" alt="" class="w-full h-full object-cover object-center duration-450">
-                                                    </div>
-                                                    <div class="text-field px-[20px] overflow-hidden isolate">
-                                                        <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
-                                                            <div class="icon icon-location text-[#C7234B] text-[20px] h-[20px] block leading-none duration-350"></div>
-                                                            <span class="text-[#C7234B] font-normal text-[22px] line-clamp-1">Cyprus</span>
-                                                        </div>
-                                                        <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-[#0055A3] editor-h1:font-bold editor-h2:font-bold editor-headings:font-normal editor-headings:line-clamp-2 editor-p:text-[14px] editor-p:font-light editor-p:text-[#0055A3] editor-p:mb-0 editor-p:duration-450 text-[#0055A3] mr-auto w-full sm:[&_br]:hidden">
-                                                            <h2>Cyprus Origin Padel Court Construction</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -826,7 +483,12 @@ $breadcrumbImage = $about->image;
 <script>
     $('.map-box').click(function(){
         let name = $(this).attr('title');
+        let continent = $(this).data('name');
         $('.continent_name').text(name);
+
+
+        $('.desc-box').removeClass('active');
+        $('.desc-box.'+continent).addClass('active');
     });
 </script>
 @endsection
