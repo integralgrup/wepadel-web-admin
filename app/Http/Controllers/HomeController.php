@@ -175,7 +175,7 @@ class HomeController extends Controller
             $certificates = DB::table('about_certificates')->where('lang', app()->getLocale())->get()->toArray();
             $brands = Brand::where('lang', app()->getLocale())->get();
             $seo = SeoSettings::where('page', 'about')->where('lang', app()->getLocale())->first();
-            $blogs = Blog::where('lang', app()->getLocale())->limit(5)->get();
+            $blogs = Blog::where('lang', app()->getLocale())->orderBy('created_at', 'desc')->limit(5)->get();
             //debug($certificates);
             
             //dd($politics);
