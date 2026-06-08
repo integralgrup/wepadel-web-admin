@@ -236,9 +236,9 @@ $breadcrumbImage = $about->image;
 
                             <div class="description-main-content xl:max-h-[550px] content content-fields w-full overflow-y-auto scrollbar scrollbar-w-[8px] scrollbar-h-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200 relative  pr-[10px]">
                                 <div class="description-field relative duration-450 overflow-hidden" dir="">
-                                    @foreach($projects as $index => $project)    
-                                        <div class="desc-box  @if($index == 0) active @endif {{$project->country->continent->class}} w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="0" data-title="Europe">
-                                                <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
+                                    <div class="desc-box  @if($index == 0) active @endif {{$project->country->continent->class}} w-full py-[15px] overflow-hidden absolute opacity-0 [visibility:hidden;] translate-y-[30px] duration-450 [&.active]:!opacity-100 [&.active]:!visible [&.active]:delay-[450ms] [&.active]:!translate-y-0 [&.active]:duration-450 [&.active]:z-[1] space-y-10" box-id="0" data-title="Europe">
+                                        @foreach($projects as $index => $project)
+                                            <div class="media-box w-full h-fit duration-450 hover:-translate-y-2">
                                                     <a href="single-blog.php" class="content group/blog relative [&:hover_.text-field]:text-white [&:hover_.icon-arrow-right-short]:text-white w-full h-full duration-450 block">
                                                         <div class="button-field absolute right-0 top-0 z-[1]">
                                                             <div class="button group/button h-[80px] w-[80px] xs:h-[60px] xs:w-[60px] flex justify-center rounded-tr-[30px] rounded-bl-[30px] bg-white border border-solid border-black/20 relative space-x-[15px] duration-500 overflow-hidden isolate opacity-0 scale-75 group-hover/blog:scale-100 group-hover/blog:opacity-100 origin-top-right ">
@@ -335,9 +335,8 @@ $breadcrumbImage = $about->image;
                                                     </a>
                                                 </div>
                                             </div>
-                                            
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
