@@ -89,7 +89,7 @@ $breadcrumbImage = $menu->image;
                         </div>
                         <div class="search w-full max-w-[450px] lg:max-w-[375px] sm:max-w-full">
                             <form action="" class="w-full max-w-[450px] sm:max-w-full ml-auto relative">
-                                <input type="text" placeholder="{{getStaticText(17)}}" class="w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
+                                <input type="text" placeholder="{{getStaticText(17)}}" class="search-input w-full leading-normal pl-[20px] pr-[50px] py-[12px] placeholder:font-light font-medium text-[#0055A3] placeholder:text-[#0055A3]/65 text-[18px] xs:text-[16px] border-solid border-[1px] border-[#0055A3]/30 rounded-full duration-350 hover:border-[#0055A3]/50 focus:!border-[#0055A3] focus:ring-0">
                                 <button class="group cursor-pointer h-[40px] w-[40px] flex-center rounded-full p-[5px] absolute right-[5px] top-[50%] translate-y-[-50%] border-0">
                                     <div class="icon icon-search-2 text-[22px] h-[22px] block leading-none duration-350 text-[#0055A3] group-hover:text-[#C7234B]"></div>
                                 </button>
@@ -112,7 +112,7 @@ $breadcrumbImage = $menu->image;
                                         <div class="text-field p-[10px] sm:p-0 m-auto flex flex-col justify-center sm:max-w-full relative sm:order-2 mx-[50px] md:mx-[30px] xs:mx-[20px]">
                                             <div class="w-fit flex justify-center items-center gap-[8px] duration-450 mb-[15px]">
                                                 <div class="icon icon-arrow-down text-[20px] h-[20px] sm:text-[16px] sm:h-[16px] block leading-none duration-350 text-[#C7234B] absolute -top-[20px] left-0 sm:left-0"></div>
-                                                <span class="text-[#0055A3] font-light text-[20px] line-clamp-1">{{$product->category->title}}</span>
+                                                <span class="product-name text-[#0055A3] font-light text-[20px] line-clamp-1">{{$product->category->title}}</span>
                                             </div>
                                             <div class="editor editor-base editor-h1:text-[34px] xl:editor-h1:text-[30px] lg:editor-h1:text-[28px] md:editor-h1:text-[26px] sm:editor-h1:text-[24px] xs:editor-h1:text-[22px] editor-headings:m-0 editor-headings:duration-450 editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-2 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450 editor-p:line-clamp-3 text-white mr-auto w-full sm:[&_br]:hidden">
                                                 <h3 class="fake-h1">{{$product->title}}</h3>
@@ -144,5 +144,12 @@ $breadcrumbImage = $menu->image;
 
 <!-- script --> 
 @section('script') 
-
+<script>
+    $('.search-input').on('input', function() {
+        var value = $(this).val().toLowerCase();
+        $('.project-box').filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+</script>
 @endsection
