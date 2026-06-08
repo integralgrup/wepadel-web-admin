@@ -487,8 +487,8 @@ $breadcrumbImage = $about->image;
         $('.continent_name').text(name);
 
 
-        $('.desc-box').removeClass('active');
-        $('.desc-box.'+continent).addClass('active');
+        $('.desc-box').hide();
+        $('.desc-box.'+continent).show();
     });
 </script>
 @endsection
