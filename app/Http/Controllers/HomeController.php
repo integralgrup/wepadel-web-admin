@@ -253,7 +253,8 @@ class HomeController extends Controller
             if($slug2 == null) {
                 
                 //$projects = Project::where(['lang' => app()->getLocale()])->with(['gallery'])->get();
-                $projects = Project::where(['lang' => app()->getLocale()])->with('gallery','country', 'country.continent')->orderBy('id', 'desc')->get();
+                $projects = Project::where(['lang' => app()->getLocale()])->with('gallery','country', 'country.continent')->orderBy('id', 'desc')
+                ->orderBy('id', 'desc')->limit(10)->get();
                 $seo = SeoSettings::where('page', 'projects')->where('lang', app()->getLocale())->first();
                 $continents = Continent::where('lang', app()->getLocale())->get();
                 //dd($projects);
