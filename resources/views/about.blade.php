@@ -489,7 +489,8 @@ $breadcrumbImage = $about->image;
 
         let dataIndex = $(this).data('branch-index');
         $('.desc-box').removeClass('active');
-        $(`.desc-box[box-id="${dataIndex}"]`).addClass('active');
+        $('.desc-box').hide();
+        $(`.desc-box[box-id="${dataIndex}"]`).addClass('active').show();
 
 
     });
