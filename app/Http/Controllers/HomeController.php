@@ -134,7 +134,7 @@ class HomeController extends Controller
                 ];
             })
             ->toArray();
-        $projects = Project::where('lang', app()->getLocale())->with(['gallery', 'country', 'country.continent'])->limit(10)->get();
+        $projects = Project::where('lang', app()->getLocale())->with(['gallery', 'country', 'country.continent'])->orderBy('id', 'desc')->limit(10)->get();
         //dd($projects);
         $blogs = Blog::where('lang', app()->getLocale())->orderBy('created_at', 'desc')->limit(5)->get();
         //dd($blog);
@@ -253,8 +253,7 @@ class HomeController extends Controller
             if($slug2 == null) {
                 
                 //$projects = Project::where(['lang' => app()->getLocale()])->with(['gallery'])->get();
-                $projects = Project::where(['lang' => app()->getLocale()])->with('gallery','country', 'country.continent')->orderBy('id', 'desc')
-                ->orderBy('id', 'desc')->limit(10)->get();
+                $projects = Project::where(['lang' => app()->getLocale()])->with('gallery','country', 'country.continent')->orderBy('id', 'desc')->get();
                 $seo = SeoSettings::where('page', 'projects')->where('lang', app()->getLocale())->first();
                 $continents = Continent::where('lang', app()->getLocale())->get();
                 //dd($projects);
