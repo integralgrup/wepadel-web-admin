@@ -212,43 +212,14 @@ $breadcrumbImage = $about->image;
                             <div class="img h-[500px] md:h-[400px] sm:h-[350px] xs:h-[250px] w-full overflow-hidden isolate relative height-fix-image">
                                 <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/earth.png" alt="">
                                 <div data-target=".maps-list" class="location-list select-field scrollable-mob">
-                                    <a class="absolute active map-box icon-content group/icon" href="javascript:;" data-branch-index="0" style="top:33%;left:46%;">
-                                        <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                        <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                    </a>
-                                    <a class="absolute map-box icon-content group/icon" href="javascript:;" data-branch-index="1" style="top:33.3%;left:60.7%;">
-                                        <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                        <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                    </a>
-                                    <a class="absolute map-box icon-content group/icon" href="javascript:;" data-branch-index="2" style="top:43%;left:54%;">
-                                        <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                        <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                    </a>
-
-                                    <a class="absolute map-box icon-content group/icon" href="javascript:;" data-branch-index="3" style="top:50%;left:46%;">
-                                        <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                        <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                    </a>
-                                    <a class="absolute map-box icon-content group/icon" href="javascript:;" data-branch-index="4" style="top:58%;left:30%;">
-                                        <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                        <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                    </a>
-                                    <a class="absolute map-box icon-content group/icon" href="javascript:;" data-branch-index="5" style="top:36%;left:21%;">
-                                        <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                        <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
-                                        </div>
-                                    </a>
+                                    @foreach($continents as $index => $continent)
+                                        <a class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}};left:{{$continent->left}};">
+                                            <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
+                                            </div>
+                                            <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
+                                            </div>
+                                        </a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

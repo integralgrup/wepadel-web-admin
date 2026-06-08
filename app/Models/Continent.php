@@ -19,6 +19,8 @@ class Continent extends Model
         'title',
         'seo_url',
         'class',
+        'top',
+        'left',
         'sort',
     ];
 

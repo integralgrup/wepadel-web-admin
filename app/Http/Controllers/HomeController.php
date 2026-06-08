@@ -176,10 +176,13 @@ class HomeController extends Controller
             $brands = Brand::where('lang', app()->getLocale())->get();
             $seo = SeoSettings::where('page', 'about')->where('lang', app()->getLocale())->first();
             $blogs = Blog::where('lang', app()->getLocale())->orderBy('created_at', 'desc')->limit(5)->get();
+
+            $projects = Project::where(['lang' => app()->getLocale()])->with('gallery','country', 'country.continent')->orderBy('id', 'desc')->get();
+            $continents = Continent::where('lang', app()->getLocale())->get();
             //debug($certificates);
             
             //dd($politics);
-            return view('about', compact('about','blogs', 'how_we_do', 'what_we_do', 'certificates', 'about_slider', 'brands', 'seo'));
+            return view('about', compact('about','blogs', 'how_we_do', 'what_we_do', 'certificates', 'about_slider', 'brands', 'seo', 'projects', 'continents'));
         }
 
         
