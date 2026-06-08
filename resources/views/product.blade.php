@@ -15,7 +15,15 @@ $breadcrumbTitle = $product->title;
                     <!-- NAVIGATION -->
                     <ul class="navigation flex-wrap w-full gap-[10px] flex items-center md:hidden">
                         <li class="flex items-center">
-                            <a href="javascript:;" class="flex group">
+                            <a href="{{env('HTTP_DOMAIN')}}" class="flex group">
+                                <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">{{getStaticText(21)}}</span>
+                            </a>
+                        </li>
+                        <li class="split relative flex items-center h-[12px]">
+                            <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">/</span>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="{{env('HTTP_DOMAIN')}}/{{getUrl('product_url')}}/{{$product->category->seo_url}}" class="flex group">
                                 <span class="text text-white text-[20px] md:text-[18px] xs:text-[16px] font-medium group-hover:text-white/80 duration-450 leading-tight">{{$product->category->title}}</span>
                             </a>
                         </li>
