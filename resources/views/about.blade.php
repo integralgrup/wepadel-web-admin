@@ -213,7 +213,7 @@ $breadcrumbImage = $about->image;
                                 <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/earth.png" alt="">
                                 <div data-target=".maps-list" class="location-list select-field scrollable-mob">
                                     @foreach($continents as $index => $continent)
-                                        <a class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}};left:{{$continent->left}};">
+                                        <a class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}}%;left:{{$continent->left}}%;">
                                             <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
                                             </div>
                                             <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
