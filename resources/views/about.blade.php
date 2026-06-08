@@ -792,7 +792,7 @@ $breadcrumbImage = $about->image;
                         <h3 class="fake-h1">{!!getStaticText(14)!!}</h3>
                     </div>
                     <div class="button-field flex justify-center flex-wrap gap-[25px] z-[2] relative">
-                        <a href="{{env('HTTP_DOMAIN')}}/{{getUrl('blog_url', app()->getLocale')}}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                        <a href="{{env('HTTP_DOMAIN')}}/{{getUrl('blog_url', app()->getLocale'))}}" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
                             <div class="text-[18px]  xs:text-[16px] font-normal font-inter flex items-center text-white group-hover:text-[#0055A3] relative z-2 duration-450 w-max">{{getStaticText(15)}}</div>
                         </a>
                     </div>
