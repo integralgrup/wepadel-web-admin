@@ -213,7 +213,7 @@ $breadcrumbImage = $about->image;
                                 <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/earth.png" alt="">
                                 <div data-target=".maps-list" class="location-list select-field scrollable-mob">
                                     @foreach($continents as $index => $continent)
-                                        <a class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}}%;left:{{$continent->left}}%;">
+                                        <a title="{{$continent->name}}" class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}}%;left:{{$continent->left}}%;">
                                             <div class="icon icon-arrow-down absolute top-[50%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-[14px] h-[14px] group-[&.active]/icon:text-[24px] group-[&.active]/icon:h-[24px] block leading-none duration-350 text-[#0055A3] text-center group-[&.active]/icon:text-[#C7234B]">
                                             </div>
                                             <div class="icon icon-arrow-down text-[37px] h-[34px] block leading-none duration-350 text-[#0055A3]/40 text-center opacity-0 group-[&.active]/icon:animate-pulse group-[&.active]/icon:text-[#C7234B]">
@@ -229,7 +229,7 @@ $breadcrumbImage = $about->image;
                                 <div class="editor editor-lg title editor-headings:duration-450 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-normal editor-headings:leading-snug xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[58px]  duration-450 editor-h1:font-bold editor-headings:text-transparent editor-headings:bg-clip-text editor-headings:bg-gradient-to-r editor-headings:from-[#0055A3] editor-headings:from-40% editor-headings:to-[#0055A3] editor-headings:to-75% editor-strong:font-bold max-w-full w-fit text-right" dir="">
                                     <h3>{{getStaticText(27)}}
                                     </h3>
-                                    <h3 class="fake-h1">Europe</h3>
+                                    <h3 class="fake-h1 continent_name">Europe</h3>
                                 </div>
                             </div>
                             <div class="gradient absolute left-0 bottom-0 w-full h-[350px] [background:linear-gradient(180deg,_rgba(255,255,255,0)_0%,_#FFFFFF_100%);] pointer-events-none z-[2] md:hidden duration-450 group-hover/map-list:opacity-0"></div>
@@ -820,4 +820,13 @@ $breadcrumbImage = $about->image;
         </div>
     </section>
 </main>
+@endsection
+
+@section('scripts')
+<script>
+    $('.map-box').click(function(){
+        let name = $(this).attr('title');
+        $('.continent_name').text(name);
+    });
+</script>
 @endsection
