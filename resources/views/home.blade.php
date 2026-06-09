@@ -14,10 +14,15 @@
             top: 300px;
         }
         .editor h2{
-            max-width: 360px;
+            max-width: 400px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+    }
+    @media(max-width: 450px) {
+        .editor h2{
+            max-width: 310px;
         }
     }
 </style>
