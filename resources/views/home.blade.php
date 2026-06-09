@@ -13,6 +13,11 @@
         .xs-top-300 {
             top: 300px;
         }
+        .editor h2{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 </style>
     <main class="main-field">
