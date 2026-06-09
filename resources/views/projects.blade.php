@@ -75,11 +75,14 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                         </div>
                         <!-- buttonlara active classı eklenince renk değişiyor -->
                         <div class="overflow-x-scroll pt-[10px] relative after:contents-[''] after:w-[40%] xs:after:w-[25%] after:inline-block  before:contents-[''] before:w-[8%] xs:before:w-[15%] before:inline-block whitespace-nowrap space-x-3 scrollbar scrollbar-w-[0px] scrollbar-h-[0px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[3px] scrollbar-thumb-[#0055A3]/50 scrollbar-track-primary-200" id="timepicker">
-                            @foreach($continents as $continent)
-                                <a href="javascript:;" data-continent="{{$continent->class}}" class="continent button group inline-block @if($loop->first) active @endif min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
-                                    <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">{{$continent->title}}</div>
+                                <a href="javascript:;" data-continent="all" class="continent button group inline-block  active  min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                                    <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">{{getStaticText(49)}}</div>
                                 </a>
-                            @endforeach
+                                @foreach($continents as $continent)
+                                    <a href="javascript:;" data-continent="{{$continent->class}}" class="continent button group inline-block min-w-[160px] lg:min-w-[130px] w-fit h-[50px] px-[30px] bg-transparent relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 [&.active]:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
+                                        <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-[.active]:text-white group-hover:text-white relative z-2 duration-450 w-max m-auto h-full" dir="">{{$continent->title}}</div>
+                                    </a>
+                                @endforeach
                         </div>
                     </div>
                 </div>
@@ -172,6 +175,11 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
 
         $('.continent').click(function(){
             var continent = $(this).data('continent');
+
+            if(continent == 'all'){
+                $('.project-box').removeClass('hidden');
+                return;
+            }
             
             $('.project-box').addClass('hidden');
             $('.project-box[data-continent="'+continent+'"]').removeClass('hidden');
