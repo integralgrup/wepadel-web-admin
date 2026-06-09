@@ -204,21 +204,21 @@
         <div class="container max-w-[1440px]">
             <div class="swiper ref-slider">
                 <div class="swiper-wrapper">
-                        <?php foreach ($about_certificates as $key => $item) : ?>
-                            <div class="swiper-slide">
-                                <a href="" class="block group/links">
-                                    <div class="feature bg-[#FFFFFF]/25 rounded-[20px] p-5 duration-300 hover:bg-[#FFFFFF]/50 hover:-translate-y-1 hover:shadow-md relative z-[12]">
-                                        <div class="flex flex-col gap-5 justify-center items-center h-full">
-                                            <div class="image-field">
-                                                <div class="img h-[50px] w-full overflow-hidden ">
-                                                    <img class="h-full w-full object-contain group-hover/blog-item:scale-110 duration-500 group-hover/links:opacity-100 opacity-60" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="">
-                                                </div>
+                    <?php foreach ($about_certificates as $key => $item) : ?>
+                        <div class="swiper-slide">
+                            <a target="_blank" href="<?=env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->pdf ?>" class="block group/links">
+                                <div class="feature bg-[#FFFFFF]/25 rounded-[20px] p-5 duration-300 hover:bg-[#FFFFFF]/50 hover:-translate-y-1 hover:shadow-md relative z-[12]">
+                                    <div class="flex flex-col gap-5 justify-center items-center h-full">
+                                        <div class="image-field">
+                                            <div class="img h-[50px] w-full overflow-hidden ">
+                                                <img class="h-full w-full object-contain group-hover/blog-item:scale-110 duration-500 group-hover/links:opacity-100 opacity-60" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="">
                                             </div>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
