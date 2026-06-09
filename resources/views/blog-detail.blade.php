@@ -80,23 +80,23 @@
                             </ul>
                             <div class="social-media-field lg:px-[15px]">
                                 <ul class="flex flex-col justify-end items-center sm:justify-center xs:flex-row gap-[25px] md:gap-[20px] xs:gap-[15px]">
-                                    <li>
-                                        <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                    <li><?php $current_url = url()->current();?>
+                                        <a target="_blank" href="https://api.whatsapp.com/send?text={{ urlencode($current_url) }}" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                             <div class="icon-whatsapp text-[20px] text-[#40403B]/20 group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($current_url) }}" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                             <div class="icon-facebook text-[20px] text-[#40403B]/20 group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                        <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($current_url) }}" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                             <div class="icon-linkedin text-[20px] text-[#40403B]/20 group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
+                                        <a target="_blank" href="https://twitter.com/intent/tweet?text={{ urlencode($current_url) }}" class="flex relative group before:absolute before:w-[0] before:h-[0] before:bg-sushi-400/10 before:left-1/2 before:rounded-full before:duration-450 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[40px] hover:before:h-[40px]">
                                             <div class="icon-twitter text-[20px] text-[#40403B]/20 group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                                         </a>
                                     </li>
@@ -152,7 +152,7 @@
                     <div class="editor editor-base editor-p:text-xl md:editor-lg sm:editor-sm edit editor-headings:leading-[1.5] editor-p:leading-10  editor-headings:duration-450 editor-headings:text-mine-shaft-900 editor-headings:font-light editor-p:text-mine-shaft-900 editor-p:font-light editor-p:transition-all editor-p:duration-450  editor-p:text-[#231F20]/50 editor-strong:text-sushi-400 editor-strong:font-normal relative py-[15px] max-w-none editor-headings:border-solid editor-headings:border-[#707070]/20 mb-[50px] md:order-2 blog-text">
                         {!!$blog->description!!}
                     </div>
-                    <a href="page-blog.php" class="button group w-fit block">
+                    <a href="{{env('HTTP_DOMAIN').'/'.getUrl('blog_url', app()->getLocale())}}" class="button group w-fit block">
                         <div class="text-[20px] xs:text-[18px] font-light flex gap-[20px] justify-center items-center w-fit text-[#656565] hover:text-[#C7234B] duration-450 ">
                             <div class="icon-back text-[20px] lg:text-[18px] md:text-[16px] text-[#656565] group-hover:text-[#C7234B] duration-450 relative z-20 flex group-hover:scale-90 group-hover:text-sushi-400"></div>
                             {{getStaticText(52)}}
