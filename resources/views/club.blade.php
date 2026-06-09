@@ -172,36 +172,13 @@
                     <div class="wrapper grid grid-cols-[minmax(0,6fr)_minmax(0,7fr)] md:grid-cols-1 relative gap-[100px] lg:gap-[50px]">
                         <div class="project-detail relative xs:m-auto xs:w-full !h-[650px] xl:!h-[550px] lg:!h-[500px] md:!h-[400px] xs:!h-[350px] rounded-[30px] overflow-hidden isolate">
                             <!-- project-swiper'ın swiper-slide adedi kadar detail-box oluşturulmalıdır. -->
-                            <div class="detail-box active opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="0">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                            <?php foreach ($club->features as $index => $feature) : ?>
+                                <div class="detail-box active opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="{{$index}}">
+                                    <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $feature->lang) .'/'. $feature->image}}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="1">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="2">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="3">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="4">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="5">
-                                <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="carousel-content">
                             <div class="title flex justify-between items-center sm:flex-col m-auto relative z-[2] pt-[50px] gap-[20px] md:gap-[15px]">
@@ -226,7 +203,7 @@
                             <div class="project-swiper swiper rounded-[30px] !py-[30px] strecth-to-right">
                                 <div class="swiper-wrapper justify-start -left-[41%] xl:-left-[37%] lg:-left-[33%] md:-left-[32%] sm:-left-[31%] xs:left-0">
                                     <!-- project-text-slider'ın swiper-slide adedi kadar swiper-slide oluşturulmalıdır. -->
-                                    <?php for ($i = 1; $i < 3; $i++) : ?>
+                                    <?php foreach ($club->features as $feature) : ?>
                                         <div class="swiper-slide group/slide !duration-450 !transition-all [&.swiper-slide-active]:opacity-100  [&.swiper-slide-active]:!scale-100 [&.swiper-slide-active]:!visible [&.swiper-slide-next]:opacity-100 [&.swiper-slide-next]:!scale-100 [&.swiper-slide-next]:!visible !pointer-events-auto">
                                             <div class="content relative rounded-[30px] ">
                                                 <div class="text-field m-auto"   dir="">
@@ -234,66 +211,31 @@
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="<?= env('HTTP_DOMAIN').'/'.getFolder(['uploads_folder', 'club_images_folder'], app()->getLocale()).'/'.$feature->icon ?>" alt="">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
-                                                            Best Padel
-                                                            Experience
+                                                            {{$feature->title}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide group/slide !duration-450 !transition-all [&.swiper-slide-active]:opacity-100  [&.swiper-slide-active]:!scale-100 [&.swiper-slide-active]:!visible [&.swiper-slide-next]:opacity-100 [&.swiper-slide-next]:!scale-100 [&.swiper-slide-next]:!visible !pointer-events-auto">
-                                            <div class="content relative rounded-[30px] ">
-                                                <div class="text-field m-auto" dir="">
-                                                    <div class="sport-box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 h-[190px] flex flex-col justify-center">
-                                                        <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                                        <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
-                                                        <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
-                                                        </div>
-                                                        <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2">
-                                                            Best Padel
-                                                            Experience
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide group/slide !duration-450 !transition-all [&.swiper-slide-active]:opacity-100  [&.swiper-slide-active]:!scale-100 [&.swiper-slide-active]:!visible [&.swiper-slide-next]:opacity-100 [&.swiper-slide-next]:!scale-100 [&.swiper-slide-next]:!visible !pointer-events-auto">
-                                            <div class="content relative rounded-[30px] ">
-                                                <div class="text-field m-auto"   dir="">
-                                                    <div class="sport-box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 group-[&.swiper-slide-active]/slide:border-white/50 duration-450 h-[190px] flex flex-col justify-center">
-                                                        <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
-                                                        <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
-                                                        <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
-                                                        </div>
-                                                        <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2">
-                                                            Best Padel
-                                                            Experience
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endfor; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                             <div class="swiper project-text-slider">
                                 <div class="swiper-wrapper">
                                     <!-- project-swiper'ın swiper-slide adedi kadar swiper-slide oluşturulmalıdır. -->
-                                    <?php for ($i = 1; $i < 7; $i++) : ?>
+                                    <?php foreach ($club->features as $feature) : ?>
                                         <div class="swiper-slide p-6 sm:p-3">
                                             <div class="text-field">
                                                 <div class="editor editor-base md:editor-sm editor-headings:font-light editor-headings:text-[#ffffff] editor-headings:leading-tight xs:editor-h1:text-[24px] sm:editor-h1:text-[26px] md:editor-h1:text-[30px] lg:editor-h1:text-[34px] xl:editor-h1:text-[40px] editor-h1:text-[40px] editor-h2:text-[28px] sm:editor-h2:text-[24px] xs:editor-h2:text-[22px] editor-p:leading-tight editor-p:text-[#B6D3E4] editor-p:font-light editor-p:text-[20px] sm:editor-p:text-[18px] xs:editor-p:text-[16px] editor-li:text-[#231F20]/40 editor-li:font-light editor-li:text-[20px]  editor-ul:pl-[25px] editor-ul:px-[25px] [&_ul_li::marker]:text-[#C7234B] [&_ul_li::marker]:text-[24px] max-w-[600px] md:max-w-full w-full" dir="">
                                                     <h2>{{getStaticText(32)}}</h2>
-                                                    <p>Double Corner Columns: 50 x 100 x 2,5 mm - Beams: 40 x 60 x 2,5 mm Modular bolted system | Center Columns: 100 x 50 x 2,5 mm - Height: 3 - 4 m</p>
+                                                    <p>{!!$feature->description!!}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php endfor; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
