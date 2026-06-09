@@ -14,6 +14,7 @@
             top: 300px;
         }
         .editor h2{
+            max-width: 360px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
