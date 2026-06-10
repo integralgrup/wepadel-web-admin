@@ -26,7 +26,6 @@
         }
     ?>
     
-        <meta name="keywords" content="{{ $seo->seo_keywords }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
         <meta name="description" content="{{ $seo->seo_description }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
         <?php $pageTitle = $seo->seo_title;?>
         <!-- Open Graph meta tags -->
