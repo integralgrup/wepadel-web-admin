@@ -53,7 +53,7 @@ $breadcrumbImage = $about->image;
                 <div class="container max-w-[1440px]">
                     <div class="wrapper grid grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:grid-cols-1 gap-[50px] scrollreveal">
                         <div class="img h-[630px] xl:h-[500px] lg:h-[450px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                            <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$about->image }}" alt="">
+                            <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$about->image }}" alt="WePadel About Image">
                         </div>
                         <div class="text-field m-auto lg:m-0 relative">
                             <div class="icon icon-arrow-down text-[35px] h-[35px] sm:text-[16px] sm:h-[16px] sm:-top-[30px] block leading-none duration-350 text-[#C7234B] absolute -top-[50px] -left-[30px] sm:left-0"></div>
@@ -76,7 +76,7 @@ $breadcrumbImage = $about->image;
                                                 <div class="flex flex-col gap-5 justify-center items-center h-full">
                                                     <div class="image-field">
                                                         <div class="img h-[50px] w-full overflow-hidden ">
-                                                            <img class="h-full w-full object-contain group-hover/blog-item:scale-110 duration-500 group-hover/links:opacity-100 opacity-60" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="">
+                                                            <img class="h-full w-full object-contain group-hover/blog-item:scale-110 duration-500 group-hover/links:opacity-100 opacity-60" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="Certificate Image">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -93,7 +93,7 @@ $breadcrumbImage = $about->image;
             <section class="info">
                 <section class="content relative">
                     <div class="bg w-[500px] h-[500px] rounded-full absolute right-0 bottom-[-15%]  pointer-events-none opacity-50">
-                        <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
+                        <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="Loader Image" class="h-full object-center object-contain w-full">
                     </div>
                     <div class="container max-w-[1440px] ">
                         <div class="sports-content relative -mt-[50px] lg:mt-0 sm:mt-0">
@@ -109,7 +109,7 @@ $breadcrumbImage = $about->image;
                                         <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
                                             <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/box:opacity-20"></div>
                                             <div class="img h-[60px] xs:h-[40px] w-full overflow-hidden mb-[15px]">
-                                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
+                                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="Tennis Image">
                                             </div>
                                             <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
                                                 Best Padel
@@ -119,7 +119,7 @@ $breadcrumbImage = $about->image;
                                         <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
                                             <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/box:opacity-20"></div>
                                             <div class="img h-[60px] xs:h-[40px] w-full overflow-hidden mb-[15px]">
-                                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
+                                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="Court Image">
                                             </div>
                                             <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
                                                 High Quality
@@ -129,7 +129,7 @@ $breadcrumbImage = $about->image;
                                         <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
                                             <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/box:opacity-20"></div>
                                             <div class="img h-[60px] xs:h-[40px] w-full overflow-hidden mb-[15px]">
-                                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
+                                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="Running Image">
                                             </div>
                                             <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
                                                 Sport Activity
@@ -144,7 +144,7 @@ $breadcrumbImage = $about->image;
                                 </div>
                                 <div class="img-field lg:my-0">
                                     <div class="img h-[640px] xl:h-[500px] lg:h-[400px] md:h-[300px] w-full overflow-hidden isolate rounded-[30px] -mb-[130px] lg:mb-0 image-zoom">
-                                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Project Image">
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +210,7 @@ $breadcrumbImage = $about->image;
                                 </div>
                             </div>
                             <div class="img h-[500px] md:h-[400px] sm:h-[350px] xs:h-[250px] w-full overflow-hidden isolate relative height-fix-image">
-                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/earth.png" alt="">
+                                <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/earth.png" alt="Earth Image">
                                 <div data-target=".maps-list" class="location-list select-field scrollable-mob">
                                     @foreach($continents as $index => $continent)
                                         <a title="{{$continent->title}}" data-name="{{$continent->class}}" class="absolute @if($index == 0) active @endif map-box icon-content group/icon" href="javascript:;" data-branch-index="{{$index}}" style="top:{{$continent->top}}%;left:{{$continent->left}}%;">
@@ -250,7 +250,7 @@ $breadcrumbImage = $about->image;
                                                                 <div class="image-field relative ">
                                                                     <div class="image relative w-full h-[190px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
                                                                         <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
-                                                                        <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}}" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                                        <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}}" alt="{{ $project->title_1 }}" class="w-full h-full object-cover object-center duration-450">
                                                                     </div>
                                                                     <div class="text-field px-[20px] overflow-hidden isolate">
                                                                         <div class="w-fit flex justify-center items-center gap-[8px] duration-450 my-[12px]">
@@ -280,7 +280,7 @@ $breadcrumbImage = $about->image;
                         <div class="content relative rounded-[30px] overflow-hidden isolate w-full h-full">
                             <div class="gradient duration-450 bg-gradient-to-br from-[#0055A3] to-[#0055A3]/60 absolute top-0 left-0 w-full h-full z-[2]"></div>
                             <div class="img duration-450 h-full w-full overflow-hidden absolute left-0 top-0">
-                                <img class="h-full w-full object-cover duration-500" src="../assets/image/other/sahil.jpg" alt="">
+                                <img class="h-full w-full object-cover duration-500" src="../assets/image/other/sahil.jpg" alt="Sea Image">
                             </div>
                             <div class="text-field w-full h-full relative z-[3]">
                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
@@ -292,17 +292,17 @@ $breadcrumbImage = $about->image;
                             </div>
                         </div>
                         <div class="img h-[400px] xl:h-[400px] md:h-[300px] w-full overflow-hidden rounded-[30px]">
-                            <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/padel-2.jpg" alt="">
+                            <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/padel-2.jpg" alt="Padel Image">
                         </div>
                     </div>
                     <div class="wrapper grid grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] md:grid-cols-1 w-full h-full  gap-[30px] scrollreveal">
                         <div class="img h-[400px] xl:h-[400px] md:h-[300px] w-full overflow-hidden rounded-[30px] md:order-2">
-                            <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="">
+                            <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="Sport Image">
                         </div>
                         <div class="content relative rounded-[30px] overflow-hidden isolate w-full h-full md:order-1">
                             <div class="gradient duration-450 bg-gradient-to-br from-[#0055A3] to-[#0055A3]/60 absolute top-0 left-0 w-full h-full z-[2]"></div>
                             <div class="img duration-450 h-full w-full overflow-hidden absolute left-0 top-0">
-                                <img class="h-full w-full object-cover duration-500" src="../assets/image/other/sahil.jpg" alt="">
+                                <img class="h-full w-full object-cover duration-500" src="../assets/image/other/sahil.jpg" alt="Wepadel Sea Image">
                             </div>
                             <div class="text-field w-full h-full relative z-[3]">
                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
@@ -335,7 +335,7 @@ $breadcrumbImage = $about->image;
                             <div class="ref-box group w-fit h-full group/detail min-w-[200px] xs:min-w-full flex ">
                                 <div class="image-field">
                                     <div class="image h-[125px] max-w-[200px] m-auto overflow-hidden duration-300 border border-solid border-transparent group-hover/detail:border-[#005AA5]/70 rounded-[20px] p-[5px] flex justify-center relative group/img  grayscale-[1] brightness-[1] opacity-60 group-hover/detail:grayscale-0 group-hover/detail:brightness-100 group-hover/detail:opacity-100">
-                                        <img loading="lazy" src="../assets/image/other/logo-<?= $i ?>.png" alt="" class="w-full h-full group-hover:scale-110 m-auto object-contain object-center duration-450 ">
+                                        <img loading="lazy" src="../assets/image/other/logo-<?= $i ?>.png" alt="Logo Image <?= $i ?>" class="w-full h-full group-hover:scale-110 m-auto object-contain object-center duration-450 ">
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +372,7 @@ $breadcrumbImage = $about->image;
                                             <div class="image relative w-full h-[350px] md:h-[300px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
                                                 <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
                                                 <div class="gradient [background:linear-gradient(180deg,rgba(0,_0,_0,_0.00)_35%,_rgba(0,_0,_0,_.8)_100%);] absolute bottom-0 left-0 w-full h-full z-0 pointer-events-none translate-z-0 "></div>
-                                                <img src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'blog_images_folder'], app()->getLocale()).'/'.$blog->image  ?>" alt="" class="w-full h-full object-cover object-center duration-450">
+                                                <img src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'blog_images_folder'], app()->getLocale()).'/'.$blog->image  ?>" alt="{{ $blog->title }}" class="w-full h-full object-cover object-center duration-450">
                                             </div>
                                             <div class="text-field absolute bottom-0 left-0 p-[20px_20px_30px_50px] sm:p-[30px] overflow-hidden isolate group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);]">
                                                 <p class=" w-fit flex justify-center items-center gap-[8px] text-white/75 font-medium group-hover/blog:text-white duration-450 mb-[8px]">

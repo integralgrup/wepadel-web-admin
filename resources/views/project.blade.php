@@ -124,10 +124,10 @@
             </section>
             <section class="project-info py-[100px] md:py-[50px] relative overflow-hidden isolate" id="technic">
                 <div class="bg w-[200px] h-[200px] rounded-full absolute left-[45%] top-[50%] translate-y-[-50%] pointer-events-none z-[2]">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-5.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-5.png" alt="Wepadel Shape 1" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="bg w-[600px] h-[600px] sm:w-[300px] sm:h-[300px] rounded-full absolute left-[8%] top-[40%] translate-y-[-50%] pointer-events-none z-[2]">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-4.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-4.png" alt="Wepadel Shape 2" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="icons overflow-hidden absolute left-[70px] top-[15%] translate-y-[-50%] pointer-events-none z-[5]">
                     <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-white/0 opacity-10"></div>
@@ -142,32 +142,32 @@
                             <!-- project-swiper'ın swiper-slide adedi kadar detail-box oluşturulmalıdır. -->
                             <div class="detail-box active opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="0">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Wepadel Project Image">
                                 </div>
                             </div>
                             <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="1">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Wepadel Project Image 2">
                                 </div>
                             </div>
                             <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="2">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Wepadel Project Image 3">
                                 </div>
                             </div>
                             <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="3">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Wepadel Project Image 4 ">
                                 </div>
                             </div>
                             <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="4">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Wepadel Project Image 5">
                                 </div>
                             </div>
                             <div class="detail-box opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="5">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/project.jpg" alt="Wepadel Project Image 6">
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[60px] group-[&.swiper-slide-active]/slide:h-[100px] duration-450 w-full overflow-hidden mb-[15px] group-[&.swiper-slide-active]/slide:mb-0">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="Wepadel Tennis Image">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group-[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
                                                             Best Padel
@@ -219,7 +219,7 @@
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[60px] group-[&.swiper-slide-active]/slide:h-[100px] duration-450 w-full overflow-hidden mb-[15px] group-[&.swiper-slide-active]/slide:mb-0">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="Wepadel Court Image">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group-[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
                                                             Best Padel
@@ -236,7 +236,7 @@
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[60px] group-[&.swiper-slide-active]/slide:h-[100px] duration-450 w-full overflow-hidden mb-[15px] group-[&.swiper-slide-active]/slide:mb-0">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="Wepadel Running Image">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group-[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
                                                             Best Padel
@@ -274,7 +274,7 @@
                         <div class="wrapper grid grid-cols-2 md:grid-cols-1 gap-[50px] md:gap-0">
                             <div class="img-field ">
                                 <div class="img h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-[30px]">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="Wepadel Sport Image">
                                 </div>
                             </div>
                             <div class="left-form">

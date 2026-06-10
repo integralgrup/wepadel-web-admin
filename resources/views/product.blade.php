@@ -77,7 +77,7 @@ $breadcrumbTitle = $product->title;
                                     </div>
                                 </div>
                                 <div class="image h-full w-full">
-                                    <img loading="lazy" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->image  ?>" alt="" class="h-full object-center object-cover w-full">
+                                    <img loading="lazy" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->image  ?>" alt="{{$product->title}}" class="h-full object-center object-cover w-full">
                                 </div>
                             </div>
                         </div>
@@ -87,14 +87,14 @@ $breadcrumbTitle = $product->title;
 
             <section class="pb-[100px] md:pb-[50px] overflow-hidden isolate relative tabmenuscroll" id="general">
                 <div class="bg w-[600px] h-[600px] sm:w-[300px] sm:h-[300px] rounded-full absolute right-0 top-0 translate-y-[-40%] translate-x-[40%] pointer-events-none z-[5] sm:hidden">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-1.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-1.png" alt="Shape 1" class="h-full object-center object-contain w-full">
                 </div>
 
                 <div class="bg w-[500px] h-[500px] rounded-full absolute right-[40%] top-[70%] translate-y-[-50%] pointer-events-none opacity-70 ">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-3.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-3.png" alt="Shape 3" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="bg w-[500px] h-[500px] rounded-full absolute -right-[10%] bottom-0  pointer-events-none translate-y-[50%] ">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="Shape 2" class="h-full object-center object-contain w-full">
                 </div>
                 <section class="prod-carousel ">
                     <div class="container max-w-[1440px]">
@@ -122,7 +122,7 @@ $breadcrumbTitle = $product->title;
                                         <div class="swiper-slide bg-cover bg-center relative overflow-hidden isolate" data-video="../assets/image/other/tennis.mp4">
                                             <div class="image h-full w-full z-[5] relative">
                                                 <a href="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$image->image  ?>" class="image-zoom group/popup overflow-hidden isolate" data-fancybox="gallery">
-                                                    <img loading="lazy" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$image->image  ?>" alt="" class="h-full object-center object-contain w-full">
+                                                    <img loading="lazy" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$image->image  ?>" alt="{{ $product->title }}" class="h-full object-center object-contain w-full">
                                                 </a>
                                             </div>
 
@@ -142,7 +142,7 @@ $breadcrumbTitle = $product->title;
                                                 <div class="swiper-slide group/slide select-none !h-[100px] flex items-center justify-center opacity-[.65] rounded-[10px] [&.swiper-slide-active]:opacity-100 bg-cover bg-center !transition-all !duration-500 cursor-pointer">
                                                     <div class="img-field relative w-full h-full mb-[15px]">
                                                         <div class="image h-full w-full">
-                                                            <img loading="lazy" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$image->image  ?>" alt="" class="h-full object-center object-contain w-full">
+                                                            <img loading="lazy" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$image->image  ?>" alt="{{ $product->title }}" class="h-full object-center object-contain w-full">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -196,7 +196,7 @@ $breadcrumbTitle = $product->title;
                                         @foreach($product->types as $color)
                                             <li class="color-item cursor-pointer duration-450 p-[5px] w-fit h-fit border border-solid border-transparent [&.active]:border-[{{$color->alt}}] rounded-full" data-title="{{$color->title}}">
                                                 <div class="img h-[54px] w-[54px] relative z-[1] duration-450 rounded-full overflow-hidden isolate">
-                                                    <img class="h-full w-full object-cover object-top duration-500" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$color->image  ?>" alt="">
+                                                    <img class="h-full w-full object-cover object-top duration-500" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$color->image  ?>" alt="{{ $color->title }}">
                                                 </div>
                                             </li>
                                         @endforeach
@@ -220,10 +220,10 @@ $breadcrumbTitle = $product->title;
             </section>
             <section class="project-info py-[100px] md:py-[50px] relative overflow-hidden isolate " id="technic">
                 <div class="bg w-[200px] h-[200px] absolute left-[45%] top-[65%] translate-y-[-50%] pointer-events-none z-[2]">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-5.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-5.png" alt="Wepadel Shape 1" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="bg w-[600px] h-[600px] sm:w-[300px] sm:h-[300px] rounded-full absolute left-[8%] top-[40%] translate-y-[-50%] pointer-events-none z-[2]">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-4.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-4.png" alt="Wepadel Shape 2" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="icons overflow-hidden absolute left-[70px] top-[15%] translate-y-[-50%] pointer-events-none z-[5]">
                     <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-white/0 opacity-10"></div>
@@ -240,7 +240,7 @@ $breadcrumbTitle = $product->title;
                             <?php foreach ($product->features as $key => $feature) : ?>
                             <div class="detail-box {{ $key == 0 ? 'active' : '' }} opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="{{$key}}">
                                 <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                    <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder', 'product_images_folder'], $feature->lang).'/'. $feature->icon}}" alt="">
+                                    <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder', 'product_images_folder'], $feature->lang).'/'. $feature->icon}}" alt="{{ $feature->title }}">
                                 </div>
                             </div>
                             <?php endforeach; ?>
@@ -275,7 +275,7 @@ $breadcrumbTitle = $product->title;
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="{{ env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder', 'product_images_folder'], $feature->lang).'/'. $feature->image}}" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="{{ env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder', 'product_images_folder'], $feature->lang).'/'. $feature->image}}" alt="{{ $feature->title }}">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
                                                             {{$feature->title}}
@@ -337,7 +337,7 @@ $breadcrumbTitle = $product->title;
                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                         <div class="gradient duration-450 [background:linear-gradient(138.02deg,_#0055A3_4.25%,_#C7234B_101.19%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[&.active]/sport:opacity-100"></div>
                                         <div class="img h-[50px] xs:h-[30px] relative z-[1] duration-450 w-full overflow-hidden mb-[20px] xs:mb-[10px] group-[&.active]/sport:invert-[1] group-[&.active]/sport:brightness-0">
-                                            <img class="h-full w-full object-contain object-center duration-500" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$feature2->image  ?>" alt="">
+                                            <img class="h-full w-full object-contain object-center duration-500" src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$feature2->image  ?>" alt="{{ $feature2->title }}">
                                         </div>
                                         <div class="title text-[18px] sm:text-[16px] xs:text-[12px] font-normal relative duration-450 text-[#656565] group-[&.active]/sport:text-white text-center line-clamp-2 z-[2] break-words" dir="">
                                             {{$feature2->title}}
@@ -394,7 +394,7 @@ $breadcrumbTitle = $product->title;
                     <div class="wrapper grid grid-cols-2 md:grid-cols-1 gap-[50px] md:gap-0">
                         <div class="img-field ">
                             <div class="img h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-[30px]">
-                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="">
+                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="Wepadel Sport">
                             </div>
                         </div>
                         <div class="left-form" dir="">

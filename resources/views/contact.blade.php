@@ -21,12 +21,12 @@
                 <div class="split absolute top-[160px]  lg:top-[150px]  xs:hidden left-[50%] w-[85%] translate-x-[-50%]  h-[1px] bg-white/10 z-[3] flex xs:!mt-0"></div>
                 <div class="gradient duration-450 bg-gradient-to-br from-[#0055A3]  to-[#C7234B] absolute top-0 left-0 w-full h-full z-[0] rounded-[30px]"></div>
                 <div class="img duration-450 h-full w-full overflow-hidden absolute left-0 top-0 z-[1]">
-                    <img class="h-full w-full object-cover object-top duration-500" src="../assets/image/other/bg-contact.png" alt="">
+                    <img class="h-full w-full object-cover object-top duration-500" src="../assets/image/other/bg-contact.png" alt="Contact image">
                 </div>
                 <div class="content-maps relative z-[2] py-[30px] px-[80px] md:px-[50px] sm:pb-[25px] xs:px-[25px]">
                     <div class="title mb-[30px] xs:mb-[25px]">
                         <a href="" class="logo-wrapper block max-w-[200px] lg:max-w-[175px] w-full mb-[20px]">
-                            <img class="block object-contain object-center w-full h-auto" src="../assets/image/trademark/logo-white.png" alt="" loading="lazy">
+                            <img class="block object-contain object-center w-full h-auto" src="../assets/image/trademark/logo-white.png" alt="Wepadel Company logo" loading="lazy">
                         </a>
                         <div class="editor editor-base title editor-headings:duration-350 group-hover/mpb:editor-headings:text-white  editor-headings:mb-0 editor-headings:font-light editor-h1:text-[40px] xl:editor-h1:text-[34px] lg:editor-h1:text-[20px] editor-strong:duration-350  editor-headings:leading-tight editor-strong:leading-tight duration-350 font-bold w-full editor-strong:font-bold editor-strong:block editor-p:text-[18px] editor-p:font-light editor-p:text-white editor-a:no-underline editor-a:font-bold editor-a:text-white editor-a:hover:text-[#C7234B] editor-a:duration-350">
                             <p>{{getStaticText(19)}} <a href="">Integral Group</a></p>
@@ -137,7 +137,7 @@
             <div class="wrapper grid grid-cols-2 md:grid-cols-1 gap-[50px] md:gap-0">
                 <div class="img-field ">
                     <div class="img h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-[30px]">
-                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="">
+                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="Wepadel Court Image">
                     </div>
                 </div>
                 <div class="left-form" dir="">
@@ -225,7 +225,7 @@
 
 
                 <div class="icon group/icons w-fit flex justify-center items-center">
-                    <img loading="lazy" src="../assets/image/trademark/logo.png" alt="" class="w-[120px] h-full object-contain object-center duration-450 ">
+                    <img loading="lazy" src="../assets/image/trademark/logo.png" alt="Wepadel Company logo 2" class="w-[120px] h-full object-contain object-center duration-450 ">
                 </div>
 
                 </div>

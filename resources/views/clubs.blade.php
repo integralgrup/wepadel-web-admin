@@ -12,7 +12,7 @@
             <div class="image-field absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div class="image h-full overflow-hidden">
                     <?php if ($breadcrumbType == "Görsel") : ?>
-                        <img loading="lazy" src="<?= $breadcrumbSRC ?>" alt="" class="w-full h-full object-cover object-center">
+                        <img loading="lazy" src="<?= $breadcrumbSRC ?>" alt="{{$paneName}}" class="w-full h-full object-cover object-center">
                     <?php else : ?>
                         <!-- VİDEO EKLENEBİLİR -->
                         <!-- <video autoplay loop muted playsinline class="w-full h-full object-cover object-right" src="<?= $breadcrumbSRC ?>"></video> -->

@@ -308,7 +308,7 @@
                                                         <div class="menu-product-box group/mpb w-full h-full lg:h-fit lg:border-b lg:borde-solid lg:border-[#e5e9eb]">
                                                             <div class="content h-full min-h-[325px] lg:min-h-fit relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none pt-[13%] pl-[12%] xl:p-[30px] lg:py-[20px] lg:px-[30px]">
                                                                 <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-0  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                                    <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], $childItem->lang) .'/'. $childItem->image }}" alt="" class="h-full object-center object-cover w-full">
+                                                                    <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], $childItem->lang) .'/'. $childItem->image }}" alt="{{$childItem->title}}" class="h-full object-center object-cover w-full">
                                                                     <div class="gradient [background:linear-gradient(145deg,_rgba(0,85,163,1)_0%,_rgba(199,35,75,1)_100%);] opacity-60 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
                                                                 </div>
                                                                 <div class="title-field flex justify-between items-center p-[20px_30px] lg:p-0 gap-2 mb-[40px] xl:mb-[20px] lg:mb-0 relative z-[1]">
@@ -352,7 +352,7 @@
                                                     <div class="menu-product-box group/mpb w-full h-full lg:h-auto">
                                                         <div class="content h-full min-h-[325px] xs:min-h-full relative overflow-hidden lg:bg-white lg:border-transparent lg:rounded-none">
                                                             <div class="image h-full w-full absolute left-0 top-0 duration-450 opacity-10  group-[.is-active]/mpb:opacity-100 group-hover/mpb:opacity-100 xs:hidden">
-                                                                <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], $childItem->lang) .'/'. $childItem->image }}" alt="" class="h-full object-center object-cover w-full">
+                                                                <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], $childItem->lang) .'/'. $childItem->image }}" alt="{{ $childItem->title }}" class="h-full object-center object-cover w-full">
                                                                 <div class="gradient [background:linear-gradient(180deg,_rgba(3,20,35,1)_0%,_rgba(0,85,163,1)_100%);] opacity-80 duration-450 absolute left-0 top-0 w-full z-[0] h-full"></div>
                                                             </div>
                                                             <div class="title-field flex justify-between md:justify-center items-center p-[20px_30px] lg:p-0 gap-2 relative z-[1] h-full lg:min-h-[325px] xs:min-h-full">

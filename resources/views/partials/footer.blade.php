@@ -21,7 +21,7 @@
         <div class="wrapper max-w-[1440px] mx-auto w-full px-[30px] flex items-start justify-between gap-[180px] 2xl:gap-[90px] xl:gap-[60px] md:gap-[45px] xs:gap-[30px] md:flex-col">
             <div class="brand-wrapper max-w-[350px] md:max-w-[480px] sm:max-w-full md:w-full sm:mx-auto lg:max-w-[300px] w-full shrink-0 mt-[25px] xs:mt-0">
                 <a href="" class="logo-wrapper block max-w-[240px] xl:max-w-[200px] lg:max-w-[175px] w-full mb-[80px] sm:mb-[50px]">
-                    <img class="block object-contain object-center w-full h-auto" src="../assets/image/trademark/logo.png" alt="" loading="lazy">
+                    <img class="block object-contain object-center w-full h-auto" src="../assets/image/trademark/logo.png" alt="Wepadel Logo" loading="lazy">
                 </a>
                 <div class="list grid gap-[40px]">
                     <a href="tel:<?php echo $footer_info ? $footer_info->phone : ''; ?>" class="item group/item w-fit text-black flex items-center gap-[10px] hover:text-[#C7234B]">
@@ -134,7 +134,7 @@
             <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center">{{getStaticText(19)}} <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]" dir="">Integral Group</a></div>
             <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center sm:hidden" dir="">© {{date('Y')}} <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]">{{getStaticText(61)}}</a> | {{getStaticText(20)}}</div>
             <a href="" class="logo-wrapper block max-w-[120px] w-full hover:scale-105 duration-450 ml-auto md:col-span-2 sm:col-span-1 md:m-auto sm:hidden">
-                <img class="block object-contain object-center w-full h-auto" src="../assets/image/other/integral.png" alt="" loading="lazy">
+                <img class="block object-contain object-center w-full h-auto" src="../assets/image/other/integral.png" alt="Integral Group Logo" loading="lazy">
             </a>
         </div>
     </div>

@@ -78,7 +78,7 @@
                                             </div>
                                         </div>
                                         <div class="image h-full w-full">
-                                            <img loading="lazy" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $slider->lang) .'/'. $slider->image}}" alt="" class="h-full object-center object-cover w-full">
+                                            <img loading="lazy" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $slider->lang) .'/'. $slider->image}}" alt="{{ $slider->title }}" class="h-full object-center object-cover w-full">
                                         </div>
                                         <div class="video group/video absolute top-0 left-0 w-full h-full">
 
@@ -120,7 +120,7 @@
                                                         </div>
                                                         <div class="img h-[45px] group-[&.swiper-slide-active]/slide:h-[50px] relative z-[1] duration-450 w-full overflow-hidden">
                                                             <img class="h-full w-full object-contain object-center duration-500" 
-                                                            src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $slider->lang) .'/'. $slider->icon}}" alt="">
+                                                            src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $slider->lang) .'/'. $slider->icon}}" alt="{{$slider->title}} icon">
                                                         </div>
                                                     </div>
                                                     <div class="text-field overflow-hidden isolate">
@@ -156,10 +156,10 @@
             </section>
             <section class="project-info py-[100px] md:py-[50px] relative overflow-hidden isolate tabmenuscroll" id="technic">
                 <div class="bg w-[200px] h-[200px] rounded-full absolute left-[45%] top-[50%] translate-y-[-50%] pointer-events-none z-[2]">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-5.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-5.png" alt="Icon 1" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="bg w-[600px] h-[600px] sm:w-[300px] sm:h-[300px]  rounded-full absolute left-[8%] top-[40%] translate-y-[-50%] pointer-events-none z-[2]">
-                    <img loading="lazy" src="../assets/image/other/Ellipsedty-4.png" alt="" class="h-full object-center object-contain w-full">
+                    <img loading="lazy" src="../assets/image/other/Ellipsedty-4.png" alt="Icon 3" class="h-full object-center object-contain w-full">
                 </div>
                 <div class="icons overflow-hidden absolute left-[70px] top-[15%] translate-y-[-50%] pointer-events-none z-[5]">
                     <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-white/0 opacity-10"></div>
@@ -175,7 +175,7 @@
                             <?php foreach ($club->features as $index => $feature) : ?>
                                 <div class="detail-box active opacity-0 absolute translate-y-[20px] duration-450 [visibility:hidden;] [&.active]:opacity-100 [&.active]:translate-y-0 [&.active]:delay-[450ms] [&.active]:visible gap-[25px] w-full h-full z-[5]" data-id="{{$index}}">
                                     <div class="img h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[350px] w-full overflow-hidden rounded-[30px] image-zoom">
-                                        <img class="h-full w-full object-cover object-center duration-500" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $feature->lang) .'/'. $feature->image}}" alt="">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $feature->lang) .'/'. $feature->image}}" alt="{{$feature->title}}">
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -211,7 +211,7 @@
                                                         <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-[.swiper-slide-active]/slide:opacity-20"></div>
                                                         <div class="gradient duration-450 [background:linear-gradient(180deg,_rgba(247,247,247,0.06)_0%,_rgba(247,247,247,0)_100%);]  absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-100 group-[.swiper-slide-active]/slide:opacity-0"></div>
                                                         <div class="img h-[50px] group-[&.swiper-slide-active]/slide:h-[100px] relative z-[1] duration-450 w-full overflow-hidden">
-                                                            <img class="h-full w-full object-contain object-center duration-500" src="<?= env('HTTP_DOMAIN').'/'.getFolder(['uploads_folder', 'club_images_folder'], app()->getLocale()).'/'.$feature->icon ?>" alt="">
+                                                            <img class="h-full w-full object-contain object-center duration-500" src="<?= env('HTTP_DOMAIN').'/'.getFolder(['uploads_folder', 'club_images_folder'], app()->getLocale()).'/'.$feature->icon ?>" alt="{{$feature->title}} icon">
                                                         </div>
                                                         <div class="title text-[18px] font-normal h-[55px] group-[&.swiper-slide-active]/slide:h-0 group- relative[&.swiper-slide-active]/slide:opacity-0 duration-450 text-white text-center line-clamp-2" dir="">
                                                             {{$feature->title}}
@@ -247,7 +247,7 @@
                     @if($key % 2 == 0)
                         <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
                             <div class="bg w-[500px] h-[500px] rounded-full absolute -left-[10%] top-[60%] translate-y-[-50%] pointer-events-none opacity-90 ">
-                                <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
+                                <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="Background Shape" class="h-full object-center object-contain w-full">
                             </div>
                             <div class="icons overflow-hidden absolute left-[70px] top-[40%] translate-y-[-50%] pointer-events-none z-[5]">
                                 <div class="icon icon-arrow-down text-[100px] w-[105px] h-[100px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] to-[#0055A3] opacity-5"></div>
@@ -264,7 +264,7 @@
                                         </div>
                                     </div>
                                     <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-l-[20px] md:rounded-[20px] strecth-to-right image-zoom">
-                                        <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN') . '/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $slider->image }}" alt="">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="{{ env('HTTP_DOMAIN') . '/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $slider->image }}" alt="{{ $slider->title }} Image">
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@
                     @else
                         <div class="club-box mt-[100px] xl:mt-[75px] lg:mt-[50px] relative">
                             <div class="bg w-[500px] h-[500px] rounded-full absolute -right-[15%] top-[60%] translate-y-[-50%] pointer-events-none ">
-                                <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="" class="h-full object-center object-contain w-full">
+                                <img loading="lazy" src="../assets/image/other/Ellipsedty-2.png" alt="Shape 6" class="h-full object-center object-contain w-full">
                             </div>
                             <div class="icons overflow-hidden absolute right-[30px] top-[25%] translate-y-[-50%] pointer-events-none z-[1]">
                                 <div class="icon icon-arrow-down text-[85px] h-[85px] block leading-none duration-350 text-transparent bg-clip-text bg-gradient-to-b from-[#0055A3] via-[#C7234B]/50 to-[#0055A3]/0 opacity-5"></div>
@@ -286,7 +286,7 @@
                             <div class="container max-w-[1440px]">
                                 <div class="wrapper grid grid-cols-[minmax(0,9fr)_minmax(0,4fr)] gap-[100px] lg:gap-[50px] md:grid-cols-1">
                                     <div class="img relative h-[650px] xl:h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-r-[20px] sm:rounded-[20px] strecth-to-left md:order-2 image-zoom">
-                                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-2.jpg" alt="">
+                                        <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/impact-2.jpg" alt="Wepadel Court Image">
                                     </div>
                                     <div class="text-field m-auto"   dir="md:order-1">
                                         <div class="editor editor-base editor-h1:text-[44px] xl:editor-h1:text-[40px] lg:editor-h1:text-[34px] md:editor-h1:text-[30px] sm:editor-h1:text-[26px] xs:editor-h1:text-[24px] editor-headings:m-0 editor-headings:duration-450 editor-headings:mb-[50px] editor-headings:text-[#0055A3] group-hover/slide:editor-headings:text-white editor-h1:font-bold editor-headings:font-normal editor-headings:leading-[1.25] editor-headings:line-clamp-3 editor-p:text-[20px] editor-p:font-light editor-p:text-[#231F20] editor-p:mb-0 editor-p:duration-450  text-white mr-auto w-full sm:[&_br]:hidden">
@@ -347,7 +347,7 @@
                     <div class="wrapper grid grid-cols-2 md:grid-cols-1 gap-[50px] md:gap-0">
                         <div class="img-field ">
                             <div class="img h-[550px] lg:h-[500px] md:h-[400px] xs:h-[300px] w-full overflow-hidden isolate rounded-[30px]">
-                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="">
+                                <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="Wepadel Court Image">
                             </div>
                         </div>
                         <div class="left-form" dir="">

@@ -47,7 +47,7 @@
                                                 </video>
                                             @else
                                                 <div class="image h-full w-full">
-                                                    <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="" class="h-full object-center object-cover w-full">
+                                                    <img loading="lazy" src="{{ env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="{{ $item->title }}" class="h-full object-center object-cover w-full">
                                                 </div>
                                             @endif
                                         </div>
@@ -171,7 +171,7 @@
                                         </svg>
                                         <div class="image absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-fit">
                                             <div data-atropos-offset="2.5" class="image animpers h-[400px] lg:h-[400px] md:h-[300px] sm:h-[300px] ">
-                                                <img src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$about_home->image }}" alt="" class="w-full h-full object-contain object-center animpers-img duration-450">
+                                                <img src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$about_home->image }}" alt="{{ $about_home->title }}" class="w-full h-full object-contain object-center animpers-img duration-450">
                                             </div>
                                         </div>
 
@@ -211,7 +211,7 @@
                                     <div class="flex flex-col gap-5 justify-center items-center h-full">
                                         <div class="image-field">
                                             <div class="img h-[50px] w-full overflow-hidden ">
-                                                <img class="h-full w-full object-contain group-hover/blog-item:scale-110 duration-500 group-hover/links:opacity-100 opacity-60" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="">
+                                                <img class="h-full w-full object-contain group-hover/blog-item:scale-110 duration-500 group-hover/links:opacity-100 opacity-60" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], app()->getLocale()).'/'.$item->image }}" alt="{{ $item->title }}">
                                             </div>
                                         </div>
                                     </div>
@@ -259,7 +259,7 @@
                             <div class="image-field w-full h-full">
                                 <div class="img h-full w-full overflow-hidden">
                                     <img class="h-full w-full object-cover group-hover/blog-item:scale-110 duration-500" 
-                                    src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$category->image }}" alt="">
+                                    src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$category->image }}" alt="{{ $category->title }}">
                                 </div>
                             </div>
 
@@ -315,7 +315,7 @@
                     <div class="refence-detail relative xs:m-auto xs:w-full h-full rounded-[30px] sm:rounded-t-none overflow-hidden isolate">
                         <div class="gradient duration-450 bg-gradient-to-br from-[#0055A3]/80 to-[#C7234B]/80 absolute top-0 left-0 w-full h-full z-[2]"></div>
                         <div class="img duration-450 h-full w-full overflow-hidden absolute left-0 top-0">
-                            <img class="h-full w-full object-cover duration-500" src="../assets/image/other/saha-bg.jpg" alt="">
+                            <img class="h-full w-full object-cover duration-500" src="../assets/image/other/saha-bg.jpg" alt="Wepadel Court Image">
                         </div>
                         <?php foreach($products as $key => $product) : ?>
                         @if($key == 0)
@@ -351,13 +351,13 @@
                                         <div class="bg absolute left-0 top-0 w-full h-full [background:linear-gradient(180deg,_#FFFFFF_0%,rgba(255,255,255,0)_100%);]"></div>
                                         <div class="content w-full h-full relative ">
                                             <div class="img duration-450 h-full w-full overflow-hidden absolute left-0 top-0 z-[-1] opacity-0 group-[&.swiper-slide-active]/slide:opacity-100 pointer-events-none">
-                                                <img class="h-full w-full object-contain duration-500" src="../assets/image/other/saha-bg.png" alt="">
+                                                <img class="h-full w-full object-contain duration-500" src="../assets/image/other/saha-bg.png" alt="Wepadel Court Image 2">
                                             </div>
                                             <div class="swiper product-images">
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide">
                                                         <div class="prod-img img h-[300px] group-[&.swiper-slide-active]/slide:h-[400px] md:h-[250px] md:group-[&.swiper-slide-active]/slide:h-[350px] sm:group-[&.swiper-slide-active]/slide:h-[300px] xs:group-[&.swiper-slide-active]/slide:h-[275px] group-[&.swiper-slide-active]/slide:pl-[50px] pr-[25px] md:!px-[15px] w-full overflow-hidden duration-700 ml-auto">
-                                                            <img class="h-full w-full object-contain  duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->gallery[0]->image }}" alt="">
+                                                            <img class="h-full w-full object-contain  duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()).'/'.$product->gallery[0]->image }}" alt="{{ $product->title }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -401,7 +401,7 @@
                             <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
                                 <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/box:opacity-20"></div>
                                 <div class="img h-[60px] xs:h-[40px] w-full overflow-hidden mb-[15px]">
-                                    <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="">
+                                    <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/tennis.png" alt="Wepadel Tennis Image">
                                 </div>
                                 <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
                                    {{getStaticText(8)}}
@@ -410,7 +410,7 @@
                             <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
                                 <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/box:opacity-20"></div>
                                 <div class="img h-[60px] xs:h-[40px] w-full overflow-hidden mb-[15px]">
-                                    <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="">
+                                    <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/court.png" alt="Wepadel Court Image">
                                 </div>
                                 <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
                                     {{getStaticText(9)}}
@@ -419,7 +419,7 @@
                             <div class="sport-box group/box bg-[#F6F6F6]/5 rounded-[30px] p-[30px] px-[25px] xs:py-[20px] xs:px-[15px] lg:p-[20px] relative overflow-hidden border border-solid border-transparent hover:border-white/50 duration-450">
                                 <div class="gradient duration-450 bg-gradient-to-br from-white from-15% to-white/50 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/box:opacity-20"></div>
                                 <div class="img h-[60px] xs:h-[40px] w-full overflow-hidden mb-[15px]">
-                                    <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="">
+                                    <img class="h-full w-full object-contain object-center duration-500" src="../assets/image/other/running.png" alt="Wepadel Running Image">
                                 </div>
                                 <div class="title text-[18px] sm:text-[16px] xs:text-[14px] text-white text-center">
                                     {{getStaticText(10)}}
@@ -434,7 +434,7 @@
                     </div>
                     <div class="img-field lg:my-0">
                         <div class="img h-[600px] xl:h-[500px] lg:h-[400px] md:h-[300px] w-full overflow-hidden rounded-[30px] image-zoom">
-                            <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="">
+                            <img class="h-full w-full object-cover object-center duration-500" src="../assets/image/other/sport.jpg" alt="Wepadel Sport Image">
                         </div>
                     </div>
                 </div>
@@ -466,7 +466,7 @@
                                         <div class="content relative rounded-[30px] overflow-hidden isolate w-full h-full">
                                             <div class="gradient duration-450 bg-gradient-to-br from-[#0055A3]/80 to-[#C7234B]/80 absolute top-0 left-0 w-full h-full z-[2]"></div>
                                             <div class="img duration-450 h-full w-full overflow-hidden absolute left-0 top-0">
-                                                <img class="h-full w-full object-cover duration-500" src="../assets/image/other/saha-bg.jpg" alt="">
+                                                <img class="h-full w-full object-cover duration-500" src="../assets/image/other/saha-bg.jpg" alt="Wepadel Court Image 3">
                                             </div>
                                             <div class="text-field w-full h-full relative z-[3]">
                                                 <div class="text-content max-w-[525px] md:max-w-full w-full h-full mr-auto flex flex-col justify-center items-center p-[50px] duration-700 relative rounded-[30px] overflow-hidden isolate sm:px-[30px] xs:px-[20px] m-auto">
@@ -511,7 +511,7 @@
                                 <div class="swiper-slide ">
                                     <a href="">
                                         <div class="img h-[550px] xl:h-[500px] md:h-[400px] sm:h-[300px] w-full overflow-hidden rounded-[30px]">
-                                            <img class="h-full w-full object-cover object-center duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image }}" alt="">
+                                            <img class="h-full w-full object-cover object-center duration-500" src="{{env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image }}" alt="{{ $project->title_1 }} Image">
                                         </div>
                                     </a>
                                 </div>
@@ -554,7 +554,7 @@
                                         <div class="image relative w-full h-[350px] md:h-[300px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[30px]">
                                             <div class="gradient duration-450 bg-black/20 absolute top-0 left-0 w-full h-full z-[0] rounded-[30px] opacity-0 group-hover/blog:opacity-100"></div>
                                             <div class="gradient [background:linear-gradient(180deg,rgba(0,_0,_0,_0.00)_35%,_rgba(0,_0,_0,_.8)_100%);] absolute bottom-0 left-0 w-full h-full z-0 pointer-events-none translate-z-0 "></div>
-                                            <img src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'blog_images_folder'], app()->getLocale()).'/'.$blog->image  ?>" alt="" class="w-full h-full object-cover object-center duration-450">
+                                            <img src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'blog_images_folder'], app()->getLocale()).'/'.$blog->image  ?>" alt="{{ $blog->title }}" class="w-full h-full object-cover object-center duration-450">
                                         </div>
                                         <div class="text-field absolute bottom-0 left-0 p-[20px_20px_30px_50px] sm:p-[30px] overflow-hidden isolate group-[&.is-safari]/body:[transform:translateZ(0)_translate3d(0,0,0);]">
                                             <p class=" w-fit flex justify-center items-center gap-[8px] text-white/75 font-medium group-hover/blog:text-white duration-450 mb-[8px]">

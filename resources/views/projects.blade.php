@@ -12,7 +12,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
     <div class="image-field absolute top-0 left-0 w-full h-full overflow-hidden">
         <div class="image h-full overflow-hidden">
             <?php if ($breadcrumbType == "Görsel") : ?>
-                <img loading="lazy" src="<?= $breadcrumbSRC ?>" alt="" class="w-full h-full object-cover object-center">
+                <img loading="lazy" src="<?= $breadcrumbSRC ?>" alt="{{$paneName}}" class="w-full h-full object-cover object-center">
             <?php else : ?>
                 <!-- VİDEO EKLENEBİLİR -->
                 <!-- <video autoplay loop muted playsinline class="w-full h-full object-cover object-right" src="<?= $breadcrumbSRC ?>"></video> -->
@@ -112,7 +112,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                                 @if($key % 2 == 0)
                                     <div class="image-field relative sm:order-1">
                                         <div class="image relative w-full h-[420px] md:h-[350px] xs:h-[300px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[20px]">
-                                            <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}}" alt="" class="w-full h-full object-cover object-center duration-450">
+                                            <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image}}" alt="{{ $project->title }}" class="w-full h-full object-cover object-center duration-450">
                                         </div>
                                     </div>
                                     <div class="text-field p-[10px] sm:p-0 max-w-[500px] m-auto overflow-hidden isolate flex flex-col justify-center sm:max-w-full relative sm:order-2">
@@ -138,7 +138,7 @@ $breadcrumbSRC = "../assets/image/other/blog-2.jpg";
                                     </div>
                                     <div class="image-field relative sm:order-1">
                                         <div class="image relative w-full h-[420px] md:h-[350px] xs:h-[300px] bg-[#D6D6D6] duration-450 overflow-hidden isolate rounded-[20px]">
-                                            <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image }}" alt="" class="w-full h-full object-cover object-center duration-450">
+                                            <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()).'/'.$project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover object-center duration-450">
                                         </div>
                                     </div>
                                 @endif
