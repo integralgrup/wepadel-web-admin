@@ -8,18 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @if(isset($seo))
     <?php
-        $seoImage = 'https://wepadel.com/assets/image/trademark/logo.png';
+        
         if(isset($is_blog)){
             $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'blog_images_folder'], app()->getLocale()) . '/' . $blog->image;
         }
-        if(isset($club)){
+        elseif(isset($club)){
             $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'club_images_folder'], app()->getLocale()) . '/' . $club->image;
         }
-        if(isset($project)){
+        elseif(isset($project)){
             $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()) . '/' . $project->image;
         }
-        if(isset($product)){
+        elseif(isset($product)){
             $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()) . '/' . $product->image;
+        }
+         else {
+            $seoImage = 'https://wepadel.com/assets/image/trademark/logo.png';
         }
     ?>
     
