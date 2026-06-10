@@ -7,10 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @if(isset($seo))
+    <?php
+        $seoImage = 'https://wepadel.com/assets/image/trademark/logo.png';
+        if(isset($is_blog)){
+            $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'blog_images_folder'], app()->getLocale()) . '/' . $blog->image;
+        }
+        if(isset($club)){
+            $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'club_images_folder'], app()->getLocale()) . '/' . $club->image;
+        }
+        if(isset($project)){
+            $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'project_images_folder'], app()->getLocale()) . '/' . $project->image;
+        }
+        if(isset($product)){
+            $seoImage = env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'product_images_folder'], app()->getLocale()) . '/' . $product->image;
+        }
+    ?>
     
         <meta name="keywords" content="{{ $seo->seo_keywords }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
         <meta name="description" content="{{ $seo->seo_description }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
         <?php $pageTitle = $seo->seo_title;?>
+        <!-- Open Graph meta tags -->
+        <meta property="og:title" content="{{ $seo->seo_title }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
+        <meta property="og:description" content="{{ $seo->seo_description }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
+        <meta property="og:image" content="{{ $seoImage }}">
+
+        <!-- Twitter Card meta tags -->
+        <meta name="twitter:title" content="{{ $seo->seo_title }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
+        <meta name="twitter:description" content="{{ $seo->seo_description }} <?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?>">
+        <meta name="twitter:image" content="{{ $seoImage }}">
+
     @endif
     <title><?php if (!empty($pageTitle)) echo $pageTitle; ?><?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?></title>
     <link rel="shortcut icon" href="../assets/image/trademark/favicon.png" type="image/x-icon">
