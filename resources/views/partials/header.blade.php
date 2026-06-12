@@ -39,7 +39,7 @@
         <meta name="twitter:image" content="{{ $seoImage }}">
 
     @endif
-    <title><?php if (!empty($pageTitle)) echo $pageTitle; ?><?php if(isset($is_blog)){ echo ' - '. date('Y'); } ?></title>
+    <title><?php if (!empty($pageTitle)) echo $pageTitle; ?></title>
     <link rel="shortcut icon" href="../assets/image/trademark/favicon.png" type="image/x-icon">
     <!-- Önbellek tutmasın diye ekledim; '?id<?= rand(); ?>' yazısını silersin -->
     <link rel="stylesheet" href="../assets/css/tailwind.css?id=<?= rand(); ?>">
