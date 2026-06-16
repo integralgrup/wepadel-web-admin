@@ -116,12 +116,7 @@
                                                 </div>
                                             </a>
                                             <div class="button-field relative mt-[30px]">
-                                                <a href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'club_images_folder'], $club->lang) .'/'. $club->pdf_file}}" target="_blank" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#D9D9D9]/20 relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-[#0055A3] hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center rtl:gap-2">
-                                                    <div class="icon text-[12px] flex items-center relative z-2 duration-450 ">
-                                                        <div class="icon-download text-[18px] flex items-center text-[#0055A3] relative z-2 duration-450 group-hover:text-white group-hover:-translate-x-1"></div>
-                                                    </div>
-                                                    <div class="text-[18px] xs:text-[16px] font-normal font-inter flex items-center text-[#0055A3] group-hover:text-white relative z-2 duration-450 w-max">PDF</div>
-                                                </a>
+                                                
                                             </div>
                                         </div>
                                     </div>
