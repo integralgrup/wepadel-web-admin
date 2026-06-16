@@ -131,7 +131,7 @@
     </div>
     <div class="copyright-wrapper py-[20px] xl:py-[15px] relative z-2">
         <div class="wrapper max-w-[1440px] mx-auto w-full px-[30px] grid grid-cols-3 lg:grid-cols-[minmax(0,4fr)_minmax(0,5fr)_minmax(0,2fr)] md:grid-cols-2 sm:grid-cols-1 items-center justify-between gap-[20px] ">
-            <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center">{{getStaticText(19)}} <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]" dir="">Integral Group</a></div>
+            <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center">{!!getStaticText(19)!!}</div>
             <div class="text text-black text-[18px] xs:text-[16px] font-light md:text-center sm:hidden" dir="">© {{date('Y')}} <a href="" class="font-bold text-[#0055A3] duration-350 hover:text-[#C7234B]">{{getStaticText(61)}}</a> | {{getStaticText(20)}}</div>
             <a href="" class="logo-wrapper block max-w-[120px] w-full hover:scale-105 duration-450 ml-auto md:col-span-2 sm:col-span-1 md:m-auto sm:hidden">
                 <img class="block object-contain object-center w-full h-auto" src="../assets/image/other/integral.png" alt="Integral Group Logo" loading="lazy">
