@@ -1,6 +1,4 @@
 RewriteEngine On
-<IfModule mod_rewrite.c>
-    RewriteEngine On
 
     # Redirects
     RewriteRule ^блог-падел/как-построить-падельный-корт/?$ /блог/как-построить-падельный-корт [R=301,L,NE]
@@ -10,8 +8,5 @@ RewriteEngine On
     RewriteRule ^блог-падел/руководство-по-установке-падел-корта/?$ /блог/руководство-по-установке-падел-корта [R=301,L,NE]
     RewriteRule ^блог-падел/мировой-тур-по-паделу/?$ /блог/мировой-тур-по-паделу [R=301,L,NE]
 
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
-</IfModule>
+
 RewriteRule ^(.*)$ public/$1 [L]
