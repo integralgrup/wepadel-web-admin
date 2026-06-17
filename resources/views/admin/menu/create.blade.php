@@ -139,6 +139,11 @@
                                         <!-- Submit Button -->
                                         
                                     </div>
+                                    <div class="p-3 mt-3">
+                                        <label for="description_{{$language->lang_code}}" class="form-label">Açıklama ({{ $language->lang_code }})</label>
+                                        <textarea name="description_{{$language->lang_code}}" id="description_{{$language->lang_code}}" class="form-control editor" rows="4"></textarea>
+
+                                    </div>
                                 
                             </div>
                            @endforeach

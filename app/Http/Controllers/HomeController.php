@@ -193,8 +193,9 @@ class HomeController extends Controller
                 $categories = ProductCategory::where('lang', app()->getLocale())->where('parent_category_id', '!=', 0)->orderBy('sort', 'asc')->with('product')->get();
                 $products = Product::where(['lang' => app()->getLocale()])->with(['images', 'category'])->get();
                 $seo = SeoSettings::where('page', 'court')->where('lang', app()->getLocale())->first();
+                $main_menu = 1;
                 
-                return view('product_category', compact('categories', 'menu', 'seo', 'main_category', 'products'));
+                return view('product_category', compact('categories', 'menu', 'seo', 'main_category', 'products', 'main_menu'));
             }else{
                 $main_category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
 
@@ -207,8 +208,9 @@ class HomeController extends Controller
                     $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $main_category->category_id])->with(['images', 'category'])->get();
                     //dd($products);
                     $seo = $main_category;
+                    $main_menu = 0;
                     
-                    return view('product_category', compact('main_category', 'categories', 'products', 'menu', 'seo'));
+                    return view('product_category', compact('main_category', 'categories', 'products', 'menu', 'seo', 'main_menu'));
 
                 } else {
 
@@ -246,7 +248,7 @@ class HomeController extends Controller
                 $seo = SeoSettings::where('page', 'club')->where('lang', app()->getLocale())->first();
                 $menu = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug])->first();
                 $clubs_title = $menu->title;
-                return view('clubs', compact('clubs', 'seo', 'clubs_title'));
+                return view('clubs', compact('clubs', 'seo', 'clubs_title', 'menu'));
             }
 
         }

@@ -96,10 +96,8 @@ class MenuController extends Controller
                     if ($request->hasFile('image_en') || $request->hasFile('image_' . $language->lang_code)) {
                         
                         $tmpImgPath = createTmpFile($request, 'image_en', $languages[0]);
-                        
                         $imageName = moveFile($request,$language,'image_' . $language->lang_code, 'image_en', 'title_' . $language->lang_code, 'title_en', $language->images_folder, $tmpImgPath);
-                        //dd($tmpImgPath);
-                        //dd($imageName);
+                        
                     }else{
                         $imageName = $request->input('old_image_' . $language->lang_code, null) ?? null; // Use old image if no new image is uploaded
                     }
@@ -115,6 +113,7 @@ class MenuController extends Controller
                         [
                             'parent_menu_id' => $request->input('parent_menu_id_en') ?? $request->input('parent_menu_id_' . $language->lang_code) ?? 0,
                             'title' => $request->input('title_' . $language->lang_code) ?? $request->input('title_en'),
+                            'description' => $request->input('description_' . $language->lang_code) ?? $request->input('description_en') ?? null,
                             'seo_url' => $request->input('seo_url_' . $language->lang_code) ?? $request->input('seo_url_en'),
                             'image' => $imageName, // save relative path
                             'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en') ?? null,

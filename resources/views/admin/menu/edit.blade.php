@@ -56,6 +56,7 @@
                             $menu_id = $menu->menu_id;
                             $parent_menu_id = $menu->parent_menu_id;
                             $title[$menu->lang] = $menu->title;
+                            $description[$menu->lang] = $menu->description;
                             $seo_url[$menu->lang] = $menu->seo_url;
                             $image[$menu->lang] = $menu->image;
                             $alt[$menu->lang] = $menu->alt;
@@ -152,7 +153,13 @@
                                             <label class="form-check-label" for="isActive_{{$language->lang_code}}">Aktif</label>
                                         </div>-->
                                     </div>
+                                    <div class="p-3 mt-3">
+                                        <label for="description_{{$language->lang_code}}" class="form-label">Açıklama ({{ $language->lang_code }})</label>
+                                        <textarea name="description_{{$language->lang_code}}" id="description_{{$language->lang_code}}" class="form-control editor" rows="4">{{ $description[$language->lang_code] }}</textarea>
+
+                                    </div>
                                 </div>
+                                
                             @endforeach
                         </div>
                         <div class="d-flex justify-content-end">

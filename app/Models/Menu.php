@@ -24,6 +24,7 @@ class Menu extends Model
         'menu_id',
         'lang',
         'title',
+        'description',
         'seo_url',
         'image',
         'alt',
