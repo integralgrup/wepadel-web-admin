@@ -208,7 +208,7 @@ class HomeController extends Controller
                     $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $main_category->category_id])->with(['images', 'category'])->get();
                     //dd($products);
                     $seo = $main_category;
-                    $main_menu = 0;
+                    $main_menu = 2;
                     
                     return view('product_category', compact('main_category', 'categories', 'products', 'menu', 'seo', 'main_menu'));
 
