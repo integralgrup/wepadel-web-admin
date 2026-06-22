@@ -138,7 +138,7 @@ $breadcrumbImage = $menu->image;
                     @if($main_menu == 2)
                     <div class="menu_description" style="height:200px; overflow:hidden;">
                         {!! $menu_data->description !!}
-                        @if(length($menu_data->description) > 200)
+                        @if(strlen($menu_data->description) > 200)
                             <a href="#" class="read-more">Read More</a>
                         @endif
                     </div>
