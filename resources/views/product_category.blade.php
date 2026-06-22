@@ -136,11 +136,11 @@ $breadcrumbImage = $menu->image;
                     </div>
                     @endif
                     @if($main_menu == 2)
-                    <div class="menu_description" style="height:200px; overflow:hidden;">
+                    <div class="menu_description" style="height:150px; overflow:hidden;">
                         {!! $menu_data->description !!}
                         
                     </div>
-                        @if(strlen($menu_data->description) > 200)
+                        @if(strlen($menu_data->description) > 1000)
                             <a href="#" class="read-more" style="color:#0055A3">Read More</a>
                         @endif
                     @endif
@@ -174,7 +174,7 @@ $breadcrumbImage = $menu->image;
             descriptionDiv.css('height', 'auto');
             $(this).text('Read Less');
         } else {
-            descriptionDiv.css('height', '200px');
+            descriptionDiv.css('height', '150px');
             $(this).text('Read More');
         }
     });
