@@ -131,17 +131,21 @@ $breadcrumbImage = $menu->image;
                         
                     </div>
                     @if($main_menu == 1)
-                    <div>
-                        {!! $menu->description !!}
-                    </div>
+                        <div class="menu_description" style="height:150px; overflow:hidden;">
+                            {!! $main_category->description !!}
+                            
+                        </div>
+                        @if(strlen($main_category->description) > 1000)
+                            <a href="#" class="read-more" style="color:#0055A3">{{getStaticText(62)}}</a>
+                        @endif
                     @endif
                     @if($main_menu == 2)
-                    <div class="menu_description" style="height:150px; overflow:hidden;">
-                        {!! $menu_data->description !!}
-                        
-                    </div>
+                        <div class="menu_description" style="height:150px; overflow:hidden;">
+                            {!! $menu_data->description !!}
+                            
+                        </div>
                         @if(strlen($menu_data->description) > 1000)
-                            <a href="#" class="read-more" style="color:#0055A3">Read More</a>
+                            <a href="#" class="read-more" style="color:#0055A3">{{getStaticText(62)}}</a>
                         @endif
                     @endif
                     <!--<div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
@@ -172,10 +176,10 @@ $breadcrumbImage = $menu->image;
         var descriptionDiv = $(this).prev('.menu_description');
         if (descriptionDiv.css('height') === '150px') {
             descriptionDiv.css('height', 'auto');
-            $(this).text('Read Less');
+            $(this).text('{{getStaticText(63)}}');
         } else {
             descriptionDiv.css('height', '150px');
-            $(this).text('Read More');
+            $(this).text('{{getStaticText(62)}}');
         }
     });
 </script>
