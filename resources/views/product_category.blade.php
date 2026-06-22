@@ -132,10 +132,10 @@ $breadcrumbImage = $menu->image;
                     </div>
                     @if($main_menu == 1)
                         <div class="menu_description" style="height:150px; overflow:hidden;">
-                            {!! $mmenu->description !!}
+                            {!! $menu->description !!}
                             
                         </div>
-                        @if(strlen($mmenu->description) > 1000)
+                        @if(strlen($menu->description) > 1000)
                             <a href="#" class="read-more" style="color:#0055A3">{{getStaticText(62)}}</a>
                         @endif
                     @endif
