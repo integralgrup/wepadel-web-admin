@@ -136,8 +136,11 @@ $breadcrumbImage = $menu->image;
                     </div>
                     @endif
                     @if($main_menu == 2)
-                    <div>
+                    <div class="menu_description" style="height:200px; overflow:hidden;">
                         {!! $menu_data->description !!}
+                        @if(length($menu_data->description) > 200)
+                            <a href="#" class="read-more">Read More</a>
+                        @endif
                     </div>
                     @endif
                     <!--<div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
