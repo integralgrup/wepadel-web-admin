@@ -170,7 +170,7 @@ $breadcrumbImage = $menu->image;
     $('.read-more').on('click', function(e) {
         e.preventDefault();
         var descriptionDiv = $(this).prev('.menu_description');
-        if (descriptionDiv.css('height') === '200px') {
+        if (descriptionDiv.css('height') === '150px') {
             descriptionDiv.css('height', 'auto');
             $(this).text('Read Less');
         } else {
