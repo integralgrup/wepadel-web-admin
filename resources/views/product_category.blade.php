@@ -136,13 +136,14 @@ $breadcrumbImage = $menu->image;
                     </div>
                     @endif
                     @if($main_menu == 2)
-                    <div class="menu_description" style="height:200px; overflow:hidden;">
+                    <div class="menu_description" style="height:150px; overflow:hidden;">
+                        @if(strlen($menu_data->description) > 800)
+                        {!! substr($menu_data->description, 0, 800) !!}...<a href="#" class="read-more" style="color:#C7234B">Read More</a>
+                        @else
                         {!! $menu_data->description !!}
+                        @endif
                         
                     </div>
-                        @if(strlen($menu_data->description) > 200)
-                            <a href="#" class="read-more">Read More</a>
-                        @endif
                     @endif
                     <!--<div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
                         <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
@@ -170,11 +171,11 @@ $breadcrumbImage = $menu->image;
     $('.read-more').on('click', function(e) {
         e.preventDefault();
         var descriptionDiv = $(this).prev('.menu_description');
-        if (descriptionDiv.css('height') === '200px') {
+        if (descriptionDiv.css('height') === '150px') {
             descriptionDiv.css('height', 'auto');
             $(this).text('Read Less');
         } else {
-            descriptionDiv.css('height', '200px');
+            descriptionDiv.css('height', '150px');
             $(this).text('Read More');
         }
     });
