@@ -137,7 +137,7 @@ $breadcrumbImage = $menu->image;
                     @endif
                     @if($main_menu == 2)
                     <div>
-                        {!! $main_category->description !!}
+                        {!! $menu_data->description !!}
                     </div>
                     @endif
                     <!--<div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">

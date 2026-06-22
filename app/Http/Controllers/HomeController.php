@@ -209,8 +209,9 @@ class HomeController extends Controller
                     //dd($products);
                     $seo = $main_category;
                     $main_menu = 2;
+                    $menu_data = Menu::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->first();
                     
-                    return view('product_category', compact('main_category', 'categories', 'products', 'menu', 'seo', 'main_menu'));
+                    return view('product_category', compact('main_category', 'categories', 'products', 'menu', 'seo', 'main_menu', 'menu_data') );
 
                 } else {
 
