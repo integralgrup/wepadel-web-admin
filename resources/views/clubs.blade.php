@@ -135,9 +135,12 @@
                     @endforeach
 
                     @if($menu->description != null)
-                    <div>
-                        {!! $menu->description !!}
-                    </div>
+                        <div class="menu_description" style="height:150px; overflow:hidden;">
+                            {!! $menu->description !!}
+                        </div>
+                        @if(strlen($menu->description) > 1000)
+                            <a href="#" class="read-more" style="color:#0055A3">{{getStaticText(62)}}</a>
+                        @endif
                     @endif
                 </div>
                 <!--<div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
@@ -153,5 +156,18 @@
 
 <!-- script --> 
 @section('script') 
+<script>
 
+    $('.read-more').on('click', function(e) {
+        e.preventDefault();
+        var descriptionDiv = $(this).prev('.menu_description');
+        if (descriptionDiv.css('height') === '150px') {
+            descriptionDiv.css('height', 'auto');
+            $(this).text('{{getStaticText(63)}}');
+        } else {
+            descriptionDiv.css('height', '150px');
+            $(this).text('{{getStaticText(62)}}');
+        }
+    });
+</script>
 @endsection
