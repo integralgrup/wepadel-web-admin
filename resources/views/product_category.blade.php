@@ -138,10 +138,11 @@ $breadcrumbImage = $menu->image;
                     @if($main_menu == 2)
                     <div class="menu_description" style="height:200px; overflow:hidden;">
                         {!! $menu_data->description !!}
+                        
+                    </div>
                         @if(strlen($menu_data->description) > 200)
                             <a href="#" class="read-more">Read More</a>
                         @endif
-                    </div>
                     @endif
                     <!--<div class="button-field flex justify-center flex-wrap gap-[25px] mt-[75px] mb-[50px] xs:mt-[50px] xs:mb-[30px] z-[2] relative">
                         <a href="" class="button group min-w-[180px] lg:min-w-[150px] xs:lg:min-w-[120px] justify-center items-center w-fit h-[50px] flex px-[30px] bg-[#0055A3] relative space-x-[10px] transition-all !duration-450 overflow-hidden isolate rounded-full border border-solid border-[#0055A3] before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-white hover:before:left-0 before:duration-450 sm:h-[44px] menu-link xs:justify-center ">
@@ -164,6 +165,18 @@ $breadcrumbImage = $menu->image;
         $('.project-box').filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
+    });
+
+    $('.read-more').on('click', function(e) {
+        e.preventDefault();
+        var descriptionDiv = $(this).prev('.menu_description');
+        if (descriptionDiv.css('height') === '200px') {
+            descriptionDiv.css('height', 'auto');
+            $(this).text('Read Less');
+        } else {
+            descriptionDiv.css('height', '200px');
+            $(this).text('Read More');
+        }
     });
 </script>
 @endsection
