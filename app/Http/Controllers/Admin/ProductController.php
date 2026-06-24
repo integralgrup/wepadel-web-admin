@@ -686,21 +686,21 @@ class ProductController extends Controller
                 }
 
                 if ($request->hasFile('image_en') || $request->hasFile('image_' . $language->lang_code)) {
-                    $tmpImgPath = createTmpFile($request, 'image_en', $languages[0]);
+                    $tmpImgPath = createTmpFile($request, 'image_en', $this->languages[0]);
                     $imageName = moveFile($request,$language,'image_' . $language->lang_code, 'image_en', 'title_' . $language->lang_code, 'title_en', $language->product_images_folder, $tmpImgPath);
                     //dd($imageName);
                 }else{
                     $imageName = $request->input('old_image_' . $language->lang_code, null); // Use old image if no new image is uploaded
                 }
 
-                /*if ($request->hasFile('icon_en') || $request->hasFile('icon_' . $language->lang_code)) {
+                if ($request->hasFile('icon_en') || $request->hasFile('icon_' . $language->lang_code)) {
                     
                     $tmpIconPath = createTmpFile($request, 'icon_en', $languages[0]);
                     $iconName = moveFile($request,$language,'icon_' . $language->lang_code, 'icon_en', 'title_' . $language->lang_code, 'title_en', $language->product_images_folder, $tmpIconPath);
                     //dd($imageName);
                 }else{
                     $iconName = $request->input('old_icon_' . $language->lang_code, null); // Use old image if no new image is uploaded
-                }*/
+                }
                 
 
                 ProductFeature::updateOrCreate(
