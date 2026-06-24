@@ -704,9 +704,9 @@ class ProductController extends Controller
                 
 
                 ProductFeature::updateOrCreate(
-                    ['feature_id' => $feature_id, 'lang' => $request->input('lang_' . $language->lang_code)],
+                    ['product_id' => $product_id,'feature_id' => $feature_id, 'lang' => $request->input('lang_' . $language->lang_code)],
                     [
-                        'product_id' => $product_id,
+                        
                         'title' => $request->input('title_' . $language->lang_code) ?? $request->input('title_en'),
                         'description' => $request->input('description_' . $language->lang_code) ?? $request->input('description_en'),
                         'image' => $imageName,
