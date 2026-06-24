@@ -647,7 +647,7 @@ class ProductController extends Controller
     // Product Feature methods will go here
     public function featuresIndex($product_id)
     {
-        $features = ProductFeature::where('product_id', $product_id)->where('lang' , 'en')->get();
+        $features = ProductFeature::where('product_id', $product_id)->where('lang' , 'en')->orderBy('sort', 'asc')->get();
         return view('admin.product.feature.index', compact('features', 'product_id'));
     }
 
