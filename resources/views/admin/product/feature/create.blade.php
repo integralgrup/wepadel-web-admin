@@ -73,22 +73,23 @@
                                         </div>
                                         <!-- image -->
                                         <div >
-                                            <div class="mb-3">
-                                                <label for="image_{{ $language->lang_code }}" class="form-label">Görsel ({{ $language->lang_code }})</label>
-                                                <input type="file" class="form-control" id="image_{{ $language->lang_code }}" name="image_{{ $language->lang_code }}" accept="image/*" {{ $required }}>
+                                            <!-- image -->
+                                            <div class="mb-3" style="background:#dddddd;">
+                                                <label for="icon_{{ $language->lang_code }}" class="form-label">İkon ({{ $language->lang_code }})</label>
+                                                <input type="file" class="form-control" id="icon_{{ $language->lang_code }}" name="icon_{{ $language->lang_code }}" accept="image/*" {{ $required }}>
                                             </div>
+                                            
                                             <div>
                                                 <label for="alt_{{ $language->lang_code }}" class="form-label">Alt Metin ({{ $language->lang_code }})</label>
                                                 <input type="text" class="form-control" id="alt_{{ $language->lang_code }}" name="alt_{{ $language->lang_code }}" {{ $required }}>
                                             </div>
                                         </div>
 
-                                        <!-- image -->
+                                        
                                         <div class="mb-3">
-                                            <label for="icon_{{ $language->lang_code }}" class="form-label">İkon ({{ $language->lang_code }})</label>
-                                            <input type="file" class="form-control" id="icon_{{ $language->lang_code }}" name="icon_{{ $language->lang_code }}" accept="image/*" {{ $required }}>
+                                            <label for="image_{{ $language->lang_code }}" class="form-label">Görsel ({{ $language->lang_code }})</label>
+                                            <input type="file" class="form-control" id="image_{{ $language->lang_code }}" name="image_{{ $language->lang_code }}" accept="image/*" {{ $required }}>
                                         </div>
-
                                         <div class="mb-3">
                                             <label for="sort_{{ $language->lang_code }}" class="form-label">Sıralama ({{ strtoupper($language->lang_code) }})</label>
                                             <input type="number" class="form-control" id="sort_{{ $language->lang_code }}" name="sort_{{ $language->lang_code }}" {{ $required }}>

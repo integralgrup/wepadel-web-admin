@@ -89,12 +89,14 @@
                                         </div>
                                         <!-- image -->
                                         <div >
-                                            <div class="mb-3">
-                                                <label for="image_{{ $language->lang_code }}" class="form-label">Görsel ({{ $language->lang_code }})</label>
+                                            <div class="mb-3" >
+                                                <label for="image_{{ $language->lang_code }}" class="form-label">İkon ({{ $language->lang_code }})</label>
                                                 <input type="file" class="form-control" id="image_{{ $language->lang_code }}" name="image_{{ $language->lang_code }}"  accept="image/*" >
                                                 @if($image[$language->lang_code])
+                                                <div style="background:#dddddd;">
                                                     <img src="{{ $language->domain .'/'.  getFolder(['uploads_folder','product_images_folder'], $language->lang_code) . '/' . $image[$language->lang_code] }}" alt="" style="width: 100px; margin-top: 10px;">
                                                     <input type="hidden"  name="old_image_{{ $language->lang_code }}" value="{{ $image[$language->lang_code] }}">
+                                                </div>
                                                 @endif
                                             </div>
                                             <div>
@@ -104,7 +106,7 @@
                                         </div>
 
                                         <!-- image -->
-                                        <div class="mb-3">
+                                        <div class="mb-3" >
                                                 <label for="icon_{{ $language->lang_code }}" class="form-label">Görsel ({{ $language->lang_code }})</label>
                                                 <input type="file" class="form-control" id="icon_{{ $language->lang_code }}" name="icon_{{ $language->lang_code }}"  accept="image/*" >
                                                 @if($image[$language->lang_code])

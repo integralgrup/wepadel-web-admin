@@ -712,7 +712,7 @@ class ProductController extends Controller
                         'image' => $imageName,
                         'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en'),
                         'icon' => $iconName ?? '-',
-                        'sort' => $request->input('sort_' . $language->lang_code) ?? $request->input('sort_en') ?? 0,
+                        'sort' => $request->input('sort_en') ?? $request->input('sort_' . $language->lang_code) ?? 0,
                     ]
                 );
             }
